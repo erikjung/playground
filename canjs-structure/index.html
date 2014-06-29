@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+      body {
+        font-size: 2em;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container  js-app">
+      <header class="js-header">
+        <h1>
+          <span class="label  label-primary  js-total-changes">0</span>
+          Total thing changes
+        </h1>
+      </header>
+      <hr>
+      <table class="table  table-bordered">
+        <tr>
+          <th>thing.isNew</th>
+          <th>thing.someValue</th>
+          <th>thingLastUpdated</th>
+          <th>items.isPending</th>
+          <th>items.state</th>
+          <th>lastItemRequest</th>
+        </tr>
+        <tr class="js-status"></tr>
+      </table>
+      <div class="js-control">
+        <button class="btn  btn-primary  btn-lg  js-control-1">Update Thing</button>
+        <button class="btn  btn-primary  btn-lg  js-control-2">Update Items</button>
+      </div>
+      <hr>
+      <footer class="js-footer">
+        <div class="alert  alert-info  js-alert-info">
+          <strong>Thing</strong> was just created or updated
+        </div>
+        <div class="alert  alert-warning  js-alert-warning">
+          <strong>Items</strong> are loading
+        </div>
+        <div class="alert  alert-success  js-alert-success">
+          <strong>Items</strong> have finished loading
+        </div>
+      </footer>
+    </main>
+    <script id="status.tpl" type="text/mustache">
+      <td>{{thing.isNew}}</td>
+      <td>{{thing.someValue}}</td>
+      <td>
+        {{#if thing.lastUpdated}}
+          {{thingLastUpdated}}
+        {{else}}
+          N/A
+        {{/if}}
+      </td>
+      <td>{{items.isPending}}</td>
+      <td>{{items.state}}</td>
+      <td>{{lastItemRequest}}</td>
+    </script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="vendor/jquery.velocity.min.js"></script>
+    <script src="vendor/velocity.ui.js"></script>
+    <script src="vendor/can.custom.js"></script>
+    <script src="vendor/require.js" data-main="js/main"></script>
+</html>
