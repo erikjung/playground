@@ -1,4 +1,4 @@
-define(function () {
+define(['fixtures'], function () {
   return can.Model.extend({
     create  : 'POST /thing/new',
     findOne : 'GET /thing/{id}',

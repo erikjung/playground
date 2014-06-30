@@ -3,6 +3,7 @@ define([
   'core/state',
   'model/thing',
   'model/items',
+  'model/product',
   'control/app',
   'ui/header',
   'ui/body',
@@ -13,12 +14,13 @@ function (
   state,
   Thing,
   Items,
+  Product,
   AppControl
 ) {
   var App = can.Construct.extend({
     setup: function () {
       $.ajaxSetup({
-        isLocal: true
+
       })
     },
 

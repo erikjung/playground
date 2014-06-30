@@ -1,9 +1,19 @@
-define(function () {
+
+define(['json!products'], function (products) {
+
+  var store = can.fixture.store
+
+  var productStore = store(products.length - 1, function (i) {
+    return products[i]
+  })
+
   can.fixture({
 
     /** Products */
 
-    'GET /products': 'data/products.json',
+    'GET /products': function (req) {
+      return productStore.findAll(req)
+    },
 
     /** Thing */
 
