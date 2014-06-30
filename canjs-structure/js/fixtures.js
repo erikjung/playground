@@ -1,8 +1,12 @@
 define(function () {
-
-  /** Thing */
-
   can.fixture({
+
+    /** Products */
+
+    'GET /products': 'data/products.json',
+
+    /** Thing */
+
     'POST /thing/new': function (req) {
       return can.extend({}, req.data, { id: 1 })
     },

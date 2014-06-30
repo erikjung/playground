@@ -16,6 +16,12 @@ function (
   AppControl
 ) {
   var App = can.Construct.extend({
+    setup: function () {
+      $.ajaxSetup({
+        isLocal: true
+      })
+    },
+
     init: function () {
       this.appControl = new AppControl('.js-app')
       this.appControl.bind(events.UPDATE_THING, can.proxy(this.updateThing, this))
