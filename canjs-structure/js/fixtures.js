@@ -1,29 +1,41 @@
 
 define(['json!products'], function (products) {
 
-  var store = can.fixture.store
+  /** Helpers */
 
-  var productStore = store(products.length - 1, function (i) {
+  var productStore = can.fixture.store(products.length - 1, function (i) {
     return products[i]
   })
+
+  function extendWithId (data) {
+    return can.extend({}, data, { id: 1 })
+  }
+
+  /** The fixtures */
 
   can.fixture({
 
     /** Products */
 
-    'GET /products': function (req) {
-      return productStore.findAll(req)
+    'GET /products': function (request) {
+      return productStore.findAll(request)
     },
 
-    /** Thing */
+    /** Orders */
 
-    'POST /thing/new': function (req) {
-      return can.extend({}, req.data, { id: 1 })
+    'POST /order/create': function (request) {
+      return extendWithId(request.data)
     },
 
-    'GET /thing/{id}': function (req) {
+    /** Things */
+
+    'POST /thing/new': function (request) {
+      return extendWithId(request.data)
+    },
+
+    'GET /thing/{id}': function (request) {
       return {
-        id: req.data.id,
+        id: request.data.id,
         someValue: Math.random() + 1
       }
     },
@@ -36,7 +48,7 @@ define(['json!products'], function (products) {
 
     /** Items */
 
-    'GET /items/{id}': function (req) {
+    'GET /items/{id}': function (request) {
       return {
         id: 1,
         name: 'One'
@@ -52,5 +64,7 @@ define(['json!products'], function (products) {
     }
   })
 
+  /** Options */
+  
   can.fixture.delay = 600
 })

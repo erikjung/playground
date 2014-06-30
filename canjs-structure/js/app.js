@@ -4,6 +4,7 @@ define([
   'model/thing',
   'model/items',
   'model/product',
+  'model/order',
   'control/app',
   'ui/header',
   'ui/body',
@@ -15,6 +16,7 @@ function (
   Thing,
   Items,
   Product,
+  Order,
   AppControl
 ) {
   var App = can.Construct.extend({
@@ -28,6 +30,10 @@ function (
       this.appControl = new AppControl('.js-app')
       this.appControl.bind(events.UPDATE_THING, can.proxy(this.updateThing, this))
       this.appControl.bind(events.UPDATE_ITEMS, can.proxy(this.updateItems, this))
+
+      new Order({ productIds: [1,2,3], subtotal: 44.55 }).save(function (res) {
+        console.log(res)
+      })
     },
 
     updateThing: function (event, data) {
