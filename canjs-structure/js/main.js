@@ -8,4 +8,8 @@ require.config({
 
 require(['app'], function (App) {
   var app = new App()
+
+  app.on('started', function () {
+    console.log('asas')
+  })
 })

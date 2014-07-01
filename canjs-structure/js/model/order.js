@@ -9,6 +9,14 @@ define(['fixtures'], function () {
     productIds: [],
     subtotal: 0.00,
     type: 'pickup',
-    taxExemptions: []
+    taxExemptions: [],
+    pickup: {
+      storeLocation: null,
+      time: Date.now()
+    },
+    delivery: {
+      address: '',
+      time: Date.now()
+    }
   })
 })
