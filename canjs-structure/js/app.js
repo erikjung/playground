@@ -30,10 +30,7 @@ function (
       this.appControl = new AppControl('.js-app')
       this.appControl.bind(events.UPDATE_THING, can.proxy(this.updateThing, this))
       this.appControl.bind(events.UPDATE_ITEMS, can.proxy(this.updateItems, this))
-
-      new Order({ productIds: [1,2,3], subtotal: 44.55 }).save(function (res) {
-        console.log(res)
-      })
+      this.appControl.bind(events.UPDATE_PRODUCT_OFFSET, can.proxy(this.updateProducts, this))
     },
 
     updateThing: function (event, data) {
@@ -43,6 +40,14 @@ function (
     updateItems: function (event, data) {
       state.attr('lastItemRequest', Date.now())
     },
+
+    updateProducts: function (event, data) {
+      switch (event.type) {
+      default: case events.UPDATE_PRODUCT_OFFSET:
+        state.attr('productOffset', state.productOffset + state.productLimit)
+        break
+      }
+    }
   })
 
   can.extend(App.prototype, can.event)
