@@ -63,13 +63,16 @@ function (Thing, Items, Product) {
     }
   })
 
+  // The singleton instance exported by the module
   var instance = new State()
-  var thing = instance.attr('thing')
+
+  //
+  // var thing = instance.attr('thing')
 
   // Trigger auto-save when thing value is changed
-  thing.bind('someValue', function () {
-    thing.save()
-  })
+  // thing.bind('someValue', function () {
+  //   thing.save()
+  // })
 
   // Allows for console debugging
   window.APP_STATE = instance

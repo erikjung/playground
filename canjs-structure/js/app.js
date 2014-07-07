@@ -1,3 +1,18 @@
+/**
+ * Functionality:
+ *
+ * 1. Page loads with 5 default products
+ * 2. Scrolling to the bottom of the page loads the next 5 products
+ * 3. Adding a quantity of < 0 results in:
+ *    - The product becoming "active"
+ *    - The "Place order" button becoming enabled
+ *    - The total items and price label being updated
+ *    - The order being updated, showing a confirmation label
+ * 4. Removing an item results in:
+ *    - The product disappearing
+ *    - The total items and price label being updated
+ */
+
 define([
   'core/events',
   'core/state',
@@ -31,6 +46,7 @@ function (
       this.appControl.bind(events.UPDATE_THING, can.proxy(this.updateThing, this))
       this.appControl.bind(events.UPDATE_ITEMS, can.proxy(this.updateItems, this))
       this.appControl.bind(events.UPDATE_PRODUCT_OFFSET, can.proxy(this.updateProducts, this))
+      this.dispatch(events.APP_STARTED)
     },
 
     updateThing: function (event, data) {
