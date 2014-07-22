@@ -1,0 +1,15 @@
+{
+  "name": "testing-hapi",
+  "version": "0.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^6.2.0",
+    "ramda": "^0.2.4"
+  }
+}
