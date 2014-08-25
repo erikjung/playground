@@ -1,601 +1,601 @@
 [
   {
     "id": "89B194BC-CC2B-59F9-DBB4-BA9409BC5A5B",
-    "name": "Ac Arcu Nunc Foundation",
+    "displayName": "Ac Arcu Nunc Foundation",
     "price": 15.79,
     "stock": 191
   },
   {
     "id": "1FAD270A-4D01-2F66-948C-E159E9C27A1F",
-    "name": "Non Nisi Associates",
+    "displayName": "Non Nisi Associates",
     "price": 35.17,
     "stock": 275
   },
   {
     "id": "2162B10A-04F9-04F0-0052-1308BD849A20",
-    "name": "Massa Mauris Vestibulum Ltd",
+    "displayName": "Massa Mauris Vestibulum Ltd",
     "price": 54.48,
     "stock": 20
   },
   {
     "id": "BAFDE249-EFBA-C2EE-B3F3-83D47CFE923E",
-    "name": "Vitae Velit Egestas Corporation",
+    "displayName": "Vitae Velit Egestas Corporation",
     "price": 22.64,
     "stock": 66
   },
   {
     "id": "B3B58B2C-BE8E-CC67-92FB-76AE53A408ED",
-    "name": "Nulla Cras Eu Limited",
+    "displayName": "Nulla Cras Eu Limited",
     "price": 13.68,
     "stock": 185
   },
   {
     "id": "9864CFD4-17CF-EDC7-A1BC-49789F287EDC",
-    "name": "Nam Porttitor Scelerisque Corp.",
+    "displayName": "Nam Porttitor Scelerisque Corp.",
     "price": 3.62,
     "stock": 195
   },
   {
     "id": "56DE6839-6705-58FC-A767-1EB11AB2DB5F",
-    "name": "Ut Dolor Dapibus LLC",
+    "displayName": "Ut Dolor Dapibus LLC",
     "price": 30.98,
     "stock": 6
   },
   {
     "id": "A27D86BC-DA3C-A531-B5F2-847DA78F27C4",
-    "name": "Rutrum Justo Ltd",
+    "displayName": "Rutrum Justo Ltd",
     "price": 63.61,
     "stock": 263
   },
   {
     "id": "82210FC7-E080-58C0-2D7B-DA774CD071D4",
-    "name": "Magnis Dis Parturient LLP",
+    "displayName": "Magnis Dis Parturient LLP",
     "price": 24.37,
     "stock": 28
   },
   {
     "id": "3373F0BC-A046-218A-D73B-B573D264AC03",
-    "name": "Et Magnis Dis Foundation",
+    "displayName": "Et Magnis Dis Foundation",
     "price": 72.11,
     "stock": 283
   },
   {
     "id": "4B20560F-8FBE-CF4F-5E01-CA2496FFDAA8",
-    "name": "Velit Ltd",
+    "displayName": "Velit Ltd",
     "price": 13.19,
     "stock": 107
   },
   {
     "id": "201C2035-7C3F-03E2-DA58-7E44F46CE54E",
-    "name": "Elementum Lorem LLC",
+    "displayName": "Elementum Lorem LLC",
     "price": 78.02,
     "stock": 258
   },
   {
     "id": "2969890C-6BE0-4944-F12A-FEF11E429F7B",
-    "name": "Donec At Arcu Limited",
+    "displayName": "Donec At Arcu Limited",
     "price": 79.99,
     "stock": 187
   },
   {
     "id": "B3D57BEC-301A-A7FD-5B2C-12E23E0C9F3E",
-    "name": "Ipsum Company",
+    "displayName": "Ipsum Company",
     "price": 81.94,
     "stock": 138
   },
   {
     "id": "7E9D94B6-8782-FBE7-4116-C61502BC465C",
-    "name": "Molestie Orci Tincidunt Incorporated",
+    "displayName": "Molestie Orci Tincidunt Incorporated",
     "price": 1.76,
     "stock": 96
   },
   {
     "id": "2F2ABBAD-7568-F58B-54D3-1AAAA823121F",
-    "name": "Rhoncus Limited",
+    "displayName": "Rhoncus Limited",
     "price": 69.28,
     "stock": 127
   },
   {
     "id": "770F1D68-EA7F-A1FE-16C8-EAAF60747866",
-    "name": "Et PC",
+    "displayName": "Et PC",
     "price": 12.44,
     "stock": 127
   },
   {
     "id": "17339BAF-F2F7-81D9-DBE4-EC428E1E8117",
-    "name": "Integer Sem Limited",
+    "displayName": "Integer Sem Limited",
     "price": 6.68,
     "stock": 111
   },
   {
     "id": "4AF89EE4-DB36-42D2-573F-5BD3F694D690",
-    "name": "Elementum Dui Quis Corporation",
+    "displayName": "Elementum Dui Quis Corporation",
     "price": 69.23,
     "stock": 26
   },
   {
     "id": "F6A01EF4-BFC9-16F5-AB98-29D342108CD4",
-    "name": "Mi Ac Mattis Industries",
+    "displayName": "Mi Ac Mattis Industries",
     "price": 77.59,
     "stock": 246
   },
   {
     "id": "EE24FC9C-DBD7-2B23-22D0-080844B6542A",
-    "name": "Nec PC",
+    "displayName": "Nec PC",
     "price": 34.30,
     "stock": 254
   },
   {
     "id": "90EB7F7F-233B-1F4A-C6AE-93976F02BA2A",
-    "name": "Maecenas PC",
+    "displayName": "Maecenas PC",
     "price": 70.25,
     "stock": 276
   },
   {
     "id": "9BC4DEB6-40A1-4FA9-5995-B042578ED6F2",
-    "name": "Mollis Industries",
+    "displayName": "Mollis Industries",
     "price": 93.13,
     "stock": 6
   },
   {
     "id": "982D760C-0A0F-A434-7B87-3ACFDC6C909A",
-    "name": "Fringilla Euismod Enim LLC",
+    "displayName": "Fringilla Euismod Enim LLC",
     "price": 67.91,
     "stock": 49
   },
   {
     "id": "A03A450B-3748-6F73-308B-6F1C640AB6DC",
-    "name": "Ipsum Nunc Id Ltd",
+    "displayName": "Ipsum Nunc Id Ltd",
     "price": 20.50,
     "stock": 92
   },
   {
     "id": "489EC372-7FF4-8531-4585-975A628A0CEF",
-    "name": "Et Tristique Pellentesque Foundation",
+    "displayName": "Et Tristique Pellentesque Foundation",
     "price": 79.66,
     "stock": 84
   },
   {
     "id": "5AD532C0-49B6-1477-4959-9616742516F1",
-    "name": "Est Associates",
+    "displayName": "Est Associates",
     "price": 60.47,
     "stock": 202
   },
   {
     "id": "AB730326-F066-CD8A-4C4E-5C0519E44B8E",
-    "name": "Bibendum Sed Est Limited",
+    "displayName": "Bibendum Sed Est Limited",
     "price": 42.57,
     "stock": 133
   },
   {
     "id": "B42F1DA8-B2D9-0A44-2195-01215D471214",
-    "name": "Erat Vivamus LLC",
+    "displayName": "Erat Vivamus LLC",
     "price": 13.02,
     "stock": 215
   },
   {
     "id": "AAE2FF4D-4F94-DCD0-D557-674D018225A4",
-    "name": "Turpis In Condimentum Institute",
+    "displayName": "Turpis In Condimentum Institute",
     "price": 36.69,
     "stock": 226
   },
   {
     "id": "DFE97FEC-4351-976D-7CC9-B0C2BE88999F",
-    "name": "Dis Parturient Company",
+    "displayName": "Dis Parturient Company",
     "price": 64.30,
     "stock": 77
   },
   {
     "id": "C193D371-1FB0-182D-6F41-5BC436B1D37B",
-    "name": "Parturient Industries",
+    "displayName": "Parturient Industries",
     "price": 97.33,
     "stock": 236
   },
   {
     "id": "AC1E2DE4-3712-6212-EB1D-C947C84BD54D",
-    "name": "Placerat Associates",
+    "displayName": "Placerat Associates",
     "price": 0.92,
     "stock": 1
   },
   {
     "id": "EBDE5CA2-E1E4-BA25-9B15-D29A7A05EB2C",
-    "name": "Dapibus Quam Consulting",
+    "displayName": "Dapibus Quam Consulting",
     "price": 20.53,
     "stock": 189
   },
   {
     "id": "4B7D2B00-FA71-B457-45AF-8E1BA63C3DD7",
-    "name": "Enim Etiam Imperdiet Foundation",
+    "displayName": "Enim Etiam Imperdiet Foundation",
     "price": 74.04,
     "stock": 14
   },
   {
     "id": "D8F5264F-ED21-2097-5F16-412F629D2B5F",
-    "name": "Dolor Dapibus Gravida Limited",
+    "displayName": "Dolor Dapibus Gravida Limited",
     "price": 12.64,
     "stock": 276
   },
   {
     "id": "AD96D91C-9BBD-3534-EFC4-08F23C018E0E",
-    "name": "Nibh Quisque Industries",
+    "displayName": "Nibh Quisque Industries",
     "price": 72.30,
     "stock": 180
   },
   {
     "id": "CE950615-A79B-4985-E638-338FF230283E",
-    "name": "Dolor Fusce Mi Incorporated",
+    "displayName": "Dolor Fusce Mi Incorporated",
     "price": 10.82,
     "stock": 253
   },
   {
     "id": "BCFE3D2C-B824-975D-4E2A-AF7AEEA91559",
-    "name": "Tempus Scelerisque LLP",
+    "displayName": "Tempus Scelerisque LLP",
     "price": 19.15,
     "stock": 44
   },
   {
     "id": "617A48F6-DC28-7C77-E822-F966277A99A8",
-    "name": "Vivamus Rhoncus Foundation",
+    "displayName": "Vivamus Rhoncus Foundation",
     "price": 5.67,
     "stock": 208
   },
   {
     "id": "4A1DDFC7-1BF1-A408-9C87-249BA5D2E893",
-    "name": "Neque Corporation",
+    "displayName": "Neque Corporation",
     "price": 23.87,
     "stock": 197
   },
   {
     "id": "FA2EBC44-AD24-173A-7AE0-A6498421C853",
-    "name": "Nonummy Ut Ltd",
+    "displayName": "Nonummy Ut Ltd",
     "price": 94.43,
     "stock": 140
   },
   {
     "id": "104DE1BE-A1A6-2FE0-B745-D7888AB1B329",
-    "name": "Fringilla Cursus Consulting",
+    "displayName": "Fringilla Cursus Consulting",
     "price": 69.59,
     "stock": 52
   },
   {
     "id": "A3DC6309-3AA5-77BC-C2A4-194ACE4F4454",
-    "name": "Nullam Velit Dui LLP",
+    "displayName": "Nullam Velit Dui LLP",
     "price": 30.36,
     "stock": 147
   },
   {
     "id": "AB166510-7EF4-5E43-62AB-8EBDE1E1D661",
-    "name": "Ipsum Nunc Id Incorporated",
+    "displayName": "Ipsum Nunc Id Incorporated",
     "price": 35.35,
     "stock": 242
   },
   {
     "id": "2A42891D-689B-891A-4282-71CCC7EFB96E",
-    "name": "Nunc Id Enim Associates",
+    "displayName": "Nunc Id Enim Associates",
     "price": 90.98,
     "stock": 26
   },
   {
     "id": "0F3993C7-9F74-C825-6A98-281286326978",
-    "name": "Blandit Enim Incorporated",
+    "displayName": "Blandit Enim Incorporated",
     "price": 6.80,
     "stock": 178
   },
   {
     "id": "E9A1F29E-8246-7DD5-0BB0-6331A8600E89",
-    "name": "Magna Industries",
+    "displayName": "Magna Industries",
     "price": 8.61,
     "stock": 264
   },
   {
     "id": "683B6861-AEED-631F-0193-46EE6B835912",
-    "name": "Sem Egestas PC",
+    "displayName": "Sem Egestas PC",
     "price": 23.02,
     "stock": 39
   },
   {
     "id": "C7974710-80A1-4DAB-7A13-38F56E0D83AC",
-    "name": "At Auctor Institute",
+    "displayName": "At Auctor Institute",
     "price": 3.70,
     "stock": 79
   },
   {
     "id": "B7094A55-C5BC-ABEA-9910-5702C3BE0222",
-    "name": "Pede Nec Ante Corporation",
+    "displayName": "Pede Nec Ante Corporation",
     "price": 83.28,
     "stock": 297
   },
   {
     "id": "A31D60A6-F517-EA97-5D83-CD1B01EED81E",
-    "name": "A Corp.",
+    "displayName": "A Corp.",
     "price": 92.05,
     "stock": 246
   },
   {
     "id": "43D027E4-20F7-917D-CB2E-A248708262BA",
-    "name": "Neque Non Quam Limited",
+    "displayName": "Neque Non Quam Limited",
     "price": 57.49,
     "stock": 180
   },
   {
     "id": "C48A4BC7-4BE8-4615-9E17-D209BBDE805A",
-    "name": "In Institute",
+    "displayName": "In Institute",
     "price": 39.55,
     "stock": 218
   },
   {
     "id": "977408BA-328F-536A-EC9A-BE9D4A479F30",
-    "name": "Vitae Sodales At PC",
+    "displayName": "Vitae Sodales At PC",
     "price": 45.85,
     "stock": 24
   },
   {
     "id": "FB820057-A211-ADB4-F92E-D3299C0C3707",
-    "name": "Ipsum Primis PC",
+    "displayName": "Ipsum Primis PC",
     "price": 51.52,
     "stock": 222
   },
   {
     "id": "137F0ED4-97DF-C262-D724-75689F777725",
-    "name": "Donec Feugiat Associates",
+    "displayName": "Donec Feugiat Associates",
     "price": 43.19,
     "stock": 79
   },
   {
     "id": "B7D143E3-2F7B-9EED-A605-D5181C71E62B",
-    "name": "Pede Malesuada Vel Industries",
+    "displayName": "Pede Malesuada Vel Industries",
     "price": 7.31,
     "stock": 264
   },
   {
     "id": "18A8901E-A486-36B4-2706-5D60EE1FDAAB",
-    "name": "Pellentesque Tellus Limited",
+    "displayName": "Pellentesque Tellus Limited",
     "price": 37.63,
     "stock": 269
   },
   {
     "id": "8D138EED-E20E-BB9A-70C6-01D71FADB6EF",
-    "name": "Cursus Consulting",
+    "displayName": "Cursus Consulting",
     "price": 94.66,
     "stock": 218
   },
   {
     "id": "3737609F-C29B-2852-16D2-B98EBC876535",
-    "name": "Eleifend Egestas Sed LLP",
+    "displayName": "Eleifend Egestas Sed LLP",
     "price": 95.30,
     "stock": 286
   },
   {
     "id": "885111A9-2414-4BE8-4819-D0623780DFA2",
-    "name": "Turpis Inc.",
+    "displayName": "Turpis Inc.",
     "price": 22.26,
     "stock": 269
   },
   {
     "id": "ED5D3AD9-B1CA-C4BF-5BBB-89B17487F403",
-    "name": "Semper Egestas Corp.",
+    "displayName": "Semper Egestas Corp.",
     "price": 82.21,
     "stock": 136
   },
   {
     "id": "CD19D1EA-56F3-3D90-50D1-E5C458FC4785",
-    "name": "Parturient Montes Associates",
+    "displayName": "Parturient Montes Associates",
     "price": 83.97,
     "stock": 79
   },
   {
     "id": "C1123404-7E5E-8AF6-119F-B8F4599460AF",
-    "name": "Sit Amet Corporation",
+    "displayName": "Sit Amet Corporation",
     "price": 58.39,
     "stock": 4
   },
   {
     "id": "99CBF0CB-9A28-CC1D-2A7C-D7261D0D646E",
-    "name": "Suspendisse Sed Incorporated",
+    "displayName": "Suspendisse Sed Incorporated",
     "price": 45.69,
     "stock": 97
   },
   {
     "id": "8B7461A0-0B0A-7164-B56F-F59B89A08A68",
-    "name": "Orci Luctus Et Associates",
+    "displayName": "Orci Luctus Et Associates",
     "price": 76.40,
     "stock": 197
   },
   {
     "id": "DE155F66-97F9-FFD1-241D-DAC3E2C0579F",
-    "name": "Proin Dolor Company",
+    "displayName": "Proin Dolor Company",
     "price": 14.86,
     "stock": 64
   },
   {
     "id": "C95A2DA7-97F9-54C6-CE49-83F2527BA543",
-    "name": "Faucibus Morbi Vehicula Industries",
+    "displayName": "Faucibus Morbi Vehicula Industries",
     "price": 43.43,
     "stock": 55
   },
   {
     "id": "1D72D67D-1B68-B738-F7A5-CD332C53B6FB",
-    "name": "Lacus Etiam LLP",
+    "displayName": "Lacus Etiam LLP",
     "price": 70.57,
     "stock": 33
   },
   {
     "id": "222C11F8-9AF5-F1E9-283D-968BA7936173",
-    "name": "Sit Corporation",
+    "displayName": "Sit Corporation",
     "price": 46.80,
     "stock": 91
   },
   {
     "id": "8DF015B1-368F-E88C-9DBA-2A3CB9A1CF30",
-    "name": "Elit Curabitur Ltd",
+    "displayName": "Elit Curabitur Ltd",
     "price": 84.38,
     "stock": 134
   },
   {
     "id": "0AFF1E67-E07D-76A3-5504-277429EBEFE4",
-    "name": "Ut Sagittis Lobortis Corporation",
+    "displayName": "Ut Sagittis Lobortis Corporation",
     "price": 47.85,
     "stock": 136
   },
   {
     "id": "8E2906A4-D6A8-B5DC-4096-9E8155486523",
-    "name": "Lacus Quisque Ltd",
+    "displayName": "Lacus Quisque Ltd",
     "price": 53.57,
     "stock": 181
   },
   {
     "id": "3603323F-3B72-4890-1BE8-1BCBF7C803F0",
-    "name": "Elit PC",
+    "displayName": "Elit PC",
     "price": 87.22,
     "stock": 236
   },
   {
     "id": "3FF5347A-F6D0-6916-02A5-6D4788DF5C1E",
-    "name": "Nec Orci Company",
+    "displayName": "Nec Orci Company",
     "price": 90.33,
     "stock": 290
   },
   {
     "id": "824506FD-24B5-8F8E-67AF-6ED0FF7FDB9F",
-    "name": "Lacus Incorporated",
+    "displayName": "Lacus Incorporated",
     "price": 73.64,
     "stock": 69
   },
   {
     "id": "582AFDBD-4B61-CDD5-9A0D-C182F0CF7B16",
-    "name": "Suspendisse Foundation",
+    "displayName": "Suspendisse Foundation",
     "price": 19.67,
     "stock": 82
   },
   {
     "id": "499A0454-CC29-697B-C26F-E7C2C63CCDEE",
-    "name": "Quis LLC",
+    "displayName": "Quis LLC",
     "price": 32.74,
     "stock": 242
   },
   {
     "id": "72C48159-E014-A047-C126-44F1A12D41DC",
-    "name": "Quis PC",
+    "displayName": "Quis PC",
     "price": 94.97,
     "stock": 292
   },
   {
     "id": "14F0EA84-F516-9F6C-57F9-2975F54FC85E",
-    "name": "Curabitur Vel Lectus Incorporated",
+    "displayName": "Curabitur Vel Lectus Incorporated",
     "price": 52.98,
     "stock": 96
   },
   {
     "id": "27FAA5CB-9166-5C0C-6F1D-80FF558151CA",
-    "name": "Gravida LLP",
+    "displayName": "Gravida LLP",
     "price": 63.65,
     "stock": 50
   },
   {
     "id": "854FAFDF-1B0D-789B-CFAF-89D6AFA4CF74",
-    "name": "Duis Risus Odio Corp.",
+    "displayName": "Duis Risus Odio Corp.",
     "price": 83.99,
     "stock": 130
   },
   {
     "id": "A0E0BC93-981D-D650-43D3-8E9CBE72A90E",
-    "name": "Lobortis Class LLC",
+    "displayName": "Lobortis Class LLC",
     "price": 20.13,
     "stock": 290
   },
   {
     "id": "92B56645-C4BC-D4B5-FB96-016A780424BC",
-    "name": "Habitant Morbi Company",
+    "displayName": "Habitant Morbi Company",
     "price": 55.55,
     "stock": 292
   },
   {
     "id": "D08F6631-C94F-DD39-519A-055BEBE98E4F",
-    "name": "Urna Industries",
+    "displayName": "Urna Industries",
     "price": 56.84,
     "stock": 276
   },
   {
     "id": "697C64A3-446C-3970-9BAE-D30BC273ABD2",
-    "name": "Ut Aliquam Consulting",
+    "displayName": "Ut Aliquam Consulting",
     "price": 52.85,
     "stock": 139
   },
   {
     "id": "7DB3EBED-CED3-6F3D-2CE4-469264B9BA4E",
-    "name": "Mauris Sagittis Placerat Corp.",
+    "displayName": "Mauris Sagittis Placerat Corp.",
     "price": 33.38,
     "stock": 82
   },
   {
     "id": "A1D8C230-9C27-8181-F498-F81DAA09CF68",
-    "name": "Est Ac Corporation",
+    "displayName": "Est Ac Corporation",
     "price": 79.97,
     "stock": 264
   },
   {
     "id": "C56CAE7A-B0E4-8238-9D1D-175DB99C7D87",
-    "name": "Erat In Consectetuer Institute",
+    "displayName": "Erat In Consectetuer Institute",
     "price": 69.21,
     "stock": 53
   },
   {
     "id": "B5BF497C-25DD-8B85-482F-9CB6CB0A0589",
-    "name": "Quis Arcu Corp.",
+    "displayName": "Quis Arcu Corp.",
     "price": 12.75,
     "stock": 154
   },
   {
     "id": "FE138CCD-25F9-277E-CF65-E783BCA14080",
-    "name": "Vitae Aliquet Nec Associates",
+    "displayName": "Vitae Aliquet Nec Associates",
     "price": 79.05,
     "stock": 193
   },
   {
     "id": "6FB11614-54E2-7E7F-5292-C02594FFBBDE",
-    "name": "Libero At Auctor Limited",
+    "displayName": "Libero At Auctor Limited",
     "price": 14.70,
     "stock": 247
   },
   {
     "id": "3E726EEB-63EC-F221-761C-F88E0CFF8362",
-    "name": "Nunc Sed Limited",
+    "displayName": "Nunc Sed Limited",
     "price": 30.41,
     "stock": 203
   },
   {
     "id": "F6351B73-4C9A-0756-DCE8-D5F5327BC702",
-    "name": "Cursus LLC",
+    "displayName": "Cursus LLC",
     "price": 81.96,
     "stock": 286
   },
   {
     "id": "98C52D4A-DA21-F278-97FF-38A830F157B7",
-    "name": "Ipsum Phasellus Limited",
+    "displayName": "Ipsum Phasellus Limited",
     "price": 61.02,
     "stock": 84
   },
   {
     "id": "E312D286-4578-0359-8187-7419BA4C0997",
-    "name": "Magnis Dis Parturient Institute",
+    "displayName": "Magnis Dis Parturient Institute",
     "price": 93.74,
     "stock": 216
   },
   {
     "id": "E2682E20-A968-04DE-7283-BD9D2B55CF48",
-    "name": "Pellentesque A Facilisis Foundation",
+    "displayName": "Pellentesque A Facilisis Foundation",
     "price": 72.90,
     "stock": 293
   },
   {
     "id": "94DB2039-4477-96F8-ADAC-E5452805B99F",
-    "name": "Condimentum Donec Inc.",
+    "displayName": "Condimentum Donec Inc.",
     "price": 55.54,
     "stock": 145
   },
   {
     "id": "4F1C2DAA-C6D6-47E5-56CC-971173F86173",
-    "name": "Ultricies Dignissim Lacus Company",
+    "displayName": "Ultricies Dignissim Lacus Company",
     "price": 12.09,
     "stock": 154
   }

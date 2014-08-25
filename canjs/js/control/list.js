@@ -1,19 +1,18 @@
 'use strict'
-define(['can'], function (can) {
+define([
+  'can',
+  'control/modal'
+],
+function (can, Modal) {
   return can.Control.extend({
-
+    defaults: {
+      remover: '.js-item-del'
+    }
+  }, {
     init: function (element, options) {
       var view = can.view(options.template)
       var list = options.list
       element.html(view(list))
-    },
-
-    '.item inserted': function () {
-      console.log(arguments)
-    },
-
-    '{remover} click': function (element, event) {
-
     }
   })
 })

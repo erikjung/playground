@@ -10,6 +10,18 @@
       <header>
         <h1>Order</h1>
       </header>
+      <button class="btn js-modal-trigger"
+       data-modal="remove-item-modal">
+        Modal 1
+      </button>
+      <button class="btn js-modal-trigger"
+       data-modal="generic-modal">
+        Modal 2
+      </button>
+      <button class="btn js-modal-trigger"
+       data-modal="simple-modal">
+        Modal 3
+      </button>
       <hr>
       <div class="js-app-list">
 
@@ -28,11 +40,33 @@
             </div>
             <div class="col-xs-2">
               <x:quantity value="stock" />
+              <button class="btn btn-block btn-danger js-item-del">Delete</button>
             </div>
           </div>
         </div>
       {{/each}}
     </script>
+
+    <script id="remove-item-modal" type="text/mustache">
+      <x:modal title="Remove item?" confirm="Yes, delete" deny="Nevermind">
+        <h2>Wait</h2>
+        <p class="lead">This will destroy your item</p>
+        <p><small>Are you really really sure you want to do this?</small></p>
+      </x:modal>
+    </script>
+
+    <script id="generic-modal" type="text/mustache">
+      <x:modal confirm="OKAY GOT IT">
+        <p class="lead">Something happened.</p>
+      </x:modal>
+    </script>
+
+    <script id="simple-modal" type="text/mustache">
+      <x:modal>
+        Attention!
+      </x:modal>
+    </script>
+
     <script src="/vendor/require.js"></script>
     <script src="/js/require.config.js"></script>
     <script>

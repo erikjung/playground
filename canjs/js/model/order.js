@@ -13,7 +13,7 @@ function (can, utils) {
         name: 'orderName',
         subTotal: 'orderSubTotal'
       })
-      return this._super(attrs)
+      this._super(attrs)
     }
   })
 })
