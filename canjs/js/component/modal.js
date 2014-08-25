@@ -7,6 +7,7 @@ define(['can'], function (can) {
     scope: {
       confirm: '@',
       deny: '@',
+      message: '@',
       title: '@'
     }
   })
