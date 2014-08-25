@@ -1,71 +1,55 @@
-/**
- * Functionality:
- *
- * 1. Page loads with 5 default products
- * 2. Scrolling to the bottom of the page loads the next 5 products
- * 3. Adding a quantity of < 0 results in:
- *    - The product becoming "active"
- *    - The "Place order" button becoming enabled
- *    - The total items and price label being updated
- *    - The order being updated, showing a confirmation label
- * 4. Removing an item results in:
- *    - The product disappearing
- *    - The total items and price label being updated
- */
-
+'use strict'
 define([
+  'module',
+  'can',
   'core/events',
-  'core/state',
-  'model/thing',
-  'model/items',
+  'map/appState',
   'model/product',
   'model/order',
-  'control/app',
-  'ui/header',
-  'ui/body',
-  'ui/footer'
+  'control/page',
+  'control/list',
+  'component/quantity'
 ],
 function (
+  module,
+  can,
   events,
-  state,
-  Thing,
-  Items,
+  AppState,
   Product,
   Order,
-  AppControl
+  Page,
+  List
 ) {
-  var App = can.Construct.extend({
-    setup: function () {
-      $.ajaxSetup({
+  var config = module.config()
 
+  return can.Construct.extend({
+    init: function () {
+      var route = this[config.route]
+
+      this.state = new AppState({
+        sorting: config.sorting
+      })
+
+      this.page = new Page('.js-app', {
+        appState: this.state
+      })
+
+      if (can.isFunction(route)) route.call()
+    },
+
+    order: function () {
+      new List('.js-app-list', {
+        list: new Product.List({}),
+        template: '#product-list-tpl'
       })
     },
 
-    init: function () {
-      this.appControl = new AppControl('.js-app')
-      this.appControl.bind(events.UPDATE_THING, can.proxy(this.updateThing, this))
-      this.appControl.bind(events.UPDATE_ITEMS, can.proxy(this.updateItems, this))
-      this.appControl.bind(events.UPDATE_PRODUCT_OFFSET, can.proxy(this.updateProducts, this))
-      this.dispatch(events.APP_STARTED)
+    review: function () {
+      console.log('review')
     },
 
-    updateThing: function (event, data) {
-      state.attr('thing.someValue', Math.random() + 1)
-    },
-
-    updateItems: function (event, data) {
-      state.attr('lastItemRequest', Date.now())
-    },
-
-    updateProducts: function (event, data) {
-      switch (event.type) {
-      default: case events.UPDATE_PRODUCT_OFFSET:
-        state.attr('productOffset', state.productOffset + state.productLimit)
-        break
-      }
+    checkout: function () {
+      console.log('checkout')
     }
   })
-
-  can.extend(App.prototype, can.event)
-  return App
 })

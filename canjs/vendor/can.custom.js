@@ -2,13 +2,10763 @@
  * CanJS - 2.1.2
  * http://canjs.us/
  * Copyright (c) 2014 Bitovi
- * Sat, 28 Jun 2014 22:10:27 GMT
+ * Sun, 24 Aug 2014 05:22:50 GMT
  * Licensed MIT
- * Includes: can/component/component.js,can/construct/construct.js,can/map/map.js,can/list/list.js,can/compute/compute.js,can/model/model.js,can/view/view.js,can/control/control.js,can/route/route.js,can/control/route/route.js,can/view/mustache/mustache.js,can/list/promise/promise.js,can/view/ejs/ejs.js,can/view/stache/stache.js,can/route/pushstate/pushstate.js,can/model/queue/queue.js,can/construct/super/super.js,can/construct/proxy/proxy.js,can/map/lazy/lazy.js,can/map/delegate/delegate.js,can/map/setter/setter.js,can/map/attributes/attributes.js,can/map/validations/validations.js,can/map/backup/backup.js,can/map/list/list.js,can/map/define/define.js,can/map/sort/sort.js,can/control/plugin/plugin.js,can/view/modifiers/modifiers.js,can/util/object/object.js,can/util/fixture/fixture.js
- * Download from: http://bitbuilder.herokuapp.com/can.custom.js?configuration=jquery&minify=true&plugins=can%2Fcomponent%2Fcomponent.js&plugins=can%2Fconstruct%2Fconstruct.js&plugins=can%2Fmap%2Fmap.js&plugins=can%2Flist%2Flist.js&plugins=can%2Fcompute%2Fcompute.js&plugins=can%2Fmodel%2Fmodel.js&plugins=can%2Fview%2Fview.js&plugins=can%2Fcontrol%2Fcontrol.js&plugins=can%2Froute%2Froute.js&plugins=can%2Fcontrol%2Froute%2Froute.js&plugins=can%2Fview%2Fmustache%2Fmustache.js&plugins=can%2Flist%2Fpromise%2Fpromise.js&plugins=can%2Fview%2Fejs%2Fejs.js&plugins=can%2Fview%2Fstache%2Fstache.js&plugins=can%2Froute%2Fpushstate%2Fpushstate.js&plugins=can%2Fmodel%2Fqueue%2Fqueue.js&plugins=can%2Fconstruct%2Fsuper%2Fsuper.js&plugins=can%2Fconstruct%2Fproxy%2Fproxy.js&plugins=can%2Fmap%2Flazy%2Flazy.js&plugins=can%2Fmap%2Fdelegate%2Fdelegate.js&plugins=can%2Fmap%2Fsetter%2Fsetter.js&plugins=can%2Fmap%2Fattributes%2Fattributes.js&plugins=can%2Fmap%2Fvalidations%2Fvalidations.js&plugins=can%2Fmap%2Fbackup%2Fbackup.js&plugins=can%2Fmap%2Flist%2Flist.js&plugins=can%2Fmap%2Fdefine%2Fdefine.js&plugins=can%2Fmap%2Fsort%2Fsort.js&plugins=can%2Fcontrol%2Fplugin%2Fplugin.js&plugins=can%2Fview%2Fmodifiers%2Fmodifiers.js&plugins=can%2Futil%2Fobject%2Fobject.js&plugins=can%2Futil%2Ffixture%2Ffixture.js
+ * Includes: can/component/component.js,can/construct/construct.js,can/map/map.js,can/list/list.js,can/compute/compute.js,can/model/model.js,can/view/view.js,can/control/control.js,can/route/route.js,can/control/route/route.js,can/view/mustache/mustache.js,can/list/promise/promise.js,can/route/pushstate/pushstate.js,can/construct/super/super.js,can/construct/proxy/proxy.js,can/map/validations/validations.js,can/map/list/list.js,can/map/define/define.js,can/util/object/object.js,can/util/fixture/fixture.js
+ * Download from: http://bitbuilder.herokuapp.com/can.custom.js?configuration=jquery&plugins=can%2Fcomponent%2Fcomponent.js&plugins=can%2Fconstruct%2Fconstruct.js&plugins=can%2Fmap%2Fmap.js&plugins=can%2Flist%2Flist.js&plugins=can%2Fcompute%2Fcompute.js&plugins=can%2Fmodel%2Fmodel.js&plugins=can%2Fview%2Fview.js&plugins=can%2Fcontrol%2Fcontrol.js&plugins=can%2Froute%2Froute.js&plugins=can%2Fcontrol%2Froute%2Froute.js&plugins=can%2Fview%2Fmustache%2Fmustache.js&plugins=can%2Flist%2Fpromise%2Fpromise.js&plugins=can%2Froute%2Fpushstate%2Fpushstate.js&plugins=can%2Fconstruct%2Fsuper%2Fsuper.js&plugins=can%2Fconstruct%2Fproxy%2Fproxy.js&plugins=can%2Fmap%2Fvalidations%2Fvalidations.js&plugins=can%2Fmap%2Flist%2Flist.js&plugins=can%2Fmap%2Fdefine%2Fdefine.js&plugins=can%2Futil%2Fobject%2Fobject.js&plugins=can%2Futil%2Ffixture%2Ffixture.js
  */
-(function(undefined){var __m4=function(){var t=window.can||{};("undefined"==typeof GLOBALCAN||GLOBALCAN!==!1)&&(window.can=t),t.k=function(){},t.isDeferred=function(t){return t&&"function"==typeof t.then&&"function"==typeof t.pipe};var e=0;return t.cid=function(t,n){return t._cid||(e++,t._cid=(n||"")+e),t._cid},t.VERSION="@EDGE",t.simpleExtend=function(t,e){for(var n in e)t[n]=e[n];return t},t.frag=function(e){var n;return e&&"string"!=typeof e?11===e.nodeType?e:"number"==typeof e.nodeType?(n=document.createDocumentFragment(),n.appendChild(e),n):"number"==typeof e.length?(n=document.createDocumentFragment(),t.each(e,function(e){n.appendChild(t.frag(e))}),n):(n=t.buildFragment(""+e,document.body),n.childNodes.length||n.appendChild(document.createTextNode("")),n):(n=t.buildFragment(null==e?"":""+e,document.body),n.childNodes.length||n.appendChild(document.createTextNode("")),n)},t.__reading=function(){},t}(),__m5=function(t){var e=window.setImmediate||function(t){return setTimeout(t,0)},n={MutationObserver:window.MutationObserver||window.WebKitMutationObserver||window.MozMutationObserver,map:{"class":"className",value:"value",innerText:"innerText",textContent:"textContent",checked:!0,disabled:!0,readonly:!0,required:!0,src:function(t,e){return null==e||""===e?(t.removeAttribute("src"),null):(t.setAttribute("src",e),e)},style:function(t,e){return t.style.cssText=e||""}},defaultValue:["input","textarea"],set:function(e,r,i){var a;n.MutationObserver||(a=n.get(e,r));var s,o=(""+e.nodeName).toLowerCase(),u=n.map[r];"function"==typeof u?s=u(e,i):u===!0?(s=e[r]=!0,"checked"===r&&"radio"===e.type&&t.inArray(o,n.defaultValue)>=0&&(e.defaultChecked=!0)):u?(s=e[u]=i,"value"===u&&t.inArray(o,n.defaultValue)>=0&&(e.defaultValue=i)):(e.setAttribute(r,i),s=i),n.MutationObserver||s===a||n.trigger(e,r,a)},trigger:function(n,r,i){return t.data(t.$(n),"canHasAttributesBindings")?e(function(){t.trigger(n,{type:"attributes",attributeName:r,target:n,oldValue:i,bubbles:!1},[])}):undefined},get:function(t,e){var r=n.map[e];return"string"==typeof r&&t[r]?t[r]:t.getAttribute(e)},remove:function(t,e){var r;n.MutationObserver||(r=n.get(t,e));var i=n.map[e];"function"==typeof i&&i(t,undefined),i===!0?t[e]=!1:"string"==typeof i?t[i]="":t.removeAttribute(e),n.MutationObserver||null==r||n.trigger(t,e,r)},has:function(){var t=document.createElement("div");return t.hasAttribute?function(t,e){return t.hasAttribute(e)}:function(t,e){return null!==t.getAttribute(e)}}()};return n}(__m4),__m6=function(t){return t.addEvent=function(t,e){var n=this.__bindEvents||(this.__bindEvents={}),r=n[t]||(n[t]=[]);return r.push({handler:e,name:t}),this},t.listenTo=function(e,n,r){var i=this.__listenToEvents;i||(i=this.__listenToEvents={});var a=t.cid(e),s=i[a];s||(s=i[a]={obj:e,events:{}});var o=s.events[n];o||(o=s.events[n]=[]),o.push(r),t.bind.call(e,n,r)},t.stopListening=function(e,n,r){var i=this.__listenToEvents,a=i,s=0;if(!i)return this;if(e){var o=t.cid(e);if((a={})[o]=i[o],!i[o])return this}for(var u in a){var c,l=a[u];e=i[u].obj,n?(c={})[n]=l.events[n]:c=l.events;for(var f in c){var d=c[f]||[];for(s=0;d.length>s;)r&&r===d[s]||!r?(t.unbind.call(e,f,d[s]),d.splice(s,1)):s++;d.length||delete l.events[f]}t.isEmptyObject(l.events)&&delete i[u]}return this},t.removeEvent=function(t,e,n){if(!this.__bindEvents)return this;for(var r,i=this.__bindEvents[t]||[],a=0,s="function"==typeof e;i.length>a;)r=i[a],(n?n(r,t,e):s&&r.handler===e||!s&&(r.cid===e||!e))?i.splice(a,1):a++;return this},t.dispatch=function(t,e){var n=this.__bindEvents;if(n){"string"==typeof t&&(t={type:t});var r=t.type,i=(n[r]||[]).slice(0),a=[t];e&&a.push.apply(a,e);for(var s=0,o=i.length;o>s;s++)i[s].handler.apply(this,a);return t}},t.one=function(e,n){var r=function(){return t.unbind.call(this,e,r),n.apply(this,arguments)};return t.bind.call(this,e,r),this},t.event={on:function(){return 0===arguments.length&&t.Control&&this instanceof t.Control?t.Control.prototype.on.call(this):t.addEvent.apply(this,arguments)},off:function(){return 0===arguments.length&&t.Control&&this instanceof t.Control?t.Control.prototype.off.call(this):t.removeEvent.apply(this,arguments)},bind:t.addEvent,unbind:t.removeEvent,delegate:function(e,n,r){return t.addEvent.call(this,n,r)},undelegate:function(e,n,r){return t.removeEvent.call(this,n,r)},trigger:t.dispatch,one:t.one,addEvent:t.addEvent,removeEvent:t.removeEvent,listenTo:t.listenTo,stopListening:t.stopListening,dispatch:t.dispatch},t.event}(__m4),__m7=function(t){var e=function(t){var e=t.length;return"function"!=typeof arr&&(0===e||"number"==typeof e&&e>0&&e-1 in t)};return t.each=function(n,r,i){var a,s,o,u=0;if(n)if(e(n))if(t.List&&n instanceof t.List)for(s=n.attr("length");s>u&&(o=n.attr(u),r.call(i||o,o,u,n)!==!1);u++);else for(s=n.length;s>u&&(o=n[u],r.call(i||o,o,u,n)!==!1);u++);else if("object"==typeof n)if(t.Map&&n instanceof t.Map||n===t.route){var c=t.Map.keys(n);for(u=0,s=c.length;s>u&&(a=c[u],o=n.attr(a),r.call(i||o,o,a,n)!==!1);u++);}else for(a in n)if(n.hasOwnProperty(a)&&r.call(i||n[a],n[a],a,n)===!1)break;return n},t}(__m4),__m8=function(t){t.inserted=function(e){e=t.makeArray(e);for(var n,r,i=!1,a=t.$(document.contains?document:document.body),s=0;(r=e[s])!==undefined;s++){if(!i){if(!r.getElementsByTagName)continue;if(!t.has(a,r).length)return;i=!0}if(i&&r.getElementsByTagName){n=t.makeArray(r.getElementsByTagName("*")),t.trigger(r,"inserted",[],!1);for(var o,u=0;(o=n[u])!==undefined;u++)t.trigger(o,"inserted",[],!1)}}},t.appendChild=function(e,n){var r;r=11===n.nodeType?t.makeArray(n.childNodes):[n],e.appendChild(n),t.inserted(r)},t.insertBefore=function(e,n,r){var i;i=11===n.nodeType?t.makeArray(n.childNodes):[n],e.insertBefore(n,r),t.inserted(i)}}(__m4),__m2=function(t,e,n){var r=function(t){return t.nodeName&&(1===t.nodeType||9===t.nodeType)||t==window};t.extend(e,t,{trigger:function(n,i,a,s){r(n)?t.event.trigger(i,a,n,!s):n.trigger?n.trigger(i,a):("string"==typeof i&&(i={type:i}),i.target=i.target||n,a&&(a.length&&"string"==typeof a?a=[a]:a.length||(a=[a])),a||(a=[]),e.dispatch.call(n,i,a))},event:e.event,addEvent:e.addEvent,removeEvent:e.removeEvent,buildFragment:function(e,n){var r;return e=[e],n=n||document,n=!n.nodeType&&n[0]||n,n=n.ownerDocument||n,r=t.buildFragment(e,n),r.cacheable?t.clone(r.fragment):r.fragment||r},$:t,each:e.each,bind:function(n,i){return this.bind&&this.bind!==e.bind?this.bind(n,i):r(this)?t.event.add(this,n,i):e.addEvent.call(this,n,i),this},unbind:function(n,i){return this.unbind&&this.unbind!==e.unbind?this.unbind(n,i):r(this)?t.event.remove(this,n,i):e.removeEvent.call(this,n,i),this},delegate:function(n,i,a){return this.delegate?this.delegate(n,i,a):r(this)?t(this).delegate(n,i,a):e.bind.call(this,i,a),this},undelegate:function(n,i,a){return this.undelegate?this.undelegate(n,i,a):r(this)?t(this).undelegate(n,i,a):e.unbind.call(this,i,a),this},proxy:function(t,e){return function(){return t.apply(e,arguments)}},attr:n}),e.on=e.bind,e.off=e.unbind,t.each(["append","filter","addClass","remove","data","get","has"],function(t,n){e[n]=function(t){return t[n].apply(t,e.makeArray(arguments).slice(1))}});var i=t.cleanData;t.cleanData=function(n){t.each(n,function(t,n){n&&e.trigger(n,"removed",[],!1)}),i(n)};var a,s=t.fn.domManip;if(t.fn.domManip=function(){for(var t=1;arguments.length>t;t++)if("function"==typeof arguments[t]){a=t;break}return s.apply(this,arguments)},t(document.createElement("div")).append(document.createElement("div")),t.fn.domManip=2===a?function(t,n,r){return s.call(this,t,n,function(t){var n;11===t.nodeType&&(n=e.makeArray(t.childNodes));var i=r.apply(this,arguments);return e.inserted(n?n:[t]),i})}:function(t,n){return s.call(this,t,function(t){var r;11===t.nodeType&&(r=e.makeArray(t.childNodes));var i=n.apply(this,arguments);return e.inserted(r?r:[t]),i})},e.attr.MutationObserver)t.event.special.attributes={setup:function(){var t=this,n=new e.attr.MutationObserver(function(n){n.forEach(function(n){var r=e.simpleExtend({},n);e.trigger(t,r,[])})});n.observe(this,{attributes:!0,attributeOldValue:!0}),e.data(e.$(this),"canAttributesObserver",n)},teardown:function(){e.data(e.$(this),"canAttributesObserver").disconnect(),t.removeData(this,"canAttributesObserver")}};else{var o=t.attr;t.attr=function(t,n){var r,i;arguments.length>=3&&(r=o.call(this,t,n));var a=o.apply(this,arguments);return arguments.length>=3&&(i=o.call(this,t,n)),i!==r&&e.attr.trigger(t,n,r),a};var u=t.removeAttr;t.removeAttr=function(t,n){var r=o.call(this,t,n),i=u.apply(this,arguments);return null!=r&&e.attr.trigger(t,n,r),i},t.event.special.attributes={setup:function(){e.data(e.$(this),"canHasAttributesBindings",!0)},teardown:function(){t.removeData(this,"canHasAttributesBindings")}}}return function(){var t="<-\n>",n=e.buildFragment(t,document);if(t!==n.childNodes[0].nodeValue){var r=e.buildFragment;e.buildFragment=function(t,e){var n=r(t,e);return 1===n.childNodes.length&&3===n.childNodes[0].nodeType&&(n.childNodes[0].nodeValue=t),n}}}(),t.event.special.inserted={},t.event.special.removed={},e}(jQuery,__m4,__m5,__m6,__m7,__m8),__m10=function(t){var e=t.isFunction,n=t.makeArray,r=1,i=function(t){var e=function(){return c.frag(t.apply(this,arguments))};return e.render=function(){return t.apply(t,arguments)},e},a=function(t,e){if(!t.length)throw"can.view: No template or empty template:"+e},s=function(e,n){var r,i,s,o="string"==typeof e?e:e.url,u=e.engine&&"."+e.engine||o.match(/\.[\w\d]+$/);if(o.match(/^#/)&&(o=o.substr(1)),(i=document.getElementById(o))&&(u="."+i.type.match(/\/(x\-)?(.+)/)[2]),u||c.cached[o]||(o+=u=c.ext),t.isArray(u)&&(u=u[0]),s=c.toId(o),o.match(/^\/\//)&&(o=o.substr(2),o=window.steal?steal.config().root.mapJoin(""+steal.id(o)):o),window.require&&require.toUrl&&(o=require.toUrl(o)),r=c.types[u],c.cached[s])return c.cached[s];if(i)return c.registerView(s,i.innerHTML,r);var l=new t.Deferred;return t.ajax({async:n,url:o,dataType:"text",error:function(t){a("",o),l.reject(t)},success:function(t){a(t,o),c.registerView(s,t,r,l)}}),l},o=function(e){var n=[];if(t.isDeferred(e))return[e];for(var r in e)t.isDeferred(e[r])&&n.push(e[r]);return n},u=function(e){return t.isArray(e)&&"success"===e[1]?e[0]:e},c=t.view=t.template=function(t,n,r,i){e(r)&&(i=r,r=undefined);var a;return a=e(t)?t(n,r,i):c.renderAs("fragment",t,n,r,i)};return t.extend(c,{frag:function(t,e){return c.hookup(c.fragment(t),e)},fragment:function(e){if("string"!=typeof e&&11===e.nodeType)return e;var n=t.buildFragment(e,document.body);return n.childNodes.length||n.appendChild(document.createTextNode("")),n},toId:function(e){return t.map((""+e).split(/\/|\./g),function(t){return t?t:undefined}).join("_")},toStr:function(t){return null==t?"":""+t},hookup:function(e,n){var r,i,a=[];return t.each(e.childNodes?t.makeArray(e.childNodes):e,function(e){1===e.nodeType&&(a.push(e),a.push.apply(a,t.makeArray(e.getElementsByTagName("*"))))}),t.each(a,function(t){t.getAttribute&&(r=t.getAttribute("data-view-id"))&&(i=c.hookups[r])&&(i(t,n,r),delete c.hookups[r],t.removeAttribute("data-view-id"))}),e},hookups:{},hook:function(t){return c.hookups[++r]=t," data-view-id='"+r+"'"},cached:{},cachedRenderers:{},cache:!0,register:function(e){this.types["."+e.suffix]=e,t[e.suffix]=c[e.suffix]=function(t,n){var r,a;if(!n)return a=function(){return r||(r=e.fragRenderer?e.fragRenderer(null,t):i(e.renderer(null,t))),r.apply(this,arguments)},a.render=function(){var n=e.renderer(null,t);return n.apply(n,arguments)},a;var s=function(){return r||(r=e.fragRenderer?e.fragRenderer(t,n):e.renderer(t,n)),r.apply(this,arguments)};return e.fragRenderer?c.preload(t,s):c.preloadStringRenderer(t,s)}},types:{},ext:".ejs",registerScript:function(t,e,n){return"can.view.preloadStringRenderer('"+e+"',"+c.types["."+t].script(e,n)+");"},preload:function(e,n){var r=c.cached[e]=(new t.Deferred).resolve(function(t,e){return n.call(t,t,e)});return r.__view_id=e,c.cachedRenderers[e]=n,n},preloadStringRenderer:function(t,e){return this.preload(t,i(e))},render:function(e,n,r,i){return t.view.renderAs("string",e,n,r,i)},renderTo:function(t,e,n,r){return("string"===t&&e.render?e.render:e)(n,r)},renderAs:function(r,i,a,l,f){e(l)&&(f=l,l=undefined);var d,h,p,g,m,v=o(a);if(v.length)return h=new t.Deferred,p=t.extend({},a),v.push(s(i,!0)),t.when.apply(t,v).then(function(e){var i,s=n(arguments),o=s.pop();if(t.isDeferred(a))p=u(e);else for(var c in a)t.isDeferred(a[c])&&(p[c]=u(s.shift()));i=t.view.renderTo(r,o,p,l),h.resolve(i,p),f&&f(i,p)},function(){h.reject.apply(h,arguments)}),h;if(d=t.__clearReading(),g=e(f),h=s(i,g),d&&t.__setReading(d),g)m=h,h.then(function(e){f(a?t.view.renderTo(r,e,a,l):e)});else{if("resolved"===h.state()&&h.__view_id){var _=c.cachedRenderers[h.__view_id];return a?t.view.renderTo(r,_,a,l):_}h.then(function(e){m=a?t.view.renderTo(r,e,a,l):e})}return m},registerView:function(e,n,r,a){var s,o="object"==typeof r?r:c.types[r||c.ext];return s=o.fragRenderer?o.fragRenderer(e,n):i(o.renderer(e,n)),a=a||new t.Deferred,c.cache&&(c.cached[e]=a,a.__view_id=e,c.cachedRenderers[e]=s),a.resolve(s)}}),t}(__m2),__m9=function(t){var e=t.view.attr=function(t,e){if(!e){var i=n[t];if(!i)for(var a=0,s=r.length;s>a;a++){var o=r[a];if(o.match.test(t)){i=o.handler;break}}return i}"string"==typeof t?n[t]=e:r.push({match:t,handler:e})},n={},r=[],i=/[-\:]/,a=t.view.tag=function(t,e){if(!e){var n=s[t.toLowerCase()];return!n&&i.test(t)&&(n=function(){}),n}window.html5&&(window.html5.elements+=" "+t,window.html5.shivDocument()),s[t.toLowerCase()]=e},s={};return t.view.callbacks={_tags:s,_attributes:n,_regExpAttributes:r,tag:a,attr:e,tagHandler:function(e,n,r){var i,a=r.options.attr("tags."+n),o=a||s[n],u=r.scope;if(o){var c=t.__clearReading();i=o(e,r),t.__setReading(c)}else i=u;if(i&&r.subtemplate){u!==i&&(u=u.add(i));var l=r.subtemplate(u,r.options),f="string"==typeof l?t.view.frag(l):l;t.appendChild(e,f)}}},t.view.callbacks}(__m2,__m10),__m13=function(t){var e=/_|-/,n=/\=\=/,r=/([A-Z]+)([A-Z][a-z])/g,i=/([a-z\d])([A-Z])/g,a=/([a-z\d])([A-Z])/g,s=/\{([^\}]+)\}/g,o=/"/g,u=/'/g,c=/-+(.)?/g,l=/[a-z][A-Z]/g,f=function(t,e,n){var r=t[e];return r===undefined&&n===!0&&(r=t[e]={}),r},d=function(t){return/^f|^o/.test(typeof t)},h=function(t){var e=null===t||t===undefined||isNaN(t)&&"NaN"==""+t;return""+(e?"":t)};return t.extend(t,{esc:function(t){return h(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(o,"&#34;").replace(u,"&#39;")},getObject:function(e,n,r){var i,a,s,o,u=e?e.split("."):[],c=u.length,l=0;if(n=t.isArray(n)?n:[n||window],o=n.length,!c)return n[0];for(l;o>l;l++){for(i=n[l],s=undefined,a=0;c>a&&d(i);a++)s=i,i=f(s,u[a]);if(s!==undefined&&i!==undefined)break}if(r===!1&&i!==undefined&&delete s[u[a-1]],r===!0&&i===undefined)for(i=n[0],a=0;c>a&&d(i);a++)i=f(i,u[a],!0);return i},capitalize:function(t){return t.charAt(0).toUpperCase()+t.slice(1)},camelize:function(t){return h(t).replace(c,function(t,e){return e?e.toUpperCase():""})},hyphenate:function(t){return h(t).replace(l,function(t){return t.charAt(0)+"-"+t.charAt(1).toLowerCase()})},underscore:function(t){return t.replace(n,"/").replace(r,"$1_$2").replace(i,"$1_$2").replace(a,"_").toLowerCase()},sub:function(e,n,r){var i=[];return e=e||"",i.push(e.replace(s,function(e,a){var s=t.getObject(a,n,r===!0?!1:undefined);return s===undefined||null===s?(i=null,""):d(s)&&i?(i.push(s),""):""+s})),null===i?i:1>=i.length?i[0]:i},replacer:s,undHash:e}),t}(__m2),__m12=function(t){var e=0;return t.Construct=function(){return arguments.length?t.Construct.extend.apply(t.Construct,arguments):undefined},t.extend(t.Construct,{constructorExtends:!0,newInstance:function(){var t,e=this.instance();return e.setup&&(t=e.setup.apply(e,arguments)),e.init&&e.init.apply(e,t||arguments),e},_inherit:function(e,n,r){t.extend(r||e,e||{})},_overwrite:function(t,e,n,r){t[n]=r},setup:function(e){this.defaults=t.extend(!0,{},e.defaults,this.defaults)},instance:function(){e=1;var t=new this;return e=0,t},extend:function(n,r,i){function a(){return e?undefined:this.constructor!==a&&arguments.length&&a.constructorExtends?a.extend.apply(a,arguments):a.newInstance.apply(a,arguments)}"string"!=typeof n&&(i=r,r=n,n=null),i||(i=r,r=null),i=i||{};var s,o,u,c,l,f,d,h,p=this,g=this.prototype;h=this.instance(),t.Construct._inherit(i,g,h);for(l in p)p.hasOwnProperty(l)&&(a[l]=p[l]);t.Construct._inherit(r,p,a),n&&(s=n.split("."),f=s.pop(),o=t.getObject(s.join("."),window,!0),d=o,u=t.underscore(n.replace(/\./g,"_")),c=t.underscore(f),o[f]=a),t.extend(a,{constructor:a,prototype:h,namespace:d,_shortName:c,fullName:n,_fullName:u}),f!==undefined&&(a.shortName=f),a.prototype.constructor=a;var m=[p].concat(t.makeArray(arguments)),v=a.setup.apply(a,m);return a.init&&a.init.apply(a,v||m),a}}),t.Construct.prototype.setup=function(){},t.Construct.prototype.init=function(){},t.Construct}(__m13),__m11=function(t){var e,n=function(e,n,r){return t.bind.call(e,n,r),function(){t.unbind.call(e,n,r)}},r=t.isFunction,i=t.extend,a=t.each,s=[].slice,o=/\{([^\}]+)\}/g,u=t.getObject("$.event.special",[t])||{},c=function(e,n,r,i){return t.delegate.call(e,n,r,i),function(){t.undelegate.call(e,n,r,i)}},l=function(e,r,i,a){return a?c(e,t.trim(a),r,i):n(e,r,i)},f=t.Control=t.Construct({setup:function(){if(t.Construct.setup.apply(this,arguments),t.Control){var e,n=this;n.actions={};for(e in n.prototype)n._isAction(e)&&(n.actions[e]=n._action(e))}},_shifter:function(e,n){var i="string"==typeof n?e[n]:n;return r(i)||(i=e[i]),function(){return e.called=n,i.apply(e,[this.nodeName?t.$(this):this].concat(s.call(arguments,0)))}},_isAction:function(t){var e=this.prototype[t],n=typeof e;return"constructor"!==t&&("function"===n||"string"===n&&r(this.prototype[e]))&&!!(u[t]||d[t]||/[^\w]/.test(t))},_action:function(n,r){if(o.lastIndex=0,r||!o.test(n)){var i=r?t.sub(n,this._lookup(r)):n;if(!i)return null;var a=t.isArray(i),s=a?i[1]:i,u=s.split(/\s+/g),c=u.pop();return{processor:d[c]||e,parts:[s,u.join(" "),c],delegate:a?i[0]:undefined}}},_lookup:function(t){return[t,window]},processors:{},defaults:{}},{setup:function(e,n){var r,a=this.constructor,s=a.pluginName||a._fullName;return this.element=t.$(e),s&&"can_control"!==s&&this.element.addClass(s),r=t.data(this.element,"controls"),r||(r=[],t.data(this.element,"controls",r)),r.push(this),this.options=i({},a.defaults,n),this.on(),[this.element,this.options]},on:function(e,n,r,i){if(!e){this.off();var a,s,o=this.constructor,u=this._bindings,c=o.actions,f=this.element,d=t.Control._shifter(this,"destroy");for(a in c)c.hasOwnProperty(a)&&(s=c[a]||o._action(a,this.options,this),s&&(u.control[a]=s.processor(s.delegate||f,s.parts[2],s.parts[1],a,this)));return t.bind.call(f,"removed",d),u.user.push(function(e){t.unbind.call(e,"removed",d)}),u.user.length}return"string"==typeof e&&(i=r,r=n,n=e,e=this.element),i===undefined&&(i=r,r=n,n=null),"string"==typeof i&&(i=t.Control._shifter(this,i)),this._bindings.user.push(l(e,r,i,n)),this._bindings.user.length},off:function(){var t=this.element[0],e=this._bindings;e&&(a(e.user||[],function(e){e(t)}),a(e.control||{},function(e){e(t)})),this._bindings={user:[],control:{}}},destroy:function(){if(null!==this.element){var e,n=this.constructor,r=n.pluginName||n._fullName;this.off(),r&&"can_control"!==r&&this.element.removeClass(r),e=t.data(this.element,"controls"),e.splice(t.inArray(this,e),1),t.trigger(this,"destroyed"),this.element=null}}}),d=t.Control.processors;return e=function(e,n,r,i,a){return l(e,n,t.Control._shifter(a,i),r)},a(["change","click","contextmenu","dblclick","keydown","keyup","keypress","mousedown","mousemove","mouseout","mouseover","mouseup","reset","resize","scroll","select","submit","focusin","focusout","mouseenter","mouseleave","touchstart","touchmove","touchcancel","touchend","touchleave","inserted","removed"],function(t){d[t]=e}),f}(__m2,__m12),__m16=function(t){return t.bindAndSetup=function(){return t.addEvent.apply(this,arguments),this._init||(this._bindings?this._bindings++:(this._bindings=1,this._bindsetup&&this._bindsetup())),this},t.unbindAndTeardown=function(){return t.removeEvent.apply(this,arguments),null===this._bindings?this._bindings=0:this._bindings--,!this._bindings&&this._bindteardown&&this._bindteardown(),this},t}(__m2),__m17=function(t){var e=t.bubble={event:function(t,e){return t.constructor._bubbleRule(e,t)},childrenOf:function(t,n){t._each(function(r,i){r&&r.bind&&e.toParent(r,t,i,n)})},teardownChildrenFrom:function(t,n){t._each(function(r){e.teardownFromParent(t,r,n)})},toParent:function(e,n,r,i){t.listenTo.call(n,e,i,function(){var i=t.makeArray(arguments),a=i.shift();i[0]=(t.List&&n instanceof t.List?n.indexOf(e):r)+(i[0]?"."+i[0]:""),a.triggeredNS=a.triggeredNS||{},a.triggeredNS[n._cid]||(a.triggeredNS[n._cid]=!0,t.trigger(n,a,i))})},teardownFromParent:function(e,n,r){n&&n.unbind&&t.stopListening.call(e,n,r)},isBubbling:function(t,e){return t._bubbleBindings&&t._bubbleBindings[e]},bind:function(t,n){if(!t._init){var r=e.event(t,n);r&&(t._bubbleBindings||(t._bubbleBindings={}),t._bubbleBindings[r]?t._bubbleBindings[r]++:(t._bubbleBindings[r]=1,e.childrenOf(t,r)))}},unbind:function(n,r){var i=e.event(n,r);i&&(n._bubbleBindings&&n._bubbleBindings[i]--,n._bubbleBindings&&!n._bubbleBindings[i]&&(delete n._bubbleBindings[i],e.teardownChildrenFrom(n,i),t.isEmptyObject(n._bubbleBindings)&&delete n._bubbleBindings))},add:function(n,r,i){if(r instanceof t.Map&&n._bubbleBindings)for(var a in n._bubbleBindings)n._bubbleBindings[a]&&(e.teardownFromParent(n,r,a),e.toParent(r,n,i,a))},removeMany:function(t,n){for(var r=0,i=n.length;i>r;r++)e.remove(t,n[r])},remove:function(n,r){if(r instanceof t.Map&&n._bubbleBindings)for(var i in n._bubbleBindings)n._bubbleBindings[i]&&e.teardownFromParent(n,r,i)},set:function(n,r,i,a){return t.Map.helpers.isObservable(i)&&e.add(n,i,r),t.Map.helpers.isObservable(a)&&e.remove(n,a),i}};return e}(__m2),__m18=function(t){var e=1,n=0,r=[],i=[];t.batch={start:function(t){n++,t&&i.push(t)},stop:function(a,s){if(a?n=0:n--,0===n){var o,u,c=r.slice(0),l=i.slice(0);for(r=[],i=[],e++,s&&t.batch.start(),o=0,u=c.length;u>o;o++)t.dispatch.apply(c[o][0],c[o][1]);for(o=0,u=l.length;l.length>o;o++)l[o]()}},trigger:function(i,a,s){if(!i._init){if(0===n)return t.dispatch.call(i,a,s);a="string"==typeof a?{type:a}:a,a.batchNum=e,r.push([i,[a,s]])}}}}(__m4),__m15=function(t,e,n){var r=null,i=function(){for(var t in r)r[t].added&&delete r[t].obj._cid;r=null},a=function(t){return r&&r[t._cid]&&r[t._cid].instance},s=null,o=t.Map=t.Construct.extend({setup:function(){if(t.Construct.setup.apply(this,arguments),t.Map){this.defaults||(this.defaults={}),this._computes=[];for(var e in this.prototype)"define"!==e&&"function"!=typeof this.prototype[e]?this.defaults[e]=this.prototype[e]:this.prototype[e].isComputed&&this._computes.push(e);this.helpers.define&&this.helpers.define(this)}!t.List||this.prototype instanceof t.List||(this.List=o.List.extend({Map:this},{}))},_bubble:n,_bubbleRule:function(t){return("change"===t||t.indexOf(".")>=0)&&"change"},_computes:[],bind:t.bindAndSetup,on:t.bindAndSetup,unbind:t.unbindAndTeardown,off:t.unbindAndTeardown,id:"id",helpers:{define:null,attrParts:function(t,e){return e?[t]:"object"==typeof t?t:(""+t).split(".")},addToMap:function(e,n){var a;r||(a=i,r={});var s=e._cid,o=t.cid(e);return r[o]||(r[o]={obj:e,instance:n,added:!s}),a},isObservable:function(e){return e instanceof t.Map||e&&e===t.route},canMakeObserve:function(e){return e&&!t.isDeferred(e)&&(t.isArray(e)||t.isPlainObject(e))},serialize:function(e,n,r){var i=t.cid(e),a=!1;return s||(a=!0,s={attr:{},serialize:{}}),s[n][i]=r,e.each(function(i,a){var u,c=o.helpers.isObservable(i),l=c&&s[n][t.cid(i)];u=l?l:"serialize"===n?o.helpers._serialize(e,a,i):o.helpers._getValue(e,a,i,n),u!==undefined&&(r[a]=u)}),t.__reading(e,"__keys"),a&&(s=null),r},_serialize:function(t,e,n){return o.helpers._getValue(t,e,n,"serialize")},_getValue:function(t,e,n,r){return o.helpers.isObservable(n)?n[r]():n}},keys:function(e){var n=[];t.__reading(e,"__keys");for(var r in e._data)n.push(r);return n}},{setup:function(e){this._data={},t.cid(this,".map"),this._init=1;var n=this._setupDefaults();this._setupComputes(n);var r=e&&t.Map.helpers.addToMap(e,this),i=t.extend(t.extend(!0,{},n),e);this.attr(i),r&&r(),this.bind("change",t.proxy(this._changes,this)),delete this._init},_setupComputes:function(){var t=this.constructor._computes;this._computedBindings={};for(var e,n=0,r=t.length;r>n;n++)e=t[n],this[e]=this[e].clone(this),this._computedBindings[e]={count:0}},_setupDefaults:function(){return this.constructor.defaults||{}},_bindsetup:function(){},_bindteardown:function(){},_changes:function(e,n,r,i,a){t.batch.trigger(this,{type:n,batchNum:e.batchNum,target:e.target},[i,a])},_triggerChange:function(e,r,i,a){n.isBubbling(this,"change")?t.batch.trigger(this,{type:"change",target:this},[e,r,i,a]):t.batch.trigger(this,e,[i,a]),("remove"===r||"add"===r)&&t.batch.trigger(this,{type:"__keys",target:this})},_each:function(t){var e=this.__get();for(var n in e)e.hasOwnProperty(n)&&t(e[n],n)},attr:function(e,n){var r=typeof e;return"string"!==r&&"number"!==r?this._attrs(e,n):1===arguments.length?(t.__reading(this,e),this._get(e)):(this._set(e,n),this)},each:function(){return t.each.apply(undefined,[this].concat(t.makeArray(arguments)))},removeAttr:function(e){var n=t.List&&this instanceof t.List,r=t.Map.helpers.attrParts(e),i=r.shift(),a=n?this[i]:this._data[i];return r.length&&a?a.removeAttr(r):("string"==typeof e&&~e.indexOf(".")&&(i=e),this._remove(i,a),a)},_remove:function(t,e){t in this._data&&(delete this._data[t],t in this.constructor.prototype||delete this[t],this._triggerChange(t,"remove",undefined,e))},_get:function(t){t=""+t;var e=t.indexOf(".");if(e>=0){var n=this.__get(t);if(n!==undefined)return n;var r=t.substr(0,e),i=t.substr(e+1),a=this.__get(r);return a&&a._get?a._get(i):undefined}return this.__get(t)},__get:function(t){return t?this._computedBindings[t]?this[t]():this._data[t]:this._data},__type:function(e){if(!(e instanceof t.Map)&&t.Map.helpers.canMakeObserve(e)){var n=a(e);if(n)return n;if(t.isArray(e)){var r=t.List;return new r(e)}var i=this.constructor.Map||t.Map;return new i(e)}return e},_set:function(t,e,n){t=""+t;var r,i=t.indexOf(".");if(!n&&i>=0){var a=t.substr(0,i),s=t.substr(i+1);if(r=this._init?undefined:this.__get(a),!o.helpers.isObservable(r))throw"can.Map: Object does not exist";r._set(s,e)}else this.__convert&&(e=this.__convert(t,e)),r=this._init?undefined:this.__get(t),this.__set(t,this.__type(e,t),r)},__set:function(t,e,n){if(e!==n){var r=n!==undefined||this.__get().hasOwnProperty(t)?"set":"add";this.___set(t,this.constructor._bubble.set(this,t,e,n)),this._triggerChange(t,r,e,n),n&&this.constructor._bubble.teardownFromParent(this,n)}},___set:function(t,e){this._computedBindings[t]?this[t](e):this._data[t]=e,"function"==typeof this.constructor.prototype[t]||this._computedBindings[t]||(this[t]=e)},bind:function(e){var n=this._computedBindings&&this._computedBindings[e];if(n)if(n.count)n.count++;else{n.count=1;var r=this;n.handler=function(n,i,a){t.batch.trigger(r,{type:e,batchNum:n.batchNum,target:r},[i,a])},this[e].bind("change",n.handler)}return this.constructor._bubble.bind(this,e),t.bindAndSetup.apply(this,arguments)},unbind:function(e){var n=this._computedBindings&&this._computedBindings[e];return n&&(1===n.count?(n.count=0,this[e].unbind("change",n.handler),delete n.handler):n.count--),this.constructor._bubble.unbind(this,e),t.unbindAndTeardown.apply(this,arguments)},serialize:function(){return t.Map.helpers.serialize(this,"serialize",{})},_attrs:function(e,n){if(e===undefined)return o.helpers.serialize(this,"attr",{});e=t.simpleExtend({},e);var r,i,a=this;t.batch.start(),this.each(function(t,r){if("_cid"!==r){if(i=e[r],i===undefined)return n&&a.removeAttr(r),undefined;a.__convert&&(i=a.__convert(r,i)),o.helpers.isObservable(i)?a.__set(r,a.__type(i,r),t):o.helpers.isObservable(t)&&o.helpers.canMakeObserve(i)?t.attr(i,n):t!==i&&a.__set(r,a.__type(i,r),t),delete e[r]}});for(r in e)"_cid"!==r&&(i=e[r],this._set(r,i,!0));return t.batch.stop(),this},compute:function(e){if(t.isFunction(this.constructor.prototype[e]))return t.compute(this[e],this);var n=e.split("."),r=n.length-1,i={args:[]};return t.compute(function(e){return arguments.length?(t.compute.read(this,n.slice(0,r)).value.attr(n[r],e),undefined):t.compute.read(this,n,i).value},this)}});return o.prototype.on=o.prototype.bind,o.prototype.off=o.prototype.unbind,o}(__m2,__m16,__m17,__m12,__m18),__m19=function(t,e,n){var r=[].splice,i=function(){var t={0:"a",length:1};return r.call(t,0,1),!t[0]}(),a=e.extend({Map:e},{setup:function(e,n){this.length=0,t.cid(this,".map"),this._init=1,this._setupComputes(),e=e||[];var r;t.isDeferred(e)?this.replace(e):(r=e.length&&t.Map.helpers.addToMap(e,this),this.push.apply(this,t.makeArray(e||[]))),r&&r(),this.bind("change",t.proxy(this._changes,this)),t.simpleExtend(this,n),delete this._init},_triggerChange:function(n,r,i,a){e.prototype._triggerChange.apply(this,arguments);var s=+n;~n.indexOf(".")||isNaN(s)||("add"===r?(t.batch.trigger(this,r,[i,s]),t.batch.trigger(this,"length",[this.length])):"remove"===r?(t.batch.trigger(this,r,[a,s]),t.batch.trigger(this,"length",[this.length])):t.batch.trigger(this,r,[i,s]))},__get:function(e){return e?this[e]&&this[e].isComputed&&t.isFunction(this.constructor.prototype[e])?this[e]():this[e]:this},___set:function(t,e){this[t]=e,+t>=this.length&&(this.length=+t+1)},_remove:function(t,e){isNaN(+t)?(delete this[t],this._triggerChange(t,"remove",undefined,e)):this.splice(t,1)},_each:function(t){for(var e=this.__get(),n=0;e.length>n;n++)t(e[n],n)},serialize:function(){return e.helpers.serialize(this,"serialize",[])},splice:function(e,a){var s,o,u=t.makeArray(arguments),c=[];for(s=2;u.length>s;s++)u[s]=n.set(this,s,this.__type(u[s],s)),c.push(u[s]);a===undefined&&(a=u[1]=this.length-e);var l=r.apply(this,u),f=l;if(c.length&&l.length)for(o=0;l.length>o;o++)t.inArray(l[o],c)>=0&&f.splice(o,1);if(!i)for(s=this.length;l.length+this.length>s;s++)delete this[s];return t.batch.start(),a>0&&(this._triggerChange(""+e,"remove",undefined,l),n.removeMany(this,l)),u.length>2&&this._triggerChange(""+e,"add",u.slice(2),l),t.batch.stop(),l},_attrs:function(n,r){return n===undefined?e.helpers.serialize(this,"attr",[]):(n=t.makeArray(n),t.batch.start(),this._updateAttrs(n,r),t.batch.stop(),undefined)},_updateAttrs:function(t,n){for(var r=Math.min(t.length,this.length),i=0;r>i;i++){var a=this[i],s=t[i];e.helpers.isObservable(a)&&e.helpers.canMakeObserve(s)?a.attr(s,n):a!==s&&this._set(i,s)}t.length>this.length?this.push.apply(this,t.slice(this.length)):t.length<this.length&&n&&this.splice(t.length)}}),s=function(e){return e[0]&&t.isArray(e[0])?e[0]:t.makeArray(e)};return t.each({push:"length",unshift:0},function(t,e){var r=[][e];a.prototype[e]=function(){for(var e,i,a=[],s=t?this.length:0,o=arguments.length;o--;)i=arguments[o],a[o]=n.set(this,o,this.__type(i,o));return e=r.apply(this,a),(!this.comparator||a.length)&&this._triggerChange(""+s,"add",a,undefined),e}}),t.each({pop:"length",shift:0},function(t,e){a.prototype[e]=function(){var r=s(arguments),i=t&&this.length?this.length-1:0,a=[][e].apply(this,r);return this._triggerChange(""+i,"remove",undefined,[a]),a&&a.unbind&&n.remove(this,a),a}}),t.extend(a.prototype,{indexOf:function(e,n){return this.attr("length"),t.inArray(e,this,n)},join:function(){return[].join.apply(this.attr(),arguments)},reverse:function(){var e=t.makeArray([].reverse.call(this));this.replace(e)},slice:function(){var t=Array.prototype.slice.apply(this,arguments);return new this.constructor(t)},concat:function(){var e=[];return t.each(t.makeArray(arguments),function(n,r){e[r]=n instanceof t.List?n.serialize():n}),new this.constructor(Array.prototype.concat.apply(this.serialize(),e))},forEach:function(e,n){return t.each(this,e,n||this)},replace:function(e){return t.isDeferred(e)?e.then(t.proxy(this.replace,this)):this.splice.apply(this,[0,this.length].concat(t.makeArray(e||[]))),this},filter:function(e,n){var r,i=new t.List,a=this;
-return this.each(function(t,s){r=e.call(n|a,t,s,a),r&&i.push(t)}),i}}),t.List=e.List=a,t.List}(__m2,__m15,__m17),__m20=function(t){var e=[];t.__read=function(t,n){e.push({});var r=t.call(n);return{value:r,observed:e.pop()}},t.__reading=function(t,n){e.length&&(e[e.length-1][t._cid+"|"+n]={obj:t,event:n+""})},t.__clearReading=function(){if(e.length){var t=e[e.length-1];return e[e.length-1]={},t}},t.__setReading=function(t){e.length&&(e[e.length-1]=t)},t.__addReading=function(n){e.length&&t.simpleExtend(e[e.length-1],n)};var n=function(e,n,i,s){var o=t.__read(e,n),u=o.observed;return r(i,u,s),a(i,s),o},r=function(t,e,n){for(var r in e)i(t,e,r,n)},i=function(t,e,n,r){if(t[n])delete t[n];else{var i=e[n];i.obj.bind(i.event,r)}},a=function(t,e){for(var n in t){var r=t[n];r.obj.unbind(r.event,e)}},s=function(e,n,r,i){n!==r&&t.batch.trigger(e,i?{type:"change",batchNum:i}:"change",[n,r])},o=function(e,r,i,a){var s,o,u;return{on:function(c){o||(o=function(t){if(e.bound&&(t.batchNum===undefined||t.batchNum!==u)){var a=s.value;s=n(r,i,s.observed,o),c(s.value,a,t.batchNum),u=u=t.batchNum}}),s=n(r,i,{},o),a(s.value),e.hasDependencies=!t.isEmptyObject(s.observed)},off:function(){for(var t in s.observed){var e=s.observed[t];e.obj.unbind(e.event,o)}}}},u=function(e,r,i,a){var s,o,u,c;return{on:function(l){u||(u=function(t){if(e.bound&&(t.batchNum===undefined||t.batchNum!==c)){var n=r.call(i);l(n,o,t.batchNum),o=n,c=c=t.batchNum}}),s=n(r,i,{},u),o=s.value,a(s.value),e.hasDependencies=!t.isEmptyObject(s.observed)},off:function(){for(var t in s.observed){var e=s.observed[t];e.obj.unbind(e.event,u)}}}},c=function(e){return e instanceof t.Map||e&&e.__get},l=function(){};t.compute=function(n,r,i,a){if(n&&n.isComputed)return n;for(var c,f,d,h=l,p=l,g=function(){return f},m=function(t){f=t},v=m,_=[],b=function(t,e,n){v(t),s(c,t,e,n)},y=0,x=arguments.length;x>y;y++)_[y]=arguments[y];if(c=function(n){if(arguments.length){var i=f,a=m.call(r,n,i);return c.hasDependencies?g.call(r):(f=a===undefined?g.call(r):a,s(c,f,i),f)}return e.length&&c.canReadForChangeEvent!==!1&&(t.__reading(c,"change"),c.bound||t.compute.temporarilyBind(c)),c.bound?f:g.call(r)},"function"==typeof n){m=n,g=n,c.canReadForChangeEvent=i===!1?!1:!0;var w=a?u(c,n,r||this,v):o(c,n,r||this,v);h=w.on,p=w.off}else if(r)if("string"==typeof r){var k=r,M=n instanceof t.Map;if(M){c.hasDependencies=!0;var C;g=function(){return n.attr(k)},m=function(t){n.attr(k,t)},h=function(e){C=function(t,n,r){e(n,r,t.batchNum)},n.bind(i||k,C),f=t.__read(g).value},p=function(){n.unbind(i||k,C)}}else g=function(){return n[k]},m=function(t){n[k]=t},h=function(e){C=function(){e(g(),f)},t.bind.call(n,i||k,C),f=t.__read(g).value},p=function(){t.unbind.call(n,i||k,C)}}else if("function"==typeof r)f=n,m=r,r=i,d="setter";else{f=n;var A=r,N=b;if(r=A.context||A,g=A.get||g,m=A.set||function(){return f},A.fn){var T,O=A.fn;g=function(){return O.call(r,f)},0===O.length?T=o(c,O,r,v):1===O.length?T=o(c,function(){return O.call(r,f)},r,v):(b=function(t){t!==undefined&&N(t,f)},T=o(c,function(){var t=O.call(r,f,function(t){N(t,f)});return t!==undefined?t:f},r,v)),h=T.on,p=T.off}else b=function(){var t=g.call(r);N(t,f)};h=A.on||h,p=A.off||p}else f=n;return t.cid(c,"compute"),t.simpleExtend(c,{isComputed:!0,_bindsetup:function(){this.bound=!0;var e=t.__clearReading();h.call(this,b),t.__setReading(e)},_bindteardown:function(){p.call(this,b),this.bound=!1},bind:t.bindAndSetup,unbind:t.unbindAndTeardown,clone:function(e){return e&&("setter"===d?_[2]=e:_[1]=e),t.compute.apply(t,_)}})};var f,d=function(){for(var t=0,e=f.length;e>t;t++)f[t].unbind("change",l);f=null};return t.compute.temporarilyBind=function(t){t.bind("change",l),f||(f=[],setTimeout(d,10)),f.push(t)},t.compute.truthy=function(e){return t.compute(function(){var t=e();return"function"==typeof t&&(t=t()),!!t})},t.compute.async=function(e,n,r){return t.compute(e,{fn:n,context:r})},t.compute.read=function(e,n,r){r=r||{};for(var i,a,s,o=e,u=0,l=n.length;l>u;u++)if(a=o,a&&a.isComputed&&(r.foundObservable&&r.foundObservable(a,u),a=a()),c(a)?(!s&&r.foundObservable&&r.foundObservable(a,u),s=1,o="function"==typeof a[n[u]]&&a.constructor.prototype[n[u]]===a[n[u]]?r.returnObserveMethods?o[n[u]]:"constructor"===n[u]&&a instanceof t.Construct?a[n[u]]:a[n[u]].apply(a,r.args||[]):o.attr(n[u])):o=a[n[u]],i=typeof o,o&&o.isComputed&&!r.isArgument&&l-1>u?(!s&&r.foundObservable&&r.foundObservable(a,u+1),o=o()):n.length-1>u&&"function"===i&&r.executeAnonymousFunctions&&!(t.Construct&&o.prototype instanceof t.Construct)&&(o=o()),n.length-1>u&&(null===o||"function"!==i&&"object"!==i))return r.earlyExit&&r.earlyExit(a,u,o),{value:undefined,parent:a};return"function"!=typeof o||t.Construct&&o.prototype instanceof t.Construct||(r.isArgument?o.isComputed||r.proxyMethods===!1||(o=t.proxy(o,a)):(o.isComputed&&!s&&r.foundObservable&&r.foundObservable(o,u),o=o.call(a))),o===undefined&&r.earlyExit&&r.earlyExit(a,u-1),{value:o,parent:a}},t.compute}(__m2,__m16,__m18),__m14=function(t){return t.Observe=t.Map,t.Observe.startBatch=t.batch.start,t.Observe.stopBatch=t.batch.stop,t.Observe.triggerBatch=t.batch.trigger,t}(__m2,__m15,__m19,__m20),__m22=function(t){var e=/(\\)?\./g,n=/\\\./g,r=function(t){var r=[],i=0;return t.replace(e,function(e,a,s){a||(r.push(t.slice(i,s).replace(n,".")),i=s+e.length)}),r.push(t.slice(i).replace(n,".")),r},i=t.Construct.extend({read:t.compute.read},{init:function(t,e){this._context=t,this._parent=e,this.__cache={}},attr:function(e){var n=t.__clearReading(),r=this.read(e,{isArgument:!0,returnObserveMethods:!0,proxyMethods:!1}).value;return t.__setReading(n),r},add:function(t){return t!==this._context?new this.constructor(t,this):this},computeData:function(e,n){n=n||{args:[]};var r,i,a=this,s={compute:t.compute(function(o){if(!arguments.length){if(r)return t.compute.read(r,i,n).value;var u=a.read(e,n);return r=u.rootObserve,i=u.reads,s.scope=u.scope,s.initialValue=u.value,s.reads=u.reads,s.root=r,u.value}if(r.isComputed&&!i.length)r(o);else{var c=i.length-1;t.compute.read(r,i.slice(0,c)).value.attr(i[c],o)}})};return s},compute:function(t,e){return this.computeData(t,e).compute},read:function(e,n){var i;if("./"===e.substr(0,2))i=!0,e=e.substr(2);else{if("../"===e.substr(0,3))return this._parent.read(e.substr(3),n);if(".."===e)return{value:this._parent._context};if("."===e||"this"===e)return{value:this._context}}for(var a,s,o,u,c,l,f=-1===e.indexOf("\\.")?e.split("."):r(e),d=this,h=[],p=-1;d;){if(a=d._context,null!==a){var g=t.compute.read(a,f,t.simpleExtend({foundObservable:function(t,e){c=t,l=f.slice(e)},earlyExit:function(e,n){n>p&&(s=c,h=l,p=n,u=d,o=t.__clearReading())},executeAnonymousFunctions:!0},n));if(g.value!==undefined)return{scope:d,rootObserve:c,value:g.value,reads:l}}t.__clearReading(),d=i?null:d._parent}return s?(t.__setReading(o),{scope:u,rootObserve:s,reads:h,value:undefined}):{names:f,value:undefined}}});return t.view.Scope=i,i}(__m2,__m12,__m15,__m19,__m10,__m20),__m24=function(t){var e=function(){return 1===t.$(document.createComment("~")).length}(),n={tagToContentPropMap:{option:"textContent"in document.createElement("option")?"textContent":"innerText",textarea:"value"},attrMap:t.attr.map,attrReg:/([^\s=]+)[\s]*=[\s]*/,defaultValue:t.attr.defaultValue,tagMap:{"":"span",colgroup:"col",table:"tbody",tr:"td",ol:"li",ul:"li",tbody:"tr",thead:"tr",tfoot:"tr",select:"option",optgroup:"option"},reverseTagMap:{col:"colgroup",tr:"tbody",option:"select",td:"tr",th:"tr",li:"ul"},getParentNode:function(t,e){return e&&11===t.parentNode.nodeType?e:t.parentNode},setAttr:t.attr.set,getAttr:t.attr.get,removeAttr:t.attr.remove,contentText:function(t){return"string"==typeof t?t:t||0===t?""+t:""},after:function(e,n){var r=e[e.length-1];r.nextSibling?t.insertBefore(r.parentNode,n,r.nextSibling):t.appendChild(r.parentNode,n)},replace:function(r,i){n.after(r,i),t.remove(t.$(r)).length<r.length&&!e&&t.each(r,function(t){8===t.nodeType&&t.parentNode.removeChild(t)})}};return t.view.elements=n,n}(__m2,__m10),__m23=function(can,elements,viewCallbacks){var newLine=/(\r|\n)+/g,notEndTag=/\//,clean=function(t){return t.split("\\").join("\\\\").split("\n").join("\\n").split('"').join('\\"').split("	").join("\\t")},getTag=function(t,e,n){if(t)return t;for(;e.length>n;){if("<"===e[n]&&!notEndTag.test(e[n+1]))return elements.reverseTagMap[e[n+1]]||"span";n++}return""},bracketNum=function(t){return--t.split("{").length- --t.split("}").length},myEval=function(script){eval(script)},attrReg=/([^\s]+)[\s]*=[\s]*$/,startTxt="var ___v1ew = [];",finishTxt="return ___v1ew.join('')",put_cmd="___v1ew.push(\n",insert_cmd=put_cmd,htmlTag=null,quote=null,beforeQuote=null,rescan=null,getAttrName=function(){var t=beforeQuote.match(attrReg);return t&&t[1]},status=function(){return quote?"'"+getAttrName()+"'":htmlTag?1:0},top=function(t){return t[t.length-1]},Scanner;return can.view.Scanner=Scanner=function(t){can.extend(this,{text:{},tokens:[]},t),this.text.options=this.text.options||"",this.tokenReg=[],this.tokenSimple={"<":"<",">":">",'"':'"',"'":"'"},this.tokenComplex=[],this.tokenMap={};for(var e,n=0;e=this.tokens[n];n++)e[2]?(this.tokenReg.push(e[2]),this.tokenComplex.push({abbr:e[1],re:RegExp(e[2]),rescan:e[3]})):(this.tokenReg.push(e[1]),this.tokenSimple[e[1]]=e[0]),this.tokenMap[e[0]]=e[1];this.tokenReg=RegExp("("+this.tokenReg.slice(0).concat(["<",">",'"',"'"]).join("|")+")","g")},Scanner.prototype={helpers:[],scan:function(t,e){var n=[],r=0,i=this.tokenSimple,a=this.tokenComplex;t=t.replace(newLine,"\n"),this.transform&&(t=this.transform(t)),t.replace(this.tokenReg,function(e,s){var o=arguments[arguments.length-2];if(o>r&&n.push(t.substring(r,o)),i[e])n.push(e);else for(var u,c=0;u=a[c];c++)if(u.re.test(e)){n.push(u.abbr),u.rescan&&n.push(u.rescan(s));break}r=o+s.length}),t.length>r&&n.push(t.substr(r));var s,o,u,c,l="",f=[startTxt+(this.text.start||"")],d=function(t,e){f.push(put_cmd,'"',clean(t),'"'+(e||"")+");")},h=[],p=null,g=!1,m={attributeHookups:[],tagHookups:[],lastTagHookup:""},v=function(){m.lastTagHookup=m.tagHookups.pop()+m.tagHookups.length},_="",b=[],y=!1,x=!1,w=0,k=this.tokenMap;for(htmlTag=quote=beforeQuote=null;(u=n[w++])!==undefined;){if(null===p)switch(u){case k.left:case k.escapeLeft:case k.returnLeft:g=htmlTag&&1;case k.commentLeft:p=u,l.length&&d(l),l="";break;case k.escapeFull:g=htmlTag&&1,rescan=1,p=k.escapeLeft,l.length&&d(l),rescan=n[w++],l=rescan.content||rescan,rescan.before&&d(rescan.before),n.splice(w,0,k.right);break;case k.commentFull:break;case k.templateLeft:l+=k.left;break;case"<":0!==n[w].indexOf("!--")&&(htmlTag=1,g=0),l+=u;break;case">":htmlTag=0;var M="/"===l.substr(l.length-1)||"--"===l.substr(l.length-2),C="";if(m.attributeHookups.length&&(C="attrs: ['"+m.attributeHookups.join("','")+"'], ",m.attributeHookups=[]),_+m.tagHookups.length!==m.lastTagHookup&&_===top(m.tagHookups))M&&(l=l.substr(0,l.length-1)),f.push(put_cmd,'"',clean(l),'"',",can.view.pending({tagName:'"+_+"',"+C+"scope: "+(this.text.scope||"this")+this.text.options),M?(f.push("}));"),l="/>",v()):"<"===n[w]&&n[w+1]==="/"+_?(f.push("}));"),l=u,v()):(f.push(",subtemplate: function("+this.text.argNames+"){\n"+startTxt+(this.text.start||"")),l="");else if(g||!y&&elements.tagToContentPropMap[b[b.length-1]]||C){var A=",can.view.pending({"+C+"scope: "+(this.text.scope||"this")+this.text.options+'}),"';M?d(l.substr(0,l.length-1),A+'/>"'):d(l,A+'>"'),l="",g=0}else l+=u;(M||y)&&(b.pop(),_=b[b.length-1],y=!1),m.attributeHookups=[];break;case"'":case'"':if(htmlTag)if(quote&&quote===u){quote=null;var N=getAttrName();if(viewCallbacks.attr(N)&&m.attributeHookups.push(N),x){l+=u,d(l),f.push(finishTxt,"}));\n"),l="",x=!1;break}}else if(null===quote&&(quote=u,beforeQuote=s,c=getAttrName(),"img"===_&&"src"===c||"style"===c)){d(l.replace(attrReg,"")),l="",x=!0,f.push(insert_cmd,"can.view.txt(2,'"+getTag(_,n,w)+"',"+status()+",this,function(){",startTxt),d(c+"="+u);break}default:if("<"===s){_="!--"===u.substr(0,3)?"!--":u.split(/\s/)[0];var T,O=!1;0===_.indexOf("/")&&(O=!0,T=_.substr(1)),O?(top(b)===T&&(_=T,y=!0),top(m.tagHookups)===T&&(d(l.substr(0,l.length-1)),f.push(finishTxt+"}}) );"),l="><",v())):(_.lastIndexOf("/")===_.length-1&&(_=_.substr(0,_.length-1)),"!--"!==_&&viewCallbacks.tag(_)&&("content"===_&&elements.tagMap[top(b)]&&(u=u.replace("content",elements.tagMap[top(b)])),m.tagHookups.push(_)),b.push(_))}l+=u}else switch(u){case k.right:case k.returnRight:switch(p){case k.left:o=bracketNum(l),1===o?(f.push(insert_cmd,"can.view.txt(0,'"+getTag(_,n,w)+"',"+status()+",this,function(){",startTxt,l),h.push({before:"",after:finishTxt+"}));\n"})):(r=h.length&&-1===o?h.pop():{after:";"},r.before&&f.push(r.before),f.push(l,";",r.after));break;case k.escapeLeft:case k.returnLeft:o=bracketNum(l),o&&h.push({before:finishTxt,after:"}));\n"});for(var L=p===k.escapeLeft?1:0,j={insert:insert_cmd,tagName:getTag(_,n,w),status:status(),specialAttribute:x},S=0;this.helpers.length>S;S++){var E=this.helpers[S];if(E.name.test(l)){l=E.fn(l,j),E.name.source===/^>[\s]*\w*/.source&&(L=0);break}}"object"==typeof l?l.startTxt&&l.end&&x?f.push(insert_cmd,"can.view.toStr( ",l.content,"() ) );"):(l.startTxt?f.push(insert_cmd,"can.view.txt(\n"+("string"==typeof status()||(null!=l.escaped?l.escaped:L))+",\n'"+_+"',\n"+status()+",\nthis,\n"):l.startOnlyTxt&&f.push(insert_cmd,"can.view.onlytxt(this,\n"),f.push(l.content),l.end&&f.push("));")):x?f.push(insert_cmd,l,");"):f.push(insert_cmd,"can.view.txt(\n"+("string"==typeof status()||L)+",\n'"+_+"',\n"+status()+",\nthis,\nfunction(){ "+(this.text.escape||"")+"return ",l,o?startTxt:"}));\n"),rescan&&rescan.after&&rescan.after.length&&(d(rescan.after.length),rescan=null)}p=null,l="";break;case k.templateLeft:l+=k.left;break;default:l+=u}s=u}l.length&&d(l),f.push(";");var R=f.join(""),D={out:(this.text.outStart||"")+R+" "+finishTxt+(this.text.outEnd||"")};return myEval.call(D,"this.fn = (function("+this.text.argNames+"){"+D.out+"});\r\n//# sourceURL="+e+".js"),D}},can.view.pending=function(t){var e=can.view.getHooks();return can.view.hook(function(n){can.each(e,function(t){t(n)}),t.templateType="legacy",t.tagName&&viewCallbacks.tagHandler(n,t.tagName,t),can.each(t&&t.attrs||[],function(e){t.attributeName=e;var r=viewCallbacks.attr(e);r&&r(n,t)})})},can.view.tag("content",function(t,e){return e.scope}),can.view.Scanner=Scanner,Scanner}(__m10,__m24,__m9),__m27=function(t){var e=!0;try{document.createTextNode("")._=0}catch(n){e=!1}var r={},i={},a="ejs_"+Math.random(),s=0,o=function(t,n){var r=n||i,o=u(t,r);return o?o:e||3!==t.nodeType?(++s,t[a]=(t.nodeName?"element_":"obj_")+s):(++s,r["text_"+s]=t,"text_"+s)},u=function(t,n){if(e||3!==t.nodeType)return t[a];for(var r in n)if(n[r]===t)return r},c=[].splice,l=[].push,f=function(t){for(var e=0,n=0,r=t.length;r>n;n++){var i=t[n];i.nodeType?e++:e+=f(i)}return e},d=function(t,e){for(var n={},r=0,i=t.length;i>r;r++){var a=h.first(t[r]);n[o(a,e)]=t[r]}return n},h={id:o,update:function(e,n){var r=h.unregisterChildren(e);n=t.makeArray(n);var i=e.length;return c.apply(e,[0,i].concat(n)),e.replacements?h.nestReplacements(e):h.nestList(e),r},nestReplacements:function(t){for(var e=0,n={},r=d(t.replacements,n),i=t.replacements.length;t.length>e&&i;){var a=t[e],s=r[u(a,n)];s&&(t.splice(e,f(s),s),i--),e++}t.replacements=[]},nestList:function(t){for(var e=0;t.length>e;){var n=t[e],i=r[o(n)];i?i!==t&&t.splice(e,f(i),i):r[o(n)]=t,e++}},last:function(t){var e=t[t.length-1];return e.nodeType?e:h.last(e)},first:function(t){var e=t[0];return e.nodeType?e:h.first(e)},register:function(t,e,n){return t.unregistered=e,t.parentList=n,n===!0?t.replacements=[]:n?(n.replacements.push(t),t.replacements=[]):h.nestList(t),t},unregisterChildren:function(e){var n=[];return t.each(e,function(t){t.nodeType?(e.replacements||delete r[o(t)],n.push(t)):l.apply(n,h.unregister(t))}),n},unregister:function(t){var e=h.unregisterChildren(t);if(t.unregistered){var n=t.unregistered;delete t.unregistered,delete t.replacements,n()}return e},nodeMap:r};return t.view.nodeLists=h,h}(__m2,__m24),__m28=function(t){function e(t){for(var e={},n=t.split(","),r=0;n.length>r;r++)e[n[r]]=!0;return e}var n="-A-Za-z0-9_",r="[a-zA-Z_:]["+n+":.]+",i="\\s*=\\s*",a='"((?:\\\\.|[^"])*)"',s="'((?:\\\\.|[^'])*)'",o="(?:"+i+"(?:"+"(?:\"[^\"]*\")|(?:'[^']*')|[^>\\s]+))?",u="\\{\\{[^\\}]*\\}\\}\\}?",c="\\{\\{([^\\}]*)\\}\\}\\}?",l=RegExp("^<(["+n+"]+)"+"("+"(?:\\s*"+"(?:(?:"+"(?:"+r+")?"+o+")|"+"(?:"+u+")+)"+")*"+")\\s*(\\/?)>"),f=RegExp("^<\\/(["+n+"]+)[^>]*>"),d=RegExp("(?:(?:("+r+")|"+c+")"+"(?:"+i+"(?:"+"(?:"+a+")|(?:"+s+")|([^>\\s]+)"+")"+")?)","g"),h=RegExp(c,"g"),p=/<|\{\{/,g=e("area,base,basefont,br,col,frame,hr,img,input,isindex,link,meta,param,embed"),m=e("address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video"),v=e("a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var"),_=e("colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr"),b=e("checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected"),y=e("script,style"),x=function(t,e){function n(t,n,i,a){if(n=n.toLowerCase(),m[n])for(;u.last()&&v[u.last()];)r("",u.last());_[n]&&u.last()===n&&r("",n),a=g[n]||!!a,e.start(n,a),a||u.push(n),x.parseAttrs(i,e),e.end(n,a)}function r(t,n){var r;if(n)for(r=u.length-1;r>=0&&u[r]!==n;r--);else r=0;if(r>=0){for(var i=u.length-1;i>=r;i--)e.close&&e.close(u[i]);u.length=r}}function i(t,n){e.special&&e.special(n)}var a,s,o,u=[],c=t;for(u.last=function(){return this[this.length-1]};t;){if(s=!0,u.last()&&y[u.last()])t=t.replace(RegExp("([\\s\\S]*?)</"+u.last()+"[^>]*>"),function(t,n){return n=n.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g,"$1$2"),e.chars&&e.chars(n),""}),r("",u.last());else if(0===t.indexOf("<!--")?(a=t.indexOf("-->"),a>=0&&(e.comment&&e.comment(t.substring(4,a)),t=t.substring(a+3),s=!1)):0===t.indexOf("</")?(o=t.match(f),o&&(t=t.substring(o[0].length),o[0].replace(f,r),s=!1)):0===t.indexOf("<")?(o=t.match(l),o&&(t=t.substring(o[0].length),o[0].replace(l,n),s=!1)):0===t.indexOf("{{")&&(o=t.match(h),o&&(t=t.substring(o[0].length),o[0].replace(h,i))),s){a=t.search(p);var d=0>a?t:t.substring(0,a);t=0>a?"":t.substring(a),e.chars&&d&&e.chars(d)}if(t===c)throw"Parse Error: "+t;c=t}r(),e.done()};return x.parseAttrs=function(t,e){(null!=t?t:"").replace(d,function(t,n,r,i,a,s){if(r&&e.special(r),n||i||a||s){var o=arguments[3]?arguments[3]:arguments[4]?arguments[4]:arguments[5]?arguments[5]:b[n.toLowerCase()]?n:"";e.attrStart(n||"");for(var u,c=h.lastIndex=0,l=h.exec(o);l;)u=o.substring(c,h.lastIndex-l[0].length),u.length&&e.attrValue(u),e.special(l[1]),c=h.lastIndex,l=h.exec(o);u=o.substr(c,o.length),u&&e.attrValue(u),e.attrEnd(n||"")}})},t.view.parser=x,x}(__m10),__m26=function(t,e,n,r,i){e=e||t.view.elements,r=r||t.view.NodeLists,i=i||t.view.parser;var a=function(e,n,r){var i=!1,a=function(){return i||(i=!0,r(s),t.unbind.call(e,"removed",a)),!0},s={teardownCheck:function(t){return t?!1:a()}};return t.bind.call(e,"removed",a),n(s),s},s=function(t,e,n){return a(t,function(){e.bind("change",n)},function(t){e.unbind("change",n),t.nodeList&&r.unregister(t.nodeList)})},o=function(t){var e,n={};return i.parseAttrs(t,{attrStart:function(t){n[t]="",e=t},attrValue:function(t){n[e]+=t},attrEnd:function(){}}),n},u=[].splice,c=function(t){return t&&t.nodeType},l=function(t){t.childNodes.length||t.appendChild(document.createTextNode(""))},f={list:function(n,i,s,o,c,l){var d,h=l||[n],p=[],g=function(n,i,a){var c=document.createDocumentFragment(),f=[],d=[];t.each(i,function(e,n){var i=[];l&&r.register(i,null,!0);var u=t.compute(n+a),h=s.call(o,e,u,i),p="string"==typeof h,g=t.frag(h);g=p?t.view.hookup(g):g;var m=t.makeArray(g.childNodes);l?(r.update(i,m),f.push(i)):f.push(r.register(m)),c.appendChild(g),d.push(u)});var g=a+1;if(h[g]){var m=r.first(h[g]);t.insertBefore(m.parentNode,c,m)}else e.after(1===g?[v]:[r.last(h[g-1])],c);u.apply(h,[g,0].concat(f)),u.apply(p,[a,0].concat(d));for(var _=a+d.length,b=p.length;b>_;_++)p[_](_)},m=function(e,n,i,a,s){if(a||!y.teardownCheck(v.parentNode)){var o=h.splice(i+1,n.length),u=[];t.each(o,function(t){var e=r.unregister(t);[].push.apply(u,e)}),p.splice(i,n.length);for(var c=i,l=p.length;l>c;c++)p[c](c);s||t.remove(t.$(u))}},v=document.createTextNode(""),_=function(t){d&&d.unbind&&d.unbind("add",g).unbind("remove",m),m({},{length:h.length-1},0,!0,t)},b=function(t,e){_(),d=e||[],d.bind&&d.bind("add",g).bind("remove",m),g({},d,0)};c=e.getParentNode(n,c);var y=a(c,function(){t.isFunction(i)&&i.bind("change",b)},function(){t.isFunction(i)&&i.unbind("change",b),_(!0)});l?(e.replace(h,v),r.update(h,[v]),l.unregistered=y.teardownCheck):f.replace(h,v,y.teardownCheck),b({},t.isFunction(i)?i():i)},html:function(n,i,a,o){var u;a=e.getParentNode(n,a),u=s(a,i,function(t,e){var n=r.first(f).parentNode;n&&d(e),u.teardownCheck(r.first(f).parentNode)});var f=o||[n],d=function(n){var i=!c(n),s=t.frag(n),o=t.makeArray(f);l(s),i&&(s=t.view.hookup(s,a)),o=r.update(f,s.childNodes),e.replace(o,s)};u.nodeList=f,o?o.unregistered=u.teardownCheck:r.register(f,u.teardownCheck),d(i())},replace:function(n,i,a){var s=n.slice(0),o=t.frag(i);return r.register(n,a),"string"==typeof i&&(o=t.view.hookup(o,n[0].parentNode)),r.update(n,o.childNodes),e.replace(s,o),n},text:function(n,i,a,o){var u=e.getParentNode(n,a),c=s(u,i,function(e,n){"unknown"!=typeof l.nodeValue&&(l.nodeValue=t.view.toStr(n)),c.teardownCheck(l.parentNode)}),l=document.createTextNode(t.view.toStr(i()));o?(o.unregistered=c.teardownCheck,c.nodeList=o,r.update(o,[l]),e.replace([n],l)):c.nodeList=f.replace([n],l,c.teardownCheck)},setAttributes:function(e,n){var r=o(n);for(var i in r)t.attr.set(e,i,r[i])},attributes:function(n,r,i){var a={},u=function(r){var i,s=o(r);for(i in s){var u=s[i],c=a[i];u!==c&&t.attr.set(n,i,u),delete a[i]}for(i in a)e.removeAttr(n,i);a=s};s(n,r,function(t,e){u(e)}),arguments.length>=3?a=o(i):u(r())},attributePlaceholder:"__!!__",attributeReplace:/__!!__/g,attribute:function(n,r,i){s(n,i,function(){e.setAttr(n,r,u.render())});var a,o=t.$(n);a=t.data(o,"hooks"),a||t.data(o,"hooks",a={});var u,c=e.getAttr(n,r),l=c.split(f.attributePlaceholder),d=[];d.push(l.shift(),l.join(f.attributePlaceholder)),a[r]?a[r].computes.push(i):a[r]={render:function(){var t=0,n=c?c.replace(f.attributeReplace,function(){return e.contentText(u.computes[t++]())}):e.contentText(u.computes[t++]());return n},computes:[i],batchNum:undefined},u=a[r],d.splice(1,0,i()),e.setAttr(n,r,d.join(""))},specialAttribute:function(t,n,r){s(t,r,function(r,i){e.setAttr(t,n,h(i))}),e.setAttr(t,n,h(r()))},simpleAttribute:function(t,n,r){s(t,r,function(r,i){e.setAttr(t,n,i)}),e.setAttr(t,n,r())}};f.attr=f.simpleAttribute,f.attrs=f.attributes;var d=/(\r|\n)+/g,h=function(t){var n=/^["'].*["']$/;return t=t.replace(e.attrReg,"").replace(d,""),n.test(t)?t.substr(1,t.length-2):t};return t.view.live=f,f}(__m2,__m24,__m10,__m27,__m28),__m25=function(t,e,n){var r,i=[],a=function(t){var n=e.tagMap[t]||"span";return"span"===n?"@@!!@@":"<"+n+">"+a(n)+"</"+n+">"},s=function(e,n){if("string"==typeof e)return e;if(!e&&0!==e)return"";var r=e.hookup&&function(t,n){e.hookup.call(e,t,n)}||"function"==typeof e&&e;return r?n?"<"+n+" "+t.view.hook(r)+"></"+n+">":(i.push(r),""):""+e},o=function(e,n){return"string"==typeof e||"number"==typeof e?t.esc(e):s(e,n)},u=!1,c=function(){};return t.extend(t.view,{live:n,setupLists:function(){var e,n=t.view.lists;return t.view.lists=function(t,n){return e={list:t,renderer:n},Math.random()},function(){return t.view.lists=n,e}},getHooks:function(){var t=i.slice(0);return r=t,i=[],t},onlytxt:function(t,e){return o(e.call(t))},txt:function(l,f,d,h,p){var g,m,v,_,b=e.tagMap[f]||"span",y=!1,x=c;if(u)g=p.call(h);else{("string"==typeof d||1===d)&&(u=!0);var w=t.view.setupLists();x=function(){v.unbind("change",c)},v=t.compute(p,h,!1),v.bind("change",c),m=w(),g=v(),u=!1,y=v.hasDependencies}if(m)return x(),"<"+b+t.view.hook(function(t,e){n.list(t,m.list,m.renderer,h,e)})+"></"+b+">";if(!y||"function"==typeof g)return x(),(u||2===l||!l?s:o)(g,0===d&&b);var k=e.tagToContentPropMap[f];return 0!==d||k?1===d?(i.push(function(t){n.attributes(t,v,v()),x()}),v()):2===l?(_=d,i.push(function(t){n.specialAttribute(t,_,v),x()}),v()):(_=0===d?k:d,(0===d?r:i).push(function(t){n.attribute(t,_,v),x()}),n.attributePlaceholder):"<"+b+t.view.hook(l&&"object"!=typeof g?function(t,e){n.text(t,v,e),x()}:function(t,e){n.html(t,v,e),x()})+">"+a(b)+"</"+b+">"}}),t}(__m10,__m24,__m26,__m13),__m21=function(t){t.view.ext=".mustache";var e="scope",n="___h4sh",r="{scope:"+e+",options:options}",i="{scope:"+e+",options:options, special: true}",a=e+",options",s=/((([^\s]+?=)?('.*?'|".*?"))|.*?)\s/g,o=/^(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false|null|undefined)|((.+?)=(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false)|(.+))))$/,u=function(t){return'{get:"'+t.replace(/"/g,'\\"')+'"}'},c=function(t){return t&&"string"==typeof t.get},l=function(e){return e instanceof t.Map||e&&!!e._get},f=function(t){return t&&t.splice&&"number"==typeof t.length},d=function(e,n,r){var i=function(t,r){return e(t||n,r)};return function(e,a){return e===undefined||e instanceof t.view.Scope||(e=n.add(e)),a===undefined||a instanceof t.view.Options||(a=r.add(a)),i(e,a||r)}},h=function(e){if(this.constructor!==h){var n=new h(e);return function(t,e){return n.render(t,e)}}return"function"==typeof e?(this.template={fn:e},undefined):(t.extend(this,e),this.template=this.scanner.scan(this.text,this.name),undefined)};t.Mustache=window.Mustache=h,h.prototype.render=function(e,n){return e instanceof t.view.Scope||(e=new t.view.Scope(e||{})),n instanceof t.view.Options||(n=new t.view.Options(n||{})),n=n||{},this.template.fn.call(e,e,n)},t.extend(h.prototype,{scanner:new t.view.Scanner({text:{start:"",scope:e,options:",options: options",argNames:a},tokens:[["returnLeft","{{{","{{[{&]"],["commentFull","{{!}}","^[\\s\\t]*{{!.+?}}\\n"],["commentLeft","{{!","(\\n[\\s\\t]*{{!|{{!)"],["escapeFull","{{}}","(^[\\s\\t]*{{[#/^][^}]+?}}\\n|\\n[\\s\\t]*{{[#/^][^}]+?}}\\n|\\n[\\s\\t]*{{[#/^][^}]+?}}$)",function(t){return{before:/^\n.+?\n$/.test(t)?"\n":"",content:t.match(/\{\{(.+?)\}\}/)[1]||""}}],["escapeLeft","{{"],["returnRight","}}}"],["right","}}"]],helpers:[{name:/^>[\s]*\w*/,fn:function(e){var n=t.trim(e.replace(/^>\s?/,"")).replace(/["|']/g,"");return"can.Mustache.renderPartial('"+n+"',"+a+")"}},{name:/^\s*data\s/,fn:function(t){var n=t.match(/["|'](.*)["|']/)[1];return"can.proxy(function(__){can.data(can.$(__),'"+n+"', this.attr('.')); }, "+e+")"}},{name:/\s*\(([\$\w]+)\)\s*->([^\n]*)/,fn:function(t){var n=/\s*\(([\$\w]+)\)\s*->([^\n]*)/,r=t.match(n);return"can.proxy(function(__){var "+r[1]+"=can.$(__);with("+e+".attr('.')){"+r[2]+"}}, this);"}},{name:/^.*$/,fn:function(e,c){var l=!1,f={content:"",startTxt:!1,startOnlyTxt:!1,end:!1};if(e=t.trim(e),e.length&&(l=e.match(/^([#^/]|else$)/))){switch(l=l[0]){case"#":case"^":c.specialAttribute?f.startOnlyTxt=!0:(f.startTxt=!0,f.escaped=0);break;case"/":return f.end=!0,f.content+='return ___v1ew.join("");}}])',f}e=e.substring(1)}if("else"!==l){var d,h=[],p=[],g=0;f.content+="can.Mustache.txt(\n"+(c.specialAttribute?i:r)+",\n"+(l?'"'+l+'"':"null")+",",(t.trim(e)+" ").replace(s,function(t,e){g&&(d=e.match(o))?d[2]?h.push(d[0]):p.push(d[4]+":"+(d[6]?d[6]:u(d[5]))):h.push(u(e)),g++}),f.content+=h.join(","),p.length&&(f.content+=",{"+n+":{"+p.join(",")+"}}")}switch(l&&"else"!==l&&(f.content+=",[\n\n"),l){case"^":case"#":f.content+="{fn:function("+a+"){var ___v1ew = [];";break;case"else":f.content+='return ___v1ew.join("");}},\n{inverse:function('+a+"){\nvar ___v1ew = [];";break;default:f.content+=")"}return l||(f.startTxt=!0,f.end=!0),f}}]})});for(var p=t.view.Scanner.prototype.helpers,g=0;p.length>g;g++)h.prototype.scanner.helpers.unshift(p[g]);return h.txt=function(e,r,i){for(var a,s,o=e.scope,u=e.options,p=[],g={fn:function(){},inverse:function(){}},m=o.attr("."),v=!0,_=3;arguments.length>_;_++){var b=arguments[_];if(r&&t.isArray(b))g=t.extend.apply(t,[g].concat(b));else if(b&&b[n]){a=b[n];for(var y in a)c(a[y])&&(a[y]=h.get(a[y].get,e,!1,!0))}else b&&c(b)?p.push(h.get(b.get,e,!1,!0)):p.push(b)}if(c(i)){var x=i.get;i=h.get(i.get,e,p.length,!1),v=x===i}if(g.fn=d(g.fn,o,u),g.inverse=d(g.inverse,o,u),"^"===r){var w=g.fn;g.fn=g.inverse,g.inverse=w}return(s=v&&"string"==typeof i&&h.getHelper(i,u)||t.isFunction(i)&&!i.isComputed&&{fn:i})?(t.extend(g,{context:m,scope:o,contexts:o,hash:a}),p.push(g),function(){return s.fn.apply(m,p)||""}):function(){var e;e=t.isFunction(i)&&i.isComputed?i():i;var n,a,s,o=p.length?p:[e],u=!0,c=[];if(r)for(n=0;o.length>n;n++)s=o[n],a=s!==undefined&&l(s),f(s)?"#"===r?u=u&&!!(a?s.attr("length"):s.length):"^"===r&&(u=u&&!(a?s.attr("length"):s.length)):u="#"===r?u&&!!s:"^"===r?u&&!s:u;if(u){if("#"===r){if(f(e)){var d=l(e);for(n=0;e.length>n;n++)c.push(g.fn(d?e.attr(""+n):e[n]));return c.join("")}return g.fn(e||{})||""}return"^"===r?g.inverse(e||{})||"":""+(null!=e?e:"")}return""}},h.get=function(e,n,r,i){var a=n.scope.attr("."),s=n.options||{};if(r){if(h.getHelper(e,s))return e;if(n.scope&&t.isFunction(a[e]))return a[e]}var o=n.scope.computeData(e,{isArgument:i,args:[a,n.scope]}),u=o.compute;t.compute.temporarilyBind(u);var c=o.initialValue;return c!==undefined&&o.scope===n.scope||!h.getHelper(e,s)?u.hasDependencies?u:c:e},h.resolve=function(e){return l(e)&&f(e)&&e.attr("length")?e:t.isFunction(e)?e():e},t.view.Options=t.view.Scope.extend({init:function(e){e.helpers||e.partials||e.tags||(e={helpers:e}),t.view.Scope.prototype.init.apply(this,arguments)}}),h._helpers={},h.registerHelper=function(t,e){this._helpers[t]={name:t,fn:e}},h.getHelper=function(t,e){var n=e.attr("helpers."+t);return n?{fn:n}:this._helpers[t]},h.render=function(e,n,r){if(!t.view.cached[e]){var i=t.__clearReading();n.attr("partial")&&(e=n.attr("partial")),t.__setReading(i)}return t.view.render(e,n,r)},h.safeString=function(t){return{toString:function(){return t}}},h.renderPartial=function(e,n,r){var i=r.attr("partials."+e);return i?i.render?i.render(n,r):i(n,r):t.Mustache.render(e,n,r)},t.each({"if":function(e,n){var r;return r=t.isFunction(e)?t.compute.truthy(e)():!!h.resolve(e),r?n.fn(n.contexts||this):n.inverse(n.contexts||this)},unless:function(e,n){return h._helpers["if"].fn.apply(this,[t.isFunction(e)?t.compute(function(){return!e()}):!e,n])},each:function(e,n){var r,i,a,s=h.resolve(e),o=[];if(t.view.lists&&(s instanceof t.List||e&&e.isComputed&&s===undefined))return t.view.lists(e,function(t,e){return n.fn(n.scope.add({"@index":e}).add(t))});if(e=s,e&&f(e)){for(a=0;e.length>a;a++)o.push(n.fn(n.scope.add({"@index":a}).add(e[a])));return o.join("")}if(l(e)){for(r=t.Map.keys(e),a=0;r.length>a;a++)i=r[a],o.push(n.fn(n.scope.add({"@key":i}).add(e[i])));return o.join("")}if(e instanceof Object){for(i in e)o.push(n.fn(n.scope.add({"@key":i}).add(e[i])));return o.join("")}},"with":function(t,e){var n=t;return t=h.resolve(t),t?e.fn(n):undefined},log:function(t,e){"undefined"!=typeof console&&console.log&&(e?console.log(t,e.context):console.log(t.context))}},function(t,e){h.registerHelper(e,t)}),t.view.register({suffix:"mustache",contentType:"x-mustache-template",script:function(t,e){return"can.Mustache(function("+a+") { "+new h({text:e,name:t}).template.out+" })"},renderer:function(t,e){return h({text:e,name:t})}}),t.mustache.registerHelper=t.proxy(t.Mustache.registerHelper,t.Mustache),t.mustache.safeString=t.Mustache.safeString,t}(__m2,__m22,__m10,__m23,__m20,__m25),__m29=function(t){var e=function(){var t={"":!0,"true":!0,"false":!1},e=function(e){if(e&&e.getAttribute){var n=e.getAttribute("contenteditable");return t[n]}};return function(t){var n=e(t);return"boolean"==typeof n?n:!!e(t.parentNode)
-}}(),n=function(t){return"{"===t[0]&&"}"===t[t.length-1]?t.substr(1,t.length-2):t};t.view.attr("can-value",function(r,u){var c,l,f=n(r.getAttribute("can-value")),d=u.scope.computeData(f,{args:[]}).compute;return"input"===r.nodeName.toLowerCase()&&("checkbox"===r.type&&(c=t.attr.has(r,"can-true-value")?r.getAttribute("can-true-value"):!0,l=t.attr.has(r,"can-false-value")?r.getAttribute("can-false-value"):!1),"checkbox"===r.type||"radio"===r.type)?(new a(r,{value:d,trueValue:c,falseValue:l}),undefined):"select"===r.nodeName.toLowerCase()&&r.multiple?(new s(r,{value:d}),undefined):e(r)?(new o(r,{value:d}),undefined):(new i(r,{value:d}),undefined)});var r={enter:function(t,e,n){return{event:"keyup",handler:function(t){return 13===t.keyCode?n.call(this,t):undefined}}}};t.view.attr(/can-[\w\.]+/,function(e,i){var a=i.attributeName,s=a.substr("can-".length),o=function(r){var s=n(e.getAttribute(a)),o=i.scope.read(s,{returnObserveMethods:!0,isArgument:!0});return o.value.call(o.parent,i.scope._context,t.$(this),r)};if(r[s]){var u=r[s](i,e,o);o=u.handler,s=u.event}t.bind.call(e,s,o)});var i=t.Control.extend({init:function(){"SELECT"===this.element[0].nodeName.toUpperCase()?setTimeout(t.proxy(this.set,this),1):this.set()},"{value} change":"set",set:function(){if(this.element){var t=this.options.value();this.element[0].value=null==t?"":t}},change:function(){this.element&&this.options.value(this.element[0].value)}}),a=t.Control.extend({init:function(){this.isCheckbox="checkbox"===this.element[0].type.toLowerCase(),this.check()},"{value} change":"check",check:function(){if(this.isCheckbox){var e=this.options.value(),n=this.options.trueValue||!0;this.element[0].checked=e===n}else{var r=this.options.value()==this.element[0].value?"set":"remove";t.attr[r](this.element[0],"checked",!0)}},change:function(){this.isCheckbox?this.options.value(this.element[0].checked?this.options.trueValue:this.options.falseValue):this.element[0].checked&&this.options.value(this.element[0].value)}}),s=i.extend({init:function(){this.delimiter=";",this.set()},set:function(){var e=this.options.value();"string"==typeof e?(e=e.split(this.delimiter),this.isString=!0):e&&(e=t.makeArray(e));var n={};t.each(e,function(t){n[t]=!0}),t.each(this.element[0].childNodes,function(t){t.value&&(t.selected=!!n[t.value])})},get:function(){var e=[],n=this.element[0].childNodes;return t.each(n,function(t){t.selected&&t.value&&e.push(t.value)}),e},change:function(){var e=this.get(),n=this.options.value();this.isString||"string"==typeof n?(this.isString=!0,this.options.value(e.join(this.delimiter))):n instanceof t.List?n.attr(e,!0):this.options.value(e)}}),o=t.Control.extend({init:function(){this.set(),this.on("blur","setValue")},"{value} change":"set",set:function(){var t=this.options.value();this.element[0].innerHTML=t===undefined?"":t},setValue:function(){this.options.value(this.element[0].innerHTML)}})}(__m2,__m21,__m11),__m1=function(t,e){var n=/^(dataViewId|class|id)$/i,r=/\{([^\}]+)\}/g,i=t.Component=t.Construct.extend({setup:function(){if(t.Construct.setup.apply(this,arguments),t.Component){var e=this,n=this.prototype.scope;if(this.Control=a.extend(this.prototype.events),n&&("object"!=typeof n||n instanceof t.Map)?n.prototype instanceof t.Map&&(this.Map=n):this.Map=t.Map.extend(n||{}),this.attributeScopeMappings={},t.each(this.Map?this.Map.defaults:{},function(t,n){"@"===t&&(e.attributeScopeMappings[n]=n)}),this.prototype.template)if("function"==typeof this.prototype.template){var r=this.prototype.template;this.renderer=function(){return t.view.frag(r.apply(null,arguments))}}else this.renderer=t.view.mustache(this.prototype.template);t.view.tag(this.prototype.tag,function(t,n){new e(t,n)})}}},{setup:function(r,i){var a,s,o,u={},c=this,l={};if(t.each(this.constructor.attributeScopeMappings,function(e,n){u[n]=r.getAttribute(t.hyphenate(e))}),t.each(t.makeArray(r.attributes),function(o){var f=t.camelize(o.nodeName.toLowerCase()),d=o.value;if(!(c.constructor.attributeScopeMappings[f]||n.test(f)||e.attr(o.nodeName))){if("{"===d[0]&&"}"===d[d.length-1])d=d.substr(1,d.length-2);else if("legacy"!==i.templateType)return u[f]=d,undefined;var h=i.scope.computeData(d,{args:[]}),p=h.compute,g=function(t,e){a=f,s.attr(f,e),a=null};p.bind("change",g),u[f]=p(),p.hasDependencies?(t.bind.call(r,"removed",function(){p.unbind("change",g)}),l[f]=h):p.unbind("change",g)}}),this.constructor.Map)s=new this.constructor.Map(u);else if(this.scope instanceof t.Map)s=this.scope;else if(t.isFunction(this.scope)){var f=this.scope(u,i.scope,r);s=f instanceof t.Map?f:f.prototype instanceof t.Map?new f(u):new(t.Map.extend(f))(u)}var d={};t.each(l,function(t,e){d[e]=function(n,r){a!==e&&t.compute(r)},s.bind(e,d[e])}),t.bind.call(r,"removed",function(){t.each(d,function(t,e){s.unbind(e,d[e])})}),t.isEmptyObject(this.constructor.attributeScopeMappings)&&"legacy"===i.templateType||t.bind.call(r,"attributes",function(e){var n=t.camelize(e.attributeName);l[n]||s.attr(n,r.getAttribute(e.attributeName))}),this.scope=s,t.data(t.$(r),"scope",this.scope);var h=i.scope.add(this.scope),p={helpers:{}};t.each(this.helpers||{},function(e,n){t.isFunction(e)&&(p.helpers[n]=function(){return e.apply(s,arguments)})}),this._control=new this.constructor.Control(r,{scope:this.scope}),this.constructor.renderer?(p.tags||(p.tags={}),p.tags.content=function g(e,n){var r=i.subtemplate||n.subtemplate;r&&(delete p.tags.content,t.view.live.replace([e],r(n.scope,n.options)),p.tags.content=g)},o=this.constructor.renderer(h,i.options.add(p))):o="legacy"===i.templateType?t.view.frag(i.subtemplate?i.subtemplate(h,i.options.add(p)):""):i.subtemplate?i.subtemplate(h,i.options.add(p)):document.createDocumentFragment(),t.appendChild(r,o)}}),a=t.Control.extend({_lookup:function(t){return[t.scope,t,window]},_action:function(e,n,i){var a,s;if(r.lastIndex=0,a=r.test(e),i||!a){if(a){s=t.compute(function(){var i,a=e.replace(r,function(e,r){var a;return"scope"===r?(i=n.scope,""):(r=r.replace(/^scope\./,""),a=t.compute.read(n.scope,r.split("."),{isArgument:!0}).value,a===undefined&&(a=t.getObject(r)),"string"==typeof a?a:(i=a,""))}),s=a.split(/\s+/g),o=s.pop();return{processor:this.processors[o]||this.processors.click,parts:[a,s.join(" "),o],delegate:i||undefined}},this);var o=function(t,n){i._bindings.control[e](i.element),i._bindings.control[e]=n.processor(n.delegate||i.element,n.parts[2],n.parts[1],e,i)};return s.bind("change",o),i._bindings.readyComputes[e]={compute:s,handler:o},s()}return t.Control._action.apply(this,arguments)}}},{setup:function(e,n){return this.scope=n.scope,t.Control.prototype.setup.call(this,e,n)},off:function(){this._bindings&&t.each(this._bindings.readyComputes||{},function(t){t.compute.unbind("change",t.handler)}),t.Control.prototype.off.apply(this,arguments),this._bindings.readyComputes={}}});return window.$&&$.fn&&($.fn.scope=function(t){return t?this.data("scope").attr(t):this.data("scope")}),t.scope=function(e,n){return e=t.$(e),n?t.data(e,"scope").attr(n):t.data(e,"scope")},i}(__m2,__m9,__m11,__m14,__m21,__m29),__m30=function(t){var e=function(e,n,r){var i=new t.Deferred;return e.then(function(){var e=t.makeArray(arguments),a=!0;try{e[0]=r.apply(n,e)}catch(s){a=!1,i.rejectWith(i,[s].concat(e))}a&&i.resolveWith(i,e)},function(){i.rejectWith(this,arguments)}),"function"==typeof e.abort&&(i.abort=function(){return e.abort()}),i},n=0,r=function(e){return t.__reading(e,e.constructor.id),e.__get(e.constructor.id)},i=function(e,n,r,i,a,s){var o={};if("string"==typeof e){var u=e.split(/\s+/);o.url=u.pop(),u.length&&(o.type=u.pop())}else t.extend(o,e);return o.data="object"!=typeof n||t.isArray(n)?n:t.extend(o.data||{},n),o.url=t.sub(o.url,o.data,!0),t.ajax(t.extend({type:r||"post",dataType:i||"json",success:a,error:s},o))},a=function(n,i,a,s,o){var u;t.isArray(n)?(u=n[1],n=n[0]):u=n.serialize(),u=[u];var c,l,f=n.constructor;return("update"===i||"destroy"===i)&&u.unshift(r(n)),l=f[i].apply(f,u),c=e(l,n,function(t){return n[o||i+"d"](t,l),n}),l.abort&&(c.abort=function(){l.abort()}),c.then(a,s),c},s={models:function(e){return function(n,r){if(t.Model._reqs++,n){if(n instanceof this.List)return n;var i=this,a=[],s=i.List||g,o=r instanceof t.List?r:new s,u=t.isArray(n),c=n instanceof g,l=u?n:c?n.serialize():t.getObject(e||"data",n);if(l===undefined)throw Error("Could not get any raw data while converting using .models");return o.length&&o.splice(0),t.each(l,function(t){a.push(i.model(t))}),o.push.apply(o,a),u||t.each(n,function(t,e){"data"!==e&&o.attr(e,t)}),setTimeout(t.proxy(this._clean,this),1),o}}},model:function(e){return function(n){if(n){"function"==typeof n.serialize&&(n=n.serialize()),this.parseModel?n=this.parseModel.apply(this,arguments):e&&(n=t.getObject(e||"data",n));var r=n[this.id],i=(r||0===r)&&this.store[r]?this.store[r].attr(n,this.removeAttr||!1):new this(n);return i}}}},o=function(e){return function(n){return e?t.getObject(e||"data",n):n}},u={parseModel:o,parseModels:o},c={create:{url:"_shortName",type:"post"},update:{data:function(e,n){n=n||{};var r=this.id;return n[r]&&n[r]!==e&&(n["new"+t.capitalize(e)]=n[r],delete n[r]),n[r]=e,n},type:"put"},destroy:{type:"delete",data:function(t,e){return e=e||{},e.id=e[this.id]=t,e}},findAll:{url:"_shortName"},findOne:{}},l=function(t,e){return function(n){return n=t.data?t.data.apply(this,arguments):n,i(e||this[t.url||"_url"],n,t.type||"get")}},f=function(t,e){if(t.resource){var n=t.resource.replace(/\/+$/,"");return"findAll"===e||"create"===e?n:n+"/{"+t.id+"}"}};t.Model=t.Map.extend({fullName:"can.Model",_reqs:0,setup:function(e,r,i,a){if("string"!==r&&(a=i,i=r),a||(a=i),this.store={},t.Map.setup.apply(this,arguments),t.Model){i&&i.List?(this.List=i.List,this.List.Map=this):this.List=e.List.extend({Map:this},{});var o=this,d=t.proxy(this._clean,o);t.each(c,function(n,r){if(t.isFunction(o[r])||(o[r]=l(n,o[r]?o[r]:f(o,r))),o["make"+t.capitalize(r)]){var i=o["make"+t.capitalize(r)](o[r]);t.Construct._overwrite(o,e,r,function(){t.Model._reqs++;var e=i.apply(this,arguments),n=e.then(d,d);return n.abort=e.abort,n})}}),t.each(s,function(n,r){var i="parse"+t.capitalize(r),s=o[r];"string"==typeof s?(t.Construct._overwrite(o,e,i,u[i](s)),t.Construct._overwrite(o,e,r,n(s))):a&&(a[r]||a[i])||t.Construct._overwrite(o,e,i,u[i]())}),t.each(u,function(n,r){"string"==typeof o[r]&&t.Construct._overwrite(o,e,r,n(o[r]))}),"can.Model"!==o.fullName&&o.fullName||(o.fullName="Model"+ ++n),t.Model._reqs=0,this._url=this._shortName+"/{"+this.id+"}"}},_ajax:l,_makeRequest:a,_clean:function(){if(t.Model._reqs--,!t.Model._reqs)for(var e in this.store)this.store[e]._bindings||delete this.store[e];return arguments[0]},models:s.models("data"),model:s.model()},{setup:function(e){var n=e&&e[this.constructor.id];t.Model._reqs&&null!=n&&(this.constructor.store[n]=this),t.Map.prototype.setup.apply(this,arguments)},isNew:function(){var t=r(this);return!(t||0===t)},save:function(t,e){return a(this,this.isNew()?"create":"update",t,e)},destroy:function(e,n){if(this.isNew()){var r=this,i=t.Deferred();return i.then(e,n),i.done(function(t){r.destroyed(t)}).resolve(r)}return a(this,"destroy",e,n,"destroyed")},_bindsetup:function(){return this.constructor.store[this.__get(this.constructor.id)]=this,t.Map.prototype._bindsetup.apply(this,arguments)},_bindteardown:function(){return delete this.constructor.store[r(this)],t.Map.prototype._bindteardown.apply(this,arguments)},___set:function(e,n){t.Map.prototype.___set.call(this,e,n),e===this.constructor.id&&this._bindings&&(this.constructor.store[r(this)]=this)}});var d=function(e){var n="parse"+t.capitalize(e);return function(t){return this[n]&&(t=this[n].apply(this,arguments)),this[e](t)}},h=function(t){return this.parseModel?this.parseModel.apply(this,arguments):this.model(t)},p={makeFindAll:d("models"),makeFindOne:d("model"),makeCreate:h,makeUpdate:h};t.each(p,function(n,r){t.Model[r]=function(r){return function(){var i=t.makeArray(arguments),a=t.isFunction(i[1])?i.splice(0,1):i.splice(0,2),s=e(r.apply(this,a),this,n);return s.then(i[0],i[1]),s}}}),t.each(["created","updated","destroyed"],function(e){t.Model.prototype[e]=function(n){var r,i=this.constructor;r=n&&"object"==typeof n&&this.attr(n.attr?n.attr():n),t.dispatch.call(this,{type:"change",target:this},[e]),t.dispatch.call(i,e,[this])}});var g=t.Model.List=t.List.extend({_bubbleRule:function(e,n){return t.List._bubbleRule(e,n)||"destroyed"}},{setup:function(e){t.isPlainObject(e)&&!t.isArray(e)?(t.List.prototype.setup.apply(this),this.replace(this.constructor.Map.findAll(e))):t.List.prototype.setup.apply(this,arguments),this._init=1,this.bind("destroyed",t.proxy(this._destroyed,this)),delete this._init},_destroyed:function(t,e){if(/\w+/.test(e))for(var n;(n=this.indexOf(t.target))>-1;)this.splice(n,1)}});return t.Model}(__m2,__m15,__m19),__m32=function(t){var e=/^\d+$/,n=/([^\[\]]+)|(\[\])/g,r=/([^?#]*)(#.*)?$/,i=function(t){return decodeURIComponent(t.replace(/\+/g," "))};return t.extend(t,{deparam:function(a){var s,o,u={};return a&&r.test(a)&&(s=a.split("&"),t.each(s,function(t){var r=t.split("="),a=i(r.shift()),s=i(r.join("=")),c=u;if(a){r=a.match(n);for(var l=0,f=r.length-1;f>l;l++)c[r[l]]||(c[r[l]]=e.test(r[l+1])||"[]"===r[l+1]?[]:{}),c=c[r[l]];o=r.pop(),"[]"===o?c.push(s):c[o]=s}})),u}}),t}(__m2,__m13),__m31=function(t){var e,n,r,i,a=/\:([\w\.]+)/g,s=/^(?:&[^=]+=[^&]*)+/,o=function(e){var n=[];return t.each(e,function(e,r){n.push(("className"===r?"class":r)+'="'+("href"===r?e:t.esc(e))+'"')}),n.join(" ")},u=function(t,e){var n=0,r=0,i={};for(var a in t.defaults)t.defaults[a]===e[a]&&(i[a]=1,n++);for(;t.names.length>r;r++){if(!e.hasOwnProperty(t.names[r]))return-1;i[t.names[r]]||n++}return n},c=window.location,l=function(t){return(t+"").replace(/([.?*+\^$\[\]\\(){}|\-])/g,"\\$1")},f=t.each,d=t.extend,h=function(e){return e&&"object"==typeof e?(e=e instanceof t.Map?e.attr():t.isFunction(e.slice)?e.slice():t.extend({},e),t.each(e,function(t,n){e[n]=h(t)})):e!==undefined&&null!==e&&t.isFunction(e.toString)&&(e=""+e),e},p=function(t){return t.replace(/\\/g,"")},g=function(){i=1,clearTimeout(e),e=setTimeout(function(){i=0;var e=t.route.data.serialize(),n=t.route.param(e,!0);t.route._call("setURL",n),r=n},10)};t.route=function(e,n){var r=t.route._call("root");r.lastIndexOf("/")===r.length-1&&0===e.indexOf("/")&&(e=e.substr(1)),n=n||{};for(var i,s,o=[],u="",c=a.lastIndex=0,f=t.route._call("querySeparator"),d=t.route._call("matchSlashes");i=a.exec(e);)o.push(i[1]),u+=p(e.substring(c,a.lastIndex-i[0].length)),s="\\"+(p(e.substr(a.lastIndex,1))||f+(d?"":"|/")),u+="([^"+s+"]"+(n[i[1]]?"*":"+")+")",c=a.lastIndex;return u+=e.substr(c).replace("\\",""),t.route.routes[e]={test:RegExp("^"+u+"($|"+l(f)+")"),route:e,names:o,defaults:n,length:e.split("/").length},t.route},d(t.route,{param:function(e,n){var r,i,s=0,o=e.route,c=0;if(delete e.route,f(e,function(){c++}),f(t.route.routes,function(t){return i=u(t,e),i>s&&(r=t,s=i),i>=c?!1:undefined}),t.route.routes[o]&&u(t.route.routes[o],e)===s&&(r=t.route.routes[o]),r){var l,h=d({},e),p=r.route.replace(a,function(t,n){return delete h[n],e[n]===r.defaults[n]?"":encodeURIComponent(e[n])}).replace("\\","");return f(r.defaults,function(t,e){h[e]===t&&delete h[e]}),l=t.param(h),n&&t.route.attr("route",r.route),p+(l?t.route._call("querySeparator")+l:"")}return t.isEmptyObject(e)?"":t.route._call("querySeparator")+t.param(e)},deparam:function(e){var n=t.route._call("root");n.lastIndexOf("/")===n.length-1&&0===e.indexOf("/")&&(e=e.substr(1));var r={length:-1},i=t.route._call("querySeparator"),a=t.route._call("paramsMatcher");if(f(t.route.routes,function(t){t.test.test(e)&&t.length>r.length&&(r=t)}),r.length>-1){var s=e.match(r.test),o=s.shift(),u=e.substr(o.length-(s[s.length-1]===i?1:0)),c=u&&a.test(u)?t.deparam(u.slice(1)):{};return c=d(!0,{},r.defaults,c),f(s,function(t,e){t&&t!==i&&(c[r.names[e]]=decodeURIComponent(t))}),c.route=r.route,c}return e.charAt(0)!==i&&(e=i+e),a.test(e)?t.deparam(e.slice(1)):{}},data:new t.Map({}),map:function(e){var n;n=e.prototype instanceof t.Map?new e:e,t.route.data=n},routes:{},ready:function(e){return e!==!0&&(t.route._setup(),t.route.setState()),t.route},url:function(e,n){return n&&(e=t.extend({},t.route.deparam(t.route._call("matchingPartOfURL")),e)),t.route._call("root")+t.route.param(e)},link:function(e,n,r,i){return"<a "+o(d({href:t.route.url(n,i)},r))+">"+e+"</a>"},current:function(e){return this._call("matchingPartOfURL")===t.route.param(e)},bindings:{hashchange:{paramsMatcher:s,querySeparator:"&",matchSlashes:!1,bind:function(){t.bind.call(window,"hashchange",m)},unbind:function(){t.unbind.call(window,"hashchange",m)},matchingPartOfURL:function(){return c.href.split(/#!?/)[1]||""},setURL:function(t){return c.hash="#!"+t,t},root:"#!"}},defaultBinding:"hashchange",currentBinding:null,_setup:function(){t.route.currentBinding||(t.route._call("bind"),t.route.bind("change",g),t.route.currentBinding=t.route.defaultBinding)},_teardown:function(){t.route.currentBinding&&(t.route._call("unbind"),t.route.unbind("change",g),t.route.currentBinding=null),clearTimeout(e),i=0},_call:function(){var e=t.makeArray(arguments),n=e.shift(),r=t.route.bindings[t.route.currentBinding||t.route.defaultBinding],i=r[n];return i.apply?i.apply(r,e):i}}),f(["bind","unbind","on","off","delegate","undelegate","removeAttr","compute","_get","__get"],function(e){t.route[e]=function(){return t.route.data[e]?t.route.data[e].apply(t.route.data,arguments):undefined}}),t.route.attr=function(e,n){var r,i=typeof e;return r=n===undefined?arguments:"string"!==i&&"number"!==i?[h(e),n]:[e,h(n)],t.route.data.attr.apply(t.route.data,r)};var m=t.route.setState=function(){var e=t.route._call("matchingPartOfURL"),a=n;if(n=t.route.deparam(e),!i||e!==r){t.batch.start();for(var s in a)n[s]||t.route.removeAttr(s);t.route.attr(n),t.batch.stop()}};return t.route}(__m2,__m15,__m19,__m32),__m33=function(t){return t.Control.processors.route=function(e,n,r,i,a){r=r||"",t.route.routes[r]||("/"===r[0]&&(r=r.substring(1)),t.route(r));var s,o=function(e){if(t.route.attr("route")===r&&(e.batchNum===undefined||e.batchNum!==s)){s=e.batchNum;var n=t.route.attr();delete n.route,t.isFunction(a[i])?a[i](n):a[a[i]](n)}};return t.route.bind("change",o),function(){t.route.unbind("change",o)}},t}(__m2,__m31,__m11),__m34=function(){var t=can.List.prototype.replace;can.List.prototype.replace=function(e){var n=t.apply(this,arguments);if(can.isDeferred(e)){can.batch.start(),this.attr("state",e.state()),this.removeAttr("reason"),can.batch.stop();var r=this,i=this._deferred=new can.Deferred;e.then(function(){r.attr("state",e.state()),i.resolve(r)},function(t){can.batch.start(),r.attr("state",e.state()),r.attr("reason",t),can.batch.stop(),i.reject(t)})}return n},can.each({isResolved:"resolved",isPending:"pending",isRejected:"rejected"},function(t,e){can.List.prototype[e]=function(){return this.attr("state")===t}}),can.each(["then","done","fail","always","promise"],function(t){can.List.prototype[t]=function(){return this._deferred||(this._deferred=new can.Deferred,this._deferred.resolve(this)),this._deferred[t].apply(this._deferred,arguments)}})}(__m19),__m35=function(t){var e=t.extend,n=function(t){if(this.constructor!==n){var r=new n(t);return function(t,e){return r.render(t,e)}}return"function"==typeof t?(this.template={fn:t},undefined):(e(this,t),this.template=this.scanner.scan(this.text,this.name),undefined)};return t.EJS=n,n.prototype.render=function(t,e){return t=t||{},this.template.fn.call(t,t,new n.Helpers(t,e||{}))},e(n.prototype,{scanner:new t.view.Scanner({text:{outStart:"with(_VIEW) { with (_CONTEXT) {",outEnd:"}}",argNames:"_CONTEXT,_VIEW",context:"this"},tokens:[["templateLeft","<%%"],["templateRight","%>"],["returnLeft","<%=="],["escapeLeft","<%="],["commentLeft","<%#"],["left","<%"],["right","%>"],["returnRight","%>"]],helpers:[{name:/\s*\(([\$\w]+)\)\s*->([^\n]*)/,fn:function(t){var e=/\s*\(([\$\w]+)\)\s*->([^\n]*)/,n=t.match(e);return"can.proxy(function(__){var "+n[1]+"=can.$(__);"+n[2]+"}, this);"}}],transform:function(t){return t.replace(/<%([\s\S]+?)%>/gm,function(t,e){var n,r,i=[];e.replace(/[{}]/gm,function(t,e){i.push([t,e])});do for(n=!1,r=i.length-2;r>=0;r--)if("{"===i[r][0]&&"}"===i[r+1][0]){i.splice(r,2),n=!0;break}while(n);if(i.length>=2){var a,s=["<%"],o=0;for(r=0;a=i[r];r++)s.push(e.substring(o,o=a[1])),"{"===a[0]&&i.length-1>r||"}"===a[0]&&r>0?s.push("{"===a[0]?"{ %><% ":" %><% }"):s.push(a[0]),++o;return s.push(e.substring(o),"%>"),s.join("")}return"<%"+e+"%>"})}})}),n.Helpers=function(t,n){this._data=t,this._extras=n,e(this,n)},n.Helpers.prototype={list:function(e,n){t.each(e,function(t,r){n(t,r,e)})},each:function(e,n){t.isArray(e)?this.list(e,n):t.view.lists(e,n)}},t.view.register({suffix:"ejs",script:function(t,e){return"can.EJS(function(_CONTEXT,_VIEW) { "+new n({text:e,name:t}).template.out+" })"},renderer:function(t,e){return n({text:e,name:t})}}),t.ejs.Helpers=n.Helpers,t}(__m2,__m10,__m13,__m20,__m23,__m25),__m37=function(t,e){function n(t,n,r){var i,o,u,c,l,f=r,d=typeof t,h=function(){return i||(i={path:r,callbacks:[]},n.push(i),f=[]),i};if("object"===d){if(t.tag){if(o=document.createElement(t.tag),t.attrs)for(var p in t.attrs){var g=t.attrs[p];"function"==typeof g?h().callbacks.push({callback:g}):o.setAttribute(p,g)}if(t.attributes)for(c=0,l=t.attributes.length;l>c;c++)h().callbacks.push({callback:t.attributes[c]});t.children&&t.children.length&&(u=i?i.paths=[]:n,o.appendChild(a(t.children,u,f)))}else if(t.comment&&(o=document.createComment(t.comment),t.callbacks))for(c=0,l=t.attributes.length;l>c;c++)h().callbacks.push({callback:t.callbacks[c]})}else"string"===d?o=document.createTextNode(t):"function"===d&&(s?(o=document.createTextNode(""),h().callbacks.push({callback:t})):(o=document.createComment("~"),h().callbacks.push({callback:function(){var n=document.createTextNode("");return e.replace([this],n),t.apply(n,arguments)}})));return o}function r(t,e,n){for(var i,a=e.path,s=e.callbacks,o=e.paths,u=t,c=0,l=a.length;l>c;c++)u=u.childNodes[a[c]];for(c=0,l=s.length;l>c;c++)i=s[c],i.callback.apply(u,n);if(o&&o.length)for(c=o.length-1;c>=0;c--)r(u,o[c],n)}function i(e){var n=[],i=a(e,n,[]);return{paths:n,clone:i,hydrate:function(){for(var e=u(this.clone),i=t.makeArray(arguments),a=n.length-1;a>=0;a--)r(e,n[a],i);return e}}}var a=function(t,e,r){for(var i=document.createDocumentFragment(),a=0,s=t.length;s>a;a++){var o=t[a];i.appendChild(n(o,e,r.concat(a)))}return i},s=function(){var t=document.createDocumentFragment(),e=document.createElement("div");e.appendChild(document.createTextNode("")),e.appendChild(document.createTextNode("")),t.appendChild(e);var n=t.cloneNode(!0);return 2===n.childNodes[0].childNodes.length}(),o=function(){var t=document.createElement("a");t.innerHTML="<xyz></xyz>";var e=t.cloneNode(!0);return"<xyz></xyz>"===e.innerHTML}(),u=o?function(t){return t.cloneNode(!0)}:function(e){var n;if(1===e.nodeType?n=document.createElement(e.nodeName):3===e.nodeType?n=document.createTextNode(e.nodeValue):8===e.nodeType?n=document.createComment(e.nodeValue):11===e.nodeType&&(n=document.createDocumentFragment()),e.attributes){var r=t.makeArray(e.attributes);t.each(r,function(t){t&&t.specified&&n.setAttribute(t.nodeName,t.nodeValue)})}return e.childNodes&&t.each(e.childNodes,function(t){n.appendChild(u(t))}),n};return i.keepsTextNodes=s,t.view.target=i,i}(__m2,__m24),__m39=function(){return{isArrayLike:function(t){return t&&t.splice&&"number"==typeof t.length},isObserveLike:function(t){return t instanceof can.Map||t&&!!t._get},emptyHandler:function(){},jsonParse:function(str){return"'"===str[0]?str.substr(1,str.length-2):"undefined"===str?undefined:window.JSON?JSON.parse(str):eval("("+str+")")},mixins:{last:function(){return this.stack[this.stack.length-1]},add:function(t){this.last().add(t)},subSectionDepth:function(){return this.stack.length-1}}}}(__m2),__m41=function(t,e,n){n=n||t.view.live;var r=function(n){return e.isObserveLike(n)&&e.isArrayLike(n)&&n.attr("length")?n:t.isFunction(n)?n():n},i={each:function(i,a){var s,o,u,c=r(i),l=[];if(c instanceof t.List||i&&i.isComputed&&c===undefined)return function(t){var e=function(t,e,n){return a.fn(a.scope.add({"@index":e}).add(t),a.options,n)};n.list(t,i,e,a.context,t.parentNode,a.nodeList)};var f=c;if(f&&e.isArrayLike(f))for(u=0;f.length>u;u++)l.push(a.fn(a.scope.add({"@index":u}).add(f[u])));else if(e.isObserveLike(f))for(s=t.Map.keys(f),u=0;s.length>u;u++)o=s[u],l.push(a.fn(a.scope.add({"@key":o}).add(f[o])));else if(f instanceof Object)for(o in f)l.push(a.fn(a.scope.add({"@key":o}).add(f[o])));return l},"if":function(e,n){var i;return i=t.isFunction(e)?t.compute.truthy(e)():!!r(e),i?n.fn(n.scope||this):n.inverse(n.scope||this)},unless:function(e,n){return i["if"].apply(this,[t.isFunction(e)?t.compute(function(){return!e()}):!e,n])},"with":function(t,e){var n=t;return t=r(t),t?e.fn(n):undefined},log:function(t,e){"undefined"!=typeof console&&console.log&&(e?console.log(t,e.context):console.log(t.context))},data:function(e){var n=2===arguments.length?this:arguments[1];return function(r){t.data(t.$(r),e,n||this.context)}}};return{registerHelper:function(t,e){i[t]=e},getHelper:function(t,e){var n=e.attr("helpers."+t);return n||(n=i[t]),n?{fn:n}:undefined}}}(__m2,__m39,__m26),__m40=function(t,e,n,r,i,a,s){r=r||t.view.live,i=i||t.view.elements,a=a||t.view.Scope,s=s||t.view.nodeLists;var o=/((([^\s]+?=)?('.*?'|".*?"))|.*?)\s/g,u=/^(?:(?:('.*?'|".*?")|([0-9]+\.?[0-9]*|true|false|null|undefined))|(?:(.+?)=(?:(?:('.*?'|".*?")|([0-9]+\.?[0-9]*|true|false|null|undefined))|(.+))))$/,c=/(?:(?:^|(\r?)\n)(\s*)(\{\{([^\}]*)\}\}\}?)([^\S\n\r]*)($|\r?\n))|(\{\{([^\}]*)\}\}\}?)/g,l=function(t){return t&&"string"==typeof t.get},f=function(t,e,n,r){for(var i=document.createDocumentFragment(),a=0,s=t.length;s>a;a++)d(i,n.fn(e?t.attr(""+a):t[a],r));return i},d=function(t,e){e&&t.appendChild("string"==typeof e?document.createTextNode(e):e)},h=function(t,e,n,r){for(var i="",a=0,s=t.length;s>a;a++)i+=n.fn(e?t.attr(""+a):t[a],r);return i},p=function(e,n,r){var i=n.computeData(e,{isArgument:r,args:[n.attr("."),n]});return t.compute.temporarilyBind(i.compute),i},g=function(t,e){var n=p(t,e,!0);return n.compute.hasDependencies?n.compute:n.initialValue},m=function(t,e,n,r,i,a){i&&(t.fn=v(i,e,n,r)),a&&(t.inverse=v(a,e,n,r))},v=function(e,n,r,i){var a=function(t,r,i){return e(t||n,r,i)};return function(e,s,o){var u=t.__clearReading();e===undefined||e instanceof t.view.Scope||(e=n.add(e)),s===undefined||s instanceof _.Options||(s=r.add(s));var c=a(e,s||r,o||i);return t.__setReading(u),c}},_={expressionData:function(n){var r=[],i={},a=0;return(t.trim(n)+" ").replace(o,function(t,n){var s;a&&(s=n.match(u))?s[1]||s[2]?r.push(e.jsonParse(s[1]||s[2])):i[s[3]]=s[6]?{get:s[6]}:e.jsonParse(s[4]||s[5]):r.push({get:n}),a++}),{name:r.shift(),args:r,hash:i}},makeEvaluator:function(r,i,a,s,o,u,c,d){for(var v,_,b=[],y={},x={fn:function(){},inverse:function(){}},w=r.attr("."),k=o.name,M=o.args.length||!t.isEmptyObject(o.hash),C=0,A=o.args.length;A>C;C++){var N=o.args[C];N&&l(N)?b.push(g(N.get,r,!0)):b.push(N)}for(var T in o.hash)y[T]=l(o.hash[T])?g(o.hash[T].get,r):o.hash[T];if(l(k)&&(M&&(v=n.getHelper(k.get,i),v||"function"!=typeof w[k.get]||(v={fn:w[k.get]})),!v)){var O=k.get,L=p(k.get,r,!1),j=L.compute;_=L.initialValue,L.reads&&1===L.reads.length&&L.root instanceof t.Map&&(j=t.compute(L.root,L.reads[0])),k=L.compute.hasDependencies?j:_,M||_!==undefined?"function"==typeof _&&(v={fn:_}):v=n.getHelper(O,i)}if("^"===s){var S=u;u=c,c=S}return v?(m(x,r,i,a,u,c),t.simpleExtend(x,{context:w,scope:r,contexts:r,hash:y,nodeList:a}),b.push(x),function(){return v.fn.apply(w,b)||""}):s?"#"===s||"^"===s?(m(x,r,i,a,u,c),function(){var n;if(n=t.isFunction(k)&&k.isComputed?k():k,e.isArrayLike(n)){var a=e.isObserveLike(n);return(a?n.attr("length"):n.length)?(d?h:f)(n,a,x,i):x.inverse(r,i)}return n?x.fn(n||r,i):x.inverse(r,i)}):undefined:k&&k.isComputed?k:function(){return""+(null!=k?k:"")}},makeLiveBindingPartialRenderer:function(e,n){return e=t.trim(e),function(r,a,o){var u,c=a.attr("partials."+e);u=c?c.render?c.render(r,a):c(r,a):t.view.render(e,r,a),u=t.frag(u);var l=[this];s.register(l,null,n.directlyNested?o||!0:!0),s.update(l,u.childNodes),i.replace([this],u)}},makeStringBranchRenderer:function(t,e){var n=y(e),r=t+e;return function(e,i,a,s){var o=e.__cache[r];(t||!o)&&(o=b(e,i,null,t,n,a,s,!0),t||(e.__cache[r]=o));var u=o();return null==u?"":""+u}},makeLiveBindingBranchRenderer:function(e,n,a){var o=y(n);return function(u,c,l,f,d){var h=[this];h.expression=n,s.register(h,null,a.directlyNested?l||!0:!0);var p=b(u,c,h,e,o,f,d,a.tag),g=t.compute(p,null,!1,!0);g.bind("change",t.k);var m=g();if("function"==typeof m){var v=t.__clearReading();m(this),t.__setReading(v)}else g.hasDependencies?a.attr?r.simpleAttribute(this,a.attr,g):a.tag?r.attributes(this,g):a.text&&"object"!=typeof m?r.text(this,g,this.parentNode,h):r.html(this,g,this.parentNode,h):a.attr?t.attr.set(this,a.attr,m):a.tag?r.setAttributes(this,m):a.text&&"string"==typeof m?this.nodeValue=m:m&&i.replace([this],t.frag(m));g.unbind("change",t.k)}},splitModeFromExpression:function(e,n){e=t.trim(e);var r=e[0];return"#/{&^>!".indexOf(r)>=0?e=t.trim(e.substr(1)):r=null,"{"===r&&n.node&&(r=null),{mode:r,expression:e}},cleanLineEndings:function(t){return t.replace(c,function(t,e,n,r,i,a,s,o,u,c){a=a||"",e=e||"",n=n||"";var l=x(i||u,{});return o||">{".indexOf(l.mode)>=0?t:"^#!/".indexOf(l.mode)>=0?r+(0!==c&&s.length?e+"\n":""):n+r+a+(n.length||0!==c?e+"\n":"")})},Options:t.view.Scope.extend({init:function(e){e.helpers||e.partials||e.tags||(e={helpers:e}),t.view.Scope.prototype.init.apply(this,arguments)}})},b=_.makeEvaluator,y=_.expressionData,x=_.splitModeFromExpression;return _}(__m2,__m39,__m41,__m26,__m24,__m22,__m27),__m38=function(t,e,n,r){var i=function(){var t=document.createElement("div");return function(e){return-1===e.indexOf("&")?e.replace(/\r\n/g,"\n"):(t.innerHTML=e,0===t.childNodes.length?"":t.childNodes[0].nodeValue)}}(),a=function(){this.stack=[new s]};t.extend(a.prototype,n.mixins),t.extend(a.prototype,{startSubSection:function(t){var e=new s(t);return this.stack.push(e),e},endSubSectionAndReturnRenderer:function(){if(this.last().isEmpty())return this.stack.pop(),null;var e=this.endSection();return t.proxy(e.compiled.hydrate,e.compiled)},startSection:function(t){var e=new s(t);this.last().add(e.targetCallback),this.stack.push(e)},endSection:function(){return this.last().compile(),this.stack.pop()},inverse:function(){this.last().inverse()},compile:function(){var e=this.stack.pop().compile();return function(n,i){return n instanceof t.view.Scope||(n=new t.view.Scope(n||{})),i instanceof r.Options||(i=new r.Options(i||{})),e.hydrate(n,i)}},push:function(t){this.last().push(t)},pop:function(){return this.last().pop()}});var s=function(e){this.data="targetData",this.targetData=[],this.targetStack=[];var n=this;this.targetCallback=function(r,i,a){e.call(this,r,i,a,t.proxy(n.compiled.hydrate,n.compiled),n.inverseCompiled&&t.proxy(n.inverseCompiled.hydrate,n.inverseCompiled))}};return t.extend(s.prototype,{inverse:function(){this.inverseData=[],this.data="inverseData"},push:function(t){this.add(t),this.targetStack.push(t)},pop:function(){return this.targetStack.pop()},add:function(t){"string"==typeof t&&(t=i(t)),this.targetStack.length?this.targetStack[this.targetStack.length-1].children.push(t):this[this.data].push(t)},compile:function(){return this.compiled=e(this.targetData),this.inverseData&&(this.inverseCompiled=e(this.inverseData),delete this.inverseData),delete this.targetData,delete this.targetStack,this.compiled},children:function(){return this.targetStack.length?this.targetStack[this.targetStack.length-1].children:this[this.data]},isEmpty:function(){return!this.targetData.length}}),a}(__m2,__m37,__m39,__m40),__m42=function(t,e,n){e=e||t.view.live;var r=function(){this.stack=[new s]},i=function(){};t.extend(r.prototype,n.mixins),t.extend(r.prototype,{startSection:function(t){var e=new s;
-this.last().add({process:t,truthy:e}),this.stack.push(e)},endSection:function(){this.stack.pop()},inverse:function(){this.stack.pop();var t=new s;this.last().last().falsey=t,this.stack.push(t)},compile:function(n){var r=this.stack[0].compile();return function(a,s){var o=t.compute(function(){return r(a,s)},this,!1,!0);o.bind("change",i);var u=o();o.hasDependencies?(n.attr?e.simpleAttribute(this,n.attr,o):e.attributes(this,o),o.unbind("change",i)):n.attr?t.attr.set(this,n.attr,u):e.setAttributes(this,u)}}});var a=function(t,e,n){return function(r,i){return t.call(this,r,i,e,n)}},s=function(){this.values=[]};return t.extend(s.prototype,{add:function(t){this.values.push(t)},last:function(){return this.values[this.values.length-1]},compile:function(){for(var t=this.values,e=t.length,n=0;e>n;n++){var r=this.values[n];"object"==typeof r&&(t[n]=a(r.process,r.truthy&&r.truthy.compile(),r.falsey&&r.falsey.compile()))}return function(n,r){for(var i,a="",s=0;e>s;s++)i=t[s],a+="string"==typeof i?i:i.call(this,n,r);return a}}}),r}(__m2,__m26,__m39),__m36=function(t,e,n,r,i,a,s,o){function u(n){n=a.cleanLineEndings(n);var s=new r,u={node:null,attr:null,sectionElementStack:[],text:!1},c=function(t,e,n){if(">"===e)t.add(a.makeLiveBindingPartialRenderer(n,u));else if("/"===e)t.endSection(),t instanceof r&&u.sectionElementStack.pop();else if("else"===e)t.inverse();else{var i=t instanceof r?a.makeLiveBindingBranchRenderer:a.makeStringBranchRenderer;"{"===e||"&"===e?t.add(i(null,n,l())):"#"===e||"^"===e?(t.startSection(i(e,n,l())),t instanceof r&&u.sectionElementStack.push("section")):t.add(i(null,n,l({text:!0})))}},l=function(e){var n={tag:u.node&&u.node.tag,attr:u.attr&&u.attr.name,directlyNested:"section"===u.sectionElementStack[u.sectionElementStack.length-1]};return e?t.simpleExtend(n,e):n},f=function(t,e){t.attributes||(t.attributes=[]),t.attributes.push(e)};return e(n,{start:function(t){u.node={tag:t,children:[]}},end:function(t,e){var n=o.tag(t);e?(s.add(u.node),n&&f(u.node,function(e,n){o.tagHandler(this,t,{scope:e,options:n,subtemplate:null,templateType:"stache"})})):(s.push(u.node),u.sectionElementStack.push("element"),n&&s.startSubSection()),u.node=null},close:function(t){var e,n=o.tag(t);n&&(e=s.endSubSectionAndReturnRenderer());var r=s.pop();n&&f(r,function(n,r){o.tagHandler(this,t,{scope:n,options:r,subtemplate:e,templateType:"stache"})}),u.sectionElementStack.pop()},attrStart:function(t){u.node.section?u.node.section.add(t+'="'):u.attr={name:t,value:""}},attrEnd:function(t){if(u.node.section)u.node.section.add('" ');else{u.node.attrs||(u.node.attrs={}),u.node.attrs[u.attr.name]=u.attr.section?u.attr.section.compile(l()):u.attr.value;var e=o.attr(t);e&&(u.node.attributes||(u.node.attributes=[]),u.node.attributes.push(function(n,r){e(this,{attributeName:t,scope:n,options:r})})),u.attr=null}},attrValue:function(t){var e=u.node.section||u.attr.section;e?e.add(t):u.attr.value+=t},chars:function(t){s.add(t)},special:function(t){var e=a.splitModeFromExpression(t,u),n=e.mode,r=e.expression;if("else"===r)return(u.attr&&u.attr.section?u.attr.section:s).inverse(),undefined;if("!"!==n)if(u.node&&u.node.section)c(u.node.section,n,r),0===u.node.section.subSectionDepth()&&(u.node.attributes.push(u.node.section.compile(l())),delete u.node.section);else if(u.attr)u.attr.section||(u.attr.section=new i,u.attr.value&&u.attr.section.add(u.attr.value)),c(u.attr.section,n,r);else if(u.node)if(u.node.attributes||(u.node.attributes=[]),n){if("#"!==n&&"^"!==n)throw n+" is currently not supported within a tag.";u.node.section||(u.node.section=new i),c(u.node.section,n,r)}else u.node.attributes.push(a.makeLiveBindingBranchRenderer(null,r,l()));else c(s,n,r)},comment:function(t){s.add({comment:t})},done:function(){}}),s.compile()}e=e||t.view.parser,o=o||t.view.callbacks;var c={"\n":"\\n","\r":"\\r","\u2028":"\\u2028","\u2029":"\\u2029"},l=function(t){return(""+t).replace(/["'\\\n\r\u2028\u2029]/g,function(t){return"'\"\\".indexOf(t)>=0?"\\"+t:c[t]})};return t.view.register({suffix:"stache",contentType:"x-stache-template",fragRenderer:function(t,e){return u(e)},script:function(t,e){return'can.stache("'+l(e)+'")'}}),t.view.ext=".stache",t.extend(t.stache,s),t.extend(u,s),t.stache.safeString=u.safeString=function(t){return{toString:function(){return t}}},u}(__m2,__m28,__m37,__m38,__m42,__m40,__m41,__m9),__m43=function(t){"use strict";if(window.history&&history.pushState){t.route.bindings.pushstate={root:"/",matchSlashes:!1,paramsMatcher:/^\?(?:[^=]+=[^&]*&)*[^=]+=[^&]*/,querySeparator:"?",bind:function(){t.delegate.call(t.$(document.documentElement),"a","click",e),t.each(r,function(e){i[e]=window.history[e],window.history[e]=function(n,r,a){var s=0===a.indexOf("http"),o=window.location.search+window.location.hash;(!s&&a!==window.location.pathname+o||s&&a!==window.location.href+o)&&(i[e].apply(window.history,arguments),t.route.setState())}}),t.bind.call(window,"popstate",t.route.setState)},unbind:function(){t.undelegate.call(t.$(document.documentElement),"click","a",e),t.each(r,function(t){window.history[t]=i[t]}),t.unbind.call(window,"popstate",t.route.setState)},matchingPartOfURL:function(){var t=n(),e=location.pathname+location.search,r=e.indexOf(t);return e.substr(r+t.length)},setURL:function(e){a&&-1===e.indexOf("#")&&window.location.hash&&(e+=window.location.hash),window.history.pushState(null,null,t.route._call("root")+e)}};var e=function(e){if(!(e.isDefaultPrevented?e.isDefaultPrevented():e.defaultPrevented===!0)){var r=this._node||this,i=r.host||window.location.host;if(window.location.host===i){var s=n();if(0===r.pathname.indexOf(s)){var o=(r.pathname+r.search).substr(s.length),u=t.route.deparam(o);u.hasOwnProperty("route")&&(a=!0,window.history.pushState(null,null,r.href),e.preventDefault&&e.preventDefault())}}}},n=function(){var e=location.protocol+"//"+location.host,n=t.route._call("root"),r=n.indexOf(e);return 0===r?n.substr(e.length):n},r=["pushState","replaceState"],i={},a=!1;t.route.defaultBinding="pushstate"}return t}(__m2,__m31),__m46=function(t){var e=t.isArray;t.Object={};var n=t.Object.same=function(i,a,s,o,u,c){var l,f=typeof i,d=e(i),h=typeof s;if(("string"===h||null===s)&&(s=r[s],h="function"),"function"===h)return s(i,a,o,u);if(s=s||{},null===i||null===a)return i===a;if(i instanceof Date||a instanceof Date)return i===a;if(-1===c)return"object"===f||i===a;if(f!==typeof a||d!==e(a))return!1;if(i===a)return!0;if(d){if(i.length!==a.length)return!1;for(var p=0;i.length>p;p++)if(l=s[p]===undefined?s["*"]:s[p],!n(i[p],a[p],i,a,l))return!1;return!0}if("object"===f||"function"===f){var g=t.extend({},a);for(var m in i){if(l=s[m]===undefined?s["*"]:s[m],!n(i[m],a[m],l,i,a,c===!1?-1:undefined))return!1;delete g[m]}for(m in g)if(s[m]===undefined||!n(undefined,a[m],s[m],i,a,c===!1?-1:undefined))return!1;return!0}return!1};t.Object.subsets=function(e,n,r){for(var i=n.length,a=[],s=0;i>s;s++){var o=n[s];t.Object.subset(e,o,r)&&a.push(o)}return a},t.Object.subset=function(t,e,r){r=r||{};for(var i in e)if(!n(t[i],e[i],r[i],t,e))return!1;return!0};var r={"null":function(){return!0},i:function(t,e){return(""+t).toLowerCase()===(""+e).toLowerCase()},eq:function(t,e){return t===e},similar:function(t,e){return t==e}};return r.eqeq=r.similar,t.Object}(__m2),__m45=function(t){var e=function(t,e){var n={};for(var r in t)n[r]="object"!=typeof t[r]||null===t[r]||t[r]instanceof Date?t[r]:e.attr(r);return n};return t.extend(t.Map.prototype,{backup:function(){return this._backupStore=this._attrs(),this},isDirty:function(e){return this._backupStore&&!t.Object.same(this._attrs(),this._backupStore,undefined,undefined,undefined,!!e)},restore:function(t){var n=t?this._backupStore:e(this._backupStore,this);return this.isDirty(t)&&this._attrs(n,!0),this}}),t.Map}(__m2,__m15,__m46),__m44=function(t){var e=function(e,n){var r,i,a=t.extend(!0,{},n);if(e)for(var s=0;e.length>s;s++){for(r=a,i=e[s].split(".");i.length>1;)r=r&&r[i.shift()];r&&delete r[i.shift()]}return a},n=function(e,n,r,i){this._changedAttrs=this._changedAttrs||[];var a,s,o=new t.Deferred,u=this,c=this.serialize(),l=this._requestQueue,f=this._changedAttrs;return a=function(t,e,n,r){return function(){return t.constructor._makeRequest([t,c],e||(t.isNew()?"create":"update"),n,r,i)}}(this,r,function(){o.resolveWith(u,arguments),l.splice(0,1),l.length>0?l[0]=l[0]():f.splice(0)},function(){o.rejectWith(u,arguments),l.splice(0),f.splice(0)}),s=l.push(a)-1,1===l.length&&(l[0]=l[0]()),o.abort=function(){var t;return t=l[s].abort&&l[s].abort(),l.splice(s),0===l.length&&f.splice(0),t},o.then(e,n),o},r=t.Model.prototype._triggerChange,i=t.Model.prototype.destroy,a=t.Model.prototype.setup;return t.each(["created","updated","destroyed"],function(n){var r=t.Model.prototype[n];t.Model.prototype[n]=function(t){t&&"object"==typeof t&&(t=t.attr?t.attr():t,this._backupStore=t,t=e(this._changedAttrs||[],t)),r.call(this,t)}}),t.extend(t.Model.prototype,{setup:function(){a.apply(this,arguments),this._requestQueue=new t.List},_triggerChange:function(t){this._changedAttrs&&this._changedAttrs.push(t),r.apply(this,arguments)},hasQueuedRequests:function(){return this._requestQueue.attr("length")>1},save:function(){return n.apply(this,arguments)},destroy:function(t,e){return this.isNew()?i.call(this,t,e):n.call(this,t,e,"destroy","destroyed")}}),t}(__m2,__m30,__m45),__m47=function(t){var e=t.isFunction,n=/xyz/.test(function(){return this.xyz})?/\b_super\b/:/.*/;return t.Construct._overwrite=function(t,r,i,a){t[i]=e(a)&&e(r[i])&&n.test(a)?function(t,e){return function(){var n,i=this._super;return this._super=r[t],n=e.apply(this,arguments),this._super=i,n}}(i,a):a},t.Construct._inherit=function(e,n,r){r=r||e;for(var i in e)t.Construct._overwrite(r,n,i,e[i])},t}(__m2,__m12),__m48=function(t){var e=(t.isFunction,t.isArray),n=t.makeArray,r=function(t){var r,i=n(arguments);return t=i.shift(),e(t)||(t=[t]),r=this,function(){for(var a,s,o=i.concat(n(arguments)),u=t.length,c=0;u>c;c++)s=t[c],s&&(a="string"==typeof s,o=(a?r[s]:s).apply(r,o||[]),u-1>c&&(o=!e(o)||o._use_call?[o]:o));return o}};t.Construct.proxy=t.Construct.prototype.proxy=r;for(var i=[t.Map,t.Control,t.Model],a=0;i.length>a;a++)i[a]&&(i[a].proxy=r);return t}(__m2,__m12),__m50=function(t){var e=t.bubble;return t.extend({},e,{childrenOf:function(t,n){t._nestedReference?t._nestedReference.each(function(r,i){r&&r.bind&&e.toParent(r,t,i(),n)}):e._each.apply(this,arguments)}})}(__m2,__m17),__m51=function(t){var e=function(t,e,n){for(var r,i=e.split("."),a=t;r=i.shift();)a=a[r],n&&n(a,r);return a},n=function(t){this.array=t};n.prototype.toString=function(){return""+t.inArray(this.item,this.array)};var r=function(t){this.root=t,this.references=[]};r.ArrIndex=n,t.extend(r.prototype,{make:function(r){var i,a=[];(t.isArray(this.root)||this.root instanceof t.LazyList)&&(i=new n(this.root)),e(this.root,r,function(e,r){i?(i.item=e,a.push(i),i=undefined):(a.push(r),t.isArray(e)&&(i=new n(e)))});var s=function(){return a.join(".")};return this.references.push(s),s},removeChildren:function(t,e){for(var n=0;this.references.length>n;){var r=this.references[n]();0===r.indexOf(t)?(e(this.get(r),r),this.references.splice(n,1)):n++}},get:function(t){return e(this.root,t)},each:function(e){var n=this;t.each(this.references,function(t){var r=t();e(n.get(r),t,r)})}}),t.NestedReference=r}(__m2),__m49=function(t,e){var n=null,r=function(t){return n&&n[t._cid]&&n[t._cid].instance};return t.LazyMap=t.Map.extend({_bubble:e},{setup:function(e){this.constructor.Map=this.constructor,this.constructor.List=t.LazyList,this._data=t.extend(t.extend(!0,{},this.constructor.defaults||{}),e),t.cid(this,".lazyMap"),this._init=1,this._setupComputes();var n=e&&t.Map.helpers.addToMap(e,this);this._nestedReference=new t.NestedReference(this._data),n&&n(),t.each(this._data,t.proxy(function(t,e){this.___set(e,t)},this)),this.bind("change",t.proxy(this._changes,this)),delete this._init},_addChild:function(t,n,r){var i=this;if(this._nestedReference.removeChildren(t,function(r,a){if(e.remove(i,r),n){var s=a.replace(t+".","");if(t===s)r._nestedReference.each(function(t,r){n._nestedReference.make(r()),i._bindings&&e.add(this,n,r())});else{var o=n._nestedReference.make(s);i._bindings&&e.add(r,n,o())}}}),r&&r(),n){var a=this._nestedReference.make(t);this._bindings&&e.add(this,n,a())}return n},removeAttr:function(e){var n=this._goto(e);return n.parts.length?n.value.removeAttr(n.parts.join(".")):(t.isArray(n.parent)?(n.parent.splice(n.prop,1),this._triggerChange(e,"remove",undefined,[this.__type(n.value,n.prop)])):n.parent[n.prop]&&(delete n.parent[n.prop],t.batch.trigger(this,n.path.length?n.path.join(".")+".__keys":"__keys"),this._triggerChange(e,"remove",undefined,this.__type(n.value,n.prop))),this._nestedReference.removeChildren(),n.value)},__type:function(e){if(!(e instanceof t.LazyMap)&&t.Map.helpers.canMakeObserve(e)){var n=r(e);if(n)return n;if(t.isArray(e)){var i=t.LazyList;return new i(e)}var a=this.constructor.Map||t.LazyMap;return new a(e)}return e},_goto:function(e,n){for(var r,i,a=t.Map.helpers.attrParts(e,n).slice(0),s=[],o=this instanceof t.List?this[a.shift()]:this.__get();o&&!t.Map.helpers.isObservable(o)&&a.length;)i!==undefined&&s.push(i),r=o,o=o[i=a.shift()];return{parts:a,prop:i,value:o,parent:r,path:s}},_get:function(e){var n=this._goto(e);if(t.Map.helpers.isObservable(n.value))return n.parts.length?n.value._get(n.parts):n.value;if(n.value&&t.Map.helpers.canMakeObserve(n.value)){var r=this.__type(n.value,n.prop);return this._addChild(e,r,function(){n.parent[n.prop]=r}),r}return n.value!==undefined?n.value:this.__get(e)},_set:function(e,n,r){var i=this._goto(e,r);if(t.Map.helpers.isObservable(i.value)&&i.parts.length)return i.value._set(i.parts,n);if(i.parts.length)throw"can.LazyMap: object does not exist";this.__set(e,n,i.value,i)},__set:function(e,n,r,i,a){if(a=a||!0,n!==r){var s=i.parent.hasOwnProperty(i.prop)?"set":"add";if(a&&t.Map.helpers.canMakeObserve(n)){n=this.__type(n,e);var o=this;this._addChild(e,n,function(){o.___set(e,n,i)})}else this.___set(e,n,i);"add"===s&&t.batch.trigger(this,i.path.length?i.path.join(".")+".__keys":"__keys",undefined),this._triggerChange(e,s,n,r)}},___set:function(e,n,r){this[e]&&this[e].isComputed&&t.isFunction(this.constructor.prototype[e])?this[e](n):r?r.parent[r.prop]=n:this._data[e]=n,t.isFunction(this.constructor.prototype[e])||(this[e]=n)},_attrs:function(e,n){if(e===undefined)return t.Map.helpers.serialize(this,"attr",{});e=t.extend({},e);var r,i,a,s=this;t.batch.start(),this.each(function(r,o){return a=e[o],i=s._goto(o,!0),a===undefined?(n&&s.removeAttr(o),undefined):(!t.Map.helpers.isObservable(r)&&t.Map.helpers.canMakeObserve(r)&&(r=s.attr(o)),s.__convert&&(a=s.__convert(o,a)),a instanceof t.Map?s.__set(o,a,r,i):t.Map.helpers.isObservable(r)&&t.Map.helpers.canMakeObserve(a)&&r.attr?r.attr(a,n):r!==a&&s.__set(o,a,r,i),delete e[o],undefined)});for(r in e)a=e[r],this._set(r,a,!0);return t.batch.stop(),this}}),t.LazyList=t.List.extend({Map:t.LazyMap},{setup:function(){t.List.prototype.setup.apply(this,arguments),this._nestedReference=new t.NestedReference(this)}}),t.LazyMap}(__m2,__m50,__m15,__m19,__m51),__m52=function(t){var e=function(t,e){var n,r=t.length,i=0,a=[];for(i;r>i;i++){if(n=e[i],"string"!=typeof n)return null;if("**"===t[i])return e.join(".");if("*"===t[i])a.push(n);else{if(n!==t[i])return null;a.push(n)}}return a.join(".")},n=function(n,r,i,a,s){var o,u,c,l,f,d=r.split("."),h=(this._observe_delegates||[]).slice(0);n.attr=r,n.lastAttr=d[d.length-1];for(var p=0;o=h[p++];)if(!(n.batchNum&&o.batchNum===n.batchNum||o.undelegated)){l=undefined,f=!0;for(var g=0;o.attrs.length>g;g++)u=o.attrs[g],c=e(u.parts,d),c&&(l=c),u.value&&f?f=u.value===""+this.attr(u.attr):f&&o.attrs.length>1&&(f=this.attr(u.attr)!==undefined);if(l&&f){var m=r.replace(l+".","");n.batchNum&&(o.batchNum=n.batchNum),"change"===o.event?(r=m,n.curAttr=l,o.callback.apply(this.attr(l),t.makeArray(arguments))):o.event===i?o.callback.apply(this.attr(l),[n,a,s,m]):"set"===o.event&&"add"===i&&o.callback.apply(this.attr(l),[n,a,s,m])}}};return t.extend(t.Map.prototype,{delegate:function(e,r,i){e=t.trim(e);for(var a,s=this._observe_delegates||(this._observe_delegates=[]),o=[],u=/([^\s=,]+)(?:=("[^",]*"|'[^',]*'|[^\s"',]*))?(,?)\s*/g;null!==(a=u.exec(e));)a[2]&&t.inArray(a[2].substr(0,1),['"',"'"])>=0&&(a[2]=a[2].substr(1,-1)),o.push({attr:a[1],parts:a[1].split("."),value:a[2],or:","===a[3]});return s.push({selector:e,attrs:o,callback:i,event:r}),1===s.length&&this.bind("change",n),this},undelegate:function(e,r,i){e=e&&t.trim(e);var a,s=0,o=this._observe_delegates||[];if(e)for(;o.length>s;)a=o[s],a.callback===i||!i&&a.selector===e?(a.undelegated=!0,o.splice(s,1)):s++;else o=[];return o.length||this.unbind("change",n),this}}),t.Map.prototype.delegate.matches=e,t.Map}(__m2,__m15),__m53=function(t){t.classize=function(e,n){for(var r=e.split(t.undHash),i=0;r.length>i;i++)r[i]=t.capitalize(r[i]);return r.join(n||"")};var e=t.classize,n=t.Map.prototype,r=n.__set;return n.__set=function(n,i,a,s,o){var u=e(n),c="set"+u,l=function(e){var r=o&&o.call(f,e);return r!==!1&&t.trigger(f,"error",[n,e],!0),!1},f=this;return this[c]?(t.batch.start(),i=this[c](i,function(t){r.call(f,n,t,a,s,l)},l),i===undefined?(t.batch.stop(),undefined):(r.call(f,n,i,a,s,l),t.batch.stop(),this)):(r.call(f,n,i,a,s,l),this)},t.Map}(__m2,__m15),__m54=function(t){t.each([t.Map,t.Model],function(e){if(e!==undefined){var n=function(t){return"object"==typeof t&&null!==t&&t};t.extend(e,{attributes:{},convert:{date:function(t){var e=typeof t;return"string"===e?(t=Date.parse(t),isNaN(t)?null:new Date(t)):"number"===e?new Date(t):t},number:function(t){return parseFloat(t)},"boolean":function(t){return"false"!==t&&"0"!==t&&t?!0:!1},"default":function(e,n,r,i){if(t.Map.prototype.isPrototypeOf(i.prototype)&&"function"==typeof i.model&&"function"==typeof i.models)return i[t.isArray(e)?"models":"model"](e);if(t.Map.prototype.isPrototypeOf(i.prototype))return t.isArray(e)&&"function"==typeof i.List?new i.List(e):new i(e);if("function"==typeof i)return i(e,n);var a,s=t.getObject(i),o=window;return i.indexOf(".")>=0&&(a=i.substring(0,i.lastIndexOf(".")),o=t.getObject(a)),"function"==typeof s?s.call(o,e,n):e}},serialize:{"default":function(t){return n(t)&&t.serialize?t.serialize():t},date:function(t){return t&&t.getTime()}}});var r=e.setup;e.setup=function(e,n,i){var a=this;r.call(a,e,n,i),t.each(["attributes"],function(t){a[t]&&e[t]!==a[t]||(a[t]={})}),t.each(["convert","serialize"],function(n){e[n]!==a[n]&&(a[n]=t.extend({},e[n],a[n]))})}}}),t.Map.prototype.__convert=function(t,e){var n,r,i=this.constructor,a=this.__get(t);return i.attributes&&(n=i.attributes[t],r=i.convert[n]||i.convert["default"]),null!==e&&n?r.call(i,e,a,function(){},n):e};var e=t.Map.helpers._serialize;t.Map.helpers._serialize=function(t,n,r){var i=t.constructor,a=i.attributes?i.attributes[n]:0,s=i.serialize?i.serialize[a]:0;return r&&"function"==typeof r.serialize?e.apply(this,arguments):s?s(r,a):e.apply(this,arguments)};var n=t.Map.prototype.serialize;return t.Map.prototype.serialize=function(t){var e=n.apply(this,arguments);return t?e[t]:e},t.Map}(__m2,__m15,__m19),__m55=function(t){var e=function(e,n,r){if(r||(r=n,n={}),n=n||{},e="string"==typeof e?[e]:t.makeArray(e),!n.testIf||n.testIf.call(this)){var i=this;t.each(e,function(t){i.validations[t]||(i.validations[t]=[]),i.validations[t].push(function(e){var i=r.call(this,e,t);return i===undefined?undefined:n.message||i})})}},n=t.Map.prototype.__set;return t.Map.prototype.__set=function(e,r,i,a,s){var o=this,u=o.constructor.validations,c=function(n){var r=s&&s.call(o,n);return r!==!1&&t.trigger(o,"error",[e,n],!0),!1};if(n.call(o,e,r,i,a,c),u&&u[e]){var l=o.errors(e);l&&c(l)}return this},t.each([t.Map,t.Model],function(n){if(n!==undefined){var r=n.setup;t.extend(n,{setup:function(t){r.apply(this,arguments),this.validations&&t.validations!==this.validations||(this.validations={})},validate:e,validationMessages:{format:"is invalid",inclusion:"is not a valid option (perhaps out of range)",lengthShort:"is too short",lengthLong:"is too long",presence:"can't be empty",range:"is out of range",numericality:"must be a number"},validateFormatOf:function(t,n,r){e.call(this,t,r,function(t){return t!==undefined&&null!==t&&""!==t&&null===(t+"").match(n)?this.constructor.validationMessages.format:undefined})},validateInclusionOf:function(t,n,r){e.call(this,t,r,function(t){if(t!==undefined){for(var e=0;n.length>e;e++)if(n[e]===t)return;return this.constructor.validationMessages.inclusion}})},validateLengthOf:function(t,n,r,i){e.call(this,t,i,function(t){return(t===undefined||null===t)&&n>0||t!==undefined&&null!==t&&n>t.length?this.constructor.validationMessages.lengthShort+" (min="+n+")":t!==undefined&&null!==t&&t.length>r?this.constructor.validationMessages.lengthLong+" (max="+r+")":undefined})},validatePresenceOf:function(t,n){e.call(this,t,n,function(t){return t===undefined||""===t||null===t?this.constructor.validationMessages.presence:undefined})},validateRangeOf:function(t,n,r,i){e.call(this,t,i,function(t){return(t===undefined||null===t)&&n>0||t!==undefined&&null!==t&&(n>t||t>r)?this.constructor.validationMessages.range+" ["+n+","+r+"]":undefined})},validatesNumericalityOf:function(t){e.call(this,t,function(t){var e=!isNaN(parseFloat(t))&&isFinite(t);return e?undefined:this.constructor.validationMessages.numericality})}})}}),t.extend(t.Map.prototype,{errors:function(e,n){e&&(e=t.isArray(e)?e:[e]);var r={},i=this,a=function(e,a){t.each(a,function(t){var a=t.call(i,o?i.__convert?i.__convert(e,n):n:i.attr(e));a&&(r[e]||(r[e]=[]),r[e].push(a))})},s=this.constructor.validations,o=e&&1===e.length&&2===arguments.length;return t.each(e||s||{},function(t,e){"number"==typeof e&&(e=t,t=s[e]),a(e,t||[])}),t.isEmptyObject(r)?null:o?r[e[0]]:r}}),t.Map}(__m2,__m15),__m56=function(t){return t.extend(t.List.prototype,{filter:function(e){var n=new this.constructor,r=this,i=function(i){var a=function(t,e){var r=n.indexOf(i);e||-1===r||n.splice(r,1),e&&-1===r&&n.push(i)},s=t.compute(function(){return e(i,r.indexOf(i),r)});s.bind("change",a),a(null,s())};return this.bind("add",function(e,n,r){t.each(n,function(t,e){i(t,r+e)})}),this.bind("remove",function(e,r){t.each(r,function(t){var e=n.indexOf(t);-1!==e&&n.splice(e,1)})}),this.forEach(i),n},map:function(e){var n=new t.List,r=this,i=function(i,a){var s=t.compute(function(){return e(i,a,r)});s.bind("change",function(t,e){n.splice(a,1,e)}),n.splice(a,0,s())};return this.forEach(i),this.bind("add",function(e,n,r){t.each(n,function(t,e){i(t,r+e)})}),this.bind("remove",function(t,e,r){n.splice(r,e.length)}),n}}),t.List}(__m2,__m15,__m19,__m20),__m57=function(t){t.Map.helpers.define=function(t){var e=t.prototype.define;t.defaultGenerators={};for(var n in e)"value"in e[n]&&("function"==typeof e[n].value?t.defaultGenerators[n]=e[n].value:t.defaults[n]=e[n].value),"function"==typeof e[n].Value&&function(e){t.defaultGenerators[n]=function(){return new e}}(e[n].Value)};var e=t.Map.prototype._setupDefaults;t.Map.prototype._setupDefaults=function(){var t=e.call(this),n=this.constructor;for(var r in n.defaultGenerators)t[r]=n.defaultGenerators[r].call(this);return t};var n=t.Map.prototype,r=n.__set;n.__set=function(e,n,i,a,s){var o=function(n){var r=s&&s.call(u,n);return r!==!1&&t.trigger(u,"error",[e,n],!0),!1},u=this,c=this.define&&this.define[e],l=c&&c.set,f=c&&c.get;if(l){t.batch.start();var d=!1,h=l.call(this,n,function(t){r.call(u,e,t,i,a,o),d=!0},o);return f?(t.batch.stop(),undefined):h===undefined&&!d&&l.length>=2?(t.batch.stop(),undefined):(d||r.call(u,e,0===l.length&&h===undefined?n:h,i,a,o),t.batch.stop(),this)}return r.call(u,e,n,i,a,o),this};var i={date:function(t){var e=typeof t;return"string"===e?(t=Date.parse(t),isNaN(t)?null:new Date(t)):"number"===e?new Date(t):t},number:function(t){return+t},"boolean":function(t){return"false"!==t&&"0"!==t&&t?!0:!1},"*":function(t){return t},string:function(t){return""+t}},a=n.__type;n.__type=function(t,e){var n=this.define&&this.define[e],r=n&&n.type,s=n&&n.Type,o=t;return"string"==typeof r&&(r=i[r]),r||s?(r&&(o=r.call(this,o,e)),!s||o instanceof s||(o=new s(o)),o):a.call(this,o,e)};var s=n._remove;n._remove=function(e,n){var r,i=this.define&&this.define[e]&&this.define[e].remove;return i?(t.batch.start(),r=i.call(this,n),r===!1?(t.batch.stop(),undefined):(r=s.call(this,e,n),t.batch.stop(),r)):s.call(this,e,n)};var o=n._setupComputes;n._setupComputes=function(e){o.apply(this,arguments);for(var n in this.define){var r=this.define[n],i=r.get;i&&(this[n]=t.compute.async(e[n],i,this),this._computedBindings[n]={count:0})}};var u=t.Map.helpers._serialize;t.Map.helpers._serialize=function(t,e,n){return c(t,e,n)};var c=function(t,e,n){var r=t.define&&t.define[e]&&t.define[e].serialize;return r===undefined?u.apply(this,arguments):r!==!1?"function"==typeof r?r.call(t,n,e):u.apply(this,arguments):undefined},l=n.serialize;return n.serialize=function(t){var e=l.apply(this,arguments);if(t)return e;var n,r;for(var i in this.define)i in e||(n=this.define&&this.define[i]&&this.define[i].serialize,n&&(r=c(this,i,this.attr(i)),r!==undefined&&(e[i]=r)));return e},t.Map}(__m2,__m14),__m58=function(t){var e=t.List._bubbleRule;if(t.List._bubbleRule=function(t,n){return n.comparator?"change":e.apply(this,arguments)},t.Model){var n=t.Model.List._bubbleRule;t.Model.List._bubbleRule=function(t,e){return e.comparator?"change":n.apply(this,arguments)}}var r=t.List.prototype,i=r._changes,a=r.setup;t.extend(r,{comparator:undefined,sortIndexes:[],sortedIndex:function(t){for(var e=t.attr(this.comparator),n=0,r=0,i=this.length;i>r;r++)if(t!==this[r]){if(this[r].attr(this.comparator)>=e)return r+n}else n=-1;return r+n},sort:function(e,n){var r=this.comparator,i=r?[function(t,e){return t="function"==typeof t[r]?t[r]():t[r],e="function"==typeof e[r]?e[r]():e[r],t===e?0:e>t?-1:1}]:[e];return n||t.trigger(this,"reset"),Array.prototype.sort.apply(this,i)}});var s=function(e){return e[0]&&t.isArray(e[0])?e[0]:t.makeArray(e)};return t.each({push:"length",unshift:0},function(e,n){var r=t.List.prototype,i=r[n];r[n]=function(){var n=s(arguments),r=e?this.length:0,a=i.apply(this,arguments);return this.comparator&&n.length&&(this.sort(null,!0),t.batch.trigger(this,"reset",[n]),this._triggerChange(""+r,"add",n,undefined)),a}}),r._changes=function(e,n,r,a,s){if(this.comparator&&/^\d+./.test(n)){var o=+/^\d+/.exec(n)[0],u=this[o];if(u!==undefined){var c=this.sortedIndex(u);if(c!==o)return[].splice.call(this,o,1),[].splice.call(this,c,0,u),t.trigger(this,"move",[u,c,o]),t.trigger(this,"change",[n.replace(/^\d+/,c),r,a,s]),undefined}}i.apply(this,arguments)},r.setup=function(){a.apply(this,arguments),this.comparator&&this.sort()},t.Map}(__m2,__m19),__m59=function(t,e){var n,r=function(t,e){var r=t.constructor.pluginName||t.constructor._shortName;for(n=0;e.length>n;n++)if("string"==typeof e[n]?r===e[n]:t instanceof e[n])return!0;return!1},i=e.makeArray,a=e.Control.setup;return e.Control.setup=function(){if(this!==e.Control){var t=this.pluginName||this._fullName;"can_control"!==t&&this.plugin(t),a.apply(this,arguments)}},t.fn.extend({controls:function(){var t,n,a=i(arguments),s=[];return this.each(function(){if(t=e.$(this).data("controls"))for(var i=0;t.length>i;i++)n=t[i],(!a.length||r(n,a))&&s.push(n)}),s},control:function(){return this.controls.apply(this,arguments)[0]}}),e.Control.plugin=function(n){var r=this;t.fn[n]||(t.fn[n]=function(n){var a,s=i(arguments),o="string"==typeof n&&t.isFunction(r.prototype[n]),u=s[0];return this.each(function(){var t=e.$(this).control(r);t?o?a=t[u].apply(t,s.slice(1)):t.update.apply(t,s):r.newInstance.apply(r,[this].concat(s))}),a!==undefined?a:this})},e.Control.prototype.update=function(t){e.extend(this.options,t),this.on()},e}(jQuery,__m2,__m11),__m60=function(t,e){var n,r,i,a,s,o,u={val:!0,text:!0};return n=function(n){var a=t.fn[n];t.fn[n]=function(){var t,s,c,l=e.makeArray(arguments),f=this;if(e.isDeferred(l[0]))return l[0].done(function(t){r.call(f,[t],a)}),this;if(i(l)){if(t=o(l))return s=l[t],l[t]=function(t){r.call(f,[t],a),s.call(f,t)},e.view.apply(e.view,l),this;if(c=e.view.apply(e.view,l),e.isDeferred(c))return c.done(function(t){r.call(f,[t],a)}),this;l=[c]}return u[n]?a.apply(this,l):r.call(this,l,a)}},r=function(t,n){var r;for(var i in e.view.hookups)break;return i&&t[0]&&a(t[0])&&(t[0]=e.view.frag(t[0]).childNodes),r=n.apply(this,t)},i=function(t){var e=typeof t[1];return"string"==typeof t[0]&&("object"===e||"function"===e)&&!s(t[1])},s=function(t){return t.nodeType||t[0]&&t[0].nodeType},a=function(t){return s(t)?!0:"string"==typeof t?(t=e.trim(t),"<"===t.substr(0,1)&&">"===t.substr(t.length-1,1)&&t.length>=3):!1},o=function(t){return"function"==typeof t[3]?3:"function"==typeof t[2]&&2},t.fn.hookup=function(){return e.view.frag(this),this},e.each(["prepend","append","after","before","text","html","replaceWith","val"],function(t){n(t)}),e}(jQuery,__m2,__m10),__m61=function(t){if(!t.Object)throw Error("can.fixture depends on can.Object. Please include it before can.fixture.");var e=function(e){return"undefined"!=typeof steal?t.isFunction(steal.config)?""+steal.config().root.mapJoin(e):""+steal.root.join(e):(t.fixture.rootUrl||"")+e},n=function(n,r){if(t.fixture.on){var i=function(){};n.type=n.type||n.method||"GET";var a=u(n);if(!n.fixture)return"file:"===window.location.protocol&&i("ajax request to "+n.url+", no fixture found"),undefined;if("string"==typeof n.fixture&&t.fixture[n.fixture]&&(n.fixture=t.fixture[n.fixture]),"string"==typeof n.fixture){var s=n.fixture;/^\/\//.test(s)&&(s=e(n.fixture.substr(2))),a&&(s=t.sub(s,a)),delete n.fixture,n.url=s,n.data=null,n.type="GET",n.error||(n.error=function(t,e,n){throw"fixtures.js Error "+e+" "+n})}else n.dataTypes&&n.dataTypes.splice(0,0,"fixture"),a&&r&&(r.data=r.data||{},t.extend(r.data,a))}},r=function(t,e,n,r){return"number"!=typeof t&&(r=e,n=t,e="success",t=200),"string"!=typeof e&&(r=n,n=e,e="success"),t>=400&&599>=t&&(this.dataType="text"),[t,e,i(this,n),r]},i=function(t,e){var n=t.dataTypes?t.dataTypes[0]:t.dataType||"json";if(!e||!e[n]){var r={};r[n]=e,e=r}return e};if(t.ajaxPrefilter&&t.ajaxTransport)t.ajaxPrefilter(n),t.ajaxTransport("fixture",function(e,n){e.dataTypes.shift();var a,s=!1;return{send:function(o,u){a=setTimeout(function(){var t=function(){s===!1&&u.apply(null,r.apply(e,arguments))},a=e.fixture(n,t,o,e);a!==undefined&&u(200,"success",i(e,a),{})},t.fixture.delay)},abort:function(){s=!0,clearTimeout(a)}}});else{var a=t.ajax;t.ajax=function(e){if(n(e,e),e.fixture){var i,s=new t.Deferred,o=!1;return s.getResponseHeader=function(){},s.then(e.success,e.fail),s.abort=function(){clearTimeout(i),o=!0,s.reject(s)},i=setTimeout(function(){var t=function(){var t=r.apply(e,arguments),n=t[0];(n>=200&&300>n||304===n)&&o===!1?s.resolve(t[2][e.dataType]):s.reject(s,"error",t[1])},n=e.fixture(e,t,e.headers,e);n!==undefined&&s.resolve(n)},t.fixture.delay),s}return a(e)}}var s=[],o=function(t,e){for(var n=0;s.length>n;n++)if(l._similar(t,s[n],e))return n;return-1},u=function(t){var e=o(t);return e>-1?(t.fixture=s[e].fixture,l._getData(s[e].url,t.url)):undefined},c=function(t){var e=t.data.id;return e===undefined&&"number"==typeof t.data&&(e=t.data),e===undefined&&t.url.replace(/\/(\d+)(\/|$|\.)/g,function(t,n){e=n}),e===undefined&&(e=t.url.replace(/\/(\w+)(\/|$|\.)/g,function(t,n){"update"!==n&&(e=n)})),e===undefined&&(e=Math.round(1e3*Math.random())),e},l=t.fixture=function(e,n){if(n!==undefined){if("string"==typeof e){var r=e.match(/(GET|POST|PUT|DELETE) (.+)/i);e=r?{url:r[2],type:r[1]}:{url:e}}var i=o(e,!!n);if(i>-1&&s.splice(i,1),null==n)return;e.fixture=n,s.push(e)}else t.each(e,function(t,e){l(e,t)})},f=t.replacer;return t.extend(t.fixture,{_similar:function(e,n,r){return r?t.Object.same(e,n,{fixture:null}):t.Object.subset(e,n,t.fixture._compare)},_compare:{url:function(t,e){return!!l._getData(e,t)},fixture:null,type:"i"},_getData:function(e,n){var r=[],i=e.replace(".","\\.").replace("?","\\?"),a=RegExp(i.replace(f,function(t,e){return r.push(e),"([^/]+)"
-})+"$").exec(n),s={};return a?(a.shift(),t.each(r,function(t){s[t]=a.shift()}),s):null},store:function(e,n,r){var i,a,s,o=0,u=function(t){for(var e=0;a.length>e;e++)if(t==a[e].id)return a[e]},l={};if(t.isArray(e)&&"string"==typeof e[0]?(i=e,e=n,n=r,r=arguments[3]):"string"==typeof e&&(i=[e+"s",e],e=n,n=r,r=arguments[3]),"number"==typeof e)a=[],s=function(){a=[];for(var r=0;e>r;r++){var s=n(r,a);s.id||(s.id=r),o=Math.max(s.id+1,o+1)||a.length,a.push(s)}t.isArray(i)&&(t.fixture["~"+i[0]]=a,t.fixture["-"+i[0]]=l.findAll,t.fixture["-"+i[1]]=l.findOne,t.fixture["-"+i[1]+"Update"]=l.update,t.fixture["-"+i[1]+"Destroy"]=l.destroy,t.fixture["-"+i[1]+"Create"]=l.create)};else{r=n;var f=e;s=function(){a=f.slice(0)}}return t.extend(l,{findAll:function(e){e=e||{};var n=a.slice(0);e.data=e.data||{},t.each((e.data.order||[]).slice(0).reverse(),function(t){var e=t.split(" ");n=n.sort(function(t,n){return"ASC"!==e[1].toUpperCase()?t[e[0]]<n[e[0]]?1:t[e[0]]===n[e[0]]?0:-1:t[e[0]]<n[e[0]]?-1:t[e[0]]===n[e[0]]?0:1})}),t.each((e.data.group||[]).slice(0).reverse(),function(t){var e=t.split(" ");n=n.sort(function(t,n){return t[e[0]]>n[e[0]]})});var i=parseInt(e.data.offset,10)||0,s=parseInt(e.data.limit,10)||a.length-i,o=0;for(var u in e.data)if(o=0,e.data[u]!==undefined&&(-1!==u.indexOf("Id")||-1!==u.indexOf("_id")))for(;n.length>o;)e.data[u]!=n[o][u]?n.splice(o,1):o++;if("function"==typeof r)for(o=0;n.length>o;)r(n[o],e)?o++:n.splice(o,1);else if("object"==typeof r)for(o=0;n.length>o;)t.Object.subset(n[o],e.data,r)?o++:n.splice(o,1);return{count:n.length,limit:e.data.limit,offset:e.data.offset,data:n.slice(i,i+s)}},findOne:function(t,e){var n=u(c(t));return n===undefined?e(404,"Requested resource not found"):(e(n),undefined)},update:function(e,n){var r=c(e),i=u(r);return i===undefined?n(404,"Requested resource not found"):(t.extend(i,e.data),n({id:r},{location:e.url||"/"+c(e)}),undefined)},destroy:function(t,e){var n=c(t),r=u(n);if(r===undefined)return e(404,"Requested resource not found");for(var i=0;a.length>i;i++)if(a[i].id==n){a.splice(i,1);break}return{}},create:function(e,r){var i=n(a.length,a);t.extend(i,e.data),i.id||(i.id=o++),a.push(i),r({id:i.id},{location:e.url+"/"+i.id})}}),s(),t.extend({getId:c,find:function(t){return u(c(t))},reset:s},l)},rand:function d(t,e,n){if("number"==typeof t)return"number"==typeof e?t+Math.floor(Math.random()*(e-t)):Math.floor(Math.random()*t);var r=d;if(e===undefined)return r(t,r(t.length+1));var i=[];t=t.slice(0),n||(n=e),n=e+Math.round(r(n-e));for(var a=0;n>a;a++)i.push(t.splice(r(t.length),1)[0]);return i},xhr:function(e){return t.extend({},{abort:t.noop,getAllResponseHeaders:function(){return""},getResponseHeader:function(){return""},open:t.noop,overrideMimeType:t.noop,readyState:4,responseText:"",responseXML:null,send:t.noop,setRequestHeader:t.noop,status:200,statusText:"OK"},e)},on:!0}),t.fixture.delay=200,t.fixture.rootUrl=e(""),t.fixture["-handleFunction"]=function(e){return"string"==typeof e.fixture&&t.fixture[e.fixture]&&(e.fixture=t.fixture[e.fixture]),"function"==typeof e.fixture?(setTimeout(function(){e.success&&e.success.apply(null,e.fixture(e,"success")),e.complete&&e.complete.apply(null,e.fixture(e,"complete"))},t.fixture.delay),!0):!1},t.fixture.overwrites=s,t.fixture.make=t.fixture.store,t.fixture}(__m2,__m13,__m46);window.can=__m4})();
+(function(undefined) {
+
+    // ## can/util/can.js
+    var __m4 = (function() {
+
+        var can = window.can || {};
+        if (typeof GLOBALCAN === 'undefined' || GLOBALCAN !== false) {
+            window.can = can;
+        }
+
+        // An empty function useful for where you need a dummy callback.
+        can.k = function() {};
+
+        can.isDeferred = function(obj) {
+            // Returns `true` if something looks like a deferred.
+            return obj && typeof obj.then === "function" && typeof obj.pipe === "function";
+        };
+
+        var cid = 0;
+        can.cid = function(object, name) {
+            if (!object._cid) {
+                cid++;
+                object._cid = (name || '') + cid;
+            }
+            return object._cid;
+        };
+        can.VERSION = '@EDGE';
+
+        can.simpleExtend = function(d, s) {
+            for (var prop in s) {
+                d[prop] = s[prop];
+            }
+            return d;
+        };
+
+        can.frag = function(item) {
+            var frag;
+            if (!item || typeof item === "string") {
+                frag = can.buildFragment(item == null ? "" : "" + item, document.body);
+                // If we have an empty frag...
+                if (!frag.childNodes.length) {
+                    frag.appendChild(document.createTextNode(''));
+                }
+                return frag;
+            } else if (item.nodeType === 11) {
+                return item;
+            } else if (typeof item.nodeType === "number") {
+                frag = document.createDocumentFragment();
+                frag.appendChild(item);
+                return frag;
+            } else if (typeof item.length === "number") {
+                frag = document.createDocumentFragment();
+                can.each(item, function(item) {
+                    frag.appendChild(can.frag(item));
+                });
+                return frag;
+            } else {
+                frag = can.buildFragment("" + item, document.body);
+                // If we have an empty frag...
+                if (!frag.childNodes.length) {
+                    frag.appendChild(document.createTextNode(''));
+                }
+                return frag;
+            }
+        };
+
+        // this is here in case can.compute hasn't loaded
+        can.__reading = function() {};
+
+        return can;
+    })();
+
+    // ## can/util/attr/attr.js
+    var __m5 = (function(can) {
+
+        // Acts as a polyfill for setImmediate which only works in IE 10+. Needed to make
+        // the triggering of `attributes` event async.
+        var setImmediate = window.setImmediate || function(cb) {
+                return setTimeout(cb, 0);
+            },
+            attr = {
+                // This property lets us know if the browser supports mutation observers.
+                // If they are supported then that will be setup in can/util/jquery and those native events will be used to inform observers of attribute changes.
+                // Otherwise this module handles triggering an `attributes` event on the element.
+                MutationObserver: window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver,
+
+
+                map: {
+                    "class": "className",
+                    "value": "value",
+                    "innerText": "innerText",
+                    "textContent": "textContent",
+                    "checked": true,
+                    "disabled": true,
+                    "readonly": true,
+                    "required": true,
+                    // For the `src` attribute we are using a setter function to prevent values such as an empty string or null from being set.
+                    // An `img` tag attempts to fetch the `src` when it is set, so we need to prevent that from happening by removing the attribute instead.
+                    src: function(el, val) {
+                        if (val == null || val === "") {
+                            el.removeAttribute("src");
+                            return null;
+                        } else {
+                            el.setAttribute("src", val);
+                            return val;
+                        }
+                    },
+                    style: function(el, val) {
+                        return el.style.cssText = val || "";
+                    }
+                },
+                // These are elements whos default value we should set.
+                defaultValue: ["input", "textarea"],
+                // ## attr.set
+                // Set the value an attribute on an element.
+                set: function(el, attrName, val) {
+                    var oldValue;
+                    // In order to later trigger an event we need to compare the new value to the old value, so here we go ahead and retrieve the old value for browsers that don't have native MutationObservers.
+                    if (!attr.MutationObserver) {
+                        oldValue = attr.get(el, attrName);
+                    }
+
+                    var tagName = el.nodeName.toString()
+                        .toLowerCase(),
+                        prop = attr.map[attrName],
+                        newValue;
+
+                    // Using the property of `attr.map`, go through and check if the property is a function, and if so call it. Then check if the property is `true`, and if so set the value to `true`, also making sure to set `defaultChecked` to `true` for elements of `attr.defaultValue`. We always set the value to true because for these boolean properties, setting them to false would be the same as removing the attribute.
+                    // For all other attributes use `setAttribute` to set the new value.
+                    if (typeof prop === "function") {
+                        newValue = prop(el, val);
+                    } else if (prop === true) {
+                        newValue = el[attrName] = true;
+
+                        if (attrName === "checked" && el.type === "radio") {
+                            if (can.inArray(tagName, attr.defaultValue) >= 0) {
+                                el.defaultChecked = true;
+                            }
+                        }
+
+                    } else if (prop) {
+                        newValue = el[prop] = val;
+                        if (prop === "value" && can.inArray(tagName, attr.defaultValue) >= 0) {
+                            el.defaultValue = val;
+                        }
+                    } else {
+                        el.setAttribute(attrName, val);
+                        newValue = val;
+                    }
+
+                    // Now that the value has been set, for browsers without MutationObservers, check to see that value has changed and if so trigger the "attributes" event on the element.
+                    if (!attr.MutationObserver && newValue !== oldValue) {
+                        attr.trigger(el, attrName, oldValue);
+                    }
+                },
+                // ## attr.trigger
+                // Used to trigger an "attributes" event on an element. Checks to make sure that someone is listening for the event and then queues a function to be called asynchronously using `setImmediate.
+                trigger: function(el, attrName, oldValue) {
+                    if (can.data(can.$(el), "canHasAttributesBindings")) {
+                        return setImmediate(function() {
+                            can.trigger(el, {
+                                    type: "attributes",
+                                    attributeName: attrName,
+                                    target: el,
+                                    oldValue: oldValue,
+                                    bubbles: false
+                                }, []);
+                        });
+                    }
+                },
+                // ## attr.get
+                // Gets the value of an attribute. First checks to see if the property is a string on `attr.map` and if so returns the value from the element's property. Otherwise uses `getAttribute` to retrieve the value.
+                get: function(el, attrName) {
+                    var prop = attr.map[attrName];
+                    if (typeof prop === "string" && el[prop]) {
+                        return el[prop];
+                    }
+
+                    return el.getAttribute(attrName);
+                },
+                // ## attr.remove
+                // Removes an attribute from an element. Works by using the `attr.map` to see if the attribute is a special type of property. If the property is a function then the fuction is called with `undefined` as the value. If the property is `true` then the attribute is set to false. If the property is a string then the attribute is set to an empty string. Otherwise `removeAttribute` is used.
+                // If the attribute previously had a value and the browser doesn't support MutationObservers we then trigger an "attributes" event.
+                remove: function(el, attrName) {
+                    var oldValue;
+                    if (!attr.MutationObserver) {
+                        oldValue = attr.get(el, attrName);
+                    }
+
+                    var setter = attr.map[attrName];
+                    if (typeof setter === "function") {
+                        setter(el, undefined);
+                    }
+                    if (setter === true) {
+                        el[attrName] = false;
+                    } else if (typeof setter === "string") {
+                        el[setter] = "";
+                    } else {
+                        el.removeAttribute(attrName);
+                    }
+                    if (!attr.MutationObserver && oldValue != null) {
+                        attr.trigger(el, attrName, oldValue);
+                    }
+
+                },
+                // ## attr.has
+                // Checks if an element contains an attribute.
+                // For browsers that support `hasAttribute`, creates a function that calls hasAttribute, otherwise creates a function that uses `getAttribute` to check that the attribute is not null.
+                has: (function() {
+                    var el = document.createElement('div');
+                    if (el.hasAttribute) {
+                        return function(el, name) {
+                            return el.hasAttribute(name);
+                        };
+                    } else {
+                        return function(el, name) {
+                            return el.getAttribute(name) !== null;
+                        };
+                    }
+                })()
+            };
+
+        return attr;
+
+    })(__m4);
+
+    // ## can/event/event.js
+    var __m6 = (function(can) {
+        // ## can.event.addEvent
+        // Adds a basic event listener to an object.
+        // This consists of storing a cache of event listeners on each object,
+        // that are iterated through later when events are dispatched.
+
+        can.addEvent = function(event, handler) {
+            // Initialize event cache.
+            var allEvents = this.__bindEvents || (this.__bindEvents = {}),
+                eventList = allEvents[event] || (allEvents[event] = []);
+
+            // Add the event
+            eventList.push({
+                    handler: handler,
+                    name: event
+                });
+            return this;
+        };
+
+        // ## can.event.listenTo
+        // Listens to an event without know how bind is implemented.
+        // The primary use for this is to listen to another's objects event while 
+        // tracking events on the local object (similar to namespacing).
+        // The API was heavily influenced by BackboneJS: http://backbonejs.org/
+
+        can.listenTo = function(other, event, handler) {
+            // Initialize event cache
+            var idedEvents = this.__listenToEvents;
+            if (!idedEvents) {
+                idedEvents = this.__listenToEvents = {};
+            }
+
+            // Identify the other object
+            var otherId = can.cid(other);
+            var othersEvents = idedEvents[otherId];
+
+            // Create a local event cache
+            if (!othersEvents) {
+                othersEvents = idedEvents[otherId] = {
+                    obj: other,
+                    events: {}
+                };
+            }
+            var eventsEvents = othersEvents.events[event];
+            if (!eventsEvents) {
+                eventsEvents = othersEvents.events[event] = [];
+            }
+
+            // Add the event, both locally and to the other object
+            eventsEvents.push(handler);
+            can.bind.call(other, event, handler);
+        };
+
+        // ## can.event.stopListening
+        // Stops listening for events on other objects
+
+        can.stopListening = function(other, event, handler) {
+            var idedEvents = this.__listenToEvents,
+                iterIdedEvents = idedEvents,
+                i = 0;
+            if (!idedEvents) {
+                return this;
+            }
+            if (other) {
+                var othercid = can.cid(other);
+                (iterIdedEvents = {})[othercid] = idedEvents[othercid];
+                // you might be trying to listen to something that is not there
+                if (!idedEvents[othercid]) {
+                    return this;
+                }
+            }
+
+            // Clean up events on the other object
+            for (var cid in iterIdedEvents) {
+                var othersEvents = iterIdedEvents[cid],
+                    eventsEvents;
+                other = idedEvents[cid].obj;
+
+                // Find the cache of events
+                if (!event) {
+                    eventsEvents = othersEvents.events;
+                } else {
+                    (eventsEvents = {})[event] = othersEvents.events[event];
+                }
+
+                // Unbind event handlers, both locally and on the other object
+                for (var eventName in eventsEvents) {
+                    var handlers = eventsEvents[eventName] || [];
+                    i = 0;
+                    while (i < handlers.length) {
+                        if (handler && handler === handlers[i] || !handler) {
+                            can.unbind.call(other, eventName, handlers[i]);
+                            handlers.splice(i, 1);
+                        } else {
+                            i++;
+                        }
+                    }
+                    // no more handlers?
+                    if (!handlers.length) {
+                        delete othersEvents.events[eventName];
+                    }
+                }
+                if (can.isEmptyObject(othersEvents.events)) {
+                    delete idedEvents[cid];
+                }
+            }
+            return this;
+        };
+
+        // ## can.event.removeEvent
+        // Removes a basic event listener from an object.
+        // This removes event handlers from the cache of listened events.
+
+        can.removeEvent = function(event, fn, __validate) {
+            if (!this.__bindEvents) {
+                return this;
+            }
+            var events = this.__bindEvents[event] || [],
+                i = 0,
+                ev, isFunction = typeof fn === 'function';
+            while (i < events.length) {
+                ev = events[i];
+                // Determine whether this event handler is "equivalent" to the one requested
+                // Generally this requires the same event/function, but a validation function 
+                // can be included for extra conditions. This is used in some plugins like `can/event/namespace`.
+                if (__validate ? __validate(ev, event, fn) : isFunction && ev.handler === fn || !isFunction && (ev.cid === fn || !fn)) {
+                    events.splice(i, 1);
+                } else {
+                    i++;
+                }
+            }
+            return this;
+        };
+
+        // ## can.event.dispatch
+        // Dispatches/triggers a basic event on an object.
+
+        can.dispatch = function(event, args) {
+            var events = this.__bindEvents;
+            if (!events) {
+                return;
+            }
+
+            // Initialize the event object
+            if (typeof event === 'string') {
+                event = {
+                    type: event
+                };
+            }
+
+            // Grab event listeners
+            var eventName = event.type,
+                handlers = (events[eventName] || []).slice(0),
+                passed = [event];
+
+            // Execute handlers listening for this event.
+            if (args) {
+                passed.push.apply(passed, args);
+            }
+
+            for (var i = 0, len = handlers.length; i < len; i++) {
+                handlers[i].handler.apply(this, passed);
+            }
+
+            return event;
+        };
+
+        // ## can.event.one
+        // Adds a basic event listener that listens to an event once and only once.
+
+        can.one = function(event, handler) {
+            // Unbind the listener after it has been executed
+            var one = function() {
+                can.unbind.call(this, event, one);
+                return handler.apply(this, arguments);
+            };
+
+            // Bind the altered listener
+            can.bind.call(this, event, one);
+            return this;
+        };
+
+        // ## can.event
+        // Create and export the `can.event` mixin
+        can.event = {
+            // Event method aliases
+
+            on: function() {
+                if (arguments.length === 0 && can.Control && this instanceof can.Control) {
+                    return can.Control.prototype.on.call(this);
+                } else {
+                    return can.addEvent.apply(this, arguments);
+                }
+            },
+
+
+            off: function() {
+                if (arguments.length === 0 && can.Control && this instanceof can.Control) {
+                    return can.Control.prototype.off.call(this);
+                } else {
+                    return can.removeEvent.apply(this, arguments);
+                }
+            },
+
+
+            bind: can.addEvent,
+
+            unbind: can.removeEvent,
+
+            delegate: function(selector, event, handler) {
+                return can.addEvent.call(this, event, handler);
+            },
+
+            undelegate: function(selector, event, handler) {
+                return can.removeEvent.call(this, event, handler);
+            },
+
+            trigger: can.dispatch,
+
+            // Normal can/event methods
+            one: can.one,
+            addEvent: can.addEvent,
+            removeEvent: can.removeEvent,
+            listenTo: can.listenTo,
+            stopListening: can.stopListening,
+            dispatch: can.dispatch
+        };
+
+        return can.event;
+    })(__m4);
+
+    // ## can/util/array/each.js
+    var __m7 = (function(can) {
+
+        // The following is from jQuery
+        var isArrayLike = function(obj) {
+            var length = obj.length;
+            return typeof arr !== "function" &&
+            (length === 0 || typeof length === "number" && length > 0 && (length - 1) in obj);
+        };
+
+        can.each = function(elements, callback, context) {
+            var i = 0,
+                key,
+                len,
+                item;
+            if (elements) {
+                if (isArrayLike(elements)) {
+                    if (can.List && elements instanceof can.List) {
+                        for (len = elements.attr("length"); i < len; i++) {
+                            item = elements.attr(i);
+                            if (callback.call(context || item, item, i, elements) === false) {
+                                break;
+                            }
+                        }
+                    } else {
+                        for (len = elements.length; i < len; i++) {
+                            item = elements[i];
+                            if (callback.call(context || item, item, i, elements) === false) {
+                                break;
+                            }
+                        }
+                    }
+
+                } else if (typeof elements === "object") {
+
+                    if (can.Map && elements instanceof can.Map || elements === can.route) {
+                        var keys = can.Map.keys(elements);
+                        for (i = 0, len = keys.length; i < len; i++) {
+                            key = keys[i];
+                            item = elements.attr(key);
+                            if (callback.call(context || item, item, key, elements) === false) {
+                                break;
+                            }
+                        }
+                    } else {
+                        for (key in elements) {
+                            if (elements.hasOwnProperty(key) && callback.call(context || elements[key], elements[key], key, elements) === false) {
+                                break;
+                            }
+                        }
+                    }
+
+                }
+            }
+            return elements;
+        };
+        return can;
+    })(__m4);
+
+    // ## can/util/inserted/inserted.js
+    var __m8 = (function(can) {
+        can.inserted = function(elems) {
+            // Turn the `elems` property into an array to prevent mutations from changing the looping.
+            elems = can.makeArray(elems);
+            var inDocument = false,
+                // Gets the `doc` to use as a reference for finding out whether the element is in the document.
+                doc = can.$(document.contains ? document : document.body),
+                children;
+            // Go through `elems` and trigger the `inserted` event.
+            // If the first element is not in the document (a Document Fragment) it will exit the function. If it is in the document it sets the `inDocument` flag to true. This means that we only check for the first element and either exit the function or start triggering "inserted" for child elements.
+            for (var i = 0, elem;
+                (elem = elems[i]) !== undefined; i++) {
+                if (!inDocument) {
+                    if (elem.getElementsByTagName) {
+                        if (can.has(doc, elem)
+                            .length) {
+                            inDocument = true;
+                        } else {
+                            return;
+                        }
+                    } else {
+                        continue;
+                    }
+                }
+
+                // If we've found an element in the document then we can now trigger **"inserted"** for `elem` and all of its children. We are using `getElementsByTagName("*")` so that we grab all of the descendant nodes.
+                if (inDocument && elem.getElementsByTagName) {
+                    children = can.makeArray(elem.getElementsByTagName("*"));
+                    can.trigger(elem, "inserted", [], false);
+                    for (var j = 0, child;
+                        (child = children[j]) !== undefined; j++) {
+                        can.trigger(child, "inserted", [], false);
+                    }
+                }
+            }
+        };
+
+        // ## can.appendChild
+        // Used to append a node to an element and trigger the "inserted" event on all of the newly inserted children. Since `can.inserted` takes an array we convert the child to an array, or in the case of a DocumentFragment we first convert the childNodes to an array and call inserted on those.
+        can.appendChild = function(el, child) {
+            var children;
+            if (child.nodeType === 11) {
+                children = can.makeArray(child.childNodes);
+            } else {
+                children = [child];
+            }
+            el.appendChild(child);
+            can.inserted(children);
+        };
+
+        // ## can.insertBefore
+        // Like can.appendChild, used to insert a node to an element before a reference node and then trigger the "inserted" event.
+        can.insertBefore = function(el, child, ref) {
+            var children;
+            if (child.nodeType === 11) {
+                children = can.makeArray(child.childNodes);
+            } else {
+                children = [child];
+            }
+            el.insertBefore(child, ref);
+            can.inserted(children);
+        };
+    })(__m4);
+
+    // ## can/util/jquery/jquery.js
+    var __m2 = (function($, can, attr, event) {
+        var isBindableElement = function(node) {
+            // In IE8 window.window !== window.window, so we allow == here.
+
+            return (node.nodeName && (node.nodeType === 1 || node.nodeType === 9)) || node == window;
+        };
+        // _jQuery node list._
+        $.extend(can, $, {
+                trigger: function(obj, event, args, bubbles) {
+                    if (isBindableElement(obj)) {
+                        $.event.trigger(event, args, obj, !bubbles);
+                    } else if (obj.trigger) {
+                        obj.trigger(event, args);
+                    } else {
+                        if (typeof event === 'string') {
+                            event = {
+                                type: event
+                            };
+                        }
+                        event.target = event.target || obj;
+                        if (args) {
+                            if (args.length && typeof args === "string") {
+                                args = [args];
+                            } else if (!args.length) {
+                                args = [args];
+                            }
+                        }
+                        if (!args) {
+                            args = [];
+                        }
+                        can.dispatch.call(obj, event, args);
+                    }
+                },
+                event: can.event,
+                addEvent: can.addEvent,
+                removeEvent: can.removeEvent,
+                buildFragment: function(elems, context) {
+                    // Check if this has any html nodes on our own.
+                    var ret;
+                    elems = [elems];
+                    // Set context per 1.8 logic
+                    context = context || document;
+                    context = !context.nodeType && context[0] || context;
+                    context = context.ownerDocument || context;
+                    ret = $.buildFragment(elems, context);
+                    return ret.cacheable ? $.clone(ret.fragment) : ret.fragment || ret;
+                },
+                $: $,
+                each: can.each,
+                bind: function(ev, cb) {
+                    // If we can bind to it...
+                    if (this.bind && this.bind !== can.bind) {
+                        this.bind(ev, cb);
+                    } else if (isBindableElement(this)) {
+                        $.event.add(this, ev, cb);
+                    } else {
+                        // Make it bind-able...
+                        can.addEvent.call(this, ev, cb);
+                    }
+                    return this;
+                },
+                unbind: function(ev, cb) {
+                    // If we can bind to it...
+                    if (this.unbind && this.unbind !== can.unbind) {
+                        this.unbind(ev, cb);
+                    } else if (isBindableElement(this)) {
+                        $.event.remove(this, ev, cb);
+                    } else {
+                        // Make it bind-able...
+                        can.removeEvent.call(this, ev, cb);
+                    }
+                    return this;
+                },
+                delegate: function(selector, ev, cb) {
+                    if (this.delegate) {
+                        this.delegate(selector, ev, cb);
+                    } else if (isBindableElement(this)) {
+                        $(this)
+                            .delegate(selector, ev, cb);
+                    } else {
+                        // make it bind-able ...
+                        can.bind.call(this, ev, cb);
+                    }
+                    return this;
+                },
+                undelegate: function(selector, ev, cb) {
+                    if (this.undelegate) {
+                        this.undelegate(selector, ev, cb);
+                    } else if (isBindableElement(this)) {
+                        $(this)
+                            .undelegate(selector, ev, cb);
+                    } else {
+                        can.unbind.call(this, ev, cb);
+                    }
+                    return this;
+                },
+                proxy: function(fn, context) {
+                    return function() {
+                        return fn.apply(context, arguments);
+                    };
+                },
+                attr: attr
+            });
+        // Wrap binding functions.
+
+        // Aliases
+        can.on = can.bind;
+        can.off = can.unbind;
+        // Wrap modifier functions.
+        $.each([
+                'append',
+                'filter',
+                'addClass',
+                'remove',
+                'data',
+                'get',
+                'has'
+            ], function(i, name) {
+                can[name] = function(wrapped) {
+                    return wrapped[name].apply(wrapped, can.makeArray(arguments)
+                        .slice(1));
+                };
+            });
+        // Memory safe destruction.
+        var oldClean = $.cleanData;
+        $.cleanData = function(elems) {
+            $.each(elems, function(i, elem) {
+                if (elem) {
+                    can.trigger(elem, 'removed', [], false);
+                }
+            });
+            oldClean(elems);
+        };
+        var oldDomManip = $.fn.domManip,
+            cbIndex;
+        // feature detect which domManip we are using
+        $.fn.domManip = function(args, cb1, cb2) {
+            for (var i = 1; i < arguments.length; i++) {
+                if (typeof arguments[i] === 'function') {
+                    cbIndex = i;
+                    break;
+                }
+            }
+            return oldDomManip.apply(this, arguments);
+        };
+        $(document.createElement("div"))
+            .append(document.createElement("div"));
+
+        $.fn.domManip = (cbIndex === 2 ? function(args, table, callback) {
+            return oldDomManip.call(this, args, table, function(elem) {
+                var elems;
+                if (elem.nodeType === 11) {
+                    elems = can.makeArray(elem.childNodes);
+                }
+                var ret = callback.apply(this, arguments);
+                can.inserted(elems ? elems : [elem]);
+                return ret;
+            });
+        } : function(args, callback) {
+            return oldDomManip.call(this, args, function(elem) {
+                var elems;
+                if (elem.nodeType === 11) {
+                    elems = can.makeArray(elem.childNodes);
+                }
+                var ret = callback.apply(this, arguments);
+                can.inserted(elems ? elems : [elem]);
+                return ret;
+            });
+        });
+
+        if (!can.attr.MutationObserver) {
+            // handle via calls to attr
+            var oldAttr = $.attr;
+            $.attr = function(el, attrName) {
+                var oldValue, newValue;
+                if (arguments.length >= 3) {
+                    oldValue = oldAttr.call(this, el, attrName);
+                }
+                var res = oldAttr.apply(this, arguments);
+                if (arguments.length >= 3) {
+                    newValue = oldAttr.call(this, el, attrName);
+                }
+                if (newValue !== oldValue) {
+                    can.attr.trigger(el, attrName, oldValue);
+                }
+                return res;
+            };
+            var oldRemove = $.removeAttr;
+            $.removeAttr = function(el, attrName) {
+                var oldValue = oldAttr.call(this, el, attrName),
+                    res = oldRemove.apply(this, arguments);
+
+                if (oldValue != null) {
+                    can.attr.trigger(el, attrName, oldValue);
+                }
+                return res;
+            };
+            $.event.special.attributes = {
+                setup: function() {
+                    can.data(can.$(this), "canHasAttributesBindings", true);
+                },
+                teardown: function() {
+                    $.removeData(this, "canHasAttributesBindings");
+                }
+            };
+        } else {
+            // setup a special events
+            $.event.special.attributes = {
+                setup: function() {
+                    var self = this;
+                    var observer = new can.attr.MutationObserver(function(mutations) {
+                        mutations.forEach(function(mutation) {
+                            var copy = can.simpleExtend({}, mutation);
+                            can.trigger(self, copy, []);
+                        });
+
+                    });
+                    observer.observe(this, {
+                            attributes: true,
+                            attributeOldValue: true
+                        });
+                    can.data(can.$(this), "canAttributesObserver", observer);
+                },
+                teardown: function() {
+                    can.data(can.$(this), "canAttributesObserver")
+                        .disconnect();
+                    $.removeData(this, "canAttributesObserver");
+
+                }
+            };
+        }
+
+        // ## Fix build fragment.
+        // In IE8, we can pass jQuery a fragment and it removes newlines.
+        // This checks for that and replaces can.buildFragment with something
+        // that if only a single text node is returned, returns a fragment with
+        // a text node that is set to the content.
+        (function() {
+
+            var text = "<-\n>",
+                frag = can.buildFragment(text, document);
+            if (text !== frag.childNodes[0].nodeValue) {
+
+                var oldBuildFragment = can.buildFragment;
+                can.buildFragment = function(content, context) {
+                    var res = oldBuildFragment(content, context);
+                    if (res.childNodes.length === 1 && res.childNodes[0].nodeType === 3) {
+                        res.childNodes[0].nodeValue = content;
+                    }
+                    return res;
+                };
+
+            }
+
+
+
+        })();
+
+        $.event.special.inserted = {};
+        $.event.special.removed = {};
+        return can;
+    })(jQuery, __m4, __m5, __m6, __m7, __m8);
+
+    // ## can/view/view.js
+    var __m10 = (function(can) {
+
+        var isFunction = can.isFunction,
+            makeArray = can.makeArray,
+            // Used for hookup `id`s.
+            hookupId = 1;
+
+        // internal utility methods
+        // ------------------------
+
+        // ##### makeRenderer
+
+        var makeRenderer = function(textRenderer) {
+            var renderer = function() {
+                return $view.frag(textRenderer.apply(this, arguments));
+            };
+            renderer.render = function() {
+                return textRenderer.apply(textRenderer, arguments);
+            };
+            return renderer;
+        };
+
+        // ##### checkText
+        // Makes sure there's a template, if not, have `steal` provide a warning.
+        var checkText = function(text, url) {
+            if (!text.length) {
+
+                // _removed if not used as a steal module_
+
+
+
+                throw "can.view: No template or empty template:" + url;
+            }
+        };
+
+        // ##### get
+        // get a deferred renderer for provided url
+
+        var get = function(obj, async) {
+            var url = typeof obj === 'string' ? obj : obj.url,
+                suffix = (obj.engine && '.' + obj.engine) || url.match(/\.[\w\d]+$/),
+                type,
+                // If we are reading a script element for the content of the template,
+                // `el` will be set to that script element.
+                el,
+                // A unique identifier for the view (used for caching).
+                // This is typically derived from the element id or
+                // the url for the template.
+                id;
+
+            //If the url has a #, we assume we want to use an inline template
+            //from a script element and not current page's HTML
+            if (url.match(/^#/)) {
+                url = url.substr(1);
+            }
+            // If we have an inline template, derive the suffix from the `text/???` part.
+            // This only supports `<script>` tags.
+            if (el = document.getElementById(url)) {
+                suffix = '.' + el.type.match(/\/(x\-)?(.+)/)[2];
+            }
+
+            // If there is no suffix, add one.
+            if (!suffix && !$view.cached[url]) {
+                url += suffix = $view.ext;
+            }
+
+            // if the suffix was derived from the .match() operation, pluck out the first value
+            if (can.isArray(suffix)) {
+                suffix = suffix[0];
+            }
+
+            // Convert to a unique and valid id.
+            id = $view.toId(url);
+
+            // If an absolute path, use `steal`/`require` to get it.
+            // You should only be using `//` if you are using an AMD loader like `steal` or `require` (not almond).
+            if (url.match(/^\/\//)) {
+                url = url.substr(2);
+                url = !window.steal ?
+                    url :
+                    steal.config()
+                    .root.mapJoin("" + steal.id(url));
+            }
+
+            // Localize for `require` (not almond)
+            if (window.require) {
+                if (require.toUrl) {
+                    url = require.toUrl(url);
+                }
+            }
+
+            // Set the template engine type.
+            type = $view.types[suffix];
+
+            // If it is cached,
+            if ($view.cached[id]) {
+                // Return the cached deferred renderer.
+                return $view.cached[id];
+
+                // Otherwise if we are getting this from a `<script>` element.
+            } else if (el) {
+                // Resolve immediately with the element's `innerHTML`.
+                return $view.registerView(id, el.innerHTML, type);
+            } else {
+                // Make an ajax request for text.
+                var d = new can.Deferred();
+                can.ajax({
+                        async: async,
+                        url: url,
+                        dataType: 'text',
+                        error: function(jqXHR) {
+                            checkText('', url);
+                            d.reject(jqXHR);
+                        },
+                        success: function(text) {
+                            // Make sure we got some text back.
+                            checkText(text, url);
+                            $view.registerView(id, text, type, d);
+                        }
+                    });
+                return d;
+            }
+        };
+        // ##### getDeferreds
+        // Gets an `array` of deferreds from an `object`.
+        // This only goes one level deep.
+
+        var getDeferreds = function(data) {
+            var deferreds = [];
+
+            // pull out deferreds
+            if (can.isDeferred(data)) {
+                return [data];
+            } else {
+                for (var prop in data) {
+                    if (can.isDeferred(data[prop])) {
+                        deferreds.push(data[prop]);
+                    }
+                }
+            }
+            return deferreds;
+        };
+
+        // ##### usefulPart
+        // Gets the useful part of a resolved deferred.
+        // When a jQuery.when is resolved, it returns an array to each argument.
+        // Reference ($.when)[https://api.jquery.com/jQuery.when/]
+        // This is for `model`s and `can.ajax` that resolve to an `array`.
+
+        var usefulPart = function(resolved) {
+            return can.isArray(resolved) && resolved[1] === 'success' ? resolved[0] : resolved;
+        };
+
+        // #### can.view
+        //defines $view for internal use, can.template for backwards compatibility
+
+        var $view = can.view = can.template = function(view, data, helpers, callback) {
+            // If helpers is a `function`, it is actually a callback.
+            if (isFunction(helpers)) {
+                callback = helpers;
+                helpers = undefined;
+            }
+            var result;
+            // Get the result, if a renderer function is passed in, then we just use that to render the data
+            if (isFunction(view)) {
+                result = view(data, helpers, callback);
+            } else {
+                result = $view.renderAs("fragment", view, data, helpers, callback);
+            }
+
+            return result;
+        };
+
+        // can.view methods
+        // --------------------------
+        can.extend($view, {
+                // ##### frag
+                // creates a fragment and hooks it up all at once
+
+                frag: function(result, parentNode) {
+                    return $view.hookup($view.fragment(result), parentNode);
+                },
+
+                // #### fragment
+                // this is used internally to create a document fragment, insert it,then hook it up
+                fragment: function(result) {
+                    if (typeof result !== "string" && result.nodeType === 11) {
+                        return result;
+                    }
+                    var frag = can.buildFragment(result, document.body);
+                    // If we have an empty frag...
+                    if (!frag.childNodes.length) {
+                        frag.appendChild(document.createTextNode(''));
+                    }
+                    return frag;
+                },
+
+                // ##### toId
+                // Convert a path like string into something that's ok for an `element` ID.
+                toId: function(src) {
+                    return can.map(src.toString()
+                        .split(/\/|\./g), function(part) {
+                            // Dont include empty strings in toId functions
+                            if (part) {
+                                return part;
+                            }
+                        })
+                        .join('_');
+                },
+                // ##### toStr
+                // convert argument to a string
+                toStr: function(txt) {
+                    return txt == null ? "" : "" + txt;
+                },
+
+                // ##### hookup
+                // attach the provided `fragment` to `parentNode`
+
+                hookup: function(fragment, parentNode) {
+                    var hookupEls = [],
+                        id,
+                        func;
+
+                    // Get all `childNodes`.
+                    can.each(fragment.childNodes ? can.makeArray(fragment.childNodes) : fragment, function(node) {
+                        if (node.nodeType === 1) {
+                            hookupEls.push(node);
+                            hookupEls.push.apply(hookupEls, can.makeArray(node.getElementsByTagName('*')));
+                        }
+                    });
+
+                    // Filter by `data-view-id` attribute.
+                    can.each(hookupEls, function(el) {
+                        if (el.getAttribute && (id = el.getAttribute('data-view-id')) && (func = $view.hookups[id])) {
+                            func(el, parentNode, id);
+                            delete $view.hookups[id];
+                            el.removeAttribute('data-view-id');
+                        }
+                    });
+
+                    return fragment;
+                },
+
+                // `hookups` keeps list of pending hookups, ie fragments to attach to a parent node
+
+                hookups: {},
+
+                // `hook` factory method for hookup function inserted into templates
+                // hookup functions are called after the html is rendered to the page
+                // only implemented by EJS templates.
+
+                hook: function(cb) {
+                    $view.hookups[++hookupId] = cb;
+                    return ' data-view-id=\'' + hookupId + '\'';
+                },
+
+
+                cached: {},
+                cachedRenderers: {},
+
+                // cache view templates resolved via XHR on the client
+
+                cache: true,
+
+                // ##### register
+                // given an info object, register a template type
+                // different templating solutions produce strings or document fragments via their renderer function
+
+                register: function(info) {
+                    this.types['.' + info.suffix] = info;
+
+                    // _removed if not used as a steal module_
+
+
+
+                    can[info.suffix] = $view[info.suffix] = function(id, text) {
+                        var renderer,
+                            renderFunc;
+                        // If there is no text, assume id is the template text, so return a nameless renderer.
+                        if (!text) {
+                            renderFunc = function() {
+                                if (!renderer) {
+                                    // if the template has a fragRenderer already, just return that.
+                                    if (info.fragRenderer) {
+                                        renderer = info.fragRenderer(null, id);
+                                    } else {
+                                        renderer = makeRenderer(info.renderer(null, id));
+                                    }
+                                }
+                                return renderer.apply(this, arguments);
+                            };
+                            renderFunc.render = function() {
+                                var textRenderer = info.renderer(null, id);
+                                return textRenderer.apply(textRenderer, arguments);
+                            };
+                            return renderFunc;
+                        }
+                        var registeredRenderer = function() {
+                            if (!renderer) {
+                                if (info.fragRenderer) {
+                                    renderer = info.fragRenderer(id, text);
+                                } else {
+                                    renderer = info.renderer(id, text);
+                                }
+                            }
+                            return renderer.apply(this, arguments);
+                        };
+                        if (info.fragRenderer) {
+                            return $view.preload(id, registeredRenderer);
+                        } else {
+                            return $view.preloadStringRenderer(id, registeredRenderer);
+                        }
+
+                    };
+
+                },
+
+                //registered view types
+                types: {},
+
+
+                ext: ".ejs",
+
+
+                registerScript: function(type, id, src) {
+                    return 'can.view.preloadStringRenderer(\'' + id + '\',' + $view.types['.' + type].script(id, src) + ');';
+                },
+
+
+                preload: function(id, renderer) {
+                    var def = $view.cached[id] = new can.Deferred()
+                        .resolve(function(data, helpers) {
+                            return renderer.call(data, data, helpers);
+                        });
+
+                    // set cache references (otherwise preloaded recursive views won't recurse properly)
+                    def.__view_id = id;
+                    $view.cachedRenderers[id] = renderer;
+
+                    return renderer;
+                },
+
+
+                preloadStringRenderer: function(id, stringRenderer) {
+                    return this.preload(id, makeRenderer(stringRenderer));
+                },
+
+                // #### renderers
+                // ---------------
+                // can.view's primary purpose is to load templates (from strings or filesystem) and render them
+                // can.view supports two different forms of rendering systems
+                // mustache templates return a string based rendering function
+
+                // stache (or other fragment based templating systems) return a document fragment, so 'hookup' steps are not required
+                // ##### render
+                //call `renderAs` with a hardcoded string, as view.render
+                // always operates against resolved template files or hardcoded strings
+                render: function(view, data, helpers, callback) {
+                    return can.view.renderAs("string", view, data, helpers, callback);
+                },
+
+                // ##### renderTo
+                renderTo: function(format, renderer, data, helpers) {
+                    return (format === "string" && renderer.render ? renderer.render : renderer)(data, helpers);
+                },
+
+
+                renderAs: function(format, view, data, helpers, callback) {
+                    // If helpers is a `function`, it is actually a callback.
+                    if (isFunction(helpers)) {
+                        callback = helpers;
+                        helpers = undefined;
+                    }
+
+                    // See if we got passed any deferreds.
+                    var deferreds = getDeferreds(data);
+                    var reading, deferred, dataCopy, async, response;
+                    if (deferreds.length) {
+                        // Does data contain any deferreds?
+                        // The deferred that resolves into the rendered content...
+                        deferred = new can.Deferred();
+                        dataCopy = can.extend({}, data);
+
+                        // Add the view request to the list of deferreds.
+                        deferreds.push(get(view, true));
+                        // Wait for the view and all deferreds to finish...
+                        can.when.apply(can, deferreds)
+                            .then(function(resolved) {
+                                // Get all the resolved deferreds.
+                                var objs = makeArray(arguments),
+                                    // Renderer is the last index of the data.
+                                    renderer = objs.pop(),
+                                    // The result of the template rendering with data.
+                                    result;
+
+                                // Make data look like the resolved deferreds.
+                                if (can.isDeferred(data)) {
+                                    dataCopy = usefulPart(resolved);
+                                } else {
+                                    // Go through each prop in data again and
+                                    // replace the defferreds with what they resolved to.
+                                    for (var prop in data) {
+                                        if (can.isDeferred(data[prop])) {
+                                            dataCopy[prop] = usefulPart(objs.shift());
+                                        }
+                                    }
+                                }
+
+                                // Get the rendered result.
+                                result = can.view.renderTo(format, renderer, dataCopy, helpers);
+
+                                // Resolve with the rendered view.
+                                deferred.resolve(result, dataCopy);
+
+                                // If there's a `callback`, call it back with the result.
+                                if (callback) {
+                                    callback(result, dataCopy);
+                                }
+                            }, function() {
+                                deferred.reject.apply(deferred, arguments);
+                            });
+                        // Return the deferred...
+                        return deferred;
+                    } else {
+                        // get is called async but in 
+                        // ff will be async so we need to temporarily reset
+                        reading = can.__clearReading();
+
+                        // If there's a `callback` function
+                        async = isFunction(callback);
+                        // Get the `view` type
+                        deferred = get(view, async);
+
+                        if (reading) {
+                            can.__setReading(reading);
+                        }
+
+                        // If we are `async`...
+                        if (async) {
+                            // Return the deferred
+                            response = deferred;
+                            // And fire callback with the rendered result.
+                            deferred.then(function(renderer) {
+                                callback(data ? can.view.renderTo(format, renderer, data, helpers) : renderer);
+                            });
+                        } else {
+                            // if the deferred is resolved, call the cached renderer instead
+                            // this is because it's possible, with recursive deferreds to
+                            // need to render a view while its deferred is _resolving_.  A _resolving_ deferred
+                            // is a deferred that was just resolved and is calling back it's success callbacks.
+                            // If a new success handler is called while resoliving, it does not get fired by
+                            // jQuery's deferred system.  So instead of adding a new callback
+                            // we use the cached renderer.
+                            // We also add __view_id on the deferred so we can look up it's cached renderer.
+                            // In the future, we might simply store either a deferred or the cached result.
+                            if (deferred.state() === 'resolved' && deferred.__view_id) {
+                                var currentRenderer = $view.cachedRenderers[deferred.__view_id];
+                                return data ? can.view.renderTo(format, currentRenderer, data, helpers) : currentRenderer;
+                            } else {
+                                // Otherwise, the deferred is complete, so
+                                // set response to the result of the rendering.
+                                deferred.then(function(renderer) {
+                                    response = data ? can.view.renderTo(format, renderer, data, helpers) : renderer;
+                                });
+                            }
+                        }
+
+                        return response;
+                    }
+                },
+
+
+                registerView: function(id, text, type, def) {
+                    // Get the renderer function.
+                    var info = (typeof type === "object" ? type : $view.types[type || $view.ext]),
+                        renderer;
+                    if (info.fragRenderer) {
+                        renderer = info.fragRenderer(id, text);
+                    } else {
+                        renderer = makeRenderer(info.renderer(id, text));
+                    }
+
+                    def = def || new can.Deferred();
+
+                    // Cache if we are caching.
+                    if ($view.cache) {
+                        $view.cached[id] = def;
+                        def.__view_id = id;
+                        $view.cachedRenderers[id] = renderer;
+                    }
+
+                    // Return the objects for the response's `dataTypes`
+                    // (in this case view).
+                    return def.resolve(renderer);
+                }
+            });
+
+        // _removed if not used as a steal module_
+
+        return can;
+    })(__m2);
+
+    // ## can/view/callbacks/callbacks.js
+    var __m9 = (function(can) {
+
+        var attr = can.view.attr = function(attributeName, attrHandler) {
+            if (attrHandler) {
+                if (typeof attributeName === "string") {
+                    attributes[attributeName] = attrHandler;
+                } else {
+                    regExpAttributes.push({
+                            match: attributeName,
+                            handler: attrHandler
+                        });
+                }
+            } else {
+                var cb = attributes[attributeName];
+                if (!cb) {
+
+                    for (var i = 0, len = regExpAttributes.length; i < len; i++) {
+                        var attrMatcher = regExpAttributes[i];
+                        if (attrMatcher.match.test(attributeName)) {
+                            cb = attrMatcher.handler;
+                            break;
+                        }
+                    }
+                }
+                return cb;
+            }
+        };
+
+        var attributes = {},
+            regExpAttributes = [],
+            automaticCustomElementCharacters = /[-\:]/;
+
+        var tag = can.view.tag = function(tagName, tagHandler) {
+            if (tagHandler) {
+                // if we have html5shive ... re-generate
+                if (window.html5) {
+                    window.html5.elements += " " + tagName;
+                    window.html5.shivDocument();
+                }
+
+                tags[tagName.toLowerCase()] = tagHandler;
+            } else {
+                var cb = tags[tagName.toLowerCase()];
+                if (!cb && automaticCustomElementCharacters.test(tagName)) {
+                    // empty callback for things that look like special tags
+                    cb = function() {};
+                }
+                return cb;
+            }
+
+        };
+        var tags = {};
+
+        can.view.callbacks = {
+            _tags: tags,
+            _attributes: attributes,
+            _regExpAttributes: regExpAttributes,
+            tag: tag,
+            attr: attr,
+            // handles calling back a tag callback
+            tagHandler: function(el, tagName, tagData) {
+                var helperTagCallback = tagData.options.attr('tags.' + tagName),
+                    tagCallback = helperTagCallback || tags[tagName];
+
+                // If this was an element like <foo-bar> that doesn't have a component, just render its content
+                var scope = tagData.scope,
+                    res;
+
+                if (tagCallback) {
+                    var reads = can.__clearReading();
+                    res = tagCallback(el, tagData);
+                    can.__setReading(reads);
+                } else {
+                    res = scope;
+                }
+
+
+
+                // If the tagCallback gave us something to render with, and there is content within that element
+                // render it!
+                if (res && tagData.subtemplate) {
+
+                    if (scope !== res) {
+                        scope = scope.add(res);
+                    }
+                    var result = tagData.subtemplate(scope, tagData.options);
+                    var frag = typeof result === "string" ? can.view.frag(result) : result;
+                    can.appendChild(el, frag);
+                }
+            }
+        };
+        return can.view.callbacks;
+    })(__m2, __m10);
+
+    // ## can/util/string/string.js
+    var __m13 = (function(can) {
+        // ##string.js
+        // _Miscellaneous string utility functions._  
+        // Several of the methods in this plugin use code adapated from Prototype
+        // Prototype JavaScript framework, version 1.6.0.1.
+        // © 2005-2007 Sam Stephenson
+        var strUndHash = /_|-/,
+            strColons = /\=\=/,
+            strWords = /([A-Z]+)([A-Z][a-z])/g,
+            strLowUp = /([a-z\d])([A-Z])/g,
+            strDash = /([a-z\d])([A-Z])/g,
+            strReplacer = /\{([^\}]+)\}/g,
+            strQuote = /"/g,
+            strSingleQuote = /'/g,
+            strHyphenMatch = /-+(.)?/g,
+            strCamelMatch = /[a-z][A-Z]/g,
+            // Returns the `prop` property from `obj`.
+            // If `add` is true and `prop` doesn't exist in `obj`, create it as an
+            // empty object.
+            getNext = function(obj, prop, add) {
+                var result = obj[prop];
+                if (result === undefined && add === true) {
+                    result = obj[prop] = {};
+                }
+                return result;
+            },
+            // Returns `true` if the object can have properties (no `null`s).
+            isContainer = function(current) {
+                return /^f|^o/.test(typeof current);
+            }, convertBadValues = function(content) {
+                // Convert bad values into empty strings
+                var isInvalid = content === null || content === undefined || isNaN(content) && '' + content === 'NaN';
+                return '' + (isInvalid ? '' : content);
+            };
+        can.extend(can, {
+                esc: function(content) {
+                    return convertBadValues(content)
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(strQuote, '&#34;')
+                        .replace(strSingleQuote, '&#39;');
+                },
+                getObject: function(name, roots, add) {
+                    // The parts of the name we are looking up
+                    // `['App','Models','Recipe']`
+                    var parts = name ? name.split('.') : [],
+                        length = parts.length,
+                        current, r = 0,
+                        i, container, rootsLength;
+                    // Make sure roots is an `array`.
+                    roots = can.isArray(roots) ? roots : [roots || window];
+                    rootsLength = roots.length;
+                    if (!length) {
+                        return roots[0];
+                    }
+                    // For each root, mark it as current.
+                    for (r; r < rootsLength; r++) {
+                        current = roots[r];
+                        container = undefined;
+                        // Walk current to the 2nd to last object or until there
+                        // is not a container.
+                        for (i = 0; i < length && isContainer(current); i++) {
+                            container = current;
+                            current = getNext(container, parts[i]);
+                        }
+                        // If we found property break cycle
+                        if (container !== undefined && current !== undefined) {
+                            break;
+                        }
+                    }
+                    // Remove property from found container
+                    if (add === false && current !== undefined) {
+                        delete container[parts[i - 1]];
+                    }
+                    // When adding property add it to the first root
+                    if (add === true && current === undefined) {
+                        current = roots[0];
+                        for (i = 0; i < length && isContainer(current); i++) {
+                            current = getNext(current, parts[i], true);
+                        }
+                    }
+                    return current;
+                },
+                capitalize: function(s, cache) {
+                    // Used to make newId.
+                    return s.charAt(0)
+                        .toUpperCase() + s.slice(1);
+                },
+                camelize: function(str) {
+                    return convertBadValues(str)
+                        .replace(strHyphenMatch, function(match, chr) {
+                            return chr ? chr.toUpperCase() : '';
+                        });
+                },
+                hyphenate: function(str) {
+                    return convertBadValues(str)
+                        .replace(strCamelMatch, function(str, offset) {
+                            return str.charAt(0) + '-' + str.charAt(1)
+                                .toLowerCase();
+                        });
+                },
+                underscore: function(s) {
+                    return s.replace(strColons, '/')
+                        .replace(strWords, '$1_$2')
+                        .replace(strLowUp, '$1_$2')
+                        .replace(strDash, '_')
+                        .toLowerCase();
+                },
+                sub: function(str, data, remove) {
+                    var obs = [];
+                    str = str || '';
+                    obs.push(str.replace(strReplacer, function(whole, inside) {
+                                // Convert inside to type.
+                                var ob = can.getObject(inside, data, remove === true ? false : undefined);
+                                if (ob === undefined || ob === null) {
+                                    obs = null;
+                                    return '';
+                                }
+                                // If a container, push into objs (which will return objects found).
+                                if (isContainer(ob) && obs) {
+                                    obs.push(ob);
+                                    return '';
+                                }
+                                return '' + ob;
+                            }));
+                    return obs === null ? obs : obs.length <= 1 ? obs[0] : obs;
+                },
+                replacer: strReplacer,
+                undHash: strUndHash
+            });
+        return can;
+    })(__m2);
+
+    // ## can/construct/construct.js
+    var __m12 = (function(can) {
+        // ## construct.js
+        // `can.Construct`  
+        // _This is a modified version of
+        // [John Resig's class](http://ejohn.org/blog/simple-javascript-inheritance/).  
+        // It provides class level inheritance and callbacks._
+        // A private flag used to initialize a new class instance without
+        // initializing it's bindings.
+        var initializing = 0;
+
+        can.Construct = function() {
+            if (arguments.length) {
+                return can.Construct.extend.apply(can.Construct, arguments);
+            }
+        };
+
+        can.extend(can.Construct, {
+
+                constructorExtends: true,
+
+                newInstance: function() {
+                    // Get a raw instance object (`init` is not called).
+                    var inst = this.instance(),
+                        args;
+                    // Call `setup` if there is a `setup`
+                    if (inst.setup) {
+                        args = inst.setup.apply(inst, arguments);
+                    }
+                    // Call `init` if there is an `init`  
+                    // If `setup` returned `args`, use those as the arguments
+                    if (inst.init) {
+                        inst.init.apply(inst, args || arguments);
+                    }
+                    return inst;
+                },
+                // Overwrites an object with methods. Used in the `super` plugin.
+                // `newProps` - New properties to add.
+                // `oldProps` - Where the old properties might be (used with `super`).
+                // `addTo` - What we are adding to.
+                _inherit: function(newProps, oldProps, addTo) {
+                    can.extend(addTo || newProps, newProps || {});
+                },
+                // used for overwriting a single property.
+                // this should be used for patching other objects
+                // the super plugin overwrites this
+                _overwrite: function(what, oldProps, propName, val) {
+                    what[propName] = val;
+                },
+                // Set `defaults` as the merger of the parent `defaults` and this
+                // object's `defaults`. If you overwrite this method, make sure to
+                // include option merging logic.
+
+                setup: function(base, fullName) {
+                    this.defaults = can.extend(true, {}, base.defaults, this.defaults);
+                },
+                // Create's a new `class` instance without initializing by setting the
+                // `initializing` flag.
+                instance: function() {
+                    // Prevents running `init`.
+                    initializing = 1;
+                    var inst = new this();
+                    // Allow running `init`.
+                    initializing = 0;
+                    return inst;
+                },
+                // Extends classes.
+
+                extend: function(fullName, klass, proto) {
+                    // Figure out what was passed and normalize it.
+                    if (typeof fullName !== 'string') {
+                        proto = klass;
+                        klass = fullName;
+                        fullName = null;
+                    }
+                    if (!proto) {
+                        proto = klass;
+                        klass = null;
+                    }
+                    proto = proto || {};
+                    var _super_class = this,
+                        _super = this.prototype,
+                        parts, current, _fullName, _shortName, name, shortName, namespace, prototype;
+                    // Instantiate a base class (but only create the instance,
+                    // don't run the init constructor).
+                    prototype = this.instance();
+                    // Copy the properties over onto the new prototype.
+                    can.Construct._inherit(proto, _super, prototype);
+                    // The dummy class constructor.
+
+                    function Constructor() {
+                        // All construction is actually done in the init method.
+                        if (!initializing) {
+
+
+                            return this.constructor !== Constructor &&
+                            // We are being called without `new` or we are extending.
+                            arguments.length && Constructor.constructorExtends ? Constructor.extend.apply(Constructor, arguments) :
+                            // We are being called with `new`.
+                            Constructor.newInstance.apply(Constructor, arguments);
+                        }
+                    }
+                    // Copy old stuff onto class (can probably be merged w/ inherit)
+                    for (name in _super_class) {
+                        if (_super_class.hasOwnProperty(name)) {
+                            Constructor[name] = _super_class[name];
+                        }
+                    }
+                    // Copy new static properties on class.
+                    can.Construct._inherit(klass, _super_class, Constructor);
+                    // Setup namespaces.
+                    if (fullName) {
+
+                        parts = fullName.split('.');
+                        shortName = parts.pop();
+                        current = can.getObject(parts.join('.'), window, true);
+                        namespace = current;
+                        _fullName = can.underscore(fullName.replace(/\./g, "_"));
+                        _shortName = can.underscore(shortName);
+
+
+
+                        current[shortName] = Constructor;
+                    }
+                    // Set things that shouldn't be overwritten.
+                    can.extend(Constructor, {
+                            constructor: Constructor,
+                            prototype: prototype,
+
+                            namespace: namespace,
+
+                            _shortName: _shortName,
+
+                            fullName: fullName,
+                            _fullName: _fullName
+                        });
+                    // Dojo and YUI extend undefined
+                    if (shortName !== undefined) {
+                        Constructor.shortName = shortName;
+                    }
+                    // Make sure our prototype looks nice.
+                    Constructor.prototype.constructor = Constructor;
+                    // Call the class `setup` and `init`
+                    var t = [_super_class].concat(can.makeArray(arguments)),
+                        args = Constructor.setup.apply(Constructor, t);
+                    if (Constructor.init) {
+                        Constructor.init.apply(Constructor, args || t);
+                    }
+
+                    return Constructor;
+                }
+            });
+
+        can.Construct.prototype.setup = function() {};
+
+        can.Construct.prototype.init = function() {};
+        return can.Construct;
+    })(__m13);
+
+    // ## can/control/control.js
+    var __m11 = (function(can) {
+        // ### bind
+        // this helper binds to one element and returns a function that unbinds from that element.
+        var bind = function(el, ev, callback) {
+
+            can.bind.call(el, ev, callback);
+
+            return function() {
+                can.unbind.call(el, ev, callback);
+            };
+        },
+            isFunction = can.isFunction,
+            extend = can.extend,
+            each = can.each,
+            slice = [].slice,
+            paramReplacer = /\{([^\}]+)\}/g,
+            special = can.getObject("$.event.special", [can]) || {},
+
+            // ### delegate
+            // this helper binds to elements based on a selector and returns a 
+            // function that unbinds.
+            delegate = function(el, selector, ev, callback) {
+                can.delegate.call(el, selector, ev, callback);
+                return function() {
+                    can.undelegate.call(el, selector, ev, callback);
+                };
+            },
+
+            // ### binder
+            // Calls bind or unbind depending if there is a selector.
+            binder = function(el, ev, callback, selector) {
+                return selector ?
+                    delegate(el, can.trim(selector), ev, callback) :
+                    bind(el, ev, callback);
+            },
+
+            basicProcessor;
+
+        var Control = can.Control = can.Construct(
+
+            // ## *static functions*
+
+            {
+                // ## can.Control.setup
+                // This function pre-processes which methods are event listeners and which are methods of
+                // the control. It has a mechanism to allow controllers to inherit default values from super
+                // classes, like `can.Construct`, and will cache functions that are action functions (see `_isAction`)
+                // or functions with an underscored name.
+                setup: function() {
+                    can.Construct.setup.apply(this, arguments);
+
+                    if (can.Control) {
+                        var control = this,
+                            funcName;
+
+                        control.actions = {};
+                        for (funcName in control.prototype) {
+                            if (control._isAction(funcName)) {
+                                control.actions[funcName] = control._action(funcName);
+                            }
+                        }
+                    }
+                },
+                // ## can.Control._shifter
+                // Moves `this` to the first argument, wraps it with `jQuery` if it's 
+                // an element.
+                _shifter: function(context, name) {
+
+                    var method = typeof name === "string" ? context[name] : name;
+
+                    if (!isFunction(method)) {
+                        method = context[method];
+                    }
+
+                    return function() {
+                        context.called = name;
+                        return method.apply(context, [this.nodeName ? can.$(this) : this].concat(slice.call(arguments, 0)));
+                    };
+                },
+
+                // ## can.Control._isAction
+                // Return `true` if `methodName` refers to an action. An action is a `methodName` value that
+                // is not the constructor, and is either a function or string that refers to a function, or is
+                // defined in `special`, `processors`. Detects whether `methodName` is also a valid method name.
+                _isAction: function(methodName) {
+                    var val = this.prototype[methodName],
+                        type = typeof val;
+
+                    return (methodName !== 'constructor') &&
+                    (type === "function" || (type === "string" && isFunction(this.prototype[val]))) && !! (special[methodName] || processors[methodName] || /[^\w]/.test(methodName));
+                },
+                // ## can.Control._action
+                // Takes a method name and the options passed to a control and tries to return the data 
+                // necessary to pass to a processor (something that binds things).
+                // For performance reasons, `_action` is called twice: 
+                // * It's called when the Control class is created. for templated method names (e.g., `{window} foo`), it returns null. For non-templated method names it returns the event binding data. That data is added to `this.actions`.
+                // * It is called wehn a control instance is created, but only for templated actions.
+                _action: function(methodName, options) {
+
+                    // If we don't have options (a `control` instance), we'll run this later. If we have
+                    // options, run `can.sub` to replace the action template `{}` with values from the `options`
+                    // or `window`. If a `{}` template resolves to an object, `convertedName` will be an array.
+                    // In that case, the event name we want will be the last item in that array.
+                    paramReplacer.lastIndex = 0;
+                    if (options || !paramReplacer.test(methodName)) {
+                        var convertedName = options ? can.sub(methodName, this._lookup(options)) : methodName;
+                        if (!convertedName) {
+
+                            return null;
+                        }
+                        var arr = can.isArray(convertedName),
+                            name = arr ? convertedName[1] : convertedName,
+                            parts = name.split(/\s+/g),
+                            event = parts.pop();
+
+                        return {
+                            processor: processors[event] || basicProcessor,
+                            parts: [name, parts.join(" "), event],
+                            delegate: arr ? convertedName[0] : undefined
+                        };
+                    }
+                },
+                _lookup: function(options) {
+                    return [options, window];
+                },
+                // ## can.Control.processors
+                // An object of `{eventName : function}` pairs that Control uses to 
+                // hook up events automatically.
+                processors: {},
+                // ## can.Control.defaults
+                // A object of name-value pairs that act as default values for a control instance
+                defaults: {}
+            }, {
+                // ## *prototype functions*
+
+                // ## setup
+                // Setup is where most of the Control's magic happens. It performs several pre-initialization steps:
+                // - Sets `this.element`
+                // - Adds the Control's name to the element's className
+                // - Saves the Control in `$.data`
+                // - Merges Options
+                // - Binds event handlers using `delegate`
+                // The final step is to return pass the element and prepareed options, to be used in `init`.
+                setup: function(element, options) {
+
+                    var cls = this.constructor,
+                        pluginname = cls.pluginName || cls._fullName,
+                        arr;
+
+                    // Retrieve the raw element, then set the plugin name as a class there.
+                    this.element = can.$(element);
+
+                    if (pluginname && pluginname !== 'can_control') {
+                        this.element.addClass(pluginname);
+                    }
+
+                    // Set up the 'controls' data on the element. If it does not exist, initialize
+                    // it to an empty array.
+                    arr = can.data(this.element, 'controls');
+                    if (!arr) {
+                        arr = [];
+                        can.data(this.element, 'controls', arr);
+                    }
+                    arr.push(this);
+
+                    // The `this.options` property is an Object that contains configuration data
+                    // passed to a control when it is created (`new can.Control(element, options)`)
+                    // The `options` argument passed when creating the control is merged with `can.Control.defaults` 
+                    // in [can.Control.prototype.setup setup].
+                    // If no `options` value is used during creation, the value in `defaults` is used instead
+                    this.options = extend({}, cls.defaults, options);
+
+                    this.on();
+
+                    return [this.element, this.options];
+                },
+                // ## on
+                // This binds an event handler for an event to a selector under the scope of `this.element`
+                // If no options are specified, all events are rebound to their respective elements. The actions,
+                // which were cached in `setup`, are used and all elements are bound using `delegate` from `this.element`.
+                on: function(el, selector, eventName, func) {
+                    if (!el) {
+                        this.off();
+
+                        var cls = this.constructor,
+                            bindings = this._bindings,
+                            actions = cls.actions,
+                            element = this.element,
+                            destroyCB = can.Control._shifter(this, "destroy"),
+                            funcName, ready;
+
+                        for (funcName in actions) {
+                            // Only push if we have the action and no option is `undefined`
+                            if (actions.hasOwnProperty(funcName)) {
+                                ready = actions[funcName] || cls._action(funcName, this.options, this);
+                                if (ready) {
+                                    bindings.control[funcName] = ready.processor(ready.delegate || element,
+                                        ready.parts[2], ready.parts[1], funcName, this);
+                                }
+                            }
+                        }
+
+                        // Set up the ability to `destroy` the control later.
+                        can.bind.call(element, "removed", destroyCB);
+                        bindings.user.push(function(el) {
+                            can.unbind.call(el, "removed", destroyCB);
+                        });
+                        return bindings.user.length;
+                    }
+
+                    // if `el` is a string, use that as `selector` and re-set it to this control's element...
+                    if (typeof el === 'string') {
+                        func = eventName;
+                        eventName = selector;
+                        selector = el;
+                        el = this.element;
+                    }
+
+                    // ...otherwise, set `selector` to null
+                    if (func === undefined) {
+                        func = eventName;
+                        eventName = selector;
+                        selector = null;
+                    }
+
+                    if (typeof func === 'string') {
+                        func = can.Control._shifter(this, func);
+                    }
+
+                    this._bindings.user.push(binder(el, eventName, func, selector));
+
+                    return this._bindings.user.length;
+                },
+                // ## off
+                // Unbinds all event handlers on the controller.
+                // This should _only_ be called in combination with .on()
+                off: function() {
+                    var el = this.element[0],
+                        bindings = this._bindings;
+                    if (bindings) {
+                        each(bindings.user || [], function(value) {
+                            value(el);
+                        });
+                        each(bindings.control || {}, function(value) {
+                            value(el);
+                        });
+                    }
+                    // Adds bindings.
+                    this._bindings = {
+                        user: [],
+                        control: {}
+                    };
+                },
+                // ## destroy
+                // Prepares a `control` for garbage collection.
+                // First checks if it has already been removed. Then, removes all the bindings, data, and 
+                // the element from the Control instance.
+                destroy: function() {
+                    if (this.element === null) {
+
+                        return;
+                    }
+                    var Class = this.constructor,
+                        pluginName = Class.pluginName || Class._fullName,
+                        controls;
+
+                    this.off();
+
+                    if (pluginName && pluginName !== 'can_control') {
+                        this.element.removeClass(pluginName);
+                    }
+
+                    controls = can.data(this.element, "controls");
+                    controls.splice(can.inArray(this, controls), 1);
+
+                    can.trigger(this, "destroyed");
+
+                    this.element = null;
+                }
+            });
+
+        // ## Processors
+        // Processors do the binding. This basic processor binds events. Each returns a function that unbinds 
+        // when called.
+        var processors = can.Control.processors;
+        basicProcessor = function(el, event, selector, methodName, control) {
+            return binder(el, event, can.Control._shifter(control, methodName), selector);
+        };
+
+        // Set common events to be processed as a `basicProcessor`
+        each(["change", "click", "contextmenu", "dblclick", "keydown", "keyup",
+                "keypress", "mousedown", "mousemove", "mouseout", "mouseover",
+                "mouseup", "reset", "resize", "scroll", "select", "submit", "focusin",
+                "focusout", "mouseenter", "mouseleave",
+                "touchstart", "touchmove", "touchcancel", "touchend", "touchleave",
+                "inserted", "removed"
+            ], function(v) {
+                processors[v] = basicProcessor;
+            });
+
+        return Control;
+    })(__m2, __m12);
+
+    // ## can/util/bind/bind.js
+    var __m16 = (function(can) {
+
+        // ## Bind helpers
+        can.bindAndSetup = function() {
+            // Add the event to this object
+            can.addEvent.apply(this, arguments);
+            // If not initializing, and the first binding
+            // call bindsetup if the function exists.
+            if (!this._init) {
+                if (!this._bindings) {
+                    this._bindings = 1;
+                    // setup live-binding
+                    if (this._bindsetup) {
+                        this._bindsetup();
+                    }
+                } else {
+                    this._bindings++;
+                }
+            }
+            return this;
+        };
+        can.unbindAndTeardown = function(ev, handler) {
+            // Remove the event handler
+            can.removeEvent.apply(this, arguments);
+            if (this._bindings === null) {
+                this._bindings = 0;
+            } else {
+                this._bindings--;
+            }
+            // If there are no longer any bindings and
+            // there is a bindteardown method, call it.
+            if (!this._bindings && this._bindteardown) {
+                this._bindteardown();
+            }
+            return this;
+        };
+        return can;
+    })(__m2);
+
+    // ## can/map/bubble.js
+    var __m17 = (function(can) {
+
+        var bubble = can.bubble = {
+            // Given a binding, returns a string event name used to set up bubbline.
+            // If no binding should be done, undefined or null should be returned
+            event: function(map, eventName) {
+                return map.constructor._bubbleRule(eventName, map);
+            },
+            childrenOf: function(parentMap, eventName) {
+
+                parentMap._each(function(child, prop) {
+                    if (child && child.bind) {
+                        bubble.toParent(child, parentMap, prop, eventName);
+                    }
+                });
+
+            },
+            teardownChildrenFrom: function(parentMap, eventName) {
+                parentMap._each(function(child) {
+
+                    bubble.teardownFromParent(parentMap, child, eventName);
+
+                });
+            },
+            toParent: function(child, parent, prop, eventName) {
+                can.listenTo.call(parent, child, eventName, function() {
+                    // `batchTrigger` the type on this...
+                    var args = can.makeArray(arguments),
+                        ev = args.shift();
+
+                    args[0] =
+                    (can.List && parent instanceof can.List ?
+                        parent.indexOf(child) :
+                        prop) + (args[0] ? "." + args[0] : "");
+
+                    // track objects dispatched on this map
+                    ev.triggeredNS = ev.triggeredNS || {};
+
+                    // if it has already been dispatched exit
+                    if (ev.triggeredNS[parent._cid]) {
+                        return;
+                    }
+
+                    ev.triggeredNS[parent._cid] = true;
+                    // send change event with modified attr to parent
+                    can.trigger(parent, ev, args);
+                });
+            },
+            teardownFromParent: function(parent, child, eventName) {
+                if (child && child.unbind) {
+                    can.stopListening.call(parent, child, eventName);
+                }
+            },
+            isBubbling: function(parent, eventName) {
+                return parent._bubbleBindings && parent._bubbleBindings[eventName];
+            },
+            bind: function(parent, eventName) {
+                if (!parent._init) {
+                    var bubbleEvent = bubble.event(parent, eventName);
+                    if (bubbleEvent) {
+                        if (!parent._bubbleBindings) {
+                            parent._bubbleBindings = {};
+                        }
+                        if (!parent._bubbleBindings[bubbleEvent]) {
+                            parent._bubbleBindings[bubbleEvent] = 1;
+                            // setup live-binding
+                            bubble.childrenOf(parent, bubbleEvent);
+                        } else {
+                            parent._bubbleBindings[bubbleEvent]++;
+                        }
+
+                    }
+                }
+            },
+            unbind: function(parent, eventName) {
+                var bubbleEvent = bubble.event(parent, eventName);
+                if (bubbleEvent) {
+                    if (parent._bubbleBindings) {
+                        parent._bubbleBindings[bubbleEvent]--;
+                    }
+                    if (parent._bubbleBindings && !parent._bubbleBindings[bubbleEvent]) {
+                        delete parent._bubbleBindings[bubbleEvent];
+                        bubble.teardownChildrenFrom(parent, bubbleEvent);
+                        if (can.isEmptyObject(parent._bubbleBindings)) {
+                            delete parent._bubbleBindings;
+                        }
+                    }
+                }
+            },
+            add: function(parent, child, prop) {
+                if (child instanceof can.Map && parent._bubbleBindings) {
+                    for (var eventName in parent._bubbleBindings) {
+                        if (parent._bubbleBindings[eventName]) {
+                            bubble.teardownFromParent(parent, child, eventName);
+                            bubble.toParent(child, parent, prop, eventName);
+                        }
+                    }
+                }
+            },
+            removeMany: function(parent, children) {
+                for (var i = 0, len = children.length; i < len; i++) {
+                    bubble.remove(parent, children[i]);
+                }
+            },
+            remove: function(parent, child) {
+                if (child instanceof can.Map && parent._bubbleBindings) {
+                    for (var eventName in parent._bubbleBindings) {
+                        if (parent._bubbleBindings[eventName]) {
+                            bubble.teardownFromParent(parent, child, eventName);
+                        }
+                    }
+                }
+            },
+            set: function(parent, prop, value, current) {
+
+                //var res = parent.__type(value, prop);
+                if (can.Map.helpers.isObservable(value)) {
+                    bubble.add(parent, value, prop);
+                }
+                // bubble.add will remove, so only remove if we are replacing another object
+                if (can.Map.helpers.isObservable(current)) {
+                    bubble.remove(parent, current);
+                }
+                return value;
+            }
+        };
+
+        return bubble;
+
+    })(__m2);
+
+    // ## can/util/batch/batch.js
+    var __m18 = (function(can) {
+        // Which batch of events this is for -- might not want to send multiple
+        // messages on the same batch.  This is mostly for event delegation.
+        var batchNum = 1,
+            // how many times has start been called without a stop
+            transactions = 0,
+            // an array of events within a transaction
+            batchEvents = [],
+            stopCallbacks = [];
+        can.batch = {
+
+            start: function(batchStopHandler) {
+                transactions++;
+                if (batchStopHandler) {
+                    stopCallbacks.push(batchStopHandler);
+                }
+            },
+
+            stop: function(force, callStart) {
+                if (force) {
+                    transactions = 0;
+                } else {
+                    transactions--;
+                }
+                if (transactions === 0) {
+                    var items = batchEvents.slice(0),
+                        callbacks = stopCallbacks.slice(0),
+                        i, len;
+                    batchEvents = [];
+                    stopCallbacks = [];
+                    batchNum++;
+                    if (callStart) {
+                        can.batch.start();
+                    }
+                    for (i = 0, len = items.length; i < len; i++) {
+                        can.dispatch.apply(items[i][0], items[i][1]);
+                    }
+                    for (i = 0, len = callbacks.length; i < callbacks.length; i++) {
+                        callbacks[i]();
+                    }
+                }
+            },
+
+            trigger: function(item, event, args) {
+                // Don't send events if initalizing.
+                if (!item._init) {
+                    if (transactions === 0) {
+                        return can.dispatch.call(item, event, args);
+                    } else {
+                        event = typeof event === 'string' ? {
+                            type: event
+                        } : event;
+                        event.batchNum = batchNum;
+                        batchEvents.push([
+                                item, [event, args]
+                            ]);
+                    }
+                }
+            }
+        };
+    })(__m4);
+
+    // ## can/map/map.js
+    var __m15 = (function(can, bind, bubble) {
+        // ## Helpers
+
+        // A temporary map of Maps that have been made from plain JS objects.
+        var madeMap = null;
+        // Clears out map of converted objects.
+        var teardownMap = function() {
+            for (var cid in madeMap) {
+                if (madeMap[cid].added) {
+                    delete madeMap[cid].obj._cid;
+                }
+            }
+            madeMap = null;
+        };
+        // Retrieves a Map instance from an Object.
+        var getMapFromObject = function(obj) {
+            return madeMap && madeMap[obj._cid] && madeMap[obj._cid].instance;
+        };
+        // A temporary map of Maps
+        var serializeMap = null;
+
+
+        var Map = can.Map = can.Construct.extend({
+
+                setup: function() {
+
+                    can.Construct.setup.apply(this, arguments);
+
+                    // Do not run if we are defining can.Map.
+                    if (can.Map) {
+                        if (!this.defaults) {
+                            this.defaults = {};
+                        }
+                        // Builds a list of compute and non-compute properties in this Object's prototype.
+                        this._computes = [];
+
+                        for (var prop in this.prototype) {
+                            // Non-functions are regular defaults.
+                            if (prop !== "define" && typeof this.prototype[prop] !== "function") {
+                                this.defaults[prop] = this.prototype[prop];
+                                // Functions with an `isComputed` property are computes.
+                            } else if (this.prototype[prop].isComputed) {
+                                this._computes.push(prop);
+                            }
+                        }
+                        if (this.helpers.define) {
+                            this.helpers.define(this);
+                        }
+                    }
+                    // If we inherit from can.Map, but not can.List, make sure any lists are the correct type.
+                    if (can.List && !(this.prototype instanceof can.List)) {
+                        this.List = Map.List.extend({
+                                Map: this
+                            }, {});
+                    }
+
+                },
+                // Reference to bubbling helpers.
+                _bubble: bubble,
+                // Given an eventName, determine if bubbling should be setup.
+                _bubbleRule: function(eventName) {
+                    return (eventName === "change" || eventName.indexOf(".") >= 0) && "change";
+                },
+                // List of computes on the Map's prototype.
+                _computes: [],
+                // Adds an event to this Map.
+                bind: can.bindAndSetup,
+                on: can.bindAndSetup,
+                // Removes an event from this Map.
+                unbind: can.unbindAndTeardown,
+                off: can.unbindAndTeardown,
+                // Name of the id field. Used in can.Model.
+                id: "id",
+                // ## Internal helpers
+                helpers: {
+                    // ### can.Map.helpers.define
+                    // Stub function for the define plugin.
+                    define: null,
+
+                    // ### can.Map.helpers.attrParts
+                    // Parses attribute name into its parts.
+                    attrParts: function(attr, keepKey) {
+                        //Keep key intact
+
+                        if (keepKey) {
+                            return [attr];
+                        }
+                        // Split key on '.'
+                        return typeof attr === "object" ? attr : ("" + attr)
+                            .split(".");
+                    },
+
+                    // ### can.Map.helpers.addToMap
+                    // Tracks Map instances created from JS Objects
+                    addToMap: function(obj, instance) {
+                        var teardown;
+                        // Setup a fresh mapping if `madeMap` is missing.
+                        if (!madeMap) {
+                            teardown = teardownMap;
+                            madeMap = {};
+                        }
+                        // Record if Object has a `_cid` before adding one.
+                        var hasCid = obj._cid;
+                        var cid = can.cid(obj);
+
+                        // Only update if there already isn't one already.
+                        if (!madeMap[cid]) {
+
+                            madeMap[cid] = {
+                                obj: obj,
+                                instance: instance,
+                                added: !hasCid
+                            };
+                        }
+                        return teardown;
+                    },
+
+                    // ### can.Map.helpers.isObservable
+                    // Determines if `obj` is observable.
+                    isObservable: function(obj) {
+                        return obj instanceof can.Map || (obj && obj === can.route);
+                    },
+
+                    // ### can.Map.helpers.canMakeObserve
+                    // Determines if an object can be made into an observable.
+                    canMakeObserve: function(obj) {
+                        return obj && !can.isDeferred(obj) && (can.isArray(obj) || can.isPlainObject(obj));
+                    },
+
+                    // ### can.Map.helpers.serialize
+                    // Serializes a Map or Map.List
+                    serialize: function(map, how, where) {
+                        var cid = can.cid(map),
+                            firstSerialize = false;
+                        if (!serializeMap) {
+                            firstSerialize = true;
+                            // Serialize might call .attr() so we need to keep different map 
+                            serializeMap = {
+                                attr: {},
+                                serialize: {}
+                            };
+                        }
+                        serializeMap[how][cid] = where;
+                        // Go through each property.
+                        map.each(function(val, name) {
+                            // If the value is an `object`, and has an `attrs` or `serialize` function.
+                            var result,
+                                isObservable = Map.helpers.isObservable(val),
+                                serialized = isObservable && serializeMap[how][can.cid(val)];
+                            if (serialized) {
+                                result = serialized;
+                            } else {
+                                if (how === "serialize") {
+                                    result = Map.helpers._serialize(map, name, val);
+                                } else {
+                                    result = Map.helpers._getValue(map, name, val, how);
+                                }
+                            }
+                            // this is probably removable
+                            if (result !== undefined) {
+                                where[name] = result;
+                            }
+                        });
+
+                        can.__reading(map, '__keys');
+                        if (firstSerialize) {
+                            serializeMap = null;
+                        }
+                        return where;
+                    },
+                    _serialize: function(map, name, val) {
+                        return Map.helpers._getValue(map, name, val, "serialize");
+                    },
+                    _getValue: function(map, name, val, how) {
+                        if (Map.helpers.isObservable(val)) {
+                            return val[how]();
+                        } else {
+                            return val;
+                        }
+                    }
+                },
+
+                keys: function(map) {
+                    var keys = [];
+                    can.__reading(map, '__keys');
+                    for (var keyName in map._data) {
+                        keys.push(keyName);
+                    }
+                    return keys;
+                }
+            },
+
+            {
+                setup: function(obj) {
+                    // `_data` is where we keep the properties.
+                    this._data = {};
+
+                    // The namespace this `object` uses to listen to events.
+                    can.cid(this, ".map");
+                    // Sets all `attrs`.
+                    this._init = 1;
+                    // It's handy if we pass this to comptues, because computes can have a default value.
+                    var defaultValues = this._setupDefaults();
+                    this._setupComputes(defaultValues);
+                    var teardownMapping = obj && can.Map.helpers.addToMap(obj, this);
+
+                    var data = can.extend(can.extend(true, {}, defaultValues), obj);
+
+                    this.attr(data);
+
+                    if (teardownMapping) {
+                        teardownMapping();
+                    }
+
+                    // `batchTrigger` change events.
+                    this.bind('change', can.proxy(this._changes, this));
+
+                    delete this._init;
+                },
+                // Sets up computed properties on a Map.
+                _setupComputes: function() {
+                    var computes = this.constructor._computes;
+                    this._computedBindings = {};
+
+                    for (var i = 0, len = computes.length, prop; i < len; i++) {
+                        prop = computes[i];
+                        // Make the context of the compute the current Map
+                        this[prop] = this[prop].clone(this);
+                        // Keep track of computed properties
+                        this._computedBindings[prop] = {
+                            count: 0
+                        };
+                    }
+                },
+                _setupDefaults: function() {
+                    return this.constructor.defaults || {};
+                },
+                // Setup child bindings.
+                _bindsetup: function() {},
+                // Teardown child bindings.
+                _bindteardown: function() {},
+                // `change`event handler.
+                _changes: function(ev, attr, how, newVal, oldVal) {
+                    // when a change happens, create the named event.
+                    can.batch.trigger(this, {
+                            type: attr,
+                            batchNum: ev.batchNum,
+                            target: ev.target
+                        }, [newVal, oldVal]);
+
+
+                },
+                // Trigger a change event.
+                _triggerChange: function(attr, how, newVal, oldVal) {
+                    // so this change can bubble ... a bubbling change triggers the 
+                    // _changes trigger
+                    if (bubble.isBubbling(this, "change")) {
+                        can.batch.trigger(this, {
+                                type: "change",
+                                target: this
+                            }, [attr, how, newVal, oldVal]);
+                    } else {
+                        can.batch.trigger(this, attr, [newVal, oldVal]);
+                    }
+
+                    if (how === "remove" || how === "add") {
+                        can.batch.trigger(this, {
+                                type: "__keys",
+                                target: this
+                            });
+                    }
+                },
+                // Iterator that does not trigger live binding.
+                _each: function(callback) {
+                    var data = this.__get();
+                    for (var prop in data) {
+                        if (data.hasOwnProperty(prop)) {
+                            callback(data[prop], prop);
+                        }
+                    }
+                },
+
+                attr: function(attr, val) {
+                    // This is super obfuscated for space -- basically, we're checking
+                    // if the type of the attribute is not a `number` or a `string`.
+                    var type = typeof attr;
+                    if (type !== "string" && type !== "number") {
+                        return this._attrs(attr, val);
+                        // If we are getting a value.
+                    } else if (arguments.length === 1) {
+                        can.__reading(this, attr);
+                        return this._get(attr);
+                    } else {
+                        // Otherwise we are setting.
+                        this._set(attr, val);
+                        return this;
+                    }
+                },
+
+                each: function() {
+                    return can.each.apply(undefined, [this].concat(can.makeArray(arguments)));
+                },
+
+                removeAttr: function(attr) {
+                    // If this is List.
+                    var isList = can.List && this instanceof can.List,
+                        // Convert the `attr` into parts (if nested).
+                        parts = can.Map.helpers.attrParts(attr),
+                        // The actual property to remove.
+                        prop = parts.shift(),
+                        // The current value.
+                        current = isList ? this[prop] : this._data[prop];
+
+                    // If we have more parts, call `removeAttr` on that part.
+                    if (parts.length && current) {
+                        return current.removeAttr(parts);
+                    } else {
+
+                        // If attr does not have a `.`
+                        if (typeof attr === 'string' && !! ~attr.indexOf('.')) {
+                            prop = attr;
+                        }
+
+                        this._remove(prop, current);
+                        return current;
+                    }
+                },
+                // Remove a property.
+                _remove: function(prop, current) {
+                    if (prop in this._data) {
+                        // Delete the property from `_data` and the Map
+                        // as long as it isn't part of the Map's prototype.
+                        delete this._data[prop];
+                        if (!(prop in this.constructor.prototype)) {
+                            delete this[prop];
+                        }
+                        // Let others now this property has been removed.
+                        this._triggerChange(prop, "remove", undefined, current);
+
+                    }
+                },
+                // Reads a property from the `object`.
+                _get: function(attr) {
+                    attr = "" + attr;
+                    var dotIndex = attr.indexOf('.');
+
+
+                    // Handles the case of a key having a `.` in its name
+                    // Otherwise we have to dig deeper into the Map to get the value.
+                    if (dotIndex >= 0) {
+                        // Attempt to get the value
+                        var value = this.__get(attr);
+                        // For keys with a `.` in them, value will be defined
+                        if (value !== undefined) {
+                            return value;
+                        }
+                        var first = attr.substr(0, dotIndex),
+                            second = attr.substr(dotIndex + 1),
+                            current = this.__get(first);
+                        return current && current._get ? current._get(second) : undefined;
+                    } else {
+                        return this.__get(attr);
+                    }
+                },
+                // Reads a property directly if an `attr` is provided, otherwise
+                // returns the "real" data object itself.
+                __get: function(attr) {
+                    if (attr) {
+                        // If property is a compute return the result, otherwise get the value directly
+                        if (this._computedBindings[attr]) {
+                            return this[attr]();
+                        } else {
+                            return this._data[attr];
+                        }
+                        // If not property is provided, return entire `_data` object
+                    } else {
+                        return this._data;
+                    }
+                },
+                // converts the value into an observable if needed
+                __type: function(value, prop) {
+                    // If we are getting an object.
+                    if (!(value instanceof can.Map) && can.Map.helpers.canMakeObserve(value)) {
+
+                        var cached = getMapFromObject(value);
+                        if (cached) {
+                            return cached;
+                        }
+                        if (can.isArray(value)) {
+                            var List = can.List;
+                            return new List(value);
+                        } else {
+                            var Map = this.constructor.Map || can.Map;
+                            return new Map(value);
+                        }
+                    }
+                    return value;
+                },
+                // Sets `attr` prop as value on this object where.
+                // `attr` - Is a string of properties or an array  of property values.
+                // `value` - The raw value to set.
+                _set: function(attr, value, keepKey) {
+                    attr = "" + attr;
+                    var dotIndex = attr.indexOf('.'),
+                        current;
+                    if (!keepKey && dotIndex >= 0) {
+                        var first = attr.substr(0, dotIndex),
+                            second = attr.substr(dotIndex + 1);
+
+                        current = this._init ? undefined : this.__get(first);
+
+                        if (Map.helpers.isObservable(current)) {
+                            current._set(second, value);
+                        } else {
+                            throw "can.Map: Object does not exist";
+                        }
+                    } else {
+                        if (this.__convert) {
+                            //Convert if there is a converter
+                            value = this.__convert(attr, value);
+                        }
+                        current = this._init ? undefined : this.__get(attr);
+                        this.__set(attr, this.__type(value, attr), current);
+                    }
+                },
+                __set: function(prop, value, current) {
+                    // TODO: Check if value is object and transform.
+                    // Don't do anything if the value isn't changing.
+                    if (value !== current) {
+                        // Check if we are adding this for the first time --
+                        // if we are, we need to create an `add` event.
+                        var changeType = current !== undefined || this.__get()
+                            .hasOwnProperty(prop) ? "set" : "add";
+
+                        // Set the value on `_data` and hook it up to send event.
+                        this.___set(prop, this.constructor._bubble.set(this, prop, value, current));
+
+                        // `batchTrigger` the change event.
+                        this._triggerChange(prop, changeType, value, current);
+
+                        // If we can stop listening to our old value, do it.
+                        if (current) {
+                            this.constructor._bubble.teardownFromParent(this, current);
+                        }
+                    }
+
+                },
+                // Directly sets a property on this `object`.
+                ___set: function(prop, val) {
+                    if (this._computedBindings[prop]) {
+                        this[prop](val);
+                    } else {
+                        this._data[prop] = val;
+                    }
+                    // Add property directly for easy writing.
+                    // Check if its on the `prototype` so we don't overwrite methods like `attrs`.
+                    if (typeof this.constructor.prototype[prop] !== 'function' && !this._computedBindings[prop]) {
+                        this[prop] = val;
+                    }
+                },
+
+                bind: function(eventName, handler) {
+                    var computedBinding = this._computedBindings && this._computedBindings[eventName];
+                    if (computedBinding) {
+                        // The first time we bind to this computed property we
+                        // initialize `count` and `batchTrigger` the change event.
+                        if (!computedBinding.count) {
+                            computedBinding.count = 1;
+                            var self = this;
+                            computedBinding.handler = function(ev, newVal, oldVal) {
+                                can.batch.trigger(self, {
+                                        type: eventName,
+                                        batchNum: ev.batchNum,
+                                        target: self
+                                    }, [newVal, oldVal]);
+                            };
+                            this[eventName].bind("change", computedBinding.handler);
+                        } else {
+                            // Increment number of things listening to this computed property.
+                            computedBinding.count++;
+                        }
+
+                    }
+                    // The first time we bind to this Map, `_bindsetup` will
+                    // be called to setup child event bubbling.
+                    this.constructor._bubble.bind(this, eventName);
+                    return can.bindAndSetup.apply(this, arguments);
+
+                },
+
+                unbind: function(eventName, handler) {
+                    var computedBinding = this._computedBindings && this._computedBindings[eventName];
+                    if (computedBinding) {
+                        // If there is only one listener, we unbind the change event handler
+                        // and clean it up since no one is listening to this property any more.
+                        if (computedBinding.count === 1) {
+                            computedBinding.count = 0;
+                            this[eventName].unbind("change", computedBinding.handler);
+                            delete computedBinding.handler;
+                        } else {
+                            // Decrement number of things listening to this computed property
+                            computedBinding.count--;
+                        }
+
+                    }
+                    this.constructor._bubble.unbind(this, eventName);
+                    return can.unbindAndTeardown.apply(this, arguments);
+
+                },
+
+                serialize: function() {
+                    return can.Map.helpers.serialize(this, 'serialize', {});
+                },
+
+                _attrs: function(props, remove) {
+                    if (props === undefined) {
+                        return Map.helpers.serialize(this, 'attr', {});
+                    }
+
+                    props = can.simpleExtend({}, props);
+                    var prop,
+                        self = this,
+                        newVal;
+
+                    // Batch all of the change events until we are done.
+                    can.batch.start();
+                    // Merge current properties with the new ones.
+                    this.each(function(curVal, prop) {
+                        // You can not have a _cid property; abort.
+                        if (prop === "_cid") {
+                            return;
+                        }
+                        newVal = props[prop];
+
+                        // If we are merging, remove the property if it has no value.
+                        if (newVal === undefined) {
+                            if (remove) {
+                                self.removeAttr(prop);
+                            }
+                            return;
+                        }
+
+                        // Run converter if there is one
+                        if (self.__convert) {
+                            newVal = self.__convert(prop, newVal);
+                        }
+
+                        // If we're dealing with models, we want to call _set to let converters run.
+                        if (Map.helpers.isObservable(newVal)) {
+
+                            self.__set(prop, self.__type(newVal, prop), curVal);
+                            // If its an object, let attr merge.
+                        } else if (Map.helpers.isObservable(curVal) && Map.helpers.canMakeObserve(newVal)) {
+                            curVal.attr(newVal, remove);
+                            // Otherwise just set.
+                        } else if (curVal !== newVal) {
+                            self.__set(prop, self.__type(newVal, prop), curVal);
+                        }
+
+                        delete props[prop];
+                    });
+                    // Add remaining props.
+                    for (prop in props) {
+                        // Ignore _cid.
+                        if (prop !== "_cid") {
+                            newVal = props[prop];
+                            this._set(prop, newVal, true);
+                        }
+
+                    }
+                    can.batch.stop();
+                    return this;
+                },
+
+                compute: function(prop) {
+                    // If the property is a function, use it as the getter/setter
+                    // otherwise, create a new compute that returns the value of a property on `this`
+                    if (can.isFunction(this.constructor.prototype[prop])) {
+                        return can.compute(this[prop], this);
+                    } else {
+                        var reads = prop.split("."),
+                            last = reads.length - 1,
+                            options = {
+                                args: []
+                            };
+                        return can.compute(function(newVal) {
+                            if (arguments.length) {
+                                can.compute.read(this, reads.slice(0, last))
+                                    .value.attr(reads[last], newVal);
+                            } else {
+                                return can.compute.read(this, reads, options)
+                                    .value;
+                            }
+                        }, this);
+                    }
+
+                }
+            });
+
+        // Setup on/off aliases
+        Map.prototype.on = Map.prototype.bind;
+        Map.prototype.off = Map.prototype.unbind;
+
+        return Map;
+    })(__m2, __m16, __m17, __m12, __m18);
+
+    // ## can/list/list.js
+    var __m19 = (function(can, Map, bubble) {
+
+        // Helpers for `observable` lists.
+        var splice = [].splice,
+            // test if splice works correctly
+            spliceRemovesProps = (function() {
+                // IE's splice doesn't remove properties
+                var obj = {
+                    0: "a",
+                    length: 1
+                };
+                splice.call(obj, 0, 1);
+                return !obj[0];
+            })();
+
+
+        var list = Map.extend(
+
+            {
+
+                Map: Map
+
+            },
+
+            {
+                setup: function(instances, options) {
+                    this.length = 0;
+                    can.cid(this, ".map");
+                    this._init = 1;
+                    this._setupComputes();
+                    instances = instances || [];
+                    var teardownMapping;
+
+                    if (can.isDeferred(instances)) {
+                        this.replace(instances);
+                    } else {
+                        teardownMapping = instances.length && can.Map.helpers.addToMap(instances, this);
+                        this.push.apply(this, can.makeArray(instances || []));
+                    }
+
+                    if (teardownMapping) {
+                        teardownMapping();
+                    }
+
+                    // this change needs to be ignored
+                    this.bind('change', can.proxy(this._changes, this));
+                    can.simpleExtend(this, options);
+                    delete this._init;
+                },
+                _triggerChange: function(attr, how, newVal, oldVal) {
+
+                    Map.prototype._triggerChange.apply(this, arguments);
+                    // `batchTrigger` direct add and remove events...
+                    var index = +attr;
+                    // Make sure this is not nested and not an expando
+                    if (!~attr.indexOf('.') && !isNaN(index)) {
+
+                        if (how === 'add') {
+                            can.batch.trigger(this, how, [newVal, index]);
+                            can.batch.trigger(this, 'length', [this.length]);
+                        } else if (how === 'remove') {
+                            can.batch.trigger(this, how, [oldVal, index]);
+                            can.batch.trigger(this, 'length', [this.length]);
+                        } else {
+                            can.batch.trigger(this, how, [newVal, index]);
+                        }
+
+                    }
+
+                },
+                __get: function(attr) {
+                    if (attr) {
+                        if (this[attr] && this[attr].isComputed && can.isFunction(this.constructor.prototype[attr])) {
+                            return this[attr]();
+                        } else {
+                            return this[attr];
+                        }
+                    } else {
+                        return this;
+                    }
+                },
+                ___set: function(attr, val) {
+                    this[attr] = val;
+                    if (+attr >= this.length) {
+                        this.length = (+attr + 1);
+                    }
+                },
+                _remove: function(prop, current) {
+                    // if removing an expando property
+                    if (isNaN(+prop)) {
+                        delete this[prop];
+                        this._triggerChange(prop, "remove", undefined, current);
+                    } else {
+                        this.splice(prop, 1);
+                    }
+                },
+                _each: function(callback) {
+                    var data = this.__get();
+                    for (var i = 0; i < data.length; i++) {
+                        callback(data[i], i);
+                    }
+                },
+                // Returns the serialized form of this list.
+
+                serialize: function() {
+                    return Map.helpers.serialize(this, 'serialize', []);
+                },
+
+                splice: function(index, howMany) {
+                    var args = can.makeArray(arguments),
+                        added = [],
+                        i, j;
+                    for (i = 2; i < args.length; i++) {
+                        args[i] = bubble.set(this, i, this.__type(args[i], i));
+                        added.push(args[i]);
+                    }
+                    if (howMany === undefined) {
+                        howMany = args[1] = this.length - index;
+                    }
+                    var removed = splice.apply(this, args),
+                        cleanRemoved = removed;
+
+                    // remove any items that were just added from the removed array
+                    if (added.length && removed.length) {
+                        for (j = 0; j < removed.length; j++) {
+                            if (can.inArray(removed[j], added) >= 0) {
+                                cleanRemoved.splice(j, 1);
+                            }
+                        }
+                    }
+
+                    if (!spliceRemovesProps) {
+                        for (i = this.length; i < removed.length + this.length; i++) {
+                            delete this[i];
+                        }
+                    }
+
+                    can.batch.start();
+                    if (howMany > 0) {
+                        this._triggerChange("" + index, "remove", undefined, removed);
+                        bubble.removeMany(this, removed);
+                    }
+                    if (args.length > 2) {
+                        this._triggerChange("" + index, "add", args.slice(2), removed);
+                    }
+                    can.batch.stop();
+                    return removed;
+                },
+
+                _attrs: function(items, remove) {
+                    if (items === undefined) {
+                        return Map.helpers.serialize(this, 'attr', []);
+                    }
+
+                    // Create a copy.
+                    items = can.makeArray(items);
+
+                    can.batch.start();
+                    this._updateAttrs(items, remove);
+                    can.batch.stop();
+                },
+
+                _updateAttrs: function(items, remove) {
+                    var len = Math.min(items.length, this.length);
+
+                    for (var prop = 0; prop < len; prop++) {
+                        var curVal = this[prop],
+                            newVal = items[prop];
+
+                        if (Map.helpers.isObservable(curVal) && Map.helpers.canMakeObserve(newVal)) {
+                            curVal.attr(newVal, remove);
+                            //changed from a coercion to an explicit
+                        } else if (curVal !== newVal) {
+                            this._set(prop, newVal);
+                        } else {
+
+                        }
+                    }
+                    if (items.length > this.length) {
+                        // Add in the remaining props.
+                        this.push.apply(this, items.slice(this.length));
+                    } else if (items.length < this.length && remove) {
+                        this.splice(items.length);
+                    }
+                }
+            }),
+
+            // Converts to an `array` of arguments.
+            getArgs = function(args) {
+                return args[0] && can.isArray(args[0]) ?
+                    args[0] :
+                    can.makeArray(args);
+            };
+        // Create `push`, `pop`, `shift`, and `unshift`
+        can.each({
+
+                push: "length",
+
+                unshift: 0
+            },
+            // Adds a method
+            // `name` - The method name.
+            // `where` - Where items in the `array` should be added.
+
+            function(where, name) {
+                var orig = [][name];
+                list.prototype[name] = function() {
+                    // Get the items being added.
+                    var args = [],
+                        // Where we are going to add items.
+                        len = where ? this.length : 0,
+                        i = arguments.length,
+                        res, val;
+
+                    // Go through and convert anything to an `map` that needs to be converted.
+                    while (i--) {
+                        val = arguments[i];
+                        args[i] = bubble.set(this, i, this.__type(val, i));
+                    }
+
+                    // Call the original method.
+                    res = orig.apply(this, args);
+
+                    if (!this.comparator || args.length) {
+
+                        this._triggerChange("" + len, "add", args, undefined);
+                    }
+
+                    return res;
+                };
+            });
+
+        can.each({
+
+                pop: "length",
+
+                shift: 0
+            },
+            // Creates a `remove` type method
+
+            function(where, name) {
+                list.prototype[name] = function() {
+
+                    var args = getArgs(arguments),
+                        len = where && this.length ? this.length - 1 : 0;
+
+                    var res = [][name].apply(this, args);
+
+                    // Create a change where the args are
+                    // `len` - Where these items were removed.
+                    // `remove` - Items removed.
+                    // `undefined` - The new values (there are none).
+                    // `res` - The old, removed values (should these be unbound).
+                    this._triggerChange("" + len, "remove", undefined, [res]);
+
+                    if (res && res.unbind) {
+                        bubble.remove(this, res);
+                    }
+
+                    return res;
+                };
+            });
+
+        can.extend(list.prototype, {
+
+                indexOf: function(item, fromIndex) {
+                    this.attr('length');
+                    return can.inArray(item, this, fromIndex);
+                },
+
+
+                join: function() {
+                    return [].join.apply(this.attr(), arguments);
+                },
+
+
+                reverse: function() {
+                    var list = can.makeArray([].reverse.call(this));
+                    this.replace(list);
+                },
+
+
+                slice: function() {
+                    var temp = Array.prototype.slice.apply(this, arguments);
+                    return new this.constructor(temp);
+                },
+
+
+                concat: function() {
+                    var args = [];
+                    can.each(can.makeArray(arguments), function(arg, i) {
+                        args[i] = arg instanceof can.List ? arg.serialize() : arg;
+                    });
+                    return new this.constructor(Array.prototype.concat.apply(this.serialize(), args));
+                },
+
+
+                forEach: function(cb, thisarg) {
+                    return can.each(this, cb, thisarg || this);
+                },
+
+
+                replace: function(newList) {
+                    if (can.isDeferred(newList)) {
+                        newList.then(can.proxy(this.replace, this));
+                    } else {
+                        this.splice.apply(this, [0, this.length].concat(can.makeArray(newList || [])));
+                    }
+
+                    return this;
+                },
+                filter: function(callback, thisArg) {
+                    var filteredList = new can.List(),
+                        self = this,
+                        filtered;
+                    this.each(function(item, index, list) {
+                        filtered = callback.call(thisArg | self, item, index, self);
+                        if (filtered) {
+                            filteredList.push(item);
+                        }
+                    });
+                    return filteredList;
+                }
+            });
+        can.List = Map.List = list;
+        return can.List;
+    })(__m2, __m15, __m17);
+
+    // ## can/compute/compute.js
+    var __m20 = (function(can, bind) {
+
+        // ## Reading Helpers
+        // The following methods are used to call a function that relies on
+        // observable data and to track the observable events which should 
+        // be listened to when changes occur.
+        // To do this, [`can.__reading(observable, event)`](#can-__reading) is called to
+        // "broadcast" the corresponding event on each read.
+        // ### Observed
+        // An "Observed" is an object of observable objects and events that
+        // a function relies on. These objects and events must be listened to
+        // in order to determine when to check a function for updates.
+        // This looks like the following:
+        //     { 
+        //       "map1|first": {obj: map, event: "first"},
+        //       "map1|last" : {obj: map, event: "last"}
+        //     }
+        // Each object-event pair is mapped so no duplicates will be listed.
+
+        // ### State
+        // `can.__read` may call a function that calls `can.__read` again. For
+        // example, a compute can read another compute. To track each compute's
+        // `Observed` object (containing observable objects and events), we maintain
+        // a stack of Observed values for each call to `__read`.
+        var stack = [];
+
+        // ### can.__read
+        // With a given function and context, calls the function
+        // and returns the resulting value of the function as well
+        // as the observable properties and events that were read.
+        can.__read = function(func, self) {
+
+            // Add an object that `can.__read` will write to.
+            stack.push({});
+
+            var value = func.call(self);
+
+            // Example return value:
+            // `{value: 100, observed: Observed}`
+            return {
+                value: value,
+                observed: stack.pop()
+            };
+        };
+
+        // ### can.__reading
+        // When an observable value is read, it must call `can.__reading` to 
+        // broadcast which object and event should be listened to.
+        can.__reading = function(obj, event) {
+            // Add the observable object and the event
+            // that was read to the `Observed` object on
+            // the stack.
+            if (stack.length) {
+                stack[stack.length - 1][obj._cid + '|' + event] = {
+                    obj: obj,
+                    event: event + ""
+                };
+            }
+
+        };
+
+        // ### can.__clearReading
+        // Clears and returns the current observables.
+        // This can be used to access a value without 
+        // it being handled as a regular `read`.
+        can.__clearReading = function() {
+            if (stack.length) {
+                var ret = stack[stack.length - 1];
+                stack[stack.length - 1] = {};
+                return ret;
+            }
+        };
+        // Specifies current observables.
+        can.__setReading = function(o) {
+            if (stack.length) {
+                stack[stack.length - 1] = o;
+            }
+        };
+        can.__addReading = function(o) {
+            if (stack.length) {
+                can.simpleExtend(stack[stack.length - 1], o);
+            }
+        };
+
+        // ## Section Name
+
+        // ### getValueAndBind
+        // Calls a function and sets up bindings to call `onchanged`
+        // when events from its "Observed" object are triggered.
+        // Removes bindings from `oldObserved` that are no longer needed.
+        // - func - the function to call.
+        // - context - the `this` of the function.
+        // - oldObserved - an object that contains what has already been bound to
+        // - onchanged - the function to call when any change occurs
+        var getValueAndBind = function(func, context, oldObserved, onchanged) {
+            // Call the function, get the value as well as the observed objects and events
+            var info = can.__read(func, context),
+                // The objects-event pairs that must be bound to
+                newObserveSet = info.observed;
+            // Go through what needs to be observed.
+            bindNewSet(oldObserved, newObserveSet, onchanged);
+            unbindOldSet(oldObserved, onchanged);
+
+            return info;
+        };
+        // This will not be optimized.
+        var bindNewSet = function(oldObserved, newObserveSet, onchanged) {
+            for (var name in newObserveSet) {
+                bindOrPreventUnbinding(oldObserved, newObserveSet, name, onchanged);
+            }
+        };
+        // This will be optimized.
+        var bindOrPreventUnbinding = function(oldObserved, newObserveSet, name, onchanged) {
+            if (oldObserved[name]) {
+                // After binding is set up, values
+                // in `oldObserved` will be unbound. So if a name
+                // has already be observed, remove from `oldObserved`
+                // to prevent this.
+                delete oldObserved[name];
+            } else {
+                // If current name has not been observed, listen to it.
+                var obEv = newObserveSet[name];
+                obEv.obj.bind(obEv.event, onchanged);
+            }
+        };
+        // Iterate through oldObserved, looking for observe/attributes
+        // that are no longer being bound and unbind them.
+        var unbindOldSet = function(oldObserved, onchanged) {
+            for (var name in oldObserved) {
+                var obEv = oldObserved[name];
+                obEv.obj.unbind(obEv.event, onchanged);
+            }
+        };
+
+        // ### updateOnChange
+        // Fires a change event when a compute's value changes
+        var updateOnChange = function(compute, newValue, oldValue, batchNum) {
+            // Only trigger event when value has changed
+            if (newValue !== oldValue) {
+                can.batch.trigger(compute, batchNum ? {
+                        type: "change",
+                        batchNum: batchNum
+                    } : 'change', [
+                        newValue,
+                        oldValue
+                    ]);
+            }
+        };
+
+        // ###setupComputeHandlers
+        // Sets up handlers for a compute.
+        // - compute - the compute to set up handlers for
+        // - func - the getter/setter function for the compute
+        // - context - the `this` for the compute
+        // - setCachedValue - function for setting cached value
+        // Returns an object with `on` and `off` functions.
+        var setupComputeHandlers = function(compute, func, context, setCachedValue) {
+            var readInfo,
+                onchanged,
+                batchNum;
+
+            return {
+                // Set up handler for when the compute changes
+                on: function(updater) {
+                    if (!onchanged) {
+                        onchanged = function(ev) {
+                            if (compute.bound && (ev.batchNum === undefined || ev.batchNum !== batchNum)) {
+                                // Keep the old value
+                                var oldValue = readInfo.value;
+
+                                // Get the new value
+                                readInfo = getValueAndBind(func, context, readInfo.observed, onchanged);
+
+                                // Call the updater with old and new values
+                                updater(readInfo.value, oldValue, ev.batchNum);
+
+                                batchNum = batchNum = ev.batchNum;
+                            }
+                        };
+                    }
+
+                    readInfo = getValueAndBind(func, context, {}, onchanged);
+
+                    setCachedValue(readInfo.value);
+
+                    compute.hasDependencies = !can.isEmptyObject(readInfo.observed);
+                },
+                // Remove handler for the compute
+                off: function(updater) {
+                    for (var name in readInfo.observed) {
+                        var ob = readInfo.observed[name];
+                        ob.obj.unbind(ob.event, onchanged);
+                    }
+                }
+            };
+        };
+        var setupSingleBindComputeHandlers = function(compute, func, context, setCachedValue) {
+            var readInfo,
+                oldValue,
+                onchanged,
+                batchNum;
+
+            return {
+                // Set up handler for when the compute changes
+                on: function(updater) {
+                    if (!onchanged) {
+                        onchanged = function(ev) {
+                            if (compute.bound && (ev.batchNum === undefined || ev.batchNum !== batchNum)) {
+                                // Get the new value
+                                var newValue = func.call(context);
+                                // Call the updater with old and new values
+                                updater(newValue, oldValue, ev.batchNum);
+                                oldValue = newValue;
+                                batchNum = batchNum = ev.batchNum;
+                            }
+                        };
+                    }
+
+                    readInfo = getValueAndBind(func, context, {}, onchanged);
+                    oldValue = readInfo.value;
+
+                    setCachedValue(readInfo.value);
+
+                    compute.hasDependencies = !can.isEmptyObject(readInfo.observed);
+                },
+                // Remove handler for the compute
+                off: function(updater) {
+                    for (var name in readInfo.observed) {
+                        var ob = readInfo.observed[name];
+                        ob.obj.unbind(ob.event, onchanged);
+                    }
+                }
+            };
+        };
+
+        // ###isObserve
+        // Checks if an object is observable
+        var isObserve = function(obj) {
+            return obj instanceof can.Map || obj && obj.__get;
+        },
+            // Instead of calculating whether anything is listening every time,
+            // use a function to do nothing (which may be overwritten)
+            k = function() {};
+
+        // ## Creating a can.compute
+        // A `can.compute` can be created by
+        // - [Specifying the getterSeter function](#specifying-gettersetter-function)
+        // - [Observing a property of an object](#observing-a-property-of-an-object)
+        // - [Specifying an initial value and a setter function](#specifying-an-initial-value-and-a-setter)
+        // - [Specifying an initial value and how to read, update, and listen to changes](#specifying-an-initial-value-and-a-settings-object)
+        // - [Simply specifying an initial value](#specifying-only-a-value)
+        can.compute = function(getterSetter, context, eventName, bindOnce) {
+            // ### Setting up
+            // Do nothing if getterSetter is already a compute
+            if (getterSetter && getterSetter.isComputed) {
+                return getterSetter;
+            }
+            // The computed object
+            var computed,
+                // The following functions are overwritten depending on how compute() is called
+                // A method to set up listening
+                on = k,
+                // A method to teardown listening
+                off = k,
+                // Current cached value (valid only when bound is true)
+                value,
+                // How the value is read by default
+                get = function() {
+                    return value;
+                },
+                // How the value is set by default
+                set = function(newVal) {
+                    value = newVal;
+                },
+                setCached = set,
+                // Save arguments for cloning
+                args = [],
+                // updater for when value is changed
+                updater = function(newValue, oldValue, batchNum) {
+                    setCached(newValue);
+                    updateOnChange(computed, newValue, oldValue, batchNum);
+                },
+                // the form of the arguments
+                form;
+
+
+            // convert arguments to args to make V8 Happy
+            for (var i = 0, arglen = arguments.length; i < arglen; i++) {
+                args[i] = arguments[i];
+            }
+
+            computed = function(newVal) {
+                // If the computed function is called with arguments,
+                // a value should be set
+                if (arguments.length) {
+                    // Save a reference to the old value
+                    var old = value;
+                    // Setter may return the value if setter
+                    // is for a value maintained exclusively by this compute.
+                    var setVal = set.call(context, newVal, old);
+                    // If the computed function has dependencies,
+                    // return the current value
+                    if (computed.hasDependencies) {
+                        return get.call(context);
+                    }
+                    // Setting may not fire a change event, in which case
+                    // the value must be read
+                    if (setVal === undefined) {
+                        value = get.call(context);
+                    } else {
+                        value = setVal;
+                    }
+                    // Fire the change
+                    updateOnChange(computed, value, old);
+                    return value;
+                } else {
+                    // Another compute may bind to this `computed`
+                    if (stack.length && computed.canReadForChangeEvent !== false) {
+
+                        // Tell the compute to listen to change on this computed
+                        // Use `can.__reading` to allow other compute to listen
+                        // for a change on this `computed`
+                        can.__reading(computed, 'change');
+                        // We are going to bind on this compute.
+                        // If we are not bound, we should bind so that
+                        // we don't have to re-read to get the value of this compute.
+                        if (!computed.bound) {
+                            can.compute.temporarilyBind(computed);
+                        }
+                    }
+                    // If computed is bound, use the cached value
+                    if (computed.bound) {
+                        return value;
+                    } else {
+                        return get.call(context);
+                    }
+                }
+            };
+            // ###Specifying getterSetter function
+            // If `can.compute` is [called with a getterSetter function](http://canjs.com/docs/can.compute.html#sig_can_compute_getterSetter__context__),
+            // override set and get
+            if (typeof getterSetter === 'function') {
+                // `can.compute(getterSetter, [context])`
+                set = getterSetter;
+                get = getterSetter;
+                computed.canReadForChangeEvent = eventName === false ? false : true;
+
+                var handlers = bindOnce ?
+                    setupSingleBindComputeHandlers(computed, getterSetter, context || this, setCached) :
+                    setupComputeHandlers(computed, getterSetter, context || this, setCached);
+                on = handlers.on;
+                off = handlers.off;
+
+                // ###Observing a property of an object
+                // If `can.compute` is called with an 
+                // [object, property name, and optional event name](http://canjs.com/docs/can.compute.html#sig_can_compute_object_propertyName__eventName__),
+                // create a compute from a property of an object. This allows the
+                // creation of a compute on objects that can be listened to with [`can.bind`](http://canjs.com/docs/can.bind.html)
+            } else if (context) {
+                if (typeof context === 'string') {
+                    // `can.compute(obj, "propertyName", [eventName])`
+                    var propertyName = context,
+                        isObserve = getterSetter instanceof can.Map;
+                    if (isObserve) {
+                        computed.hasDependencies = true;
+                        var handler;
+                        get = function() {
+                            return getterSetter.attr(propertyName);
+                        };
+                        set = function(newValue) {
+                            getterSetter.attr(propertyName, newValue);
+                        };
+                        on = function(update) {
+                            handler = function(ev, newVal, oldVal) {
+                                update(newVal, oldVal, ev.batchNum);
+                            };
+                            getterSetter.bind(eventName || propertyName, handler);
+                            // Set the cached value
+                            value = can.__read(get).value;
+                        };
+                        off = function(update) {
+                            getterSetter.unbind(eventName || propertyName, handler);
+                        };
+                    } else {
+                        get = function() {
+                            return getterSetter[propertyName];
+                        };
+                        set = function(newValue) {
+                            getterSetter[propertyName] = newValue;
+                        };
+
+                        on = function(update) {
+                            handler = function() {
+                                update(get(), value);
+                            };
+                            can.bind.call(getterSetter, eventName || propertyName, handler);
+                            // use can.__read because
+                            // we should not be indicating that some parent
+                            // reads this property if it happens to be binding on it
+                            value = can.__read(get)
+                                .value;
+                        };
+                        off = function(update) {
+                            can.unbind.call(getterSetter, eventName || propertyName, handler);
+                        };
+                    }
+                    // ###Specifying an initial value and a setter
+                    // If `can.compute` is called with an [initial value and a setter function](http://canjs.com/docs/can.compute.html#sig_can_compute_initialValue_setter_newVal_oldVal__),
+                    // a compute that can adjust incoming values is set up.
+                } else {
+                    // `can.compute(initialValue, setter)`
+                    if (typeof context === 'function') {
+
+                        value = getterSetter;
+                        set = context;
+                        context = eventName;
+                        form = 'setter';
+                        // ###Specifying an initial value and a settings object
+                        // If `can.compute` is called with an [initial value and optionally a settings object](http://canjs.com/docs/can.compute.html#sig_can_compute_initialValue__settings__),
+                        // a can.compute is created that can optionally specify how to read,
+                        // update, and listen to changes in dependent values. This form of
+                        // can.compute can be used to derive a compute that derives its
+                        // value from any source
+                    } else {
+                        // `can.compute(initialValue,{get:, set:, on:, off:})`
+
+
+                        value = getterSetter;
+                        var options = context,
+                            oldUpdater = updater;
+
+                        context = options.context || options;
+                        get = options.get || get;
+                        set = options.set || function() {
+                            return value;
+                        };
+                        // This is a "hack" to allow async computes.
+                        if (options.fn) {
+                            var fn = options.fn,
+                                data;
+                            // make sure get is called with the newVal, but not setter
+                            get = function() {
+                                return fn.call(context, value);
+                            };
+                            // Check the number of arguments the 
+                            // async function takes.
+                            if (fn.length === 0) {
+
+                                data = setupComputeHandlers(computed, fn, context, setCached);
+
+                            } else if (fn.length === 1) {
+                                data = setupComputeHandlers(computed, function() {
+                                    return fn.call(context, value);
+                                }, context, setCached);
+                            } else {
+                                updater = function(newVal) {
+                                    if (newVal !== undefined) {
+                                        oldUpdater(newVal, value);
+                                    }
+                                };
+                                data = setupComputeHandlers(computed, function() {
+                                    var res = fn.call(context, value, function(newVal) {
+                                        oldUpdater(newVal, value);
+                                    });
+                                    // If undefined is returned, don't update the value.
+                                    return res !== undefined ? res : value;
+                                }, context, setCached);
+                            }
+
+
+                            on = data.on;
+                            off = data.off;
+                        } else {
+                            updater = function() {
+                                var newVal = get.call(context);
+                                oldUpdater(newVal, value);
+                            };
+                        }
+
+                        on = options.on || on;
+                        off = options.off || off;
+                    }
+                }
+                // ###Specifying only a value
+                // If can.compute is called with an initialValue only,
+                // reads to this value can be observed.
+            } else {
+                // `can.compute(initialValue)`
+                value = getterSetter;
+            }
+            can.cid(computed, 'compute');
+            return can.simpleExtend(computed, {
+
+                    isComputed: true,
+                    _bindsetup: function() {
+                        this.bound = true;
+                        // Set up live-binding
+                        // While binding, this should not count as a read
+                        var oldReading = can.__clearReading();
+                        on.call(this, updater);
+                        // Restore "Observed" for reading
+                        can.__setReading(oldReading);
+                    },
+                    _bindteardown: function() {
+                        off.call(this, updater);
+                        this.bound = false;
+                    },
+
+                    bind: can.bindAndSetup,
+
+                    unbind: can.unbindAndTeardown,
+                    clone: function(context) {
+                        if (context) {
+                            if (form === 'setter') {
+                                args[2] = context;
+                            } else {
+                                args[1] = context;
+                            }
+                        }
+                        return can.compute.apply(can, args);
+                    }
+                });
+        };
+        // A list of temporarily bound computes
+        var computes, unbindComputes = function() {
+                for (var i = 0, len = computes.length; i < len; i++) {
+                    computes[i].unbind('change', k);
+                }
+                computes = null;
+            };
+        // Binds computes for a moment to retain their value and prevent caching
+        can.compute.temporarilyBind = function(compute) {
+            compute.bind('change', k);
+            if (!computes) {
+                computes = [];
+                setTimeout(unbindComputes, 10);
+            }
+            computes.push(compute);
+        };
+
+        // Whether a compute is truthy
+        can.compute.truthy = function(compute) {
+            return can.compute(function() {
+                var res = compute();
+                if (typeof res === 'function') {
+                    res = res();
+                }
+                return !!res;
+            });
+        };
+        can.compute.async = function(initialValue, asyncComputer, context) {
+            return can.compute(initialValue, {
+                    fn: asyncComputer,
+                    context: context
+                });
+        };
+        // {map: new can.Map({first: "Justin"})}, ["map","first"]
+        can.compute.read = function(parent, reads, options) {
+            options = options || {};
+            // `cur` is the current value.
+            var cur = parent,
+                type,
+                // `prev` is the object we are reading from.
+                prev,
+                // `foundObs` did we find an observable.
+                foundObs;
+            for (var i = 0, readLength = reads.length; i < readLength; i++) {
+                // Update what we are reading from.
+                prev = cur;
+                // Read from the compute. We can't read a property yet.
+                if (prev && prev.isComputed) {
+                    if (options.foundObservable) {
+                        options.foundObservable(prev, i);
+                    }
+                    prev = prev();
+                }
+                // Look to read a property from something.
+                if (isObserve(prev)) {
+                    if (!foundObs && options.foundObservable) {
+                        options.foundObservable(prev, i);
+                    }
+                    foundObs = 1;
+                    // is it a method on the prototype?
+                    if (typeof prev[reads[i]] === 'function' && prev.constructor.prototype[reads[i]] === prev[reads[i]]) {
+                        // call that method
+                        if (options.returnObserveMethods) {
+                            cur = cur[reads[i]];
+                        } else if (reads[i] === 'constructor' && prev instanceof can.Construct) {
+                            cur = prev[reads[i]];
+                        } else {
+                            cur = prev[reads[i]].apply(prev, options.args || []);
+                        }
+                    } else {
+                        // use attr to get that value
+                        cur = cur.attr(reads[i]);
+                    }
+                } else {
+                    // just do the dot operator
+                    cur = prev[reads[i]];
+                }
+                type = typeof cur;
+                // If it's a compute, get the compute's value
+                // unless we are at the end of the 
+                if (cur && cur.isComputed && (!options.isArgument && i < readLength - 1)) {
+                    if (!foundObs && options.foundObservable) {
+                        options.foundObservable(prev, i + 1);
+                    }
+                    cur = cur();
+                }
+                // If it's an anonymous function, execute as requested
+                else if (i < reads.length - 1 && type === 'function' && options.executeAnonymousFunctions && !(can.Construct && cur.prototype instanceof can.Construct)) {
+                    cur = cur();
+                }
+                // if there are properties left to read, and we don't have an object, early exit
+                if (i < reads.length - 1 && (cur === null || type !== 'function' && type !== 'object')) {
+                    if (options.earlyExit) {
+                        options.earlyExit(prev, i, cur);
+                    }
+                    // return undefined so we know this isn't the right value
+                    return {
+                        value: undefined,
+                        parent: prev
+                    };
+                }
+            }
+            // handle an ending function
+            // unless it is a can.Construct-derived constructor
+            if (typeof cur === 'function' && !(can.Construct && cur.prototype instanceof can.Construct)) {
+                if (options.isArgument) {
+                    if (!cur.isComputed && options.proxyMethods !== false) {
+                        cur = can.proxy(cur, prev);
+                    }
+                } else {
+                    if (cur.isComputed && !foundObs && options.foundObservable) {
+                        options.foundObservable(cur, i);
+                    }
+                    cur = cur.call(prev);
+                }
+            }
+            // if we don't have a value, exit early.
+            if (cur === undefined) {
+                if (options.earlyExit) {
+                    options.earlyExit(prev, i - 1);
+                }
+            }
+            return {
+                value: cur,
+                parent: prev
+            };
+        };
+
+        return can.compute;
+    })(__m2, __m16, __m18);
+
+    // ## can/observe/observe.js
+    var __m14 = (function(can) {
+        can.Observe = can.Map;
+        can.Observe.startBatch = can.batch.start;
+        can.Observe.stopBatch = can.batch.stop;
+        can.Observe.triggerBatch = can.batch.trigger;
+        return can;
+    })(__m2, __m15, __m19, __m20);
+
+    // ## can/view/scope/scope.js
+    var __m22 = (function(can) {
+
+        // ## Helpers
+
+        // Regex for escaped periods
+        var escapeReg = /(\\)?\./g,
+            // Regex for double escaped periods
+            escapeDotReg = /\\\./g,
+            // **getNames**
+            // Returns array of names by splitting provided string by periods and single escaped periods.
+            // ```getNames("a.b\.c.d\\.e") //-> ['a', 'b', 'c', 'd.e']```
+            getNames = function(attr) {
+                var names = [],
+                    last = 0;
+                // Goes through attr string and places the characters found between the periods and single escaped periods into the
+                // `names` array.  Double escaped periods are ignored.
+                attr.replace(escapeReg, function(first, second, index) {
+
+                    if (!second) {
+                        names.push(
+                            attr
+                            .slice(last, index)
+
+                            .replace(escapeDotReg, '.'));
+                        last = index + first.length;
+                    }
+                });
+
+                names.push(
+                    attr
+                    .slice(last)
+
+                    .replace(escapeDotReg, '.'));
+                return names;
+            };
+
+
+        var Scope = can.Construct.extend(
+
+
+            {
+                // ## Scope.read
+                // Scope.read was moved to can.compute.read
+                // can.compute.read reads properties from a parent.  A much more complex version of getObject.
+                read: can.compute.read
+            },
+
+            {
+                init: function(context, parent) {
+                    this._context = context;
+                    this._parent = parent;
+                    this.__cache = {};
+                },
+
+                // ## Scope.prototype.attr
+                // Reads a value from the current context or parent contexts.
+                attr: function(key) {
+                    // Reads for whatever called before attr.  It's possible
+                    // that this.read clears them.  We want to restore them.
+                    var previousReads = can.__clearReading(),
+                        res = this.read(key, {
+                                isArgument: true,
+                                returnObserveMethods: true,
+                                proxyMethods: false
+                            }).value;
+                    can.__setReading(previousReads);
+                    return res;
+                },
+
+                // ## Scope.prototype.add
+                // Creates a new scope and sets the current scope to be the parent.
+                // ```
+                // var scope = new can.view.Scope([{name:"Chris"}, {name: "Justin"}]).add({name: "Brian"});
+                // scope.attr("name") //-> "Brian"
+                // ```
+                add: function(context) {
+                    if (context !== this._context) {
+                        return new this.constructor(context, this);
+                    } else {
+                        return this;
+                    }
+                },
+
+                // ## Scope.prototype.computeData
+                // Finds the first location of the key in the scope and then provides a get-set compute that represents the key's value
+                // and other information about where the value was found.
+                computeData: function(key, options) {
+                    options = options || {
+                        args: []
+                    };
+                    var self = this,
+                        rootObserve,
+                        rootReads,
+                        computeData = {
+                            // computeData.compute returns a get-set compute that is tied to the first location of the provided
+                            // key in the context of the scope.
+                            compute: can.compute(function(newVal) {
+                                // **Compute setter**
+                                if (arguments.length) {
+                                    if (rootObserve.isComputed && !rootReads.length) {
+                                        rootObserve(newVal);
+                                    } else {
+                                        var last = rootReads.length - 1;
+                                        can.compute.read(rootObserve, rootReads.slice(0, last))
+                                            .value.attr(rootReads[last], newVal);
+                                    }
+                                    // **Compute getter**
+                                } else {
+                                    // If computeData has found the value for the key in the past in an observable then go directly to
+                                    // the observable (rootObserve) that the value was found in the last time and return the new value.  This
+                                    // is a huge performance gain for the fact that we aren't having to check the entire scope each time.
+                                    if (rootObserve) {
+                                        return can.compute.read(rootObserve, rootReads, options)
+                                            .value;
+                                    }
+                                    // If the key has not already been located in a observable then we need to search the scope for the
+                                    // key.  Once we find the key then we need to return it's value and if it is found in an observable
+                                    // then we need to store the observable so the next time this compute is called it can grab the value
+                                    // directly from the observable.
+                                    var data = self.read(key, options);
+                                    rootObserve = data.rootObserve;
+                                    rootReads = data.reads;
+                                    computeData.scope = data.scope;
+                                    computeData.initialValue = data.value;
+                                    computeData.reads = data.reads;
+                                    computeData.root = rootObserve;
+                                    return data.value;
+                                }
+                            })
+                        };
+                    return computeData;
+                },
+
+                // ## Scope.prototype.compute
+                // Provides a get-set compute that represents a key's value.
+                compute: function(key, options) {
+                    return this.computeData(key, options)
+                        .compute;
+                },
+
+                // ## Scope.prototype.read
+                // Finds the first isntance of a key in the available scopes and returns the keys value along with the the observable the key
+                // was found in, readsData and the current scope.
+
+                read: function(attr, options) {
+                    // check if we should only look within current scope
+                    var stopLookup;
+                    if (attr.substr(0, 2) === './') {
+                        // set flag to halt lookup from walking up scope
+                        stopLookup = true;
+                        // stop lookup from checking parent scopes
+                        attr = attr.substr(2);
+                    }
+                    // check if we should be running this on a parent.
+                    else if (attr.substr(0, 3) === "../") {
+                        return this._parent.read(attr.substr(3), options);
+                    } else if (attr === "..") {
+                        return {
+                            value: this._parent._context
+                        };
+                    } else if (attr === "." || attr === "this") {
+                        return {
+                            value: this._context
+                        };
+                    }
+
+                    // Array of names from splitting attr string into names.  ```"a.b\.c.d\\.e" //-> ['a', 'b', 'c', 'd.e']```
+                    var names = attr.indexOf('\\.') === -1 ?
+                    // Reference doesn't contain escaped periods
+                    attr.split('.')
+                    // Reference contains escaped periods ```(`a.b\.c.foo` == `a["b.c"].foo)```
+                    : getNames(attr),
+                        // The current context (a scope is just data and a parent scope).
+                        context,
+                        // The current scope.
+                        scope = this,
+                        // While we are looking for a value, we track the most likely place this value will be found.
+                        // This is so if there is no me.name.first, we setup a listener on me.name.
+                        // The most likely candidate is the one with the most "read matches" "lowest" in the
+                        // context chain.
+                        // By "read matches", we mean the most number of values along the key.
+                        // By "lowest" in the context chain, we mean the closest to the current context.
+                        // We track the starting position of the likely place with `defaultObserve`.
+                        defaultObserve,
+                        // Tracks how to read from the defaultObserve.
+                        defaultReads = [],
+                        // Tracks the highest found number of "read matches".
+                        defaultPropertyDepth = -1,
+                        // `scope.read` is designed to be called within a compute, but
+                        // for performance reasons only listens to observables within one context.
+                        // This is to say, if you have me.name in the current context, but me.name.first and
+                        // we are looking for me.name.first, we don't setup bindings on me.name and me.name.first.
+                        // To make this happen, we clear readings if they do not find a value.  But,
+                        // if that path turns out to be the default read, we need to restore them.  This
+                        // variable remembers those reads so they can be restored.
+                        defaultComputeReadings,
+                        // Tracks the default's scope.
+                        defaultScope,
+                        // Tracks the first found observe.
+                        currentObserve,
+                        // Tracks the reads to get the value for a scope.
+                        currentReads;
+
+                    // Goes through each scope context provided until it finds the key (attr).  Once the key is found
+                    // then it's value is returned along with an observe, the current scope and reads.
+                    // While going through each scope context searching for the key, each observable found is returned and
+                    // saved so that either the observable the key is found in can be returned, or in the case the key is not
+                    // found in an observable the closest observable can be returned.
+
+                    while (scope) {
+                        context = scope._context;
+                        if (context !== null) {
+                            var data = can.compute.read(context, names, can.simpleExtend({
+
+                                        foundObservable: function(observe, nameIndex) {
+                                            currentObserve = observe;
+                                            currentReads = names.slice(nameIndex);
+                                        },
+                                        // Called when we were unable to find a value.
+                                        earlyExit: function(parentValue, nameIndex) {
+
+                                            if (nameIndex > defaultPropertyDepth) {
+                                                defaultObserve = currentObserve;
+                                                defaultReads = currentReads;
+                                                defaultPropertyDepth = nameIndex;
+                                                defaultScope = scope;
+
+                                                defaultComputeReadings = can.__clearReading();
+                                            }
+                                        },
+                                        // Execute anonymous functions found along the way
+                                        executeAnonymousFunctions: true
+                                    }, options));
+                            // **Key was found**, return value and location data
+                            if (data.value !== undefined) {
+                                return {
+                                    scope: scope,
+                                    rootObserve: currentObserve,
+                                    value: data.value,
+                                    reads: currentReads
+                                };
+                            }
+                        }
+                        // Prevent prior readings and then move up to the next scope.
+                        can.__clearReading();
+                        if (!stopLookup) {
+                            // Move up to the next scope.
+                            scope = scope._parent;
+                        } else {
+                            scope = null;
+                        }
+                    }
+
+                    // **Key was not found**, return undefined for the value.  Unless an observable was
+                    // found in the process of searching for the key, then return the most likely observable along with it's
+                    // scope and reads.
+
+                    if (defaultObserve) {
+                        can.__setReading(defaultComputeReadings);
+                        return {
+                            scope: defaultScope,
+                            rootObserve: defaultObserve,
+                            reads: defaultReads,
+                            value: undefined
+                        };
+                    } else {
+                        return {
+                            names: names,
+                            value: undefined
+                        };
+                    }
+                }
+            });
+
+        can.view.Scope = Scope;
+        return Scope;
+    })(__m2, __m12, __m15, __m19, __m10, __m20);
+
+    // ## can/view/elements.js
+    var __m24 = (function(can) {
+
+        var selectsCommentNodes = (function() {
+            return can.$(document.createComment('~')).length === 1;
+        })();
+
+
+        var elements = {
+            tagToContentPropMap: {
+                option: 'textContent' in document.createElement('option') ? 'textContent' : 'innerText',
+                textarea: 'value'
+            },
+
+            // 3.0 TODO: remove
+            attrMap: can.attr.map,
+            // matches the attrName of a regexp
+            attrReg: /([^\s=]+)[\s]*=[\s]*/,
+            // 3.0 TODO: remove
+            defaultValue: can.attr.defaultValue,
+            // a map of parent element to child elements
+
+            tagMap: {
+                '': 'span',
+                colgroup: 'col',
+                table: 'tbody',
+                tr: 'td',
+                ol: 'li',
+                ul: 'li',
+                tbody: 'tr',
+                thead: 'tr',
+                tfoot: 'tr',
+                select: 'option',
+                optgroup: 'option'
+            },
+            // a tag's parent element
+            reverseTagMap: {
+                col: 'colgroup',
+                tr: 'tbody',
+                option: 'select',
+                td: 'tr',
+                th: 'tr',
+                li: 'ul'
+            },
+            // Used to determine the parentNode if el is directly within a documentFragment
+            getParentNode: function(el, defaultParentNode) {
+                return defaultParentNode && el.parentNode.nodeType === 11 ? defaultParentNode : el.parentNode;
+            },
+            // 3.0 TODO: remove
+            setAttr: can.attr.set,
+            // 3.0 TODO: remove
+            getAttr: can.attr.get,
+            // 3.0 TODO: remove
+            removeAttr: can.attr.remove,
+            // Gets a "pretty" value for something
+            contentText: function(text) {
+                if (typeof text === 'string') {
+                    return text;
+                }
+                // If has no value, return an empty string.
+                if (!text && text !== 0) {
+                    return '';
+                }
+                return '' + text;
+            },
+
+            after: function(oldElements, newFrag) {
+                var last = oldElements[oldElements.length - 1];
+                // Insert it in the `document` or `documentFragment`
+                if (last.nextSibling) {
+                    can.insertBefore(last.parentNode, newFrag, last.nextSibling);
+                } else {
+                    can.appendChild(last.parentNode, newFrag);
+                }
+            },
+
+            replace: function(oldElements, newFrag) {
+                elements.after(oldElements, newFrag);
+                if (can.remove(can.$(oldElements)).length < oldElements.length && !selectsCommentNodes) {
+                    can.each(oldElements, function(el) {
+                        if (el.nodeType === 8) {
+                            el.parentNode.removeChild(el);
+                        }
+                    });
+                }
+            }
+        };
+
+        can.view.elements = elements;
+
+        return elements;
+    })(__m2, __m10);
+
+    // ## can/view/scanner.js
+    var __m23 = (function(can, elements, viewCallbacks) {
+
+
+        var newLine = /(\r|\n)+/g,
+            notEndTag = /\//,
+            // Escapes characters starting with `\`.
+            clean = function(content) {
+                return content
+                    .split('\\')
+                    .join("\\\\")
+                    .split("\n")
+                    .join("\\n")
+                    .split('"')
+                    .join('\\"')
+                    .split("\t")
+                    .join("\\t");
+            },
+            // Returns a tagName to use as a temporary placeholder for live content
+            // looks forward ... could be slow, but we only do it when necessary
+            getTag = function(tagName, tokens, i) {
+                // if a tagName is provided, use that
+                if (tagName) {
+                    return tagName;
+                } else {
+                    // otherwise go searching for the next two tokens like "<",TAG
+                    while (i < tokens.length) {
+                        if (tokens[i] === "<" && !notEndTag.test(tokens[i + 1])) {
+                            return elements.reverseTagMap[tokens[i + 1]] || 'span';
+                        }
+                        i++;
+                    }
+                }
+                return '';
+            },
+            bracketNum = function(content) {
+                return (--content.split("{")
+                    .length) - (--content.split("}")
+                    .length);
+            },
+            myEval = function(script) {
+                eval(script);
+            },
+            attrReg = /([^\s]+)[\s]*=[\s]*$/,
+            // Commands for caching.
+            startTxt = 'var ___v1ew = [];',
+            finishTxt = "return ___v1ew.join('')",
+            put_cmd = "___v1ew.push(\n",
+            insert_cmd = put_cmd,
+            // Global controls (used by other functions to know where we are).
+            // Are we inside a tag?
+            htmlTag = null,
+            // Are we within a quote within a tag?
+            quote = null,
+            // What was the text before the current quote? (used to get the `attr` name)
+            beforeQuote = null,
+            // Whether a rescan is in progress
+            rescan = null,
+            getAttrName = function() {
+                var matches = beforeQuote.match(attrReg);
+                return matches && matches[1];
+            },
+            // Used to mark where the element is.
+            status = function() {
+                // `t` - `1`.
+                // `h` - `0`.
+                // `q` - String `beforeQuote`.
+                return quote ? "'" + getAttrName() + "'" : (htmlTag ? 1 : 0);
+            },
+            // returns the top of a stack
+            top = function(stack) {
+                return stack[stack.length - 1];
+            },
+            Scanner;
+
+
+        can.view.Scanner = Scanner = function(options) {
+            // Set options on self
+            can.extend(this, {
+
+                    text: {},
+                    tokens: []
+                }, options);
+            // make sure it's an empty string if it's not
+            this.text.options = this.text.options || "";
+
+            // Cache a token lookup
+            this.tokenReg = [];
+            this.tokenSimple = {
+                "<": "<",
+                ">": ">",
+                '"': '"',
+                "'": "'"
+            };
+            this.tokenComplex = [];
+            this.tokenMap = {};
+            for (var i = 0, token; token = this.tokens[i]; i++) {
+
+
+                // Save complex mappings (custom regexp)
+                if (token[2]) {
+                    this.tokenReg.push(token[2]);
+                    this.tokenComplex.push({
+                            abbr: token[1],
+                            re: new RegExp(token[2]),
+                            rescan: token[3]
+                        });
+                }
+                // Save simple mappings (string only, no regexp)
+                else {
+                    this.tokenReg.push(token[1]);
+                    this.tokenSimple[token[1]] = token[0];
+                }
+                this.tokenMap[token[0]] = token[1];
+            }
+
+            // Cache the token registry.
+            this.tokenReg = new RegExp("(" + this.tokenReg.slice(0)
+                .concat(["<", ">", '"', "'"])
+                .join("|") + ")", "g");
+        };
+
+
+        Scanner.prototype = {
+            // a default that can be overwritten
+            helpers: [],
+
+            scan: function(source, name) {
+                var tokens = [],
+                    last = 0,
+                    simple = this.tokenSimple,
+                    complex = this.tokenComplex;
+
+                source = source.replace(newLine, "\n");
+                if (this.transform) {
+                    source = this.transform(source);
+                }
+                source.replace(this.tokenReg, function(whole, part) {
+                    // offset is the second to last argument
+                    var offset = arguments[arguments.length - 2];
+
+                    // if the next token starts after the last token ends
+                    // push what's in between
+                    if (offset > last) {
+                        tokens.push(source.substring(last, offset));
+                    }
+
+                    // push the simple token (if there is one)
+                    if (simple[whole]) {
+                        tokens.push(whole);
+                    }
+                    // otherwise lookup complex tokens
+                    else {
+                        for (var i = 0, token; token = complex[i]; i++) {
+                            if (token.re.test(whole)) {
+                                tokens.push(token.abbr);
+                                // Push a rescan function if one exists
+                                if (token.rescan) {
+                                    tokens.push(token.rescan(part));
+                                }
+                                break;
+                            }
+                        }
+                    }
+
+                    // update the position of the last part of the last token
+                    last = offset + part.length;
+                });
+
+                // if there's something at the end, add it
+                if (last < source.length) {
+                    tokens.push(source.substr(last));
+                }
+
+                var content = '',
+                    buff = [startTxt + (this.text.start || '')],
+                    // Helper `function` for putting stuff in the view concat.
+                    put = function(content, bonus) {
+                        buff.push(put_cmd, '"', clean(content), '"' + (bonus || '') + ');');
+                    },
+                    // A stack used to keep track of how we should end a bracket
+                    // `}`.
+                    // Once we have a `<%= %>` with a `leftBracket`,
+                    // we store how the file should end here (either `))` or `;`).
+                    endStack = [],
+                    // The last token, used to remember which tag we are in.
+                    lastToken,
+                    // The corresponding magic tag.
+                    startTag = null,
+                    // Was there a magic tag inside an html tag?
+                    magicInTag = false,
+                    // was there a special state
+                    specialStates = {
+                        attributeHookups: [],
+                        // a stack of tagHookups
+                        tagHookups: [],
+                        //last tag hooked up
+                        lastTagHookup: ''
+                    },
+                    // Helper `function` for removing tagHookups from the hookup stack
+                    popTagHookup = function() {
+                        // The length of tagHookups is the nested depth which can be used to uniquely identify custom tags of the same type
+                        specialStates.lastTagHookup = specialStates.tagHookups.pop() + specialStates.tagHookups.length;
+                    },
+                    // The current tag name.
+                    tagName = '',
+                    // stack of tagNames
+                    tagNames = [],
+                    // Pop from tagNames?
+                    popTagName = false,
+                    // Declared here.
+                    bracketCount,
+                    // in a special attr like src= or style=
+                    specialAttribute = false,
+
+                    i = 0,
+                    token,
+                    tmap = this.tokenMap,
+                    attrName;
+
+                // Reinitialize the tag state goodness.
+                htmlTag = quote = beforeQuote = null;
+                for (;
+                    (token = tokens[i++]) !== undefined;) {
+                    if (startTag === null) {
+                        switch (token) {
+                            case tmap.left:
+                            case tmap.escapeLeft:
+                            case tmap.returnLeft:
+                                magicInTag = htmlTag && 1;
+
+                            case tmap.commentLeft:
+                                // A new line -- just add whatever content within a clean.
+                                // Reset everything.
+                                startTag = token;
+                                if (content.length) {
+                                    put(content);
+                                }
+                                content = '';
+                                break;
+                            case tmap.escapeFull:
+                                // This is a full line escape (a line that contains only whitespace and escaped logic)
+                                // Break it up into escape left and right
+                                magicInTag = htmlTag && 1;
+                                rescan = 1;
+                                startTag = tmap.escapeLeft;
+                                if (content.length) {
+                                    put(content);
+                                }
+                                rescan = tokens[i++];
+                                content = rescan.content || rescan;
+                                if (rescan.before) {
+                                    put(rescan.before);
+                                }
+                                tokens.splice(i, 0, tmap.right);
+                                break;
+                            case tmap.commentFull:
+                                // Ignore full line comments.
+                                break;
+                            case tmap.templateLeft:
+                                content += tmap.left;
+                                break;
+                            case '<':
+                                // Make sure we are not in a comment.
+                                if (tokens[i].indexOf("!--") !== 0) {
+                                    htmlTag = 1;
+                                    magicInTag = 0;
+                                }
+
+                                content += token;
+
+                                break;
+                            case '>':
+                                htmlTag = 0;
+                                // content.substr(-1) doesn't work in IE7/8
+                                var emptyElement = (content.substr(content.length - 1) === "/" || content.substr(content.length - 2) === "--"),
+                                    attrs = "";
+                                // if there was a magic tag
+                                // or it's an element that has text content between its tags,
+                                // but content is not other tags add a hookup
+                                // TODO: we should only add `can.EJS.pending()` if there's a magic tag
+                                // within the html tags.
+                                if (specialStates.attributeHookups.length) {
+                                    attrs = "attrs: ['" + specialStates.attributeHookups.join("','") + "'], ";
+                                    specialStates.attributeHookups = [];
+                                }
+                                // this is the > of a special tag
+                                // comparison to lastTagHookup makes sure the same custom tags can be nested
+                                if ((tagName + specialStates.tagHookups.length) !== specialStates.lastTagHookup && tagName === top(specialStates.tagHookups)) {
+                                    // If it's a self closing tag (like <content/>) make sure we put the / at the end.
+                                    if (emptyElement) {
+                                        content = content.substr(0, content.length - 1);
+                                    }
+                                    // Put the start of the end
+                                    buff.push(put_cmd,
+                                        '"', clean(content), '"',
+                                        ",can.view.pending({tagName:'" + tagName + "'," + (attrs) + "scope: " + (this.text.scope || "this") + this.text.options);
+
+                                    // if it's a self closing tag (like <content/>) close and end the tag
+                                    if (emptyElement) {
+                                        buff.push("}));");
+                                        content = "/>";
+                                        popTagHookup();
+                                    }
+                                    // if it's an empty tag	 
+                                    else if (tokens[i] === "<" && tokens[i + 1] === "/" + tagName) {
+                                        buff.push("}));");
+                                        content = token;
+                                        popTagHookup();
+                                    } else {
+                                        // it has content
+                                        buff.push(",subtemplate: function(" + this.text.argNames + "){\n" + startTxt + (this.text.start || ''));
+                                        content = '';
+                                    }
+
+                                } else if (magicInTag || (!popTagName && elements.tagToContentPropMap[tagNames[tagNames.length - 1]]) || attrs) {
+                                    // make sure / of /> is on the right of pending
+                                    var pendingPart = ",can.view.pending({" + attrs + "scope: " + (this.text.scope || "this") + this.text.options + "}),\"";
+                                    if (emptyElement) {
+                                        put(content.substr(0, content.length - 1), pendingPart + "/>\"");
+                                    } else {
+                                        put(content, pendingPart + ">\"");
+                                    }
+                                    content = '';
+                                    magicInTag = 0;
+                                } else {
+                                    content += token;
+                                }
+
+                                // if it's a tag like <input/>
+                                if (emptyElement || popTagName) {
+                                    // remove the current tag in the stack
+                                    tagNames.pop();
+                                    // set the current tag to the previous parent
+                                    tagName = tagNames[tagNames.length - 1];
+                                    // Don't pop next time
+                                    popTagName = false;
+                                }
+                                specialStates.attributeHookups = [];
+                                break;
+                            case "'":
+                            case '"':
+                                // If we are in an html tag, finding matching quotes.
+                                if (htmlTag) {
+                                    // We have a quote and it matches.
+                                    if (quote && quote === token) {
+                                        // We are exiting the quote.
+                                        quote = null;
+                                        // Otherwise we are creating a quote.
+                                        // TODO: does this handle `\`?
+                                        var attr = getAttrName();
+                                        if (viewCallbacks.attr(attr)) {
+                                            specialStates.attributeHookups.push(attr);
+                                        }
+
+                                        if (specialAttribute) {
+
+                                            content += token;
+                                            put(content);
+                                            buff.push(finishTxt, "}));\n");
+                                            content = "";
+                                            specialAttribute = false;
+
+                                            break;
+                                        }
+
+                                    } else if (quote === null) {
+                                        quote = token;
+                                        beforeQuote = lastToken;
+                                        attrName = getAttrName();
+                                        // TODO: check if there's magic!!!!
+                                        if ((tagName === "img" && attrName === "src") || attrName === "style") {
+                                            // put content that was before the attr name, but don't include the src=
+                                            put(content.replace(attrReg, ""));
+                                            content = "";
+
+                                            specialAttribute = true;
+
+                                            buff.push(insert_cmd, "can.view.txt(2,'" + getTag(tagName, tokens, i) + "'," + status() + ",this,function(){", startTxt);
+                                            put(attrName + "=" + token);
+                                            break;
+                                        }
+
+                                    }
+                                }
+
+                            default:
+                                // Track the current tag
+                                if (lastToken === '<') {
+
+                                    tagName = token.substr(0, 3) === "!--" ?
+                                        "!--" : token.split(/\s/)[0];
+
+                                    var isClosingTag = false,
+                                        cleanedTagName;
+
+                                    if (tagName.indexOf("/") === 0) {
+                                        isClosingTag = true;
+                                        cleanedTagName = tagName.substr(1);
+                                    }
+
+                                    if (isClosingTag) { // </tag>
+
+                                        // when we enter a new tag, pop the tag name stack
+                                        if (top(tagNames) === cleanedTagName) {
+                                            // set tagName to the last tagName
+                                            // if there are no more tagNames, we'll rely on getTag.
+                                            tagName = cleanedTagName;
+                                            popTagName = true;
+                                        }
+                                        // if we are in a closing tag of a custom tag
+                                        if (top(specialStates.tagHookups) === cleanedTagName) {
+
+                                            // remove the last < from the content
+                                            put(content.substr(0, content.length - 1));
+
+                                            // finish the "section"
+                                            buff.push(finishTxt + "}}) );");
+                                            // the < belongs to the outside
+                                            content = "><";
+                                            popTagHookup();
+                                        }
+
+                                    } else {
+                                        if (tagName.lastIndexOf("/") === tagName.length - 1) {
+                                            tagName = tagName.substr(0, tagName.length - 1);
+
+                                        }
+
+                                        if (tagName !== "!--" && (viewCallbacks.tag(tagName))) {
+                                            // if the content tag is inside something it doesn't belong ...
+                                            if (tagName === "content" && elements.tagMap[top(tagNames)]) {
+                                                // convert it to an element that will work
+                                                token = token.replace("content", elements.tagMap[top(tagNames)]);
+                                            }
+                                            // we will hookup at the ending tag>
+                                            specialStates.tagHookups.push(tagName);
+                                        }
+
+                                        tagNames.push(tagName);
+
+                                    }
+
+                                }
+                                content += token;
+                                break;
+                        }
+                    } else {
+                        // We have a start tag.
+                        switch (token) {
+                            case tmap.right:
+                            case tmap.returnRight:
+                                switch (startTag) {
+                                    case tmap.left:
+                                        // Get the number of `{ minus }`
+                                        bracketCount = bracketNum(content);
+
+                                        // We are ending a block.
+                                        if (bracketCount === 1) {
+                                            // We are starting on. 
+                                            buff.push(insert_cmd, 'can.view.txt(0,\'' + getTag(tagName, tokens, i) + '\',' + status() + ',this,function(){', startTxt, content);
+                                            endStack.push({
+                                                    before: "",
+                                                    after: finishTxt + "}));\n"
+                                                });
+                                        } else {
+
+                                            // How are we ending this statement?
+                                            last = // If the stack has value and we are ending a block...
+                                            endStack.length && bracketCount === -1 ? // Use the last item in the block stack.
+                                            endStack.pop() : // Or use the default ending.
+                                            {
+                                                after: ";"
+                                            };
+
+                                            // If we are ending a returning block,
+                                            // add the finish text which returns the result of the
+                                            // block.
+                                            if (last.before) {
+                                                buff.push(last.before);
+                                            }
+                                            // Add the remaining content.
+                                            buff.push(content, ";", last.after);
+                                        }
+                                        break;
+                                    case tmap.escapeLeft:
+                                    case tmap.returnLeft:
+                                        // We have an extra `{` -> `block`.
+                                        // Get the number of `{ minus }`.
+                                        bracketCount = bracketNum(content);
+                                        // If we have more `{`, it means there is a block.
+                                        if (bracketCount) {
+                                            // When we return to the same # of `{` vs `}` end with a `doubleParent`.
+                                            endStack.push({
+                                                    before: finishTxt,
+                                                    after: "}));\n"
+                                                });
+                                        }
+
+                                        var escaped = startTag === tmap.escapeLeft ? 1 : 0,
+                                            commands = {
+                                                insert: insert_cmd,
+                                                tagName: getTag(tagName, tokens, i),
+                                                status: status(),
+                                                specialAttribute: specialAttribute
+                                            };
+
+                                        for (var ii = 0; ii < this.helpers.length; ii++) {
+                                            // Match the helper based on helper
+                                            // regex name value
+                                            var helper = this.helpers[ii];
+                                            if (helper.name.test(content)) {
+                                                content = helper.fn(content, commands);
+
+                                                // dont escape partials
+                                                if (helper.name.source === /^>[\s]*\w*/.source) {
+                                                    escaped = 0;
+                                                }
+                                                break;
+                                            }
+                                        }
+
+                                        // Handle special cases
+                                        if (typeof content === 'object') {
+
+                                            if (content.startTxt && content.end && specialAttribute) {
+                                                buff.push(insert_cmd, "can.view.toStr( ", content.content, '() ) );');
+
+                                            } else {
+
+                                                if (content.startTxt) {
+                                                    buff.push(insert_cmd, "can.view.txt(\n" +
+                                                        (typeof status() === "string" || (content.escaped != null ? content.escaped : escaped)) + ",\n'" + tagName + "',\n" + status() + ",\nthis,\n");
+                                                } else if (content.startOnlyTxt) {
+                                                    buff.push(insert_cmd, 'can.view.onlytxt(this,\n');
+                                                }
+                                                buff.push(content.content);
+                                                if (content.end) {
+                                                    buff.push('));');
+                                                }
+
+                                            }
+
+                                        } else if (specialAttribute) {
+
+                                            buff.push(insert_cmd, content, ');');
+
+                                        } else {
+                                            // If we have `<%== a(function(){ %>` then we want
+                                            // `can.EJS.text(0,this, function(){ return a(function(){ var _v1ew = [];`.
+
+                                            buff.push(insert_cmd, "can.view.txt(\n" + (typeof status() === "string" || escaped) +
+                                                ",\n'" + tagName + "',\n" + status() + ",\nthis,\nfunction(){ " +
+                                                (this.text.escape || '') +
+                                                "return ", content,
+                                                // If we have a block.
+                                                bracketCount ?
+                                                // Start with startTxt `"var _v1ew = [];"`.
+                                                startTxt :
+                                                // If not, add `doubleParent` to close push and text.
+                                                "}));\n");
+
+
+
+                                        }
+
+                                        if (rescan && rescan.after && rescan.after.length) {
+                                            put(rescan.after.length);
+                                            rescan = null;
+                                        }
+                                        break;
+                                }
+                                startTag = null;
+                                content = '';
+                                break;
+                            case tmap.templateLeft:
+                                content += tmap.left;
+                                break;
+                            default:
+                                content += token;
+                                break;
+                        }
+                    }
+                    lastToken = token;
+                }
+
+                // Put it together...
+                if (content.length) {
+                    // Should be `content.dump` in Ruby.
+                    put(content);
+                }
+                buff.push(";");
+                var template = buff.join(''),
+                    out = {
+                        out: (this.text.outStart || "") + template + " " + finishTxt + (this.text.outEnd || "")
+                    };
+
+                // Use `eval` instead of creating a function, because it is easier to debug.
+                myEval.call(out, 'this.fn = (function(' + this.text.argNames + '){' + out.out + '});\r\n//# sourceURL=' + name + '.js');
+                return out;
+            }
+        };
+
+        // can.view.attr
+
+        // This is called when there is a special tag
+        can.view.pending = function(viewData) {
+            // we need to call any live hookups
+            // so get that and return the hook
+            // a better system will always be called with the same stuff
+            var hooks = can.view.getHooks();
+            return can.view.hook(function(el) {
+                can.each(hooks, function(fn) {
+                    fn(el);
+                });
+                viewData.templateType = "legacy";
+                if (viewData.tagName) {
+                    viewCallbacks.tagHandler(el, viewData.tagName, viewData);
+                }
+
+                can.each(viewData && viewData.attrs || [], function(attributeName) {
+                    viewData.attributeName = attributeName;
+                    var callback = viewCallbacks.attr(attributeName);
+                    if (callback) {
+                        callback(el, viewData);
+                    }
+                });
+
+            });
+
+        };
+
+        can.view.tag("content", function(el, tagData) {
+            return tagData.scope;
+        });
+
+        can.view.Scanner = Scanner;
+
+        return Scanner;
+    })(__m10, __m24, __m9);
+
+    // ## can/view/node_lists/node_lists.js
+    var __m27 = (function(can) {
+        // ## Helpers
+        // Some browsers don't allow expando properties on HTMLTextNodes
+        // so let's try to assign a custom property, an 'expando' property.
+        // We use this boolean to determine how we are going to hold on
+        // to HTMLTextNode within a nodeList.  More about this in the 'id'
+        // function.
+        var canExpando = true;
+        try {
+            document.createTextNode('')._ = 0;
+        } catch (ex) {
+            canExpando = false;
+        }
+
+        // A mapping of element ids to nodeList id allowing us to quickly find an element
+        // that needs to be replaced when updated.
+        var nodeMap = {},
+            // A mapping of ids to text nodes, this map will be used in the 
+            // case of the browser not supporting expando properties.
+            textNodeMap = {},
+            // The name of the expando property; the value returned 
+            // given a nodeMap key.
+            expando = 'ejs_' + Math.random(),
+            // The id used as the key in our nodeMap, this integer
+            // will be preceded by 'element_' or 'obj_' depending on whether
+            // the element has a nodeName.
+            _id = 0,
+
+            // ## nodeLists.id
+            // Given a template node, create an id on the node as a expando
+            // property, or if the node is an HTMLTextNode and the browser
+            // doesn't support expando properties store the id with a
+            // reference to the text node in an internal collection then return
+            // the lookup id.
+            id = function(node, localMap) {
+                var _textNodeMap = localMap || textNodeMap;
+                var id = readId(node, _textNodeMap);
+                if (id) {
+                    return id;
+                } else {
+                    // If the browser supports expando properties or the node
+                    // provided is not an HTMLTextNode, we don't need to work
+                    // with the internal textNodeMap and we can place the property
+                    // on the node.
+                    if (canExpando || node.nodeType !== 3) {
+                        ++_id;
+                        return node[expando] = (node.nodeName ? 'element_' : 'obj_') + _id;
+                    } else {
+                        // If we didn't find the node, we need to register it and return
+                        // the id used.
+                        ++_id;
+
+                        // If we didn't find the node, we need to register it and return
+                        // the id used.
+                        // We have to store the node itself because of the browser's lack
+                        // of support for expando properties (i.e. we can't use a look-up
+                        // table and store the id on the node as a custom property).
+                        _textNodeMap['text_' + _id] = node;
+                        return 'text_' + _id;
+                    }
+                }
+            },
+            readId = function(node, textNodeMap) {
+                if (canExpando || node.nodeType !== 3) {
+                    return node[expando];
+                } else {
+                    // The nodeList has a specific collection for HTMLTextNodes for 
+                    // (older) browsers that do not support expando properties.
+                    for (var textNodeID in textNodeMap) {
+                        if (textNodeMap[textNodeID] === node) {
+                            return textNodeID;
+                        }
+                    }
+                }
+            },
+            splice = [].splice,
+            push = [].push,
+
+            // ## nodeLists.itemsInChildListTree
+            // Given a nodeList return the number of child items in the provided
+            // list and any child lists.
+            itemsInChildListTree = function(list) {
+                var count = 0;
+                for (var i = 0, len = list.length; i < len; i++) {
+                    var item = list[i];
+                    // If the item is an HTMLElement then increment the count by 1.
+                    if (item.nodeType) {
+                        count++;
+                    } else {
+                        // If the item is not an HTMLElement it is a list, so
+                        // increment the count by the number of items in the child
+                        // list.
+                        count += itemsInChildListTree(item);
+                    }
+                }
+                return count;
+            },
+            replacementMap = function(replacements, idMap) {
+                var map = {};
+                for (var i = 0, len = replacements.length; i < len; i++) {
+                    var node = nodeLists.first(replacements[i]);
+                    map[id(node, idMap)] = replacements[i];
+                }
+                return map;
+            };
+
+        // ## Registering & Updating
+        // To keep all live-bound sections knowing which elements they are managing,
+        // all live-bound elments are registered and updated when they change.
+        // For example, the above template, when rendered with data like:
+        //     data = new can.Map({
+        //         items: ["first","second"]
+        //     })
+        // This will first render the following content:
+        //     <div>
+        //         <span data-view-id='5'/>
+        //     </div>
+        // When the `5` callback is called, this will register the `<span>` like:
+        //     var ifsNodes = [<span 5>]
+        //     nodeLists.register(ifsNodes);
+        // And then render `{{if}}`'s contents and update `ifsNodes` with it:
+        //     nodeLists.update( ifsNodes, [<"\nItems:\n">, <span data-view-id="6">] );
+        // Next, hookup `6` is called which will regsiter the `<span>` like:
+        //     var eachsNodes = [<span 6>];
+        //     nodeLists.register(eachsNodes);
+        // And then it will render `{{#each}}`'s content and update `eachsNodes` with it:
+        //     nodeLists.update(eachsNodes, [<label>,<label>]);
+        // As `nodeLists` knows that `eachsNodes` is inside `ifsNodes`, it also updates
+        // `ifsNodes`'s nodes to look like:
+        //     [<"\nItems:\n">,<label>,<label>]
+        // Now, if all items were removed, `{{#if}}` would be able to remove
+        // all the `<label>` elements.
+        // When you regsiter a nodeList, you can also provide a callback to know when
+        // that nodeList has been replaced by a parent nodeList.  This is
+        // useful for tearing down live-binding.
+        var nodeLists = {
+            id: id,
+
+            // ## nodeLists.update
+            // Updates a nodeList with new items, i.e. when values for the template have changed.
+            update: function(nodeList, newNodes) {
+                // Unregister all childNodeLists.
+                var oldNodes = nodeLists.unregisterChildren(nodeList);
+
+                newNodes = can.makeArray(newNodes);
+
+                var oldListLength = nodeList.length;
+
+                // Replace oldNodeLists's contents.
+                splice.apply(nodeList, [
+                        0,
+                        oldListLength
+                    ].concat(newNodes));
+
+                if (nodeList.replacements) {
+                    nodeLists.nestReplacements(nodeList);
+                } else {
+                    nodeLists.nestList(nodeList);
+                }
+
+                return oldNodes;
+            },
+            nestReplacements: function(list) {
+                var index = 0,
+                    // temporary id map that is limited to this call
+                    idMap = {},
+                    // replacements are in reverse order in the DOM
+                    rMap = replacementMap(list.replacements, idMap),
+                    rCount = list.replacements.length;
+
+                while (index < list.length && rCount) {
+                    var node = list[index],
+                        replacement = rMap[readId(node, idMap)];
+                    if (replacement) {
+                        list.splice(index, itemsInChildListTree(replacement), replacement);
+                        rCount--;
+                    }
+                    index++;
+                }
+                list.replacements = [];
+            },
+            // ## nodeLists.nestList
+            // If a given list does not exist in the nodeMap then create an lookup
+            // id for it in the nodeMap and assign the list to it.
+            // If the the provided does happen to exist in the nodeMap update the
+            // elements in the list.
+            // @param {Array.<HTMLElement>} nodeList The nodeList being nested.
+            nestList: function(list) {
+                var index = 0;
+                while (index < list.length) {
+                    var node = list[index],
+                        childNodeList = nodeMap[id(node)];
+                    if (childNodeList) {
+                        if (childNodeList !== list) {
+                            list.splice(index, itemsInChildListTree(childNodeList), childNodeList);
+                        }
+                    } else {
+                        // Indicate the new nodes belong to this list.
+                        nodeMap[id(node)] = list;
+                    }
+                    index++;
+                }
+            },
+
+            // ## nodeLists.last
+            // Return the last HTMLElement in a nodeList, if the last
+            // element is a nodeList, returns the last HTMLElement of
+            // the child list, etc.
+            last: function(nodeList) {
+                var last = nodeList[nodeList.length - 1];
+                // If the last node in the list is not an HTMLElement
+                // it is a nodeList so call `last` again.
+                if (last.nodeType) {
+                    return last;
+                } else {
+                    return nodeLists.last(last);
+                }
+            },
+
+            // ## nodeLists.first
+            // Return the first HTMLElement in a nodeList, if the first
+            // element is a nodeList, returns the first HTMLElement of
+            // the child list, etc.
+            first: function(nodeList) {
+                var first = nodeList[0];
+                // If the first node in the list is not an HTMLElement
+                // it is a nodeList so call `first` again. 
+                if (first.nodeType) {
+                    return first;
+                } else {
+                    return nodeLists.first(first);
+                }
+            },
+
+            // ## nodeLists.register
+            // Registers a nodeList and returns the nodeList passed to register
+            register: function(nodeList, unregistered, parent) {
+                // If a unregistered callback has been provided assign it to the nodeList
+                // as a property to be called when the nodeList is unregistred.
+                nodeList.unregistered = unregistered;
+                nodeList.parentList = parent;
+
+                if (parent === true) {
+                    // this is the "top" parent in stache
+                    nodeList.replacements = [];
+                } else if (parent) {
+                    // TOOD: remove
+                    parent.replacements.push(nodeList);
+                    nodeList.replacements = [];
+                } else {
+                    nodeLists.nestList(nodeList);
+                }
+
+
+                return nodeList;
+            },
+
+            // ## nodeLists.unregisterChildren
+            // Unregister all childen within the provided list and return the 
+            // unregistred nodes.
+            // @param {Array.<HTMLElement>} nodeList The child list to unregister.
+            unregisterChildren: function(nodeList) {
+                var nodes = [];
+                // For each node in the nodeList we want to compute it's id
+                // and delete it from the nodeList's internal map.
+                can.each(nodeList, function(node) {
+                    // If the node does not have a nodeType it is an array of
+                    // nodes.
+                    if (node.nodeType) {
+                        if (!nodeList.replacements) {
+                            delete nodeMap[id(node)];
+                        }
+
+                        nodes.push(node);
+                    } else {
+                        // Recursively unregister each of the child lists in 
+                        // the nodeList.
+                        push.apply(nodes, nodeLists.unregister(node));
+                    }
+                });
+                return nodes;
+            },
+
+            // ## nodeLists.unregister
+            // Unregister's a nodeList and returns the unregistered nodes.  
+            // Call if the nodeList is no longer being updated. This will 
+            // also unregister all child nodeLists.
+            unregister: function(nodeList) {
+                var nodes = nodeLists.unregisterChildren(nodeList);
+                // If an 'unregisted' function was provided during registration, remove
+                // it from the list, and call the function provided.
+                if (nodeList.unregistered) {
+                    var unregisteredCallback = nodeList.unregistered;
+                    delete nodeList.unregistered;
+                    delete nodeList.replacements;
+                    unregisteredCallback();
+                }
+                return nodes;
+            },
+
+            nodeMap: nodeMap
+        };
+        can.view.nodeLists = nodeLists;
+        return nodeLists;
+    })(__m2, __m24);
+
+    // ## can/view/parser/parser.js
+    var __m28 = (function(can) {
+
+
+        function makeMap(str) {
+            var obj = {}, items = str.split(",");
+            for (var i = 0; i < items.length; i++) {
+                obj[items[i]] = true;
+            }
+
+            return obj;
+        }
+
+        var alphaNumericHU = "-A-Za-z0-9_",
+            attributeNames = "[a-zA-Z_:][" + alphaNumericHU + ":.]+",
+            spaceEQspace = "\\s*=\\s*",
+            dblQuote2dblQuote = "\"((?:\\\\.|[^\"])*)\"",
+            quote2quote = "'((?:\\\\.|[^'])*)'",
+            attributeEqAndValue = "(?:" + spaceEQspace + "(?:" +
+                "(?:\"[^\"]*\")|(?:'[^']*')|[^>\\s]+))?",
+            matchStash = "\\{\\{[^\\}]*\\}\\}\\}?",
+            stash = "\\{\\{([^\\}]*)\\}\\}\\}?",
+            startTag = new RegExp("^<([" + alphaNumericHU + "]+)" +
+                "(" +
+                "(?:\\s*" +
+                "(?:(?:" +
+                "(?:" + attributeNames + ")?" +
+                attributeEqAndValue + ")|" +
+                "(?:" + matchStash + ")+)" +
+                ")*" +
+                ")\\s*(\\/?)>"),
+            endTag = new RegExp("^<\\/([" + alphaNumericHU + "]+)[^>]*>"),
+            attr = new RegExp("(?:" +
+                "(?:(" + attributeNames + ")|" + stash + ")" +
+                "(?:" + spaceEQspace +
+                "(?:" +
+                "(?:" + dblQuote2dblQuote + ")|(?:" + quote2quote + ")|([^>\\s]+)" +
+                ")" +
+                ")?)", "g"),
+            mustache = new RegExp(stash, "g"),
+            txtBreak = /<|\{\{/;
+
+        // Empty Elements - HTML 5
+        var empty = makeMap("area,base,basefont,br,col,frame,hr,img,input,isindex,link,meta,param,embed");
+
+        // Block Elements - HTML 5
+        var block = makeMap("address,article,applet,aside,audio,blockquote,button,canvas,center,dd,del,dir,div,dl,dt,fieldset,figcaption,figure,footer,form,frameset,h1,h2,h3,h4,h5,h6,header,hgroup,hr,iframe,ins,isindex,li,map,menu,noframes,noscript,object,ol,output,p,pre,section,script,table,tbody,td,tfoot,th,thead,tr,ul,video");
+
+        // Inline Elements - HTML 5
+        var inline = makeMap("a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var");
+
+        // Elements that you can, intentionally, leave open
+        // (and which close themselves)
+        var closeSelf = makeMap("colgroup,dd,dt,li,options,p,td,tfoot,th,thead,tr");
+
+        // Attributes that have their values filled in disabled="disabled"
+        var fillAttrs = makeMap("checked,compact,declare,defer,disabled,ismap,multiple,nohref,noresize,noshade,nowrap,readonly,selected");
+
+        // Special Elements (can contain anything)
+        var special = makeMap("script,style");
+
+        var HTMLParser = function(html, handler) {
+
+            function parseStartTag(tag, tagName, rest, unary) {
+                tagName = tagName.toLowerCase();
+
+                if (block[tagName]) {
+                    while (stack.last() && inline[stack.last()]) {
+                        parseEndTag("", stack.last());
+                    }
+                }
+
+                if (closeSelf[tagName] && stack.last() === tagName) {
+                    parseEndTag("", tagName);
+                }
+
+                unary = empty[tagName] || !! unary;
+
+                handler.start(tagName, unary);
+
+                if (!unary) {
+                    stack.push(tagName);
+                }
+                // find attribute or special
+                HTMLParser.parseAttrs(rest, handler);
+
+                handler.end(tagName, unary);
+
+            }
+
+            function parseEndTag(tag, tagName) {
+                // If no tag name is provided, clean shop
+                var pos;
+                if (!tagName) {
+                    pos = 0;
+                }
+
+
+                // Find the closest opened tag of the same type
+                else {
+                    for (pos = stack.length - 1; pos >= 0; pos--) {
+                        if (stack[pos] === tagName) {
+                            break;
+                        }
+                    }
+
+                }
+
+
+                if (pos >= 0) {
+                    // Close all the open elements, up the stack
+                    for (var i = stack.length - 1; i >= pos; i--) {
+                        if (handler.close) {
+                            handler.close(stack[i]);
+                        }
+                    }
+
+                    // Remove the open elements from the stack
+                    stack.length = pos;
+                }
+            }
+
+            function parseMustache(mustache, inside) {
+                if (handler.special) {
+                    handler.special(inside);
+                }
+            }
+
+
+            var index, chars, match, stack = [],
+                last = html;
+            stack.last = function() {
+                return this[this.length - 1];
+            };
+
+            while (html) {
+                chars = true;
+
+                // Make sure we're not in a script or style element
+                if (!stack.last() || !special[stack.last()]) {
+
+                    // Comment
+                    if (html.indexOf("<!--") === 0) {
+                        index = html.indexOf("-->");
+
+                        if (index >= 0) {
+                            if (handler.comment) {
+                                handler.comment(html.substring(4, index));
+                            }
+                            html = html.substring(index + 3);
+                            chars = false;
+                        }
+
+                        // end tag
+                    } else if (html.indexOf("</") === 0) {
+                        match = html.match(endTag);
+
+                        if (match) {
+                            html = html.substring(match[0].length);
+                            match[0].replace(endTag, parseEndTag);
+                            chars = false;
+                        }
+
+                        // start tag
+                    } else if (html.indexOf("<") === 0) {
+                        match = html.match(startTag);
+
+                        if (match) {
+                            html = html.substring(match[0].length);
+                            match[0].replace(startTag, parseStartTag);
+                            chars = false;
+                        }
+                    } else if (html.indexOf("{{") === 0) {
+                        match = html.match(mustache);
+
+                        if (match) {
+                            html = html.substring(match[0].length);
+                            match[0].replace(mustache, parseMustache);
+                        }
+                    }
+
+                    if (chars) {
+                        index = html.search(txtBreak);
+
+                        var text = index < 0 ? html : html.substring(0, index);
+                        html = index < 0 ? "" : html.substring(index);
+
+                        if (handler.chars && text) {
+                            handler.chars(text);
+                        }
+                    }
+
+                } else {
+                    html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function(all, text) {
+                        text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
+                        if (handler.chars) {
+                            handler.chars(text);
+                        }
+                        return "";
+                    });
+
+                    parseEndTag("", stack.last());
+                }
+
+                if (html === last) {
+                    throw "Parse Error: " + html;
+                }
+
+                last = html;
+            }
+
+            // Clean up any remaining tags
+            parseEndTag();
+
+
+            handler.done();
+        };
+        HTMLParser.parseAttrs = function(rest, handler) {
+
+
+            (rest != null ? rest : "").replace(attr, function(text, name, special, dblQuote, singleQuote, val) {
+                if (special) {
+                    handler.special(special);
+
+                }
+                if (name || dblQuote || singleQuote || val) {
+                    var value = arguments[3] ? arguments[3] :
+                        arguments[4] ? arguments[4] :
+                        arguments[5] ? arguments[5] :
+                        fillAttrs[name.toLowerCase()] ? name : "";
+                    handler.attrStart(name || "");
+
+                    var last = mustache.lastIndex = 0,
+                        res = mustache.exec(value),
+                        chars;
+                    while (res) {
+                        chars = value.substring(
+                            last,
+                            mustache.lastIndex - res[0].length);
+                        if (chars.length) {
+                            handler.attrValue(chars);
+                        }
+                        handler.special(res[1]);
+                        last = mustache.lastIndex;
+                        res = mustache.exec(value);
+                    }
+                    chars = value.substr(
+                        last,
+                        value.length);
+                    if (chars) {
+                        handler.attrValue(chars);
+                    }
+                    handler.attrEnd(name || "");
+                }
+
+
+            });
+
+
+        };
+
+        can.view.parser = HTMLParser;
+
+        return HTMLParser;
+
+    })(__m10);
+
+    // ## can/view/live/live.js
+    var __m26 = (function(can, elements, view, nodeLists, parser) {
+
+        elements = elements || can.view.elements;
+        nodeLists = nodeLists || can.view.NodeLists;
+        parser = parser || can.view.parser;
+
+        // ## live.js
+        // The live module provides live binding for computes
+        // and can.List.
+        // Currently, it's API is designed for `can/view/render`, but
+        // it could easily be used for other purposes.
+        // ### Helper methods
+        // #### setup
+        // `setup(HTMLElement, bind(data), unbind(data)) -> data`
+        // Calls bind right away, but will call unbind
+        // if the element is "destroyed" (removed from the DOM).
+        var setup = function(el, bind, unbind) {
+            // Removing an element can call teardown which
+            // unregister the nodeList which calls teardown
+            var tornDown = false,
+                teardown = function() {
+                    if (!tornDown) {
+                        tornDown = true;
+                        unbind(data);
+                        can.unbind.call(el, 'removed', teardown);
+                    }
+                    return true;
+                }, data = {
+                    teardownCheck: function(parent) {
+                        return parent ? false : teardown();
+                    }
+                };
+            can.bind.call(el, 'removed', teardown);
+            bind(data);
+            return data;
+        },
+            // #### listen
+            // Calls setup, but presets bind and unbind to
+            // operate on a compute
+            listen = function(el, compute, change) {
+                return setup(el, function() {
+                    compute.bind('change', change);
+                }, function(data) {
+                    compute.unbind('change', change);
+                    if (data.nodeList) {
+                        nodeLists.unregister(data.nodeList);
+                    }
+                });
+            },
+            // #### getAttributeParts
+            // Breaks up a string like foo='bar' into ["foo","'bar'""]
+            getAttributeParts = function(newVal) {
+                var attrs = {},
+                    attr;
+                parser.parseAttrs(newVal, {
+                        attrStart: function(name) {
+                            attrs[name] = "";
+                            attr = name;
+                        },
+                        attrValue: function(value) {
+                            attrs[attr] += value;
+                        },
+                        attrEnd: function() {}
+                    });
+                return attrs;
+            },
+            splice = [].splice,
+            isNode = function(obj) {
+                return obj && obj.nodeType;
+            },
+            addTextNodeIfNoChildren = function(frag) {
+                if (!frag.childNodes.length) {
+                    frag.appendChild(document.createTextNode(""));
+                }
+            };
+
+        var live = {
+
+            list: function(el, compute, render, context, parentNode, nodeList) {
+
+                // A nodeList of all elements this live-list manages.
+                // This is here so that if this live list is within another section
+                // that section is able to remove the items in this list.
+                var masterNodeList = nodeList || [el],
+                    // A mapping of items to their indicies'
+                    indexMap = [],
+                    // Called when items are added to the list.
+                    add = function(ev, items, index) {
+                        // Collect new html and mappings
+                        var frag = document.createDocumentFragment(),
+                            newNodeLists = [],
+                            newIndicies = [];
+                        // For each new item,
+                        can.each(items, function(item, key) {
+                            var itemNodeList = [];
+
+                            if (nodeList) {
+                                nodeLists.register(itemNodeList, null, true);
+                            }
+
+                            var itemIndex = can.compute(key + index),
+                                // get its string content
+                                itemHTML = render.call(context, item, itemIndex, itemNodeList),
+                                gotText = typeof itemHTML === "string",
+                                // and convert it into elements.
+                                itemFrag = can.frag(itemHTML);
+                            // Add those elements to the mappings.
+
+                            itemFrag = gotText ? can.view.hookup(itemFrag) : itemFrag;
+
+                            var childNodes = can.makeArray(itemFrag.childNodes);
+                            if (nodeList) {
+                                nodeLists.update(itemNodeList, childNodes);
+                                newNodeLists.push(itemNodeList);
+                            } else {
+                                newNodeLists.push(nodeLists.register(childNodes));
+                            }
+
+
+                            // Hookup the fragment (which sets up child live-bindings) and
+                            // add it to the collection of all added elements.
+                            frag.appendChild(itemFrag);
+                            // track indicies;
+                            newIndicies.push(itemIndex);
+                        });
+                        // The position of elements is always after the initial text placeholder node
+                        var masterListIndex = index + 1;
+
+
+                        // Check if we are adding items at the end
+                        if (!masterNodeList[masterListIndex]) {
+                            elements.after(masterListIndex === 1 ? [text] : [nodeLists.last(masterNodeList[masterListIndex - 1])], frag);
+                        } else {
+                            // Add elements before the next index's first element.
+                            var el = nodeLists.first(masterNodeList[masterListIndex]);
+                            can.insertBefore(el.parentNode, frag, el);
+                        }
+                        splice.apply(masterNodeList, [
+                                masterListIndex,
+                                0
+                            ].concat(newNodeLists));
+
+                        // update indices after insert point
+                        splice.apply(indexMap, [
+                                index,
+                                0
+                            ].concat(newIndicies));
+
+                        for (var i = index + newIndicies.length, len = indexMap.length; i < len; i++) {
+                            indexMap[i](i);
+                        }
+                    },
+                    // Called when items are removed or when the bindings are torn down.
+                    remove = function(ev, items, index, duringTeardown, fullTeardown) {
+                        // If this is because an element was removed, we should
+                        // check to make sure the live elements are still in the page.
+                        // If we did this during a teardown, it would cause an infinite loop.
+                        if (!duringTeardown && data.teardownCheck(text.parentNode)) {
+                            return;
+                        }
+                        var removedMappings = masterNodeList.splice(index + 1, items.length),
+                            itemsToRemove = [];
+                        can.each(removedMappings, function(nodeList) {
+
+                            // Unregister to free up event bindings.
+                            var nodesToRemove = nodeLists.unregister(nodeList);
+
+                            // add items that we will remove all at once
+                            [].push.apply(itemsToRemove, nodesToRemove);
+                        });
+                        // update indices after remove point
+                        indexMap.splice(index, items.length);
+                        for (var i = index, len = indexMap.length; i < len; i++) {
+                            indexMap[i](i);
+                        }
+                        // don't remove elements during teardown.  Something else will probably be doing that.
+                        if (!fullTeardown) {
+                            can.remove(can.$(itemsToRemove));
+                        }
+
+                    },
+                    // A text node placeholder
+                    text = document.createTextNode(''),
+                    // The current list.
+                    list,
+                    // Called when the list is replaced with a new list or the binding is torn-down.
+                    teardownList = function(fullTeardown) {
+                        // there might be no list right away, and the list might be a plain
+                        // array
+                        if (list && list.unbind) {
+                            list.unbind('add', add)
+                                .unbind('remove', remove);
+                        }
+                        // use remove to clean stuff up for us
+                        remove({}, {
+                                length: masterNodeList.length - 1
+                            }, 0, true, fullTeardown);
+                    },
+                    // Called when the list is replaced or setup.
+                    updateList = function(ev, newList, oldList) {
+                        teardownList();
+                        // make an empty list if the compute returns null or undefined
+                        list = newList || [];
+                        // list might be a plain array
+                        if (list.bind) {
+                            list.bind('add', add)
+                                .bind('remove', remove);
+                        }
+                        add({}, list, 0);
+                    };
+                parentNode = elements.getParentNode(el, parentNode);
+                // Setup binding and teardown to add and remove events
+                var data = setup(parentNode, function() {
+                    if (can.isFunction(compute)) {
+                        compute.bind('change', updateList);
+                    }
+                }, function() {
+                    if (can.isFunction(compute)) {
+                        compute.unbind('change', updateList);
+                    }
+                    teardownList(true);
+                });
+                if (!nodeList) {
+                    live.replace(masterNodeList, text, data.teardownCheck);
+                } else {
+                    elements.replace(masterNodeList, text);
+                    nodeLists.update(masterNodeList, [text]);
+                    nodeList.unregistered = data.teardownCheck;
+                }
+
+                // run the list setup
+                updateList({}, can.isFunction(compute) ? compute() : compute);
+            },
+
+            html: function(el, compute, parentNode, nodeList) {
+                var data;
+                parentNode = elements.getParentNode(el, parentNode);
+                data = listen(parentNode, compute, function(ev, newVal, oldVal) {
+
+                    // TODO: remove teardownCheck in 2.1
+                    var attached = nodeLists.first(nodes).parentNode;
+                    // update the nodes in the DOM with the new rendered value
+                    if (attached) {
+                        makeAndPut(newVal);
+                    }
+                    data.teardownCheck(nodeLists.first(nodes).parentNode);
+                });
+
+                var nodes = nodeList || [el],
+                    makeAndPut = function(val) {
+                        var isString = !isNode(val),
+                            frag = can.frag(val),
+                            oldNodes = can.makeArray(nodes);
+
+                        // Add a placeholder textNode if necessary.
+                        addTextNodeIfNoChildren(frag);
+
+                        if (isString) {
+                            frag = can.view.hookup(frag, parentNode);
+                        }
+                        // We need to mark each node as belonging to the node list.
+                        oldNodes = nodeLists.update(nodes, frag.childNodes);
+                        elements.replace(oldNodes, frag);
+                    };
+                data.nodeList = nodes;
+
+                // register the span so nodeLists knows the parentNodeList
+                if (!nodeList) {
+                    nodeLists.register(nodes, data.teardownCheck);
+                } else {
+                    nodeList.unregistered = data.teardownCheck;
+                }
+                makeAndPut(compute());
+            },
+
+            replace: function(nodes, val, teardown) {
+                var oldNodes = nodes.slice(0),
+                    frag = can.frag(val);
+                nodeLists.register(nodes, teardown);
+
+
+                if (typeof val === 'string') {
+                    // if it was a string, check for hookups
+                    frag = can.view.hookup(frag, nodes[0].parentNode);
+                }
+                // We need to mark each node as belonging to the node list.
+                nodeLists.update(nodes, frag.childNodes);
+                elements.replace(oldNodes, frag);
+                return nodes;
+            },
+
+            text: function(el, compute, parentNode, nodeList) {
+                var parent = elements.getParentNode(el, parentNode);
+                // setup listening right away so we don't have to re-calculate value
+                var data = listen(parent, compute, function(ev, newVal, oldVal) {
+                    // Sometimes this is 'unknown' in IE and will throw an exception if it is
+
+                    if (typeof node.nodeValue !== 'unknown') {
+                        node.nodeValue = can.view.toStr(newVal);
+                    }
+
+                    // TODO: remove in 2.1
+                    data.teardownCheck(node.parentNode);
+                });
+                // The text node that will be updated
+
+                var node = document.createTextNode(can.view.toStr(compute()));
+                if (nodeList) {
+                    nodeList.unregistered = data.teardownCheck;
+                    data.nodeList = nodeList;
+
+                    nodeLists.update(nodeList, [node]);
+                    elements.replace([el], node);
+                } else {
+                    // Replace the placeholder with the live node and do the nodeLists thing.
+                    // Add that node to nodeList so we can remove it when the parent element is removed from the page
+                    data.nodeList = live.replace([el], node, data.teardownCheck);
+                }
+
+            },
+            setAttributes: function(el, newVal) {
+                var attrs = getAttributeParts(newVal);
+                for (var name in attrs) {
+                    can.attr.set(el, name, attrs[name]);
+                }
+            },
+
+            attributes: function(el, compute, currentValue) {
+                var oldAttrs = {};
+
+                var setAttrs = function(newVal) {
+                    var newAttrs = getAttributeParts(newVal),
+                        name;
+                    for (name in newAttrs) {
+                        var newValue = newAttrs[name],
+                            oldValue = oldAttrs[name];
+                        if (newValue !== oldValue) {
+                            can.attr.set(el, name, newValue);
+                        }
+                        delete oldAttrs[name];
+                    }
+                    for (name in oldAttrs) {
+                        elements.removeAttr(el, name);
+                    }
+                    oldAttrs = newAttrs;
+                };
+                listen(el, compute, function(ev, newVal) {
+                    setAttrs(newVal);
+                });
+                // current value has been set
+                if (arguments.length >= 3) {
+                    oldAttrs = getAttributeParts(currentValue);
+                } else {
+                    setAttrs(compute());
+                }
+            },
+            attributePlaceholder: '__!!__',
+            attributeReplace: /__!!__/g,
+            attribute: function(el, attributeName, compute) {
+                listen(el, compute, function(ev, newVal) {
+                    elements.setAttr(el, attributeName, hook.render());
+                });
+                var wrapped = can.$(el),
+                    hooks;
+                // Get the list of hookups or create one for this element.
+                // Hooks is a map of attribute names to hookup `data`s.
+                // Each hookup data has:
+                // `render` - A `function` to render the value of the attribute.
+                // `funcs` - A list of hookup `function`s on that attribute.
+                // `batchNum` - The last event `batchNum`, used for performance.
+                hooks = can.data(wrapped, 'hooks');
+                if (!hooks) {
+                    can.data(wrapped, 'hooks', hooks = {});
+                }
+                // Get the attribute value.
+                var attr = elements.getAttr(el, attributeName),
+                    // Split the attribute value by the template.
+                    // Only split out the first __!!__ so if we have multiple hookups in the same attribute,
+                    // they will be put in the right spot on first render
+                    parts = attr.split(live.attributePlaceholder),
+                    goodParts = [],
+                    hook;
+                goodParts.push(parts.shift(), parts.join(live.attributePlaceholder));
+                // If we already had a hookup for this attribute...
+                if (hooks[attributeName]) {
+                    // Just add to that attribute's list of `function`s.
+                    hooks[attributeName].computes.push(compute);
+                } else {
+                    // Create the hookup data.
+                    hooks[attributeName] = {
+                        render: function() {
+                            var i = 0,
+                                // attr doesn't have a value in IE
+                                newAttr = attr ? attr.replace(live.attributeReplace, function() {
+                                    return elements.contentText(hook.computes[i++]());
+                                }) : elements.contentText(hook.computes[i++]());
+                            return newAttr;
+                        },
+                        computes: [compute],
+                        batchNum: undefined
+                    };
+                }
+                // Save the hook for slightly faster performance.
+                hook = hooks[attributeName];
+                // Insert the value in parts.
+                goodParts.splice(1, 0, compute());
+
+                // Set the attribute.
+                elements.setAttr(el, attributeName, goodParts.join(''));
+            },
+            specialAttribute: function(el, attributeName, compute) {
+                listen(el, compute, function(ev, newVal) {
+                    elements.setAttr(el, attributeName, getValue(newVal));
+                });
+                elements.setAttr(el, attributeName, getValue(compute()));
+            },
+
+            simpleAttribute: function(el, attributeName, compute) {
+                listen(el, compute, function(ev, newVal) {
+                    elements.setAttr(el, attributeName, newVal);
+                });
+                elements.setAttr(el, attributeName, compute());
+            }
+        };
+        live.attr = live.simpleAttribute;
+        live.attrs = live.attributes;
+        var newLine = /(\r|\n)+/g;
+        var getValue = function(val) {
+            var regexp = /^["'].*["']$/;
+            val = val.replace(elements.attrReg, '')
+                .replace(newLine, '');
+            // check if starts and ends with " or '
+            return regexp.test(val) ? val.substr(1, val.length - 2) : val;
+        };
+        can.view.live = live;
+
+        return live;
+    })(__m2, __m24, __m10, __m27, __m28);
+
+    // ## can/view/render.js
+    var __m25 = (function(can, elements, live) {
+
+
+        var pendingHookups = [],
+            tagChildren = function(tagName) {
+                var newTag = elements.tagMap[tagName] || "span";
+                if (newTag === "span") {
+                    //innerHTML in IE doesn't honor leading whitespace after empty elements
+                    return "@@!!@@";
+                }
+                return "<" + newTag + ">" + tagChildren(newTag) + "</" + newTag + ">";
+            },
+            contentText = function(input, tag) {
+
+                // If it's a string, return.
+                if (typeof input === 'string') {
+                    return input;
+                }
+                // If has no value, return an empty string.
+                if (!input && input !== 0) {
+                    return '';
+                }
+
+                // If it's an object, and it has a hookup method.
+                var hook = (input.hookup &&
+
+                    // Make a function call the hookup method.
+
+                    function(el, id) {
+                        input.hookup.call(input, el, id);
+                    }) ||
+
+                // Or if it's a `function`, just use the input.
+                (typeof input === 'function' && input);
+
+                // Finally, if there is a `function` to hookup on some dom,
+                // add it to pending hookups.
+                if (hook) {
+                    if (tag) {
+                        return "<" + tag + " " + can.view.hook(hook) + "></" + tag + ">";
+                    } else {
+                        pendingHookups.push(hook);
+                    }
+
+                    return '';
+                }
+
+                // Finally, if all else is `false`, `toString()` it.
+                return "" + input;
+            },
+            // Returns escaped/sanatized content for anything other than a live-binding
+            contentEscape = function(txt, tag) {
+                return (typeof txt === 'string' || typeof txt === 'number') ?
+                    can.esc(txt) :
+                    contentText(txt, tag);
+            },
+            // A flag to indicate if .txt was called within a live section within an element like the {{name}}
+            // within `<div {{#person}}{{name}}{{/person}}/>`.
+            withinTemplatedSectionWithinAnElement = false,
+            emptyHandler = function() {};
+
+        var lastHookups;
+
+        can.extend(can.view, {
+                live: live,
+                // called in text to make a temporary 
+                // can.view.lists function that can be called with
+                // the list to iterate over and the template
+                // used to produce the content within the list
+                setupLists: function() {
+
+                    var old = can.view.lists,
+                        data;
+
+                    can.view.lists = function(list, renderer) {
+                        data = {
+                            list: list,
+                            renderer: renderer
+                        };
+                        return Math.random();
+                    };
+                    // sets back to the old data
+                    return function() {
+                        can.view.lists = old;
+                        return data;
+                    };
+                },
+                getHooks: function() {
+                    var hooks = pendingHookups.slice(0);
+                    lastHookups = hooks;
+                    pendingHookups = [];
+                    return hooks;
+                },
+                onlytxt: function(self, func) {
+                    return contentEscape(func.call(self));
+                },
+
+                txt: function(escape, tagName, status, self, func) {
+                    // the temporary tag needed for any live setup
+                    var tag = (elements.tagMap[tagName] || "span"),
+                        // should live-binding be setup
+                        setupLiveBinding = false,
+                        // the compute's value
+                        value,
+                        listData,
+                        compute,
+                        unbind = emptyHandler,
+                        attributeName;
+
+                    // Are we currently within a live section within an element like the {{name}}
+                    // within `<div {{#person}}{{name}}{{/person}}/>`.
+                    if (withinTemplatedSectionWithinAnElement) {
+                        value = func.call(self);
+                    } else {
+
+                        // If this magic tag is within an attribute or an html element,
+                        // set the flag to true so we avoid trying to live bind
+                        // anything that func might be setup.
+                        // TODO: the scanner should be able to set this up.
+                        if (typeof status === "string" || status === 1) {
+                            withinTemplatedSectionWithinAnElement = true;
+                        }
+
+                        // Sets up a listener so we know any can.view.lists called 
+                        // when func is called
+                        var listTeardown = can.view.setupLists();
+                        unbind = function() {
+                            compute.unbind("change", emptyHandler);
+                        };
+                        // Create a compute that calls func and looks for dependencies.
+                        // By passing `false`, this compute can not be a dependency of other 
+                        // computes.  This is because live-bits are nested, but 
+                        // handle their own updating. For example:
+                        //     {{#if items.length}}{{#items}}{{.}}{{/items}}{{/if}}
+                        // We do not want `{{#if items.length}}` changing the DOM if
+                        // `{{#items}}` text changes.
+                        compute = can.compute(func, self, false);
+
+                        // Bind to get and temporarily cache the value of the compute.
+                        compute.bind("change", emptyHandler);
+
+                        // Call the "wrapping" function and get the binding information
+                        listData = listTeardown();
+
+                        // Get the value of the compute
+                        value = compute();
+
+                        // Let people know we are no longer within an element.
+                        withinTemplatedSectionWithinAnElement = false;
+
+                        // If we should setup live-binding.
+                        setupLiveBinding = compute.hasDependencies;
+                    }
+
+                    if (listData) {
+                        unbind();
+                        return "<" + tag + can.view.hook(function(el, parentNode) {
+                            live.list(el, listData.list, listData.renderer, self, parentNode);
+                        }) + "></" + tag + ">";
+                    }
+
+                    // If we had no observes just return the value returned by func.
+                    if (!setupLiveBinding || typeof value === "function") {
+                        unbind();
+                        return ((withinTemplatedSectionWithinAnElement || escape === 2 || !escape) ?
+                            contentText :
+                            contentEscape)(value, status === 0 && tag);
+                    }
+
+                    // the property (instead of innerHTML elements) to adjust. For
+                    // example options should use textContent
+                    var contentProp = elements.tagToContentPropMap[tagName];
+
+                    // The magic tag is outside or between tags.
+                    if (status === 0 && !contentProp) {
+                        // Return an element tag with a hookup in place of the content
+                        return "<" + tag + can.view.hook(
+                            // if value is an object, it's likely something returned by .safeString
+                            escape && typeof value !== "object" ?
+                            // If we are escaping, replace the parentNode with 
+                            // a text node who's value is `func`'s return value.
+
+                            function(el, parentNode) {
+                                live.text(el, compute, parentNode);
+                                unbind();
+                            } :
+                            // If we are not escaping, replace the parentNode with a
+                            // documentFragment created as with `func`'s return value.
+
+                            function(el, parentNode) {
+                                live.html(el, compute, parentNode);
+                                unbind();
+                                //children have to be properly nested HTML for buildFragment to work properly
+                            }) + ">" + tagChildren(tag) + "</" + tag + ">";
+                        // In a tag, but not in an attribute
+                    } else if (status === 1) {
+                        // remember the old attr name
+                        pendingHookups.push(function(el) {
+                            live.attributes(el, compute, compute());
+                            unbind();
+                        });
+
+                        return compute();
+                    } else if (escape === 2) { // In a special attribute like src or style
+
+                        attributeName = status;
+                        pendingHookups.push(function(el) {
+                            live.specialAttribute(el, attributeName, compute);
+                            unbind();
+                        });
+                        return compute();
+                    } else { // In an attribute...
+                        attributeName = status === 0 ? contentProp : status;
+                        // if the magic tag is inside the element, like `<option><% TAG %></option>`,
+                        // we add this hookup to the last element (ex: `option`'s) hookups.
+                        // Otherwise, the magic tag is in an attribute, just add to the current element's
+                        // hookups.
+                        (status === 0 ? lastHookups : pendingHookups)
+                            .push(function(el) {
+                                live.attribute(el, attributeName, compute);
+                                unbind();
+                            });
+                        return live.attributePlaceholder;
+                    }
+                }
+            });
+
+        return can;
+    })(__m10, __m24, __m26, __m13);
+
+    // ## can/view/mustache/mustache.js
+    var __m21 = (function(can) {
+
+        // # mustache.js
+        // `can.Mustache`: The Mustache templating engine.
+        // See the [Transformation](#section-29) section within *Scanning Helpers* for a detailed explanation 
+        // of the runtime render code design. The majority of the Mustache engine implementation 
+        // occurs within the *Transformation* scanning helper.
+
+        // ## Initialization
+        // Define the view extension.
+        can.view.ext = ".mustache";
+
+        // ### Setup internal helper variables and functions.
+        // An alias for the context variable used for tracking a stack of contexts.
+        // This is also used for passing to helper functions to maintain proper context.
+        var SCOPE = 'scope',
+            // An alias for the variable used for the hash object that can be passed
+            // to helpers via `options.hash`.
+            HASH = '___h4sh',
+            // An alias for the most used context stacking call.
+            CONTEXT_OBJ = '{scope:' + SCOPE + ',options:options}',
+            // a context object used to incidate being special
+            SPECIAL_CONTEXT_OBJ = '{scope:' + SCOPE + ',options:options, special: true}',
+            // argument names used to start the function (used by scanner and steal)
+            ARG_NAMES = SCOPE + ",options",
+
+            // matches arguments inside a {{ }}
+            argumentsRegExp = /((([^\s]+?=)?('.*?'|".*?"))|.*?)\s/g,
+
+            // matches a literal number, string, null or regexp
+            literalNumberStringBooleanRegExp = /^(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false|null|undefined)|((.+?)=(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false)|(.+))))$/,
+
+            // returns an object literal that we can use to look up a value in the current scope
+            makeLookupLiteral = function(type) {
+                return '{get:"' + type.replace(/"/g, '\\"') + '"}';
+            },
+            // returns if the object is a lookup
+            isLookup = function(obj) {
+                return obj && typeof obj.get === "string";
+            },
+
+
+            isObserveLike = function(obj) {
+                return obj instanceof can.Map || (obj && !! obj._get);
+            },
+
+
+            isArrayLike = function(obj) {
+                return obj && obj.splice && typeof obj.length === 'number';
+            },
+            // used to make sure .fn and .inverse are always called with a Scope like object
+            makeConvertToScopes = function(original, scope, options) {
+                var originalWithScope = function(ctx, opts) {
+                    return original(ctx || scope, opts);
+                };
+                return function(updatedScope, updatedOptions) {
+                    if (updatedScope !== undefined && !(updatedScope instanceof can.view.Scope)) {
+                        updatedScope = scope.add(updatedScope);
+                    }
+                    if (updatedOptions !== undefined && !(updatedOptions instanceof can.view.Options)) {
+                        updatedOptions = options.add(updatedOptions);
+                    }
+                    return originalWithScope(updatedScope, updatedOptions || options);
+                };
+            };
+
+        // ## Mustache
+
+        var Mustache = function(options, helpers) {
+            // Support calling Mustache without the constructor.
+            // This returns a function that renders the template.
+            if (this.constructor !== Mustache) {
+                var mustache = new Mustache(options);
+                return function(data, options) {
+                    return mustache.render(data, options);
+                };
+            }
+
+            // If we get a `function` directly, it probably is coming from
+            // a `steal`-packaged view.
+            if (typeof options === "function") {
+                this.template = {
+                    fn: options
+                };
+                return;
+            }
+
+            // Set options on self.
+            can.extend(this, options);
+            this.template = this.scanner.scan(this.text, this.name);
+        };
+
+
+        // Put Mustache on the `can` object.
+        can.Mustache = window.Mustache = Mustache;
+
+
+        Mustache.prototype.
+
+        render = function(data, options) {
+            if (!(data instanceof can.view.Scope)) {
+                data = new can.view.Scope(data || {});
+            }
+            if (!(options instanceof can.view.Options)) {
+                options = new can.view.Options(options || {});
+            }
+            options = options || {};
+
+            return this.template.fn.call(data, data, options);
+        };
+
+        can.extend(Mustache.prototype, {
+                // Share a singleton scanner for parsing templates.
+                scanner: new can.view.Scanner({
+                        // A hash of strings for the scanner to inject at certain points.
+                        text: {
+                            // This is the logic to inject at the beginning of a rendered template. 
+                            // This includes initializing the `context` stack.
+                            start: "", //"var "+SCOPE+"= this instanceof can.view.Scope? this : new can.view.Scope(this);\n",
+                            scope: SCOPE,
+                            options: ",options: options",
+                            argNames: ARG_NAMES
+                        },
+
+                        // An ordered token registry for the scanner.
+                        // This needs to be ordered by priority to prevent token parsing errors.
+                        // Each token follows the following structure:
+                        //		[
+                        //			// Which key in the token map to match.
+                        //			"tokenMapName",
+                        //			// A simple token to match, like "{{".
+                        //			"token",
+                        //			// Optional. A complex (regexp) token to match that 
+                        //			// overrides the simple token.
+                        //			"[\\s\\t]*{{",
+                        //			// Optional. A function that executes advanced 
+                        //			// manipulation of the matched content. This is 
+                        //			// rarely used.
+                        //			function(content){   
+                        //				return content;
+                        //			}
+                        //		]
+                        tokens: [
+
+                            // Return unescaped
+                            ["returnLeft", "{{{", "{{[{&]"],
+                            // Full line comments
+                            ["commentFull", "{{!}}", "^[\\s\\t]*{{!.+?}}\\n"],
+
+                            // Inline comments
+                            ["commentLeft", "{{!", "(\\n[\\s\\t]*{{!|{{!)"],
+
+                            // Full line escapes
+                            // This is used for detecting lines with only whitespace and an escaped tag
+                            ["escapeFull", "{{}}", "(^[\\s\\t]*{{[#/^][^}]+?}}\\n|\\n[\\s\\t]*{{[#/^][^}]+?}}\\n|\\n[\\s\\t]*{{[#/^][^}]+?}}$)",
+                                function(content) {
+                                    return {
+                                        before: /^\n.+?\n$/.test(content) ? '\n' : '',
+                                        content: content.match(/\{\{(.+?)\}\}/)[1] || ''
+                                    };
+                                }
+                            ],
+                            // Return escaped
+                            ["escapeLeft", "{{"],
+                            // Close return unescaped
+                            ["returnRight", "}}}"],
+                            // Close tag
+                            ["right", "}}"]
+                        ],
+
+                        // ## Scanning Helpers
+                        // This is an array of helpers that transform content that is within escaped tags like `{{token}}`. These helpers are solely for the scanning phase; they are unrelated to Mustache/Handlebars helpers which execute at render time. Each helper has a definition like the following:
+                        //		{
+                        //			// The content pattern to match in order to execute.
+                        //			// Only the first matching helper is executed.
+                        //			name: /pattern to match/,
+                        //			// The function to transform the content with.
+                        //			// @param {String} content   The content to transform.
+                        //			// @param {Object} cmd       Scanner helper data.
+                        //			//                           {
+                        //			//                             insert: "insert command",
+                        //			//                             tagName: "div",
+                        //			//                             status: 0
+                        //			//                           }
+                        //			fn: function(content, cmd) {
+                        //				return 'for text injection' || 
+                        //					{ raw: 'to bypass text injection' };
+                        //			}
+                        //		}
+                        helpers: [
+                            // ### Partials
+                            // Partials begin with a greater than sign, like {{> box}}.
+                            // Partials are rendered at runtime (as opposed to compile time), 
+                            // so recursive partials are possible. Just avoid infinite loops.
+                            // For example, this template and partial:
+                            // 		base.mustache:
+                            // 			<h2>Names</h2>
+                            // 			{{#names}}
+                            // 				{{> user}}
+                            // 			{{/names}}
+                            // 		user.mustache:
+                            // 			<strong>{{name}}</strong>
+                            {
+                                name: /^>[\s]*\w*/,
+                                fn: function(content, cmd) {
+                                    // Get the template name and call back into the render method,
+                                    // passing the name and the current context.
+                                    var templateName = can.trim(content.replace(/^>\s?/, ''))
+                                        .replace(/["|']/g, "");
+                                    return "can.Mustache.renderPartial('" + templateName + "'," + ARG_NAMES + ")";
+                                }
+                            },
+
+                            // ### Data Hookup
+                            // This will attach the data property of `this` to the element
+                            // its found on using the first argument as the data attribute
+                            // key.
+                            // For example:
+                            //		<li id="nameli" {{ data 'name' }}></li>
+                            // then later you can access it like:
+                            //		can.$('#nameli').data('name');
+
+                            {
+                                name: /^\s*data\s/,
+                                fn: function(content, cmd) {
+                                    var attr = content.match(/["|'](.*)["|']/)[1];
+                                    // return a function which calls `can.data` on the element
+                                    // with the attribute name with the current context.
+                                    return "can.proxy(function(__){" +
+                                    // "var context = this[this.length-1];" +
+                                    // "context = context." + STACKED + " ? context[context.length-2] : context; console.warn(this, context);" +
+                                    "can.data(can.$(__),'" + attr + "', this.attr('.')); }, " + SCOPE + ")";
+                                }
+                            }, {
+                                name: /\s*\(([\$\w]+)\)\s*->([^\n]*)/,
+                                fn: function(content) {
+                                    var quickFunc = /\s*\(([\$\w]+)\)\s*->([^\n]*)/,
+                                        parts = content.match(quickFunc);
+
+                                    //find 
+                                    return "can.proxy(function(__){var " + parts[1] + "=can.$(__);with(" + SCOPE + ".attr('.')){" + parts[2] + "}}, this);";
+                                }
+                            },
+                            // ### Transformation (default)
+                            // This transforms all content to its interpolated equivalent,
+                            // including calls to the corresponding helpers as applicable. 
+                            // This outputs the render code for almost all cases.
+                            // #### Definitions
+                            // * `context` - This is the object that the current rendering context operates within. 
+                            //		Each nested template adds a new `context` to the context stack.
+                            // * `stack` - Mustache supports nested sections, 
+                            //		each of which add their own context to a stack of contexts.
+                            //		Whenever a token gets interpolated, it will check for a match against the 
+                            //		last context in the stack, then iterate through the rest of the stack checking for matches.
+                            //		The first match is the one that gets returned.
+                            // * `Mustache.txt` - This serializes a collection of logic, optionally contained within a section.
+                            //		If this is a simple interpolation, only the interpolation lookup will be passed.
+                            //		If this is a section, then an `options` object populated by the truthy (`options.fn`) and 
+                            //		falsey (`options.inverse`) encapsulated functions will also be passed. This section handling 
+                            //		exists to support the runtime context nesting that Mustache supports.
+                            // * `Mustache.get` - This resolves an interpolation reference given a stack of contexts.
+                            // * `options` - An object containing methods for executing the inner contents of sections or helpers.  
+                            //		`options.fn` - Contains the inner template logic for a truthy section.  
+                            //		`options.inverse` - Contains the inner template logic for a falsey section.  
+                            //		`options.hash` - Contains the merged hash object argument for custom helpers.
+                            // #### Design
+                            // This covers the design of the render code that the transformation helper generates.
+                            // ##### Pseudocode
+                            // A detailed explanation is provided in the following sections, but here is some brief pseudocode
+                            // that gives a high level overview of what the generated render code does (with a template similar to  
+                            // `"{{#a}}{{b.c.d.e.name}}{{/a}}" == "Phil"`).
+                            // *Initialize the render code.*
+                            // 		view = []
+                            // 		context = []
+                            // 		stack = fn { context.concat([this]) }
+                            // *Render the root section.*
+                            // 		view.push( "string" )
+                            // 		view.push( can.view.txt(
+                            // *Render the nested section with `can.Mustache.txt`.*
+                            // 			txt( 
+                            // *Add the current context to the stack.*
+                            // 				stack(), 
+                            // *Flag this for truthy section mode.*
+                            // 				"#",
+                            // *Interpolate and check the `a` variable for truthyness using the stack with `can.Mustache.get`.*
+                            // 				get( "a", stack() ),
+                            // *Include the nested section's inner logic.
+                            // The stack argument is usually the parent section's copy of the stack, 
+                            // but it can be an override context that was passed by a custom helper.
+                            // Sections can nest `0..n` times -- **NESTCEPTION**.*
+                            // 				{ fn: fn(stack) {
+                            // *Render the nested section (everything between the `{{#a}}` and `{{/a}}` tokens).*
+                            // 					view = []
+                            // 					view.push( "string" )
+                            // 					view.push(
+                            // *Add the current context to the stack.*
+                            // 						stack(),
+                            // *Flag this as interpolation-only mode.*
+                            // 						null,
+                            // *Interpolate the `b.c.d.e.name` variable using the stack.*
+                            // 						get( "b.c.d.e.name", stack() ),
+                            // 					)
+                            // 					view.push( "string" )
+                            // *Return the result for the nested section.*
+                            // 					return view.join()
+                            // 				}}
+                            // 			)
+                            // 		))
+                            // 		view.push( "string" )
+                            // *Return the result for the root section, which includes all nested sections.*
+                            // 		return view.join()
+                            // ##### Initialization
+                            // Each rendered template is started with the following initialization code:
+                            // 		var ___v1ew = [];
+                            // 		var ___c0nt3xt = [];
+                            // 		___c0nt3xt.__sc0pe = true;
+                            // 		var __sc0pe = function(context, self) {
+                            // 			var s;
+                            // 			if (arguments.length == 1 && context) {
+                            // 				s = !context.__sc0pe ? [context] : context;
+                            // 			} else {
+                            // 				s = context && context.__sc0pe 
+                            //					? context.concat([self]) 
+                            //					: __sc0pe(context).concat([self]);
+                            // 			}
+                            // 			return (s.__sc0pe = true) && s;
+                            // 		};
+                            // The `___v1ew` is the the array used to serialize the view.
+                            // The `___c0nt3xt` is a stacking array of contexts that slices and expands with each nested section.
+                            // The `__sc0pe` function is used to more easily update the context stack in certain situations.
+                            // Usually, the stack function simply adds a new context (`self`/`this`) to a context stack. 
+                            // However, custom helpers will occasionally pass override contexts that need their own context stack.
+                            // ##### Sections
+                            // Each section, `{{#section}} content {{/section}}`, within a Mustache template generates a section 
+                            // context in the resulting render code. The template itself is treated like a root section, with the 
+                            // same execution logic as any others. Each section can have `0..n` nested sections within it.
+                            // Here's an example of a template without any descendent sections.  
+                            // Given the template: `"{{a.b.c.d.e.name}}" == "Phil"`  
+                            // Would output the following render code:
+                            //		___v1ew.push("\"");
+                            //		___v1ew.push(can.view.txt(1, '', 0, this, function() {
+                            // 			return can.Mustache.txt(__sc0pe(___c0nt3xt, this), null, 
+                            //				can.Mustache.get("a.b.c.d.e.name", 
+                            //					__sc0pe(___c0nt3xt, this))
+                            //			);
+                            //		}));
+                            //		___v1ew.push("\" == \"Phil\"");
+                            // The simple strings will get appended to the view. Any interpolated references (like `{{a.b.c.d.e.name}}`) 
+                            // will be pushed onto the view via `can.view.txt` in order to support live binding.
+                            // The function passed to `can.view.txt` will call `can.Mustache.txt`, which serializes the object data by doing 
+                            // a context lookup with `can.Mustache.get`.
+                            // `can.Mustache.txt`'s first argument is a copy of the context stack with the local context `this` added to it.
+                            // This stack will grow larger as sections nest.
+                            // The second argument is for the section type. This will be `"#"` for truthy sections, `"^"` for falsey, 
+                            // or `null` if it is an interpolation instead of a section.
+                            // The third argument is the interpolated value retrieved with `can.Mustache.get`, which will perform the 
+                            // context lookup and return the approriate string or object.
+                            // Any additional arguments, if they exist, are used for passing arguments to custom helpers.
+                            // For nested sections, the last argument is an `options` object that contains the nested section's logic.
+                            // Here's an example of a template with a single nested section.  
+                            // Given the template: `"{{#a}}{{b.c.d.e.name}}{{/a}}" == "Phil"`  
+                            // Would output the following render code:
+                            //		___v1ew.push("\"");
+                            // 		___v1ew.push(can.view.txt(0, '', 0, this, function() {
+                            // 			return can.Mustache.txt(__sc0pe(___c0nt3xt, this), "#", 
+                            //				can.Mustache.get("a", __sc0pe(___c0nt3xt, this)), 
+                            //					[{
+                            // 					_: function() {
+                            // 						return ___v1ew.join("");
+                            // 					}
+                            // 				}, {
+                            // 					fn: function(___c0nt3xt) {
+                            // 						var ___v1ew = [];
+                            // 						___v1ew.push(can.view.txt(1, '', 0, this, 
+                            //								function() {
+                            //                                  return can.Mustache.txt(
+                            // 									__sc0pe(___c0nt3xt, this), 
+                            // 									null, 
+                            // 									can.Mustache.get("b.c.d.e.name", 
+                            // 										__sc0pe(___c0nt3xt, this))
+                            // 								);
+                            // 							}
+                            // 						));
+                            // 						return ___v1ew.join("");
+                            // 					}
+                            // 				}]
+                            //			)
+                            // 		}));
+                            //		___v1ew.push("\" == \"Phil\"");
+                            // This is specified as a truthy section via the `"#"` argument. The last argument includes an array of helper methods used with `options`.
+                            // These act similarly to custom helpers: `options.fn` will be called for truthy sections, `options.inverse` will be called for falsey sections.
+                            // The `options._` function only exists as a dummy function to make generating the section nesting easier (a section may have a `fn`, `inverse`,
+                            // or both, but there isn't any way to determine that at compilation time).
+                            // Within the `fn` function is the section's render context, which in this case will render anything between the `{{#a}}` and `{{/a}}` tokens.
+                            // This function has `___c0nt3xt` as an argument because custom helpers can pass their own override contexts. For any case where custom helpers
+                            // aren't used, `___c0nt3xt` will be equivalent to the `__sc0pe(___c0nt3xt, this)` stack created by its parent section. The `inverse` function
+                            // works similarly, except that it is added when `{{^a}}` and `{{else}}` are used. `var ___v1ew = []` is specified in `fn` and `inverse` to 
+                            // ensure that live binding in nested sections works properly.
+                            // All of these nested sections will combine to return a compiled string that functions similar to EJS in its uses of `can.view.txt`.
+                            // #### Implementation
+                            {
+                                name: /^.*$/,
+                                fn: function(content, cmd) {
+                                    var mode = false,
+                                        result = {
+                                            content: "",
+                                            startTxt: false,
+                                            startOnlyTxt: false,
+                                            end: false
+                                        };
+
+                                    // Trim the content so we don't have any trailing whitespace.
+                                    content = can.trim(content);
+
+                                    // Determine what the active mode is.
+                                    // * `#` - Truthy section
+                                    // * `^` - Falsey section
+                                    // * `/` - Close the prior section
+                                    // * `else` - Inverted section (only exists within a truthy/falsey section)
+                                    if (content.length && (mode = content.match(/^([#^/]|else$)/))) {
+                                        mode = mode[0];
+                                        switch (mode) {
+
+                                            // Open a new section.
+                                            case '#':
+
+                                            case '^':
+                                                if (cmd.specialAttribute) {
+                                                    result.startOnlyTxt = true;
+                                                    //result.push(cmd.insert + 'can.view.onlytxt(this,function(){ return ');
+                                                } else {
+                                                    result.startTxt = true;
+                                                    // sections should never be escaped
+                                                    result.escaped = 0;
+                                                    //result.push(cmd.insert + 'can.view.txt(0,\'' + cmd.tagName + '\',' + cmd.status + ',this,function(){ return ');
+                                                }
+                                                break;
+                                                // Close the prior section.
+
+                                            case '/':
+                                                result.end = true;
+                                                result.content += 'return ___v1ew.join("");}}])';
+                                                return result;
+                                        }
+
+                                        // Trim the mode off of the content.
+                                        content = content.substring(1);
+                                    }
+
+                                    // `else` helpers are special and should be skipped since they don't 
+                                    // have any logic aside from kicking off an `inverse` function.
+                                    if (mode !== 'else') {
+                                        var args = [],
+                                            hashes = [],
+                                            i = 0,
+                                            m;
+
+                                        // Start the content render block.
+                                        result.content += 'can.Mustache.txt(\n' +
+                                        (cmd.specialAttribute ? SPECIAL_CONTEXT_OBJ : CONTEXT_OBJ) +
+                                            ',\n' + (mode ? '"' + mode + '"' : 'null') + ',';
+
+                                        // Parse the helper arguments.
+                                        // This needs uses this method instead of a split(/\s/) so that 
+                                        // strings with spaces can be correctly parsed.
+                                        (can.trim(content) + ' ')
+                                            .replace(argumentsRegExp, function(whole, arg) {
+
+                                                // Check for special helper arguments (string/number/boolean/hashes).
+                                                if (i && (m = arg.match(literalNumberStringBooleanRegExp))) {
+                                                    // Found a native type like string/number/boolean.
+                                                    if (m[2]) {
+                                                        args.push(m[0]);
+                                                    }
+                                                    // Found a hash object.
+                                                    else {
+                                                        // Addd to the hash object.
+
+                                                        hashes.push(m[4] + ":" + (m[6] ? m[6] : makeLookupLiteral(m[5])));
+                                                    }
+                                                }
+                                                // Otherwise output a normal interpolation reference.
+                                                else {
+                                                    args.push(makeLookupLiteral(arg));
+                                                }
+                                                i++;
+                                            });
+
+                                        result.content += args.join(",");
+                                        if (hashes.length) {
+                                            result.content += ",{" + HASH + ":{" + hashes.join(",") + "}}";
+                                        }
+
+                                    }
+
+                                    // Create an option object for sections of code.
+                                    if (mode && mode !== 'else') {
+                                        result.content += ',[\n\n';
+                                    }
+                                    switch (mode) {
+                                        // Truthy section
+                                        case '^':
+                                        case '#':
+                                            result.content += ('{fn:function(' + ARG_NAMES + '){var ___v1ew = [];');
+                                            break;
+                                            // If/else section
+                                            // Falsey section
+
+                                        case 'else':
+                                            result.content += 'return ___v1ew.join("");}},\n{inverse:function(' + ARG_NAMES + '){\nvar ___v1ew = [];';
+                                            break;
+
+                                            // Not a section, no mode
+                                        default:
+                                            result.content += (')');
+                                            break;
+                                    }
+
+                                    if (!mode) {
+                                        result.startTxt = true;
+                                        result.end = true;
+                                    }
+
+                                    return result;
+                                }
+                            }
+                        ]
+                    })
+            });
+
+        // Add in default scanner helpers first.
+        // We could probably do this differently if we didn't 'break' on every match.
+        var helpers = can.view.Scanner.prototype.helpers;
+        for (var i = 0; i < helpers.length; i++) {
+            Mustache.prototype.scanner.helpers.unshift(helpers[i]);
+        }
+
+
+        Mustache.txt = function(scopeAndOptions, mode, name) {
+
+            // here we are going to cache the lookup values so future calls are much faster
+            var scope = scopeAndOptions.scope,
+                options = scopeAndOptions.options,
+                args = [],
+                helperOptions = {
+                    fn: function() {},
+                    inverse: function() {}
+                },
+                hash,
+                context = scope.attr("."),
+                getHelper = true,
+                helper;
+
+            // convert lookup values to actual values in name, arguments, and hash
+            for (var i = 3; i < arguments.length; i++) {
+                var arg = arguments[i];
+                if (mode && can.isArray(arg)) {
+                    // merge into options
+                    helperOptions = can.extend.apply(can, [helperOptions].concat(arg));
+                } else if (arg && arg[HASH]) {
+                    hash = arg[HASH];
+                    // get values on hash
+                    for (var prop in hash) {
+                        if (isLookup(hash[prop])) {
+                            hash[prop] = Mustache.get(hash[prop].get, scopeAndOptions, false, true);
+                        }
+                    }
+                } else if (arg && isLookup(arg)) {
+                    args.push(Mustache.get(arg.get, scopeAndOptions, false, true));
+                } else {
+                    args.push(arg);
+                }
+            }
+
+            if (isLookup(name)) {
+                var get = name.get;
+                name = Mustache.get(name.get, scopeAndOptions, args.length, false);
+
+                // Base whether or not we will get a helper on whether or not the original
+                // name.get and Mustache.get resolve to the same thing. Saves us from running
+                // into issues like {{text}} / {text: 'with'}
+                getHelper = (get === name);
+            }
+
+            // overwrite fn and inverse to always convert to scopes
+            helperOptions.fn = makeConvertToScopes(helperOptions.fn, scope, options);
+            helperOptions.inverse = makeConvertToScopes(helperOptions.inverse, scope, options);
+
+            // if mode is ^, swap fn and inverse
+            if (mode === '^') {
+                var tmp = helperOptions.fn;
+                helperOptions.fn = helperOptions.inverse;
+                helperOptions.inverse = tmp;
+            }
+
+            // Check for a registered helper or a helper-like function.
+            if (helper = (getHelper && (typeof name === "string" && Mustache.getHelper(name, options)) || (can.isFunction(name) && !name.isComputed && {
+                            fn: name
+                        }))) {
+                // Add additional data to be used by helper functions
+
+                can.extend(helperOptions, {
+                        context: context,
+                        scope: scope,
+                        contexts: scope,
+                        hash: hash
+                    });
+
+                args.push(helperOptions);
+                // Call the helper.
+                return function() {
+                    return helper.fn.apply(context, args) || '';
+                };
+
+            }
+
+            return function() {
+                //{{#foo.bar zed ted}}
+                var value;
+                if (can.isFunction(name) && name.isComputed) {
+                    value = name();
+                } else {
+                    value = name;
+                }
+                // An array of arguments to check for truthyness when evaluating sections.
+                var validArgs = args.length ? args : [value],
+                    // Whether the arguments meet the condition of the section.
+                    valid = true,
+                    result = [],
+                    i, argIsObserve, arg;
+                // Validate the arguments based on the section mode.
+                if (mode) {
+                    for (i = 0; i < validArgs.length; i++) {
+                        arg = validArgs[i];
+                        argIsObserve = typeof arg !== 'undefined' && isObserveLike(arg);
+                        // Array-like objects are falsey if their length = 0.
+                        if (isArrayLike(arg)) {
+                            // Use .attr to trigger binding on empty lists returned from function
+                            if (mode === '#') {
+                                valid = valid && !! (argIsObserve ? arg.attr('length') : arg.length);
+                            } else if (mode === '^') {
+                                valid = valid && !(argIsObserve ? arg.attr('length') : arg.length);
+                            }
+                        }
+                        // Otherwise just check if it is truthy or not.
+                        else {
+                            valid = mode === '#' ? valid && !! arg : mode === '^' ? valid && !arg : valid;
+                        }
+                    }
+                }
+
+                // Otherwise interpolate like normal.
+                if (valid) {
+
+                    if (mode === "#") {
+                        if (isArrayLike(value)) {
+                            var isObserveList = isObserveLike(value);
+
+                            // Add the reference to the list in the contexts.
+                            for (i = 0; i < value.length; i++) {
+                                result.push(helperOptions.fn(
+                                        isObserveList ? value.attr('' + i) : value[i]));
+                            }
+                            return result.join('');
+                        }
+                        // Normal case.
+                        else {
+                            return helperOptions.fn(value || {}) || '';
+                        }
+                    } else if (mode === "^") {
+                        return helperOptions.inverse(value || {}) || '';
+                    } else {
+                        return '' + (value != null ? value : '');
+                    }
+                }
+
+                return '';
+            };
+        };
+
+
+        Mustache.get = function(key, scopeAndOptions, isHelper, isArgument) {
+
+            // Cache a reference to the current context and options, we will use them a bunch.
+            var context = scopeAndOptions.scope.attr('.'),
+                options = scopeAndOptions.options || {};
+
+            // If key is called as a helper,
+            if (isHelper) {
+                // try to find a registered helper.
+                if (Mustache.getHelper(key, options)) {
+                    return key;
+                }
+                // Support helper-like functions as anonymous helpers.
+                // Check if there is a method directly in the "top" context.
+                if (scopeAndOptions.scope && can.isFunction(context[key])) {
+                    return context[key];
+                }
+
+
+            }
+
+            // Get a compute (and some helper data) that represents key's value in the current scope
+            var computeData = scopeAndOptions.scope.computeData(key, {
+                    isArgument: isArgument,
+                    args: [context, scopeAndOptions.scope]
+                }),
+                compute = computeData.compute;
+
+            // Bind on the compute to cache its value. We will unbind in a timeout later.
+            can.compute.temporarilyBind(compute);
+
+            // computeData gives us an initial value
+            var initialValue = computeData.initialValue;
+
+
+
+            // Use helper over the found value if the found value isn't in the current context
+            if ((initialValue === undefined || computeData.scope !== scopeAndOptions.scope) && Mustache.getHelper(key, options)) {
+                return key;
+            }
+
+            // If there are no dependencies, just return the value.
+            if (!compute.hasDependencies) {
+                return initialValue;
+            } else {
+                return compute;
+            }
+        };
+
+
+        Mustache.resolve = function(value) {
+            if (isObserveLike(value) && isArrayLike(value) && value.attr('length')) {
+                return value;
+            } else if (can.isFunction(value)) {
+                return value();
+            } else {
+                return value;
+            }
+        };
+
+
+
+        can.view.Options = can.view.Scope.extend({
+                init: function(data, parent) {
+                    if (!data.helpers && !data.partials && !data.tags) {
+                        data = {
+                            helpers: data
+                        };
+                    }
+                    can.view.Scope.prototype.init.apply(this, arguments);
+                }
+            });
+
+        // ## Helpers
+        // Helpers are functions that can be called from within a template.
+        // These helpers differ from the scanner helpers in that they execute
+        // at runtime instead of during compilation.
+        // Custom helpers can be added via `can.Mustache.registerHelper`,
+        // but there are also some built-in helpers included by default.
+        // Most of the built-in helpers are little more than aliases to actions 
+        // that the base version of Mustache simply implies based on the 
+        // passed in object.
+        // Built-in helpers:
+        // * `data` - `data` is a special helper that is implemented via scanning helpers. 
+        //		It hooks up the active element to the active data object: `<div {{data "key"}} />`
+        // * `if` - Renders a truthy section: `{{#if var}} render {{/if}}`
+        // * `unless` - Renders a falsey section: `{{#unless var}} render {{/unless}}`
+        // * `each` - Renders an array: `{{#each array}} render {{this}} {{/each}}`
+        // * `with` - Opens a context section: `{{#with var}} render {{/with}}`
+        Mustache._helpers = {};
+
+        Mustache.registerHelper = function(name, fn) {
+            this._helpers[name] = {
+                name: name,
+                fn: fn
+            };
+        };
+
+
+        Mustache.getHelper = function(name, options) {
+            var helper = options.attr("helpers." + name);
+            return helper ? {
+                fn: helper
+            } : this._helpers[name];
+        };
+
+
+        Mustache.render = function(partial, scope, options) {
+            // TOOD: clean up the following
+            // If there is a "partial" property and there is not
+            // an already-cached partial, we use the value of the 
+            // property to look up the partial
+
+            // if this partial is not cached ...
+            if (!can.view.cached[partial]) {
+                // we don't want to bind to changes so clear and restore reading
+                var reads = can.__clearReading();
+                if (scope.attr('partial')) {
+                    partial = scope.attr('partial');
+                }
+                can.__setReading(reads);
+            }
+
+            // Call into `can.view.render` passing the
+            // partial and scope.
+            return can.view.render(partial, scope, options);
+        };
+
+
+        Mustache.safeString = function(str) {
+            return {
+                toString: function() {
+                    return str;
+                }
+            };
+        };
+
+        Mustache.renderPartial = function(partialName, scope, options) {
+            var partial = options.attr("partials." + partialName);
+            if (partial) {
+                return partial.render ? partial.render(scope, options) :
+                    partial(scope, options);
+            } else {
+                return can.Mustache.render(partialName, scope, options);
+            }
+        };
+
+        // The built-in Mustache helpers.
+        can.each({
+                // Implements the `if` built-in helper.
+
+                'if': function(expr, options) {
+                    var value;
+                    // if it's a function, wrap its value in a compute
+                    // that will only change values from true to false
+                    if (can.isFunction(expr)) {
+                        value = can.compute.truthy(expr)();
+                    } else {
+                        value = !! Mustache.resolve(expr);
+                    }
+
+                    if (value) {
+                        return options.fn(options.contexts || this);
+                    } else {
+                        return options.inverse(options.contexts || this);
+                    }
+                },
+                // Implements the `unless` built-in helper.
+
+                'unless': function(expr, options) {
+                    return Mustache._helpers['if'].fn.apply(this, [can.isFunction(expr) ? can.compute(function() {
+                                    return !expr();
+                                }) : !expr, options]);
+                },
+
+                // Implements the `each` built-in helper.
+
+                'each': function(expr, options) {
+                    // Check if this is a list or a compute that resolves to a list, and setup
+                    // the incremental live-binding 
+
+                    // First, see what we are dealing with.  It's ok to read the compute
+                    // because can.view.text is only temporarily binding to what is going on here.
+                    // Calling can.view.lists prevents anything from listening on that compute.
+                    var resolved = Mustache.resolve(expr),
+                        result = [],
+                        keys,
+                        key,
+                        i;
+
+                    // When resolved === undefined, the property hasn't been defined yet
+                    // Assume it is intended to be a list
+                    if (can.view.lists && (resolved instanceof can.List || (expr && expr.isComputed && resolved === undefined))) {
+                        return can.view.lists(expr, function(item, index) {
+                            return options.fn(options.scope.add({
+                                        "@index": index
+                                    })
+                                .add(item));
+                        });
+                    }
+                    expr = resolved;
+
+                    if ( !! expr && isArrayLike(expr)) {
+                        for (i = 0; i < expr.length; i++) {
+                            result.push(options.fn(options.scope.add({
+                                            "@index": i
+                                        })
+                                    .add(expr[i])));
+                        }
+                        return result.join('');
+                    } else if (isObserveLike(expr)) {
+                        keys = can.Map.keys(expr);
+                        // listen to keys changing so we can livebind lists of attributes.
+
+                        for (i = 0; i < keys.length; i++) {
+                            key = keys[i];
+                            result.push(options.fn(options.scope.add({
+                                            "@key": key
+                                        })
+                                    .add(expr[key])));
+                        }
+                        return result.join('');
+                    } else if (expr instanceof Object) {
+                        for (key in expr) {
+                            result.push(options.fn(options.scope.add({
+                                            "@key": key
+                                        })
+                                    .add(expr[key])));
+                        }
+                        return result.join('');
+
+                    }
+                },
+                // Implements the `with` built-in helper.
+
+                'with': function(expr, options) {
+                    var ctx = expr;
+                    expr = Mustache.resolve(expr);
+                    if ( !! expr) {
+                        return options.fn(ctx);
+                    }
+                },
+
+                'log': function(expr, options) {
+                    if (typeof console !== "undefined" && console.log) {
+                        if (!options) {
+                            console.log(expr.context);
+                        } else {
+                            console.log(expr, options.context);
+                        }
+                    }
+                }
+
+            }, function(fn, name) {
+                Mustache.registerHelper(name, fn);
+            });
+
+        // ## Registration
+        // Registers Mustache with can.view.
+        can.view.register({
+                suffix: "mustache",
+
+                contentType: "x-mustache-template",
+
+                // Returns a `function` that renders the view.
+                script: function(id, src) {
+                    return "can.Mustache(function(" + ARG_NAMES + ") { " + new Mustache({
+                            text: src,
+                            name: id
+                        })
+                        .template.out + " })";
+                },
+
+                renderer: function(id, text) {
+                    return Mustache({
+                            text: text,
+                            name: id
+                        });
+                }
+            });
+
+        can.mustache.registerHelper = can.proxy(can.Mustache.registerHelper, can.Mustache);
+        can.mustache.safeString = can.Mustache.safeString;
+        return can;
+    })(__m2, __m22, __m10, __m23, __m20, __m25);
+
+    // ## can/view/bindings/bindings.js
+    var __m29 = (function(can) {
+
+        // Function for determining of an element is contenteditable
+        var isContentEditable = (function() {
+            // A contenteditable element has a value of an empty string or "true"
+            var values = {
+                "": true,
+                "true": true,
+                "false": false
+            };
+
+            // Tests if an element has the appropriate contenteditable attribute
+            var editable = function(el) {
+                // DocumentFragments do not have a getAttribute
+                if (!el || !el.getAttribute) {
+                    return;
+                }
+
+                var attr = el.getAttribute("contenteditable");
+                return values[attr];
+            };
+
+            return function(el) {
+                // First check if the element is explicitly true or false
+                var val = editable(el);
+                if (typeof val === "boolean") {
+                    return val;
+                } else {
+                    // Otherwise, check the parent
+                    return !!editable(el.parentNode);
+                }
+            };
+        })(),
+            removeCurly = function(value) {
+                if (value[0] === "{" && value[value.length - 1] === "}") {
+                    return value.substr(1, value.length - 2);
+                }
+                return value;
+            };
+
+        // ## can-value
+        // Implement the `can-value` special attribute
+        // ### Usage
+        // 		<input can-value="name" />
+        // When a view engine finds this attribute, it will call this callback. The value of the attribute 
+        // should be a string representing some value in the current scope to cross-bind to.
+        can.view.attr("can-value", function(el, data) {
+
+            var attr = removeCurly(el.getAttribute("can-value")),
+                // Turn the attribute passed in into a compute.  If the user passed in can-value="name" and the current 
+                // scope of the template is some object called data, the compute representing this can-value will be the 
+                // data.attr('name') property.
+                value = data.scope.computeData(attr, {
+                        args: []
+                    })
+                    .compute,
+                trueValue,
+                falseValue;
+
+            // Depending on the type of element, this attribute has different behavior. can.Controls are defined (further below 
+            // in this file) for each type of input. This block of code collects arguments and instantiates each can.Control. There 
+            // is one for checkboxes/radios, another for multiselect inputs, and another for everything else.
+            if (el.nodeName.toLowerCase() === "input") {
+                if (el.type === "checkbox") {
+                    // If the element is a checkbox and has an attribute called "can-true-value", 
+                    // set up a compute that toggles the value of the checkbox to "true" based on another attribute. 
+                    // 		<input type='checkbox' can-value='sex' can-true-value='male' can-false-value='female' />
+                    if (can.attr.has(el, "can-true-value")) {
+                        trueValue = el.getAttribute("can-true-value");
+                    } else {
+                        trueValue = true;
+                    }
+                    if (can.attr.has(el, "can-false-value")) {
+                        falseValue = el.getAttribute("can-false-value");
+                    } else {
+                        falseValue = false;
+                    }
+                }
+
+                if (el.type === "checkbox" || el.type === "radio") {
+                    // For checkboxes and radio buttons, create a Checked can.Control around the input.  Pass in 
+                    // the compute representing the can-value and can-true-value and can-false-value properties (if 
+                    // they were used).
+                    new Checked(el, {
+                            value: value,
+                            trueValue: trueValue,
+                            falseValue: falseValue
+                        });
+                    return;
+                }
+            }
+            if (el.nodeName.toLowerCase() === "select" && el.multiple) {
+                // For multiselect enabled select inputs, we instantiate a special control around that select element 
+                // called Multiselect
+                new Multiselect(el, {
+                        value: value
+                    });
+                return;
+            }
+            // For contenteditable elements, we instantiate a Content control.
+            if (isContentEditable(el)) {
+                new Content(el, {
+                        value: value
+                    });
+                return;
+            }
+            // The default case. Instantiate the Value control around the element. Pass it the compute representing 
+            // the observable attribute property that was set.
+            new Value(el, {
+                    value: value
+                });
+        });
+
+        // ## Special Event Types (can-SPECIAL)
+
+        // A special object, similar to [$.event.special](http://benalman.com/news/2010/03/jquery-special-events/), 
+        // for adding hooks for special can-SPECIAL types (not native DOM events). Right now, only can-enter is 
+        // supported, but this object might be exported so that it can be added to easily.
+        // To implement a can-SPECIAL event type, add a property to the special object, whose value is a function 
+        // that returns the following: 
+        //		// the real event name to bind to
+        //		event: "event-name",
+        //		handler: function (ev) {
+        //			// some logic that figures out if the original handler should be called or not, and if so...
+        //			return original.call(this, ev);
+        //		}
+        var special = {
+            enter: function(data, el, original) {
+                return {
+                    event: "keyup",
+                    handler: function(ev) {
+                        if (ev.keyCode === 13) {
+                            return original.call(this, ev);
+                        }
+                    }
+                };
+            }
+        };
+
+        // ## can-EVENT
+        // The following section contains code for implementing the can-EVENT attribute. 
+        // This binds on a wildcard attribute name. Whenever a view is being processed 
+        // and can-xxx (anything starting with can-), this callback will be run.  Inside, its setting up an event handler 
+        // that calls a method identified by the value of this attribute.
+        can.view.attr(/can-[\w\.]+/, function(el, data) {
+
+            // the attribute name is the function to call
+            var attributeName = data.attributeName,
+                // The event type to bind on is deteremined by whatever is after can-
+                // For example, can-submit binds on the submit event.
+                event = attributeName.substr("can-".length),
+                // This is the method that the event will initially trigger. It will look up the method by the string name 
+                // passed in the attribute and call it.
+                handler = function(ev) {
+                    // The attribute value, representing the name of the method to call (i.e. can-submit="foo" foo is the 
+                    // name of the method)
+                    var attr = removeCurly(el.getAttribute(attributeName)),
+                        scopeData = data.scope.read(attr, {
+                                returnObserveMethods: true,
+                                isArgument: true
+                            });
+                    return scopeData.value.call(scopeData.parent, data.scope._context, can.$(this), ev);
+                };
+
+            // This code adds support for special event types, like can-enter="foo". special.enter (or any special[event]) is 
+            // a function that returns an object containing an event and a handler. These are to be used for binding. For example, 
+            // when a user adds a can-enter attribute, we'll bind on the keyup event, and the handler performs special logic to 
+            // determine on keyup if the enter key was pressed.
+            if (special[event]) {
+                var specialData = special[event](data, el, handler);
+                handler = specialData.handler;
+                event = specialData.event;
+            }
+            // Bind the handler defined above to the element we're currently processing and the event name provided in this 
+            // attribute name (can-click="foo")
+            can.bind.call(el, event, handler);
+        });
+
+        // ## Two way binding can.Controls
+        // Each type of input that is supported by view/bindings is wrapped with a special can.Control.  The control serves 
+        // two functions: 
+        // 1. Bind on the property changing (the compute we're two-way binding to) and change the input value.
+        // 2. Bind on the input changing and change the property (compute) we're two-way binding to.
+        // There is one control per input type. There could easily be more for more advanced input types, like the HTML5 type="date" input type.
+
+        // ### Value 
+        // A can.Control that manages the two-way bindings on most inputs.  When can-value is found as an attribute 
+        // on an input, the callback above instantiates this Value control on the input element.
+        var Value = can.Control.extend({
+                init: function() {
+                    // Handle selects by calling `set` after this thread so the rest of the element can finish rendering.
+                    if (this.element[0].nodeName.toUpperCase() === "SELECT") {
+                        setTimeout(can.proxy(this.set, this), 1);
+                    } else {
+                        this.set();
+                    }
+
+                },
+                // If the live bound data changes, call set to reflect the change in the dom.
+                "{value} change": "set",
+                set: function() {
+                    // This may happen in some edgecases, esp. with selects that are not in DOM after the timeout has fired
+                    if (!this.element) {
+                        return;
+                    }
+                    var val = this.options.value();
+                    // Set the element's value to match the attribute that was passed in
+                    this.element[0].value = (val == null ? '' : val);
+                },
+                // If the input value changes, this will set the live bound data to reflect the change.
+                "change": function() {
+                    // This may happen in some edgecases, esp. with selects that are not in DOM after the timeout has fired
+                    if (!this.element) {
+                        return;
+                    }
+                    // Set the value of the attribute passed in to reflect what the user typed
+                    this.options.value(this.element[0].value);
+                }
+            }),
+            // ### Checked 
+            // A can.Control that manages the two-way bindings on a checkbox element.  When can-value is found as an attribute 
+            // on a checkbox, the callback above instantiates this Checked control on the checkbox element.
+            Checked = can.Control.extend({
+                    init: function() {
+                        // If its not a checkbox, its a radio input
+                        this.isCheckbox = (this.element[0].type.toLowerCase() === "checkbox");
+                        this.check();
+                    },
+                    // `value` is the compute representing the can-value for this element.  For example can-value="foo" and current 
+                    // scope is someObj, value is the compute representing someObj.attr('foo')
+                    "{value} change": "check",
+                    check: function() {
+                        // jshint eqeqeq: false
+                        if (this.isCheckbox) {
+                            var value = this.options.value(),
+                                trueValue = this.options.trueValue || true;
+                            // If `can-true-value` attribute was set, check if the value is equal to that string value, and set 
+                            // the checked property based on their equality.
+                            this.element[0].checked = (value === trueValue);
+                        }
+                        // Its a radio input type
+                        else {
+                            var setOrRemove = this.options.value() == this.element[0].value ?
+                                "set" : "remove";
+
+                            can.attr[setOrRemove](this.element[0], 'checked', true);
+
+                        }
+
+                    },
+                    // This event is triggered by the DOM.  If a change event occurs, we must set the value of the compute (options.value).
+                    "change": function() {
+
+                        if (this.isCheckbox) {
+                            // If the checkbox is checked and can-true-value was used, set value to the string value of can-true-value.  If 
+                            // can-false-value was used and checked is false, set value to the string value of can-false-value.
+                            this.options.value(this.element[0].checked ? this.options.trueValue : this.options.falseValue);
+                        }
+                        // Radio input type
+                        else {
+                            if (this.element[0].checked) {
+                                this.options.value(this.element[0].value);
+                            }
+                        }
+
+                    }
+                }),
+            // ### Multiselect
+            // A can.Control that handles select input with the "multiple" attribute (meaning more than one can be selected at once). 
+            Multiselect = Value.extend({
+                    init: function() {
+                        this.delimiter = ";";
+                        this.set();
+                    },
+                    // Since this control extends Value (above), the set method will be called when the value compute changes (and on init).
+                    set: function() {
+
+                        var newVal = this.options.value();
+
+                        // When given a string, try to extract all the options from it (i.e. "a;b;c;d")
+                        if (typeof newVal === 'string') {
+                            newVal = newVal.split(this.delimiter);
+                            this.isString = true;
+                        }
+                        // When given something else, try to make it an array and deal with it
+                        else if (newVal) {
+                            newVal = can.makeArray(newVal);
+                        }
+
+                        // Make an object containing all the options passed in for convenient lookup
+                        var isSelected = {};
+                        can.each(newVal, function(val) {
+                            isSelected[val] = true;
+                        });
+
+                        // Go through each &lt;option/&gt; element, if it has a value property (its a valid option), then 
+                        // set its selected property if it was in the list of vals that were just set.
+                        can.each(this.element[0].childNodes, function(option) {
+                            if (option.value) {
+                                option.selected = !! isSelected[option.value];
+                            }
+
+                        });
+
+                    },
+                    // A helper function used by the 'change' handler below. Its purpose is to return an array of selected 
+                    // values, like ["foo", "bar"]
+                    get: function() {
+                        var values = [],
+                            children = this.element[0].childNodes;
+
+                        can.each(children, function(child) {
+                            if (child.selected && child.value) {
+                                values.push(child.value);
+                            }
+                        });
+
+                        return values;
+                    },
+                    // Called when the user changes this input in any way.
+                    'change': function() {
+                        // Get an array of the currently selected values
+                        var value = this.get(),
+                            currentValue = this.options.value();
+
+                        // If the compute is a string, set its value to the joined version of the values array (i.e. "foo;bar")
+                        if (this.isString || typeof currentValue === "string") {
+                            this.isString = true;
+                            this.options.value(value.join(this.delimiter));
+                        }
+                        // If the compute is a can.List, replace its current contents with the new array of values
+                        else if (currentValue instanceof can.List) {
+                            currentValue.attr(value, true);
+                        }
+                        // Otherwise set the value to the array of values selected in the input.
+                        else {
+                            this.options.value(value);
+                        }
+
+                    }
+                }),
+            Content = can.Control.extend({
+                    init: function() {
+                        this.set();
+                        this.on("blur", "setValue");
+                    },
+                    "{value} change": "set",
+                    set: function() {
+                        var val = this.options.value();
+                        this.element[0].innerHTML = (typeof val === 'undefined' ? '' : val);
+                    },
+                    setValue: function() {
+                        this.options.value(this.element[0].innerHTML);
+                    }
+                });
+
+    })(__m2, __m21, __m11);
+
+    // ## can/component/component.js
+    var __m1 = (function(can, viewCallbacks) {
+        // ## Helpers
+        // Attribute names to ignore for setting scope values.
+        var ignoreAttributesRegExp = /^(dataViewId|class|id)$/i,
+            paramReplacer = /\{([^\}]+)\}/g;
+
+
+        var Component = can.Component = can.Construct.extend(
+
+            // ## Static
+
+
+            {
+                // ### setup
+                // When a component is extended, this sets up the component's internal constructor
+                // functions and templates for later fast initialization.
+                setup: function() {
+                    can.Construct.setup.apply(this, arguments);
+
+                    // When `can.Component.setup` function is ran for the first time, `can.Component` doesn't exist yet 
+                    // which ensures that the following code is ran only in constructors that extend `can.Component`. 
+                    if (can.Component) {
+                        var self = this,
+                            scope = this.prototype.scope;
+
+                        // Define a control using the `events` prototype property.
+                        this.Control = ComponentControl.extend(this.prototype.events);
+
+                        // Look to convert `scope` to a Map constructor function.
+                        if (!scope || (typeof scope === "object" && !(scope instanceof can.Map))) {
+                            // If scope is an object, use that object as the prototype of an extended 
+                            // Map constructor function.
+                            // A new instance of that Map constructor function will be created and
+                            // set a the constructor instance's scope.
+                            this.Map = can.Map.extend(scope || {});
+                        } else if (scope.prototype instanceof can.Map) {
+                            // If scope is a can.Map constructor function, just use that.
+                            this.Map = scope;
+                        }
+
+                        // Look for default `@` values. If a `@` is found, these
+                        // attributes string values will be set and 2-way bound on the
+                        // component instance's scope.
+                        this.attributeScopeMappings = {};
+                        can.each(this.Map ? this.Map.defaults : {}, function(val, prop) {
+                            if (val === "@") {
+                                self.attributeScopeMappings[prop] = prop;
+                            }
+                        });
+
+                        // Convert the template into a renderer function.
+                        if (this.prototype.template) {
+                            // If `this.prototype.template` is a function create renderer from it by
+                            // wrapping it with the anonymous function that will pass it the arguments,
+                            // otherwise create the render from the string
+                            if (typeof this.prototype.template === "function") {
+                                var temp = this.prototype.template;
+                                this.renderer = function() {
+                                    return can.view.frag(temp.apply(null, arguments));
+                                };
+                            } else {
+                                this.renderer = can.view.mustache(this.prototype.template);
+                            }
+                        }
+
+                        // Register this component to be created when its `tag` is found.
+                        can.view.tag(this.prototype.tag, function(el, options) {
+                            new self(el, options);
+                        });
+                    }
+
+                }
+            }, {
+                // ## Prototype
+
+                // ### setup
+                // When a new component instance is created, setup bindings, render the template, etc.
+                setup: function(el, hookupOptions) {
+                    // Setup values passed to component
+                    var initalScopeData = {},
+                        component = this,
+                        twoWayBindings = {},
+                        // what scope property is currently updating
+                        scopePropertyUpdating,
+                        // the object added to the scope
+                        componentScope,
+                        frag;
+
+                    // ## Scope
+
+                    // Add scope prototype properties marked with an "@" to the `initialScopeData` object
+                    can.each(this.constructor.attributeScopeMappings, function(val, prop) {
+                        initalScopeData[prop] = el.getAttribute(can.hyphenate(val));
+                    });
+
+                    // Get the value in the scope for each attribute
+                    // the hookup should probably happen after?
+                    can.each(can.makeArray(el.attributes), function(node, index) {
+                        var name = can.camelize(node.nodeName.toLowerCase()),
+                            value = node.value;
+
+
+
+                        // Ignore attributes already present in the ScopeMappings.
+                        if (component.constructor.attributeScopeMappings[name] || ignoreAttributesRegExp.test(name) || viewCallbacks.attr(node.nodeName)) {
+                            return;
+                        }
+                        // Only setup bindings if attribute looks like `foo="{bar}"`
+                        if (value[0] === "{" && value[value.length - 1] === "}") {
+                            value = value.substr(1, value.length - 2);
+                        } else {
+                            // Legacy template types will crossbind "foo=bar"
+                            if (hookupOptions.templateType !== "legacy") {
+                                initalScopeData[name] = value;
+                                return;
+                            }
+                        }
+                        // Cross-bind the value in the scope to this 
+                        // component's scope
+                        var computeData = hookupOptions.scope.computeData(value, {
+                                args: []
+                            }),
+                            compute = computeData.compute;
+
+                        // bind on this, check it's value, if it has dependencies
+                        var handler = function(ev, newVal) {
+                            scopePropertyUpdating = name;
+                            componentScope.attr(name, newVal);
+                            scopePropertyUpdating = null;
+                        };
+
+                        // Compute only returned if bindable
+                        compute.bind("change", handler);
+
+                        // Set the value to be added to the scope
+                        initalScopeData[name] = compute();
+
+                        // We don't need to listen to the compute `change` if it doesn't have any dependencies
+                        if (!compute.hasDependencies) {
+                            compute.unbind("change", handler);
+                        } else {
+                            // Make sure we unbind (there's faster ways of doing this)
+                            can.bind.call(el, "removed", function() {
+                                compute.unbind("change", handler);
+                            });
+                            // Setup the two-way binding
+                            twoWayBindings[name] = computeData;
+                        }
+
+                    });
+                    if (this.constructor.Map) {
+                        // If `Map` property is set on the constructor use it to wrap the `initialScopeData`
+                        componentScope = new this.constructor.Map(initalScopeData);
+                    } else if (this.scope instanceof can.Map) {
+                        // If `this.scope` is instance of `can.Map` assign it to the `componentScope`
+                        componentScope = this.scope;
+                    } else if (can.isFunction(this.scope)) {
+                        // If `this.scope` is a function, call the function and 
+                        var scopeResult = this.scope(initalScopeData, hookupOptions.scope, el);
+
+                        if (scopeResult instanceof can.Map) {
+                            // If the function returns a can.Map, use that as the scope
+                            componentScope = scopeResult;
+                        } else if (scopeResult.prototype instanceof can.Map) {
+                            // If `scopeResult` is of a `can.Map` type, use it to wrap the `initialScopeData`
+                            componentScope = new scopeResult(initalScopeData);
+                        } else {
+                            // Otherwise extend `can.Map` with the `scopeResult` and initialize it with the `initialScopeData`
+                            componentScope = new(can.Map.extend(scopeResult))(initalScopeData);
+                        }
+
+                    }
+
+                    // ## Two way bindings
+
+                    // Object to hold the bind handlers so we can tear them down
+                    var handlers = {};
+                    // Setup reverse bindings
+                    can.each(twoWayBindings, function(computeData, prop) {
+                        handlers[prop] = function(ev, newVal) {
+                            // Check that this property is not being changed because
+                            // it's source value just changed
+                            if (scopePropertyUpdating !== prop) {
+                                computeData.compute(newVal);
+                            }
+                        };
+                        componentScope.bind(prop, handlers[prop]);
+                    });
+                    // Teardown reverse bindings when the element is removed
+                    can.bind.call(el, "removed", function() {
+                        can.each(handlers, function(handler, prop) {
+                            componentScope.unbind(prop, handlers[prop]);
+                        });
+                    });
+                    // Setup the attributes bindings
+                    if (!can.isEmptyObject(this.constructor.attributeScopeMappings) || hookupOptions.templateType !== "legacy") {
+                        // Bind on the `attributes` event and update the scope.
+                        can.bind.call(el, "attributes", function(ev) {
+                            // Convert attribute name from the `attribute-name` to the `attributeName` format.
+                            var camelized = can.camelize(ev.attributeName);
+                            if (!twoWayBindings[camelized]) {
+                                // If there is a mapping for this attribute, update the `componentScope` attribute
+                                componentScope.attr(camelized, el.getAttribute(ev.attributeName));
+                            }
+                        });
+
+                    }
+
+                    // Set `componentScope` to `this.scope` and set it to the element's `data` object as a `scope` property
+                    this.scope = componentScope;
+                    can.data(can.$(el), "scope", this.scope);
+
+                    // Create a real Scope object out of the scope property
+                    var renderedScope = hookupOptions.scope.add(this.scope),
+                        options = {
+                            helpers: {}
+                        };
+
+                    // ## Helpers
+
+                    // Setup helpers to callback with `this` as the component
+                    can.each(this.helpers || {}, function(val, prop) {
+                        if (can.isFunction(val)) {
+                            options.helpers[prop] = function() {
+                                return val.apply(componentScope, arguments);
+                            };
+                        }
+                    });
+
+                    // ## `events` control
+
+                    // Create a control to listen to events
+                    this._control = new this.constructor.Control(el, {
+                            // Pass the scope to the control so we can listen to it's changes from the controller.
+                            scope: this.scope
+                        });
+
+                    // ## Rendering
+
+                    // If this component has a template (that we've already converted to a renderer)
+                    if (this.constructor.renderer) {
+                        // If `options.tags` doesn't exist set it to an empty object.
+                        if (!options.tags) {
+                            options.tags = {};
+                        }
+
+                        // We need be alerted to when a <content> element is rendered so we can put the original contents of the widget in its place
+                        options.tags.content = function contentHookup(el, rendererOptions) {
+                            // First check if there was content within the custom tag
+                            // otherwise, render what was within <content>, the default code
+                            var subtemplate = hookupOptions.subtemplate || rendererOptions.subtemplate;
+
+                            if (subtemplate) {
+
+                                // `rendererOptions.options` is a scope of helpers where `<content>` was found, so
+                                // the right helpers should already be available.
+                                // However, `_tags.content` is going to point to this current content callback.  We need to 
+                                // remove that so it will walk up the chain
+
+                                delete options.tags.content;
+
+                                can.view.live.replace([el], subtemplate(
+                                        // This is the context of where `<content>` was found
+                                        // which will have the the component's context
+                                        rendererOptions.scope,
+
+                                        rendererOptions.options));
+
+                                // Restore the content tag so it could potentially be used again (as in lists)
+                                options.tags.content = contentHookup;
+                            }
+                        };
+                        // Render the component's template
+                        frag = this.constructor.renderer(renderedScope, hookupOptions.options.add(options));
+                    } else {
+                        // Otherwise render the contents between the 
+                        if (hookupOptions.templateType === "legacy") {
+                            frag = can.view.frag(hookupOptions.subtemplate ? hookupOptions.subtemplate(renderedScope, hookupOptions.options.add(options)) : "");
+                        } else {
+                            frag = hookupOptions.subtemplate ? hookupOptions.subtemplate(renderedScope, hookupOptions.options.add(options)) : document.createDocumentFragment();
+                        }
+
+                    }
+                    // Append the resulting document fragment to the element
+                    can.appendChild(el, frag);
+                }
+            });
+
+        var ComponentControl = can.Control.extend({
+                // Change lookup to first look in the scope.
+                _lookup: function(options) {
+                    return [options.scope, options, window];
+                },
+                _action: function(methodName, options, controlInstance) {
+                    var hasObjectLookup, readyCompute;
+
+                    paramReplacer.lastIndex = 0;
+
+                    hasObjectLookup = paramReplacer.test(methodName);
+
+                    // If we don't have options (a `control` instance), we'll run this 
+                    // later.
+                    if (!controlInstance && hasObjectLookup) {
+                        return;
+                    } else if (!hasObjectLookup) {
+                        return can.Control._action.apply(this, arguments);
+                    } else {
+                        // We have `hasObjectLookup` and `controlInstance`.
+
+                        readyCompute = can.compute(function() {
+                            var delegate;
+
+                            // Set the delegate target and get the name of the event we're listening to.
+                            var name = methodName.replace(paramReplacer, function(matched, key) {
+                                var value;
+
+                                // If we are listening directly on the `scope` set it as a delegate target.
+                                if (key === "scope") {
+                                    delegate = options.scope;
+                                    return "";
+                                }
+
+                                // Remove `scope.` from the start of the key and read the value from the `scope`.
+                                key = key.replace(/^scope\./, "");
+                                value = can.compute.read(options.scope, key.split("."), {
+                                        isArgument: true
+                                    }).value;
+
+                                // If `value` is undefined use `can.getObject` to get the value.
+                                if (value === undefined) {
+                                    value = can.getObject(key);
+                                }
+
+                                // If `value` is a string we just return it, otherwise we set it as a delegate target.
+                                if (typeof value === "string") {
+                                    return value;
+                                } else {
+                                    delegate = value;
+                                    return "";
+                                }
+
+                            });
+
+                            // Get the name of the `event` we're listening to.
+                            var parts = name.split(/\s+/g),
+                                event = parts.pop();
+
+                            // Return everything needed to handle the event we're listening to.
+                            return {
+                                processor: this.processors[event] || this.processors.click,
+                                parts: [name, parts.join(" "), event],
+                                delegate: delegate || undefined
+                            };
+
+                        }, this);
+
+                        // Create a handler function that we'll use to handle the `change` event on the `readyCompute`.
+                        var handler = function(ev, ready) {
+                            controlInstance._bindings.control[methodName](controlInstance.element);
+                            controlInstance._bindings.control[methodName] = ready.processor(
+                                ready.delegate || controlInstance.element,
+                                ready.parts[2], ready.parts[1], methodName, controlInstance);
+                        };
+
+                        readyCompute.bind("change", handler);
+
+                        controlInstance._bindings.readyComputes[methodName] = {
+                            compute: readyCompute,
+                            handler: handler
+                        };
+
+                        return readyCompute();
+                    }
+                }
+            },
+            // Extend `events` with a setup method that listens to changes in `scope` and
+            // rebinds all templated event handlers.
+            {
+                setup: function(el, options) {
+                    this.scope = options.scope;
+                    return can.Control.prototype.setup.call(this, el, options);
+                },
+                off: function() {
+                    // If `this._bindings` exists we need to go through it's `readyComputes` and manually
+                    // unbind `change` event listeners set by the controller.
+                    if (this._bindings) {
+                        can.each(this._bindings.readyComputes || {}, function(value) {
+                            value.compute.unbind("change", value.handler);
+                        });
+                    }
+                    // Call `can.Control.prototype.off` function on this instance to cleanup the bindings.
+                    can.Control.prototype.off.apply(this, arguments);
+                    this._bindings.readyComputes = {};
+                }
+            });
+
+        // If there is a `$` object and it has the `fn` object, create the `scope` plugin that returns
+        // the scope object
+        if (window.$ && $.fn) {
+            $.fn.scope = function(attr) {
+                // If `attr` is passed to the `scope` plugin return the value of that 
+                // attribute on the `scope` object, otherwise return the whole scope
+                if (attr) {
+                    return this.data("scope")
+                        .attr(attr);
+                } else {
+                    return this.data("scope");
+                }
+            };
+        }
+
+        // Define the `can.scope` function that can be used to retrieve the `scope` from the element
+        can.scope = function(el, attr) {
+            el = can.$(el);
+            // If `attr` is passed to the `can.scope` function return the value of that
+            // attribute on the `scope` object otherwise return the whole scope
+            if (attr) {
+                return can.data(el, "scope")
+                    .attr(attr);
+            } else {
+                return can.data(el, "scope");
+            }
+        };
+
+        return Component;
+    })(__m2, __m9, __m11, __m14, __m21, __m29);
+
+    // ## can/model/model.js
+    var __m30 = (function(can) {
+
+        // ## model.js
+        // (Don't steal this file directly in your code.)
+
+        // ## pipe
+        // `pipe` lets you pipe the results of a successful deferred
+        // through a function before resolving the deferred.
+
+        var pipe = function(def, thisArg, func) {
+            // The piped result will be available through a new Deferred.
+            var d = new can.Deferred();
+            def.then(function() {
+                var args = can.makeArray(arguments),
+                    success = true;
+
+                try {
+                    // Pipe the results through the function.
+                    args[0] = func.apply(thisArg, args);
+                } catch (e) {
+                    success = false;
+                    // The function threw an error, so reject the Deferred.
+                    d.rejectWith(d, [e].concat(args));
+                }
+                if (success) {
+                    // Resolve the new Deferred with the piped value.
+                    d.resolveWith(d, args);
+                }
+            }, function() {
+                // Pass on the rejection if the original Deferred never resolved.
+                d.rejectWith(this, arguments);
+            });
+
+            // `can.ajax` returns a Deferred with an abort method to halt the AJAX call.
+            if (typeof def.abort === 'function') {
+                d.abort = function() {
+                    return def.abort();
+                };
+            }
+
+            // Return the new (piped) Deferred.
+            return d;
+        },
+
+            // ## modelNum
+            // When new model constructors are set up without a full name,
+            // `modelNum` lets us name them uniquely (to keep track of them).
+            modelNum = 0,
+
+            // ## getId
+            getId = function(inst) {
+                // `can.__reading` makes a note that `id` was just read.
+                can.__reading(inst, inst.constructor.id);
+                // Use `__get` instead of `attr` for performance. (But that means we have to remember to call `can.__reading`.)
+                return inst.__get(inst.constructor.id);
+            },
+
+            // ## ajax
+            // This helper method makes it easier to make an AJAX call from the configuration of the Model.
+            ajax = function(ajaxOb, data, type, dataType, success, error) {
+
+                var params = {};
+
+                // A string here would be something like `"GET /endpoint"`.
+                if (typeof ajaxOb === 'string') {
+                    // Split on spaces to separate the HTTP method and the URL.
+                    var parts = ajaxOb.split(/\s+/);
+                    params.url = parts.pop();
+                    if (parts.length) {
+                        params.type = parts.pop();
+                    }
+                } else {
+                    // If the first argument is an object, just load it into `params`.
+                    can.extend(params, ajaxOb);
+                }
+
+                // If the `data` argument is a plain object, copy it into `params`.
+                params.data = typeof data === "object" && !can.isArray(data) ?
+                    can.extend(params.data || {}, data) : data;
+
+                // Substitute in data for any templated parts of the URL.
+                params.url = can.sub(params.url, params.data, true);
+
+                return can.ajax(can.extend({
+                            type: type || 'post',
+                            dataType: dataType || 'json',
+                            success: success,
+                            error: error
+                        }, params));
+            },
+
+            // ## makeRequest
+            // This function abstracts making the actual AJAX request away from the Model.
+            makeRequest = function(modelObj, type, success, error, method) {
+                var args;
+
+                // If `modelObj` is an Array, it it means we are coming from
+                // the queued request, and we're passing already-serialized data.
+                if (can.isArray(modelObj)) {
+                    // In that case, modelObj's signature will be `[modelObj, serializedData]`, so we need to unpack it.
+                    args = modelObj[1];
+                    modelObj = modelObj[0];
+                } else {
+                    // If we aren't supplied with serialized data, we'll make our own.
+                    args = modelObj.serialize();
+                }
+                args = [args];
+
+                var deferred,
+                    model = modelObj.constructor,
+                    jqXHR;
+
+                // When calling `update` and `destroy`, the current ID needs to be the first parameter in the AJAX call.
+                if (type === 'update' || type === 'destroy') {
+                    args.unshift(getId(modelObj));
+                }
+                jqXHR = model[type].apply(model, args);
+
+                // Make sure that can.Model can react to the request before anything else does.
+                deferred = pipe(jqXHR, modelObj, function(data) {
+                    // `method` is here because `"destroyed" !== "destroy" + "d"`.
+                    // TODO: Do something smarter/more consistent here?
+                    modelObj[method || type + "d"](data, jqXHR);
+                    return modelObj;
+                });
+
+                // Hook up `abort`
+                if (jqXHR.abort) {
+                    deferred.abort = function() {
+                        jqXHR.abort();
+                    };
+                }
+
+                deferred.then(success, error);
+                return deferred;
+            },
+
+            initializers = {
+                // ## models
+                // Returns a function that, when handed a list of objects, makes them into models and returns a model list of them.
+                // `prop` is the property on `instancesRawData` that has the array of objects in it (if it's not `data`).
+                models: function(prop) {
+                    return function(instancesRawData, oldList) {
+                        // Increment reqs counter so new instances will be added to the store.
+                        // (This is cleaned up at the end of the method.)
+                        can.Model._reqs++;
+
+                        // If there is no data, we can't really do anything with it.
+                        if (!instancesRawData) {
+                            return;
+                        }
+
+                        // If the "raw" data is already a List, it's not raw.
+                        if (instancesRawData instanceof this.List) {
+                            return instancesRawData;
+                        }
+
+                        var self = this,
+                            // `tmp` will hold the models before we push them onto `modelList`.
+                            tmp = [],
+                            // `ML` (see way below) is just `can.Model.List`.
+                            ListClass = self.List || ML,
+                            modelList = oldList instanceof can.List ? oldList : new ListClass(),
+
+                            // Check if we were handed an Array or a model list.
+                            rawDataIsArray = can.isArray(instancesRawData),
+                            rawDataIsList = instancesRawData instanceof ML,
+
+                            // Get the "plain" objects from the models from the list/array.
+                            raw = rawDataIsArray ? instancesRawData : (
+                                rawDataIsList ? instancesRawData.serialize() : can.getObject(prop || "data", instancesRawData));
+
+                        if (typeof raw === 'undefined') {
+                            throw new Error('Could not get any raw data while converting using .models');
+                        }
+
+
+
+                        // If there was anything left in the list we were given, get rid of it.
+                        if (modelList.length) {
+                            modelList.splice(0);
+                        }
+
+                        // If we pushed these directly onto the list, it would cause a change event for each model.
+                        // So, we push them onto `tmp` first and then push everything at once, causing one atomic change event that contains all the models at once.
+                        can.each(raw, function(rawPart) {
+                            tmp.push(self.model(rawPart));
+                        });
+                        modelList.push.apply(modelList, tmp);
+
+                        // If there was other stuff on `instancesRawData`, let's transfer that onto `modelList` too.
+                        if (!rawDataIsArray) {
+                            can.each(instancesRawData, function(val, prop) {
+                                if (prop !== 'data') {
+                                    modelList.attr(prop, val);
+                                }
+                            });
+                        }
+                        // Clean up the store on the next turn of the event loop. (`this` is a model constructor.)
+                        setTimeout(can.proxy(this._clean, this), 1);
+                        return modelList;
+                    };
+                },
+                // ## model
+                // Returns a function that, when handed a plain object, turns it into a model.
+                // `prop` is the property on `attributes` that has the properties for the model in it.
+                model: function(prop) {
+                    return function(attributes) {
+                        // If there're no properties, there can be no model.
+                        if (!attributes) {
+                            return;
+                        }
+                        // If this object knows how to serialize, parse, or access itself, we'll use that instead.
+                        if (typeof attributes.serialize === 'function') {
+                            attributes = attributes.serialize();
+                        }
+                        if (this.parseModel) {
+                            attributes = this.parseModel.apply(this, arguments);
+                        } else if (prop) {
+                            attributes = can.getObject(prop || "data", attributes);
+                        }
+
+                        var id = attributes[this.id],
+                            // 0 is a valid ID.
+                            model = (id || id === 0) && this.store[id] ?
+                            // If this model is in the store already, just update it.
+                            this.store[id].attr(attributes, this.removeAttr || false) :
+                            // Otherwise, we need a new model.
+                            new this(attributes);
+
+                        return model;
+                    };
+                }
+            },
+
+
+            parserMaker = function(prop) {
+                return function(attributes) {
+                    return prop ? can.getObject(prop || "data", attributes) : attributes;
+                };
+            },
+
+            // ## parsers
+            // This object describes how to take the data from an AJAX request and prepare it for `models` and `model`.
+            // These functions are meant to be overwritten (if necessary) in an extended model constructor.
+            parsers = {
+
+                parseModel: parserMaker,
+
+                parseModels: parserMaker
+            },
+
+            // ## ajaxMethods
+            // This object describes how to make an AJAX request for each ajax method (`create`, `update`, etc.)
+            // Each AJAX method is an object in `ajaxMethods` and can have the following properties:
+            // - `url`: Which property on the model contains the default URL for this method.
+            // - `type`: The default HTTP request method.
+            // - `data`: A method that takes the arguments from `makeRequest` (see above) and returns a data object for use in the AJAX call.
+
+
+            ajaxMethods = {
+
+                create: {
+                    url: "_shortName",
+                    type: "post"
+                },
+
+                update: {
+                    // ## update.data
+                    data: function(id, attrs) {
+                        attrs = attrs || {};
+
+                        // `this.id` is the property that represents the ID (and is usually `"id"`).
+                        var identity = this.id;
+
+                        // If the value of the property being used as the ID changed,
+                        // indicate that in the request and replace the current ID property.
+                        if (attrs[identity] && attrs[identity] !== id) {
+                            attrs["new" + can.capitalize(id)] = attrs[identity];
+                            delete attrs[identity];
+                        }
+                        attrs[identity] = id;
+
+                        return attrs;
+                    },
+                    type: "put"
+                },
+
+                destroy: {
+                    type: 'delete',
+                    // ## destroy.data
+                    data: function(id, attrs) {
+                        attrs = attrs || {};
+                        // `this.id` is the property that represents the ID (and is usually `"id"`).
+                        attrs.id = attrs[this.id] = id;
+                        return attrs;
+                    }
+                },
+
+                findAll: {
+                    url: "_shortName"
+                },
+
+                findOne: {}
+            },
+            // ## ajaxMaker
+            // Takes a method defined just above and a string that describes how to call that method
+            // and makes a function that calls that method with the given data.
+            // - `ajaxMethod`: The object defined above in `ajaxMethods`.
+            // - `str`: The string the configuration provided (such as `"/recipes.json"` for a `findAll` call).
+            ajaxMaker = function(ajaxMethod, str) {
+                return function(data) {
+                    data = ajaxMethod.data ?
+                    // If the AJAX method mentioned above has its own way of getting `data`, use that.
+                    ajaxMethod.data.apply(this, arguments) :
+                    // Otherwise, just use the data passed in.
+                    data;
+
+                    // Make the AJAX call with the URL, data, and type indicated by the proper `ajaxMethod` above.
+                    return ajax(str || this[ajaxMethod.url || "_url"], data, ajaxMethod.type || "get");
+                };
+            },
+            // ## createURLFromResource
+            // For each of the names (create, update, destroy, findOne, and findAll) use the 
+            // URL provided by the `resource` property. For example:
+            // 		ToDo = can.Model.extend({
+            // 			resource: "/todos"
+            // 		}, {});
+            // 	Will create a can.Model that is identical to:
+            // 		ToDo = can.Model.extend({
+            // 			findAll: "GET /todos",
+            // 			findOne: "GET /todos/{id}",
+            // 			create:  "POST /todos",
+            // 			update:  "PUT /todos/{id}",
+            // 			destroy: "DELETE /todos/{id}"
+            // 		},{});
+            // - `model`: the can.Model that has the resource property
+            // - `method`: a property from the ajaxMethod object
+            createURLFromResource = function(model, name) {
+                if (!model.resource) {
+                    return;
+                }
+
+                var resource = model.resource.replace(/\/+$/, "");
+                if (name === "findAll" || name === "create") {
+                    return resource;
+                } else {
+                    return resource + "/{" + model.id + "}";
+                }
+            };
+
+        // # can.Model
+        // A can.Map that connects to a RESTful interface.
+        can.Model = can.Map.extend({
+                // `fullName` identifies the model type in debugging.
+                fullName: "can.Model",
+                _reqs: 0,
+                // ## can.Model.setup
+
+                setup: function(base, fullName, staticProps, protoProps) {
+                    // Assume `fullName` wasn't passed. (`can.Model.extend({ ... }, { ... })`)
+                    // This is pretty usual.
+                    if (fullName !== "string") {
+                        protoProps = staticProps;
+                        staticProps = fullName;
+                    }
+                    // Assume no static properties were passed. (`can.Model.extend({ ... })`)
+                    // This is really unusual for a model though, since there's so much configuration.
+                    if (!protoProps) {
+
+                        protoProps = staticProps;
+                    }
+
+                    // Create the model store here, in case someone wants to use can.Model without inheriting from it.
+                    this.store = {};
+
+                    can.Map.setup.apply(this, arguments);
+                    if (!can.Model) {
+                        return;
+                    }
+
+                    // `List` is just a regular can.Model.List that knows what kind of Model it's hooked up to.
+
+                    if (staticProps && staticProps.List) {
+                        this.List = staticProps.List;
+                        this.List.Map = this;
+                    } else {
+                        this.List = base.List.extend({
+                                Map: this
+                            }, {});
+                    }
+
+                    var self = this,
+                        clean = can.proxy(this._clean, self);
+
+                    // Go through `ajaxMethods` and set up static methods according to their configurations.
+                    can.each(ajaxMethods, function(method, name) {
+                        // Check the configuration for this ajaxMethod.
+                        // If the configuration isn't a function, it should be a string (like `"GET /endpoint"`)
+                        // or an object like `{url: "/endpoint", type: 'GET'}`.
+                        if (!can.isFunction(self[name])) {
+                            // Etiher way, `ajaxMaker` will turn it into a function for us.
+                            self[name] = ajaxMaker(method, self[name] ? self[name] : createURLFromResource(self, name));
+                        }
+
+                        // There may also be a "maker" function (like `makeFindAll`) that alters the behavior of acting upon models
+                        // by changing when and how the function we just made with `ajaxMaker` gets called.
+                        // For example, you might cache responses and only make a call when you don't have a cached response.
+                        if (self["make" + can.capitalize(name)]) {
+                            // Use the "maker" function to make the new "ajaxMethod" function.
+                            var newMethod = self["make" + can.capitalize(name)](self[name]);
+                            // Replace the "ajaxMethod" function in the configuration with the new one.
+                            // (`_overwrite` just overwrites a property in a given Construct.)
+                            can.Construct._overwrite(self, base, name, function() {
+                                // Increment the numer of requests...
+                                can.Model._reqs++;
+                                // ...make the AJAX call (and whatever else you're doing)...
+                                var def = newMethod.apply(this, arguments);
+                                // ...and clean up the store.
+                                var then = def.then(clean, clean);
+                                // Pass along `abort` so you can still abort the AJAX call.
+                                then.abort = def.abort;
+
+                                return then;
+                            });
+                        }
+                    });
+
+                    // Set up the methods that will set up `models` and `model`.
+                    can.each(initializers, function(makeInitializer, name) {
+                        var parseName = "parse" + can.capitalize(name),
+                            dataProperty = self[name];
+
+                        // If there was a different property to find the model's data in than `data`,
+                        // make `parseModel` and `parseModels` functions that look that up instead.
+                        if (typeof dataProperty === "string") {
+                            can.Construct._overwrite(self, base, parseName, parsers[parseName](dataProperty));
+                            can.Construct._overwrite(self, base, name, makeInitializer(dataProperty));
+                        }
+
+                        // If there was no prototype, or no `model` and no `parseModel`,
+                        // we'll have to create a `parseModel`.
+                        else if (!protoProps || (!protoProps[name] && !protoProps[parseName])) {
+                            can.Construct._overwrite(self, base, parseName, parsers[parseName]());
+                        }
+                    });
+
+                    // With the overridden parse methods, set up `models` and `model`.
+                    can.each(parsers, function(makeParser, name) {
+                        // If there was a different property to find the model's data in than `data`,
+                        // make `model` and `models` functions that look that up instead.
+                        if (typeof self[name] === "string") {
+                            can.Construct._overwrite(self, base, name, makeParser(self[name]));
+                        }
+                    });
+
+                    // Make sure we have a unique name for this Model.
+                    if (self.fullName === "can.Model" || !self.fullName) {
+                        self.fullName = "Model" + (++modelNum);
+                    }
+
+                    can.Model._reqs = 0;
+                    this._url = this._shortName + "/{" + this.id + "}";
+                },
+                _ajax: ajaxMaker,
+                _makeRequest: makeRequest,
+                // ## can.Model._clean
+                // `_clean` cleans up the model store after a request happens.
+                _clean: function() {
+                    can.Model._reqs--;
+                    // Don't clean up unless we have no pending requests.
+                    if (!can.Model._reqs) {
+                        for (var id in this.store) {
+                            // Delete all items in the store without any event bindings.
+                            if (!this.store[id]._bindings) {
+                                delete this.store[id];
+                            }
+                        }
+                    }
+                    return arguments[0];
+                },
+
+                models: initializers.models("data"),
+
+                model: initializers.model()
+            },
+
+
+            {
+                // ## can.Model#setup
+                setup: function(attrs) {
+                    // Try to add things as early as possible to the store (#457).
+                    // This is the earliest possible moment, even before any properties are set.
+                    var id = attrs && attrs[this.constructor.id];
+                    if (can.Model._reqs && id != null) {
+                        this.constructor.store[id] = this;
+                    }
+                    can.Map.prototype.setup.apply(this, arguments);
+                },
+                // ## can.Model#isNew
+                // Something is new if its ID is `null` or `undefined`.
+
+                isNew: function() {
+                    var id = getId(this);
+                    // 0 is a valid ID.
+                    // TODO: Why not `return id === null || id === undefined;`?
+                    return !(id || id === 0); // If `null` or `undefined`
+                },
+                // ## can.Model#save
+                // `save` calls `create` or `update` as necessary, based on whether a model is new.
+
+                save: function(success, error) {
+                    return makeRequest(this, this.isNew() ? 'create' : 'update', success, error);
+                },
+                // ## can.Model#destroy
+                // Acts like can.Map.destroy but it also makes an AJAX call.
+
+                destroy: function(success, error) {
+                    // If this model is new, don't make an AJAX call.
+                    // Instead, we have to construct the Deferred ourselves and return it.
+                    if (this.isNew()) {
+                        var self = this;
+                        var def = can.Deferred();
+                        def.then(success, error);
+
+                        return def.done(function(data) {
+                            self.destroyed(data);
+                        }).resolve(self);
+                    }
+
+                    // If it isn't new, though, go ahead and make a request.
+                    return makeRequest(this, 'destroy', success, error, 'destroyed');
+                },
+                // ## can.Model#bind and can.Model#unbind
+                // These aren't actually implemented here, but their setup needs to be changed to account for the store.
+
+                _bindsetup: function() {
+                    this.constructor.store[this.__get(this.constructor.id)] = this;
+                    return can.Map.prototype._bindsetup.apply(this, arguments);
+                },
+
+                _bindteardown: function() {
+                    delete this.constructor.store[getId(this)];
+                    return can.Map.prototype._bindteardown.apply(this, arguments);
+                },
+                // Change the behavior of `___set` to account for the store.
+                ___set: function(prop, val) {
+                    can.Map.prototype.___set.call(this, prop, val);
+                    // If we add or change the ID, update the store accordingly.
+                    // TODO: shouldn't this also delete the record from the old ID in the store?
+                    if (prop === this.constructor.id && this._bindings) {
+                        this.constructor.store[getId(this)] = this;
+                    }
+                }
+            });
+
+        // Returns a function that knows how to prepare data from `findAll` or `findOne` calls.
+        // `name` should be either `model` or `models`.
+        var makeGetterHandler = function(name) {
+            var parseName = "parse" + can.capitalize(name);
+            return function(data) {
+                // If there's a `parse...` function, use its output.
+                if (this[parseName]) {
+                    data = this[parseName].apply(this, arguments);
+                }
+                // Run our maybe-parsed data through `model` or `models`.
+                return this[name](data);
+            };
+        },
+            // Handle data returned from `create`, `update`, and `destroy` calls.
+            createUpdateDestroyHandler = function(data) {
+                if (this.parseModel) {
+                    return this.parseModel.apply(this, arguments);
+                } else {
+                    return this.model(data);
+                }
+            };
+
+        var responseHandlers = {
+
+            makeFindAll: makeGetterHandler("models"),
+
+            makeFindOne: makeGetterHandler("model"),
+            makeCreate: createUpdateDestroyHandler,
+            makeUpdate: createUpdateDestroyHandler
+        };
+
+        // Go through the response handlers and make the actual "make" methods.
+        can.each(responseHandlers, function(method, name) {
+            can.Model[name] = function(oldMethod) {
+                return function() {
+                    var args = can.makeArray(arguments),
+                        // If args[1] is a function, we were only passed one argument before success and failure callbacks.
+                        oldArgs = can.isFunction(args[1]) ? args.splice(0, 1) : args.splice(0, 2),
+                        // Call the AJAX method (`findAll` or `update`, etc.) and pipe it through the response handler from above.
+                        def = pipe(oldMethod.apply(this, oldArgs), this, method);
+
+                    def.then(args[0], args[1]);
+                    return def;
+                };
+            };
+        });
+
+        // ## can.Model.created, can.Model.updated, and can.Model.destroyed
+        // Livecycle methods for models.
+        can.each([
+
+                "created",
+
+                "updated",
+
+                "destroyed"
+            ], function(funcName) {
+                // Each of these is pretty much the same, except for the events they trigger.
+                can.Model.prototype[funcName] = function(attrs) {
+                    var stub,
+                        constructor = this.constructor;
+
+                    // Update attributes if attributes have been passed
+                    stub = attrs && typeof attrs === 'object' && this.attr(attrs.attr ? attrs.attr() : attrs);
+
+                    // triggers change event that bubble's like
+                    // handler( 'change','1.destroyed' ). This is used
+                    // to remove items on destroyed from Model Lists.
+                    // but there should be a better way.
+                    can.dispatch.call(this, {
+                            type: "change",
+                            target: this
+                        }, [funcName]);
+
+
+
+                    // Call event on the instance's Class
+                    can.dispatch.call(constructor, funcName, [this]);
+                };
+            });
+
+
+        // # can.Model.List
+        // Model Lists are just like `Map.List`s except that when their items are
+        // destroyed, they automatically get removed from the List.
+        var ML = can.Model.List = can.List.extend({
+                // ## can.Model.List.setup
+                // On change or a nested named event, setup change bubbling.
+                // On any other type of event, setup "destroyed" bubbling.
+                _bubbleRule: function(eventName, list) {
+                    return can.List._bubbleRule(eventName, list) || "destroyed";
+                }
+            }, {
+                setup: function(params) {
+                    // If there was a plain object passed to the List constructor,
+                    // we use those as parameters for an initial findAll.
+                    if (can.isPlainObject(params) && !can.isArray(params)) {
+                        can.List.prototype.setup.apply(this);
+                        this.replace(this.constructor.Map.findAll(params));
+                    } else {
+                        // Otherwise, set up the list like normal.
+                        can.List.prototype.setup.apply(this, arguments);
+                    }
+                    this._init = 1;
+                    this.bind('destroyed', can.proxy(this._destroyed, this));
+                    delete this._init;
+                },
+                _destroyed: function(ev, attr) {
+                    if (/\w+/.test(attr)) {
+                        var index;
+                        while ((index = this.indexOf(ev.target)) > -1) {
+                            this.splice(index, 1);
+                        }
+                    }
+                }
+            });
+
+        return can.Model;
+    })(__m2, __m15, __m19);
+
+    // ## can/util/string/deparam/deparam.js
+    var __m32 = (function(can) {
+        // ## deparam.js  
+        // `can.deparam`  
+        // _Takes a string of name value pairs and returns a Object literal that represents those params._
+        var digitTest = /^\d+$/,
+            keyBreaker = /([^\[\]]+)|(\[\])/g,
+            paramTest = /([^?#]*)(#.*)?$/,
+            prep = function(str) {
+                return decodeURIComponent(str.replace(/\+/g, ' '));
+            };
+        can.extend(can, {
+                deparam: function(params) {
+                    var data = {}, pairs, lastPart;
+                    if (params && paramTest.test(params)) {
+                        pairs = params.split('&');
+                        can.each(pairs, function(pair) {
+                            var parts = pair.split('='),
+                                key = prep(parts.shift()),
+                                value = prep(parts.join('=')),
+                                current = data;
+                            if (key) {
+                                parts = key.match(keyBreaker);
+                                for (var j = 0, l = parts.length - 1; j < l; j++) {
+                                    if (!current[parts[j]]) {
+                                        // If what we are pointing to looks like an `array`
+                                        current[parts[j]] = digitTest.test(parts[j + 1]) || parts[j + 1] === '[]' ? [] : {};
+                                    }
+                                    current = current[parts[j]];
+                                }
+                                lastPart = parts.pop();
+                                if (lastPart === '[]') {
+                                    current.push(value);
+                                } else {
+                                    current[lastPart] = value;
+                                }
+                            }
+                        });
+                    }
+                    return data;
+                }
+            });
+        return can;
+    })(__m2, __m13);
+
+    // ## can/route/route.js
+    var __m31 = (function(can) {
+
+        // ## route.js
+        // `can.route`
+        // _Helps manage browser history (and client state) by synchronizing the
+        // `window.location.hash` with a `can.Map`._
+        // Helper methods used for matching routes.
+        var
+        // `RegExp` used to match route variables of the type ':name'.
+        // Any word character or a period is matched.
+        matcher = /\:([\w\.]+)/g,
+            // Regular expression for identifying &amp;key=value lists.
+            paramsMatcher = /^(?:&[^=]+=[^&]*)+/,
+            // Converts a JS Object into a list of parameters that can be
+            // inserted into an html element tag.
+            makeProps = function(props) {
+                var tags = [];
+                can.each(props, function(val, name) {
+                    tags.push((name === 'className' ? 'class' : name) + '="' +
+                        (name === "href" ? val : can.esc(val)) + '"');
+                });
+                return tags.join(" ");
+            },
+            // Checks if a route matches the data provided. If any route variable
+            // is not present in the data, the route does not match. If all route
+            // variables are present in the data, the number of matches is returned
+            // to allow discerning between general and more specific routes.
+            matchesData = function(route, data) {
+                var count = 0,
+                    i = 0,
+                    defaults = {};
+                // look at default values, if they match ...
+                for (var name in route.defaults) {
+                    if (route.defaults[name] === data[name]) {
+                        // mark as matched
+                        defaults[name] = 1;
+                        count++;
+                    }
+                }
+                for (; i < route.names.length; i++) {
+                    if (!data.hasOwnProperty(route.names[i])) {
+                        return -1;
+                    }
+                    if (!defaults[route.names[i]]) {
+                        count++;
+                    }
+
+                }
+
+                return count;
+            },
+            location = window.location,
+            wrapQuote = function(str) {
+                return (str + '')
+                    .replace(/([.?*+\^$\[\]\\(){}|\-])/g, "\\$1");
+            },
+            each = can.each,
+            extend = can.extend,
+            // Helper for convert any object (or value) to stringified object (or value)
+            stringify = function(obj) {
+                // Object is array, plain object, Map or List
+                if (obj && typeof obj === "object") {
+                    // Get native object or array from Map or List
+                    if (obj instanceof can.Map) {
+                        obj = obj.attr();
+                        // Clone object to prevent change original values
+                    } else {
+                        obj = can.isFunction(obj.slice) ? obj.slice() : can.extend({}, obj);
+                    }
+                    // Convert each object property or array item into stringified new
+                    can.each(obj, function(val, prop) {
+                        obj[prop] = stringify(val);
+                    });
+                    // Object supports toString function
+                } else if (obj !== undefined && obj !== null && can.isFunction(obj.toString)) {
+                    obj = obj.toString();
+                }
+
+                return obj;
+            },
+            removeBackslash = function(str) {
+                return str.replace(/\\/g, "");
+            },
+            // A ~~throttled~~ debounced function called multiple times will only fire once the
+            // timer runs down. Each call resets the timer.
+            timer,
+            // Intermediate storage for `can.route.data`.
+            curParams,
+            // The last hash caused by a data change
+            lastHash,
+            // Are data changes pending that haven't yet updated the hash
+            changingData,
+            // If the `can.route.data` changes, update the hash.
+            // Using `.serialize()` retrieves the raw data contained in the `observable`.
+            // This function is ~~throttled~~ debounced so it only updates once even if multiple values changed.
+            // This might be able to use batchNum and avoid this.
+            onRouteDataChange = function(ev, attr, how, newval) {
+                // indicate that data is changing
+                changingData = 1;
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    // indicate that the hash is set to look like the data
+                    changingData = 0;
+                    var serialized = can.route.data.serialize(),
+                        path = can.route.param(serialized, true);
+                    can.route._call("setURL", path);
+
+                    lastHash = path;
+                }, 10);
+            };
+
+        can.route = function(url, defaults) {
+            // if route ends with a / and url starts with a /, remove the leading / of the url
+            var root = can.route._call("root");
+
+            if (root.lastIndexOf("/") === root.length - 1 &&
+                url.indexOf("/") === 0) {
+                url = url.substr(1);
+            }
+
+            defaults = defaults || {};
+            // Extract the variable names and replace with `RegExp` that will match
+            // an atual URL with values.
+            var names = [],
+                res,
+                test = "",
+                lastIndex = matcher.lastIndex = 0,
+                next,
+                querySeparator = can.route._call("querySeparator"),
+                matchSlashes = can.route._call("matchSlashes");
+
+            // res will be something like [":foo","foo"]
+            while (res = matcher.exec(url)) {
+                names.push(res[1]);
+                test += removeBackslash(url.substring(lastIndex, matcher.lastIndex - res[0].length));
+                // if matchSlashes is false (the default) don't greedily match any slash in the string, assume its part of the URL
+                next = "\\" + (removeBackslash(url.substr(matcher.lastIndex, 1)) || querySeparator + (matchSlashes ? "" : "|/"));
+                // a name without a default value HAS to have a value
+                // a name that has a default value can be empty
+                // The `\\` is for string-escaping giving single `\` for `RegExp` escaping.
+                test += "([^" + next + "]" + (defaults[res[1]] ? "*" : "+") + ")";
+                lastIndex = matcher.lastIndex;
+            }
+            test += url.substr(lastIndex)
+                .replace("\\", "");
+            // Add route in a form that can be easily figured out.
+            can.route.routes[url] = {
+                // A regular expression that will match the route when variable values
+                // are present; i.e. for `:page/:type` the `RegExp` is `/([\w\.]*)/([\w\.]*)/` which
+                // will match for any value of `:page` and `:type` (word chars or period).
+                test: new RegExp("^" + test + "($|" + wrapQuote(querySeparator) + ")"),
+                // The original URL, same as the index for this entry in routes.
+                route: url,
+                // An `array` of all the variable names in this route.
+                names: names,
+                // Default values provided for the variables.
+                defaults: defaults,
+                // The number of parts in the URL separated by `/`.
+                length: url.split('/')
+                    .length
+            };
+            return can.route;
+        };
+
+
+        extend(can.route, {
+
+
+                param: function(data, _setRoute) {
+                    // Check if the provided data keys match the names in any routes;
+                    // Get the one with the most matches.
+                    var route,
+                        // Need to have at least 1 match.
+                        matches = 0,
+                        matchCount,
+                        routeName = data.route,
+                        propCount = 0;
+
+                    delete data.route;
+
+                    each(data, function() {
+                        propCount++;
+                    });
+                    // Otherwise find route.
+                    each(can.route.routes, function(temp, name) {
+                        // best route is the first with all defaults matching
+
+                        matchCount = matchesData(temp, data);
+                        if (matchCount > matches) {
+                            route = temp;
+                            matches = matchCount;
+                        }
+                        if (matchCount >= propCount) {
+                            return false;
+                        }
+                    });
+                    // If we have a route name in our `can.route` data, and it's
+                    // just as good as what currently matches, use that
+                    if (can.route.routes[routeName] && matchesData(can.route.routes[routeName], data) === matches) {
+                        route = can.route.routes[routeName];
+                    }
+                    // If this is match...
+                    if (route) {
+                        var cpy = extend({}, data),
+                            // Create the url by replacing the var names with the provided data.
+                            // If the default value is found an empty string is inserted.
+                            res = route.route.replace(matcher, function(whole, name) {
+                                delete cpy[name];
+                                return data[name] === route.defaults[name] ? "" : encodeURIComponent(data[name]);
+                            })
+                                .replace("\\", ""),
+                            after;
+                        // Remove matching default values
+                        each(route.defaults, function(val, name) {
+                            if (cpy[name] === val) {
+                                delete cpy[name];
+                            }
+                        });
+
+                        // The remaining elements of data are added as
+                        // `&amp;` separated parameters to the url.
+                        after = can.param(cpy);
+                        // if we are paraming for setting the hash
+                        // we also want to make sure the route value is updated
+                        if (_setRoute) {
+                            can.route.attr('route', route.route);
+                        }
+                        return res + (after ? can.route._call("querySeparator") + after : "");
+                    }
+                    // If no route was found, there is no hash URL, only paramters.
+                    return can.isEmptyObject(data) ? "" : can.route._call("querySeparator") + can.param(data);
+                },
+
+                deparam: function(url) {
+
+                    // remove the url
+                    var root = can.route._call("root");
+                    if (root.lastIndexOf("/") === root.length - 1 &&
+                        url.indexOf("/") === 0) {
+                        url = url.substr(1);
+                    }
+
+                    // See if the url matches any routes by testing it against the `route.test` `RegExp`.
+                    // By comparing the URL length the most specialized route that matches is used.
+                    var route = {
+                        length: -1
+                    },
+                        querySeparator = can.route._call("querySeparator"),
+                        paramsMatcher = can.route._call("paramsMatcher");
+
+                    each(can.route.routes, function(temp, name) {
+                        if (temp.test.test(url) && temp.length > route.length) {
+                            route = temp;
+                        }
+                    });
+                    // If a route was matched.
+                    if (route.length > -1) {
+
+                        var // Since `RegExp` backreferences are used in `route.test` (parens)
+                        // the parts will contain the full matched string and each variable (back-referenced) value.
+                        parts = url.match(route.test),
+                            // Start will contain the full matched string; parts contain the variable values.
+                            start = parts.shift(),
+                            // The remainder will be the `&amp;key=value` list at the end of the URL.
+                            remainder = url.substr(start.length - (parts[parts.length - 1] === querySeparator ? 1 : 0)),
+                            // If there is a remainder and it contains a `&amp;key=value` list deparam it.
+                            obj = (remainder && paramsMatcher.test(remainder)) ? can.deparam(remainder.slice(1)) : {};
+
+                        // Add the default values for this route.
+                        obj = extend(true, {}, route.defaults, obj);
+                        // Overwrite each of the default values in `obj` with those in
+                        // parts if that part is not empty.
+                        each(parts, function(part, i) {
+                            if (part && part !== querySeparator) {
+                                obj[route.names[i]] = decodeURIComponent(part);
+                            }
+                        });
+                        obj.route = route.route;
+                        return obj;
+                    }
+                    // If no route was matched, it is parsed as a `&amp;key=value` list.
+                    if (url.charAt(0) !== querySeparator) {
+                        url = querySeparator + url;
+                    }
+                    return paramsMatcher.test(url) ? can.deparam(url.slice(1)) : {};
+                },
+
+                data: new can.Map({}),
+                map: function(data) {
+                    var appState;
+                    // appState is a can.Map constructor function
+                    if (data.prototype instanceof can.Map) {
+                        appState = new data();
+                    }
+                    // appState is an instance of can.Map
+                    else {
+                        appState = data;
+                    }
+                    can.route.data = appState;
+                },
+
+                routes: {},
+
+                ready: function(val) {
+                    if (val !== true) {
+                        can.route._setup();
+                        can.route.setState();
+                    }
+                    return can.route;
+                },
+
+                url: function(options, merge) {
+
+                    if (merge) {
+                        options = can.extend({}, can.route.deparam(can.route._call("matchingPartOfURL")), options);
+                    }
+                    return can.route._call("root") + can.route.param(options);
+                },
+
+                link: function(name, options, props, merge) {
+                    return "<a " + makeProps(
+                        extend({
+                                href: can.route.url(options, merge)
+                            }, props)) + ">" + name + "</a>";
+                },
+
+                current: function(options) {
+                    return this._call("matchingPartOfURL") === can.route.param(options);
+                },
+                bindings: {
+                    hashchange: {
+                        paramsMatcher: paramsMatcher,
+                        querySeparator: "&",
+                        // don't greedily match slashes in routing rules
+                        matchSlashes: false,
+                        bind: function() {
+                            can.bind.call(window, 'hashchange', setState);
+                        },
+                        unbind: function() {
+                            can.unbind.call(window, 'hashchange', setState);
+                        },
+                        // Gets the part of the url we are determinging the route from.
+                        // For hashbased routing, it's everything after the #, for
+                        // pushState it's configurable
+                        matchingPartOfURL: function() {
+                            return location.href.split(/#!?/)[1] || "";
+                        },
+                        // gets called with the serialized can.route data after a route has changed
+                        // returns what the url has been updated to (for matching purposes)
+                        setURL: function(path) {
+                            location.hash = "#!" + path;
+                            return path;
+                        },
+                        root: "#!"
+                    }
+                },
+                defaultBinding: "hashchange",
+                currentBinding: null,
+                // ready calls setup
+                // setup binds and listens to data changes
+                // bind listens to whatever you should be listening to
+                // data changes tries to set the path
+
+                // we need to be able to
+                // easily kick off calling setState
+                // 	teardown whatever is there
+                //  turn on a particular binding
+
+                // called when the route is ready
+                _setup: function() {
+                    if (!can.route.currentBinding) {
+                        can.route._call("bind");
+                        can.route.bind("change", onRouteDataChange);
+                        can.route.currentBinding = can.route.defaultBinding;
+                    }
+                },
+                _teardown: function() {
+                    if (can.route.currentBinding) {
+                        can.route._call("unbind");
+                        can.route.unbind("change", onRouteDataChange);
+                        can.route.currentBinding = null;
+                    }
+                    clearTimeout(timer);
+                    changingData = 0;
+                },
+                // a helper to get stuff from the current or default bindings
+                _call: function() {
+                    var args = can.makeArray(arguments),
+                        prop = args.shift(),
+                        binding = can.route.bindings[can.route.currentBinding || can.route.defaultBinding],
+                        method = binding[prop];
+                    if (method.apply) {
+                        return method.apply(binding, args);
+                    } else {
+                        return method;
+                    }
+                }
+            });
+
+        // The functions in the following list applied to `can.route` (e.g. `can.route.attr('...')`) will
+        // instead act on the `can.route.data` observe.
+        each(['bind', 'unbind', 'on', 'off', 'delegate', 'undelegate', 'removeAttr', 'compute', '_get', '__get'], function(name) {
+            can.route[name] = function() {
+                // `delegate` and `undelegate` require
+                // the `can/map/delegate` plugin
+                if (!can.route.data[name]) {
+                    return;
+                }
+
+                return can.route.data[name].apply(can.route.data, arguments);
+            };
+        });
+
+        // Because everything in hashbang is in fact a string this will automaticaly convert new values to string. Works with single value, or deep hashes.
+        // Main motivation for this is to prevent double route event call for same value.
+        // Example (the problem):
+        // When you load page with hashbang like #!&some_number=2 and bind 'some_number' on routes.
+        // It will fire event with adding of "2" (string) to 'some_number' property
+        // But when you after this set can.route.attr({some_number: 2}) or can.route.attr('some_number', 2). it fires another event with change of 'some_number' from "2" (string) to 2 (integer)
+        // This wont happen again with this normalization
+        can.route.attr = function(attr, val) {
+            var type = typeof attr,
+                newArguments;
+
+            // Reading
+            if (val === undefined) {
+                newArguments = arguments;
+                // Sets object
+            } else if (type !== "string" && type !== "number") {
+                newArguments = [stringify(attr), val];
+                // Sets key - value
+            } else {
+                newArguments = [attr, stringify(val)];
+            }
+
+            return can.route.data.attr.apply(can.route.data, newArguments);
+        };
+
+        var // Deparameterizes the portion of the hash of interest and assign the
+        // values to the `can.route.data` removing existing values no longer in the hash.
+        // setState is called typically by hashchange which fires asynchronously
+        // So it's possible that someone started changing the data before the
+        // hashchange event fired.  For this reason, it will not set the route data
+        // if the data is changing or the hash already matches the hash that was set.
+        setState = can.route.setState = function() {
+            var hash = can.route._call("matchingPartOfURL");
+            var oldParams = curParams;
+            curParams = can.route.deparam(hash);
+
+            // if the hash data is currently changing, or
+            // the hash is what we set it to anyway, do NOT change the hash
+            if (!changingData || hash !== lastHash) {
+                can.batch.start();
+                for (var attr in oldParams) {
+                    if (!curParams[attr]) {
+                        can.route.removeAttr(attr);
+                    }
+                }
+                can.route.attr(curParams);
+                can.batch.stop();
+            }
+        };
+
+        return can.route;
+    })(__m2, __m15, __m19, __m32);
+
+    // ## can/control/route/route.js
+    var __m33 = (function(can) {
+
+        // ## control/route.js
+        // _Controller route integration._
+
+        can.Control.processors.route = function(el, event, selector, funcName, controller) {
+            selector = selector || "";
+            if (!can.route.routes[selector]) {
+                if (selector[0] === '/') {
+                    selector = selector.substring(1);
+                }
+                can.route(selector);
+            }
+            var batchNum,
+                check = function(ev, attr, how) {
+                    if (can.route.attr('route') === (selector) &&
+                        (ev.batchNum === undefined || ev.batchNum !== batchNum)) {
+
+                        batchNum = ev.batchNum;
+
+                        var d = can.route.attr();
+                        delete d.route;
+                        if (can.isFunction(controller[funcName])) {
+                            controller[funcName](d);
+                        } else {
+                            controller[controller[funcName]](d);
+                        }
+
+                    }
+                };
+            can.route.bind('change', check);
+            return function() {
+                can.route.unbind('change', check);
+            };
+        };
+
+        return can;
+    })(__m2, __m31, __m11);
+
+    // ## can/list/promise/promise.js
+    var __m34 = (function(list) {
+
+        var oldReplace = can.List.prototype.replace;
+
+        can.List.prototype.replace = function(data) {
+            // First call the old replace so its
+            // deferred callbacks will be called first
+            var result = oldReplace.apply(this, arguments);
+
+            // If there is a deferred:
+            if (can.isDeferred(data)) {
+                // Set up its state.  Must call this way
+                // because we are working on an array.
+                can.batch.start();
+                this.attr("state", data.state());
+                this.removeAttr("reason");
+                can.batch.stop();
+
+                var self = this;
+                // update its state when it changes
+                var deferred = this._deferred = new can.Deferred();
+
+                data.then(function() {
+                    self.attr("state", data.state());
+                    // The deferred methods will always return this object
+                    deferred.resolve(self);
+                }, function(reason) {
+                    can.batch.start();
+                    self.attr("state", data.state());
+                    self.attr("reason", reason);
+                    can.batch.stop();
+                    deferred.reject(reason);
+                });
+            }
+            return result;
+        };
+
+        can.each({
+                isResolved: "resolved",
+                isPending: "pending",
+                isRejected: "rejected"
+            }, function(value, method) {
+                can.List.prototype[method] = function() {
+                    return this.attr("state") === value;
+                };
+            });
+
+        can.each([
+                "then",
+                "done",
+                "fail",
+                "always",
+                "promise"
+            ], function(name) {
+                can.List.prototype[name] = function() {
+                    // it's possible a list is created manually and returned as the result
+                    // of .then.  It should not break.
+                    if (!this._deferred) {
+                        this._deferred = new can.Deferred();
+                        this._deferred.resolve(this);
+                    }
+
+                    return this._deferred[name].apply(this._deferred, arguments);
+                };
+            });
+    })(__m19);
+
+    // ## can/route/pushstate/pushstate.js
+    var __m35 = (function(can) {
+        "use strict";
+
+        // Initialize plugin only if browser supports pushstate.
+        if (window.history && history.pushState) {
+
+            // Registers itself within `can.route.bindings`.
+            can.route.bindings.pushstate = {
+
+
+                // Start of `location.pathname` is the root.
+                // (Can be configured via `can.route.bindings.pushstate.root`)
+                root: "/",
+                // don't greedily match slashes in routing rules
+                matchSlashes: false,
+                paramsMatcher: /^\?(?:[^=]+=[^&]*&)*[^=]+=[^&]*/,
+                querySeparator: '?',
+
+                // ## bind
+
+                // Intercepts clicks on `<a>` elements and rewrites original `history` methods.
+                bind: function() {
+                    // Intercept routable links.
+                    can.delegate.call(can.$(document.documentElement), 'a', 'click', anchorClickHandler);
+
+                    // Rewrites original `pushState`/`replaceState` methods on `history` and keeps pointer to original methods
+                    can.each(methodsToOverwrite, function(method) {
+                        originalMethods[method] = window.history[method];
+                        window.history[method] = function(state, title, url) {
+                            // Avoid doubled history states (with pushState).
+                            var absolute = url.indexOf("http") === 0;
+                            var searchHash = window.location.search + window.location.hash;
+                            // If url differs from current call original histoy method and update `can.route` state.
+                            if ((!absolute && url !== window.location.pathname + searchHash) || (absolute && url !== window.location.href + searchHash)) {
+                                originalMethods[method].apply(window.history, arguments);
+                                can.route.setState();
+                            }
+                        };
+                    });
+
+                    // Bind to `popstate` event, fires on back/forward.
+                    can.bind.call(window, 'popstate', can.route.setState);
+                },
+
+                // ## unbind
+
+                // Unbinds and restores original `history` methods
+                unbind: function() {
+                    can.undelegate.call(can.$(document.documentElement), 'click', 'a', anchorClickHandler);
+
+                    can.each(methodsToOverwrite, function(method) {
+                        window.history[method] = originalMethods[method];
+                    });
+                    can.unbind.call(window, 'popstate', can.route.setState);
+                },
+
+                // ## matchingPartOfURL
+
+                // Returns matching part of url without root.
+                matchingPartOfURL: function() {
+                    var root = cleanRoot(),
+                        loc = (location.pathname + location.search),
+                        index = loc.indexOf(root);
+
+                    return loc.substr(index + root.length);
+                },
+
+                // ## setURL
+
+                // Updates URL by calling `pushState`.
+                setURL: function(path) {
+                    // Keeps hash if not in path.
+                    if (includeHash && path.indexOf("#") === -1 && window.location.hash) {
+                        path += window.location.hash;
+                    }
+                    window.history.pushState(null, null, can.route._call("root") + path);
+                }
+            };
+
+            // ## anchorClickHandler
+
+            // Handler function for `click` events.
+            var anchorClickHandler = function(e) {
+                if (!(e.isDefaultPrevented ? e.isDefaultPrevented() : e.defaultPrevented === true)) {
+                    // YUI calls back events triggered with this as a wrapped object.
+                    var node = this._node || this;
+                    // Fix for IE showing blank host, but blank host means current host.
+                    var linksHost = node.host || window.location.host;
+
+                    // If link is within the same domain and descendant of `root`
+                    if (window.location.host === linksHost) {
+                        var root = cleanRoot();
+                        if (node.pathname.indexOf(root) === 0) {
+
+                            // Removes root from url.
+                            var url = (node.pathname + node.search).substr(root.length);
+                            // If a route matches update the data.
+                            var curParams = can.route.deparam(url);
+                            if (curParams.hasOwnProperty('route')) {
+                                // Makes it possible to have a link with a hash.
+                                includeHash = true;
+                                window.history.pushState(null, null, node.href);
+
+                                // Test if you can preventDefault
+                                // our tests can't call .click() b/c this
+                                // freezes phantom.
+                                if (e.preventDefault) {
+                                    e.preventDefault();
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+
+                // ## cleanRoot
+
+                // Always returns clean root, without domain.
+                cleanRoot = function() {
+                    var domain = location.protocol + "//" + location.host,
+                        root = can.route._call("root"),
+                        index = root.indexOf(domain);
+                    if (index === 0) {
+                        return root.substr(domain.length);
+                    }
+                    return root;
+                },
+                // Original methods on `history` that will be overwritten
+                methodsToOverwrite = ['pushState', 'replaceState'],
+                // A place to store pointers to original `history` methods.
+                originalMethods = {},
+                // Used to tell setURL to include the hash because we clicked on a link.
+                includeHash = false;
+
+            // Enables plugin, by default `hashchange` binding is used.
+            can.route.defaultBinding = "pushstate";
+        }
+
+        return can;
+    })(__m2, __m31);
+
+    // ## can/construct/super/super.js
+    var __m36 = (function(can, Construct) {
+        // tests if we can get super in .toString()
+        var isFunction = can.isFunction,
+            fnTest = /xyz/.test(function() {
+                return this.xyz;
+            }) ? /\b_super\b/ : /.*/;
+        // overwrites a single property so it can still call super
+        can.Construct._overwrite = function(addTo, base, name, val) {
+            // Check if we're overwriting an existing function
+            addTo[name] = isFunction(val) && isFunction(base[name]) && fnTest.test(val) ? function(name, fn) {
+                return function() {
+                    var tmp = this._super,
+                        ret;
+                    // Add a new ._super() method that is the same method
+                    // but on the super-class
+                    this._super = base[name];
+                    // The method only need to be bound temporarily, so we
+                    // remove it when we're done executing
+                    ret = fn.apply(this, arguments);
+                    this._super = tmp;
+                    return ret;
+                };
+            }(name, val) : val;
+        };
+        // overwrites an object with methods, sets up _super
+        //   newProps - new properties
+        //   oldProps - where the old properties might be
+        //   addTo - what we are adding to
+        can.Construct._inherit = function(newProps, oldProps, addTo) {
+            addTo = addTo || newProps;
+            for (var name in newProps) {
+                can.Construct._overwrite(addTo, oldProps, name, newProps[name]);
+            }
+        };
+        return can;
+    })(__m2, __m12);
+
+    // ## can/construct/proxy/proxy.js
+    var __m37 = (function(can, Construct) {
+        var isFunction = can.isFunction,
+            isArray = can.isArray,
+            makeArray = can.makeArray,
+            proxy = function(funcs) {
+                //args that should be curried
+                var args = makeArray(arguments),
+                    self;
+                // get the functions to callback
+                funcs = args.shift();
+                // if there is only one function, make funcs into an array
+                if (!isArray(funcs)) {
+                    funcs = [funcs];
+                }
+                // keep a reference to us in self
+                self = this;
+
+
+
+                return function class_cb() {
+                    // add the arguments after the curried args
+                    var cur = args.concat(makeArray(arguments)),
+                        isString, length = funcs.length,
+                        f = 0,
+                        func;
+                    // go through each function to call back
+                    for (; f < length; f++) {
+                        func = funcs[f];
+                        if (!func) {
+                            continue;
+                        }
+                        // set called with the name of the function on self (this is how this.view works)
+                        isString = typeof func === 'string';
+                        // call the function
+                        cur = (isString ? self[func] : func)
+                            .apply(self, cur || []);
+                        // pass the result to the next function (if there is a next function)
+                        if (f < length - 1) {
+                            cur = !isArray(cur) || cur._use_call ? [cur] : cur;
+                        }
+                    }
+                    return cur;
+                };
+            };
+        can.Construct.proxy = can.Construct.prototype.proxy = proxy;
+        // this corrects the case where can/control loads after can/construct/proxy, so static props don't have proxy
+        var correctedClasses = [
+            can.Map,
+            can.Control,
+            can.Model
+        ],
+            i = 0;
+        for (; i < correctedClasses.length; i++) {
+            if (correctedClasses[i]) {
+                correctedClasses[i].proxy = proxy;
+            }
+        }
+        return can;
+    })(__m2, __m12);
+
+    // ## can/map/validations/validations.js
+    var __m38 = (function(can) {
+        //validations object is by property.  You can have validations that
+        //span properties, but this way we know which ones to run.
+        //  proc should return true if there's an error or the error message
+        var validate = function(attrNames, options, proc) {
+            // normalize argumetns
+            if (!proc) {
+                proc = options;
+                options = {};
+            }
+            options = options || {};
+            attrNames = typeof attrNames === 'string' ? [attrNames] : can.makeArray(attrNames);
+            // run testIf if it exists
+            if (options.testIf && !options.testIf.call(this)) {
+                return;
+            }
+            var self = this;
+            can.each(attrNames, function(attrName) {
+                // Add a test function for each attribute
+                if (!self.validations[attrName]) {
+                    self.validations[attrName] = [];
+                }
+                self.validations[attrName].push(function(newVal) {
+                    // if options has a message return that, otherwise, return the error
+                    var res = proc.call(this, newVal, attrName);
+                    return res === undefined ? undefined : options.message || res;
+                });
+            });
+        };
+        var old = can.Map.prototype.__set;
+        can.Map.prototype.__set = function(prop, value, current, success, error) {
+            var self = this,
+                validations = self.constructor.validations,
+                errorCallback = function(errors) {
+                    var stub = error && error.call(self, errors);
+                    // if 'setter' is on the page it will trigger
+                    // the error itself and we dont want to trigger
+                    // the event twice. :)
+                    if (stub !== false) {
+                        can.trigger(self, 'error', [
+                                prop,
+                                errors
+                            ], true);
+                    }
+                    return false;
+                };
+            old.call(self, prop, value, current, success, errorCallback);
+            if (validations && validations[prop]) {
+                var errors = self.errors(prop);
+                if (errors) {
+                    errorCallback(errors);
+                }
+            }
+            return this;
+        };
+        can.each([
+                can.Map,
+                can.Model
+            ], function(clss) {
+                // in some cases model might not be defined quite yet.
+                if (clss === undefined) {
+                    return;
+                }
+                var oldSetup = clss.setup;
+
+                can.extend(clss, {
+                        setup: function(superClass) {
+                            oldSetup.apply(this, arguments);
+                            if (!this.validations || superClass.validations === this.validations) {
+                                this.validations = {};
+                            }
+                        },
+                        validate: validate,
+
+                        validationMessages: {
+                            format: 'is invalid',
+                            inclusion: 'is not a valid option (perhaps out of range)',
+                            lengthShort: 'is too short',
+                            lengthLong: 'is too long',
+                            presence: 'can\'t be empty',
+                            range: 'is out of range',
+                            numericality: 'must be a number'
+                        },
+                        validateFormatOf: function(attrNames, regexp, options) {
+                            validate.call(this, attrNames, options, function(value) {
+                                if (typeof value !== 'undefined' && value !== null && value !== '' && String(value)
+                                    .match(regexp) === null) {
+                                    return this.constructor.validationMessages.format;
+                                }
+                            });
+                        },
+                        validateInclusionOf: function(attrNames, inArray, options) {
+                            validate.call(this, attrNames, options, function(value) {
+                                if (typeof value === 'undefined') {
+                                    return;
+                                }
+                                for (var i = 0; i < inArray.length; i++) {
+                                    if (inArray[i] === value) {
+                                        return;
+                                    }
+                                }
+                                return this.constructor.validationMessages.inclusion;
+                            });
+                        },
+                        validateLengthOf: function(attrNames, min, max, options) {
+                            validate.call(this, attrNames, options, function(value) {
+                                if ((typeof value === 'undefined' || value === null) && min > 0 || typeof value !== 'undefined' && value !== null && value.length < min) {
+                                    return this.constructor.validationMessages.lengthShort + ' (min=' + min + ')';
+                                } else if (typeof value !== 'undefined' && value !== null && value.length > max) {
+                                    return this.constructor.validationMessages.lengthLong + ' (max=' + max + ')';
+                                }
+                            });
+                        },
+                        validatePresenceOf: function(attrNames, options) {
+                            validate.call(this, attrNames, options, function(value) {
+                                if (typeof value === 'undefined' || value === '' || value === null) {
+                                    return this.constructor.validationMessages.presence;
+                                }
+                            });
+                        },
+                        validateRangeOf: function(attrNames, low, hi, options) {
+                            validate.call(this, attrNames, options, function(value) {
+                                if ((typeof value === 'undefined' || value === null) && low > 0 || typeof value !== 'undefined' && value !== null && (value < low || value > hi)) {
+                                    return this.constructor.validationMessages.range + ' [' + low + ',' + hi + ']';
+                                }
+                            });
+                        },
+                        validatesNumericalityOf: function(attrNames) {
+                            validate.call(this, attrNames, function(value) {
+                                var res = !isNaN(parseFloat(value)) && isFinite(value);
+                                if (!res) {
+                                    return this.constructor.validationMessages.numericality;
+                                }
+                            });
+                        }
+                    });
+            });
+
+        can.extend(can.Map.prototype, {
+                errors: function(attrs, newVal) {
+                    // convert attrs to an array
+                    if (attrs) {
+                        attrs = can.isArray(attrs) ? attrs : [attrs];
+                    }
+                    var errors = {}, self = this,
+                        // helper function that adds error messages to errors object
+                        // attr - the name of the attribute
+                        // funcs - the validation functions
+                        addErrors = function(attr, funcs) {
+                            can.each(funcs, function(func) {
+                                var res = func.call(self, isTest ? self.__convert ? self.__convert(attr, newVal) : newVal : self.attr(attr));
+                                if (res) {
+                                    if (!errors[attr]) {
+                                        errors[attr] = [];
+                                    }
+                                    errors[attr].push(res);
+                                }
+                            });
+                        }, validations = this.constructor.validations,
+                        isTest = attrs && attrs.length === 1 && arguments.length === 2;
+                    // go through each attribute or validation and
+                    // add any errors
+                    can.each(attrs || validations || {}, function(funcs, attr) {
+                        // if we are iterating through an array, use funcs
+                        // as the attr name
+                        if (typeof attr === 'number') {
+                            attr = funcs;
+                            funcs = validations[attr];
+                        }
+                        // add errors to the
+                        addErrors(attr, funcs || []);
+                    });
+                    // return errors as long as we have one
+                    return can.isEmptyObject(errors) ? null : isTest ? errors[attrs[0]] : errors;
+                }
+            });
+        return can.Map;
+    })(__m2, __m15);
+
+    // ## can/map/list/list.js
+    var __m39 = (function(can) {
+        can.extend(can.List.prototype, {
+                filter: function(callback) {
+                    // The filtered list
+                    var filtered = new this.constructor();
+                    var self = this;
+                    // Creates the binder for a single element at a given index
+                    var generator = function(element, index) {
+                        // The event handler that updates the filtered list
+                        var binder = function(ev, val) {
+                            var index = filtered.indexOf(element);
+                            // Remove it from the list if it exists but the new value is false
+                            if (!val && index !== -1) {
+                                filtered.splice(index, 1);
+                            }
+                            // Add it to the list if it isn't in there and the new value is true
+                            if (val && index === -1) {
+                                filtered.push(element);
+                            }
+                        };
+                        // a can.compute that executes the callback
+                        var compute = can.compute(function() {
+                            return callback(element, self.indexOf(element), self);
+                        });
+                        // Update the filtered list on any compute change
+                        compute.bind('change', binder);
+                        // Call binder explicitly for the initial list
+                        binder(null, compute());
+                    };
+                    // We also want to know when something gets added to our original list
+                    this.bind('add', function(ev, data, index) {
+                        can.each(data, function(element, i) {
+                            // Call the generator for each newly added element
+                            // The index is the start index + the loop index
+                            generator(element, index + i);
+                        });
+                    });
+                    // Removed items should be removed from both lists
+                    this.bind('remove', function(ev, data, index) {
+                        can.each(data, function(element, i) {
+                            var index = filtered.indexOf(element);
+                            if (index !== -1) {
+                                filtered.splice(index, 1);
+                            }
+                        });
+                    });
+                    // Run the generator for each list element
+                    this.forEach(generator);
+                    return filtered;
+                },
+                map: function(callback) {
+                    var mapped = new can.List();
+                    var self = this;
+                    // Again, lets run a generator function
+                    var generator = function(element, index) {
+                        // The can.compute for the mapping
+                        var compute = can.compute(function() {
+                            return callback(element, index, self);
+                        });
+                        compute.bind('change', function(ev, val) {
+                            // On change, replace the current value with the new one
+                            mapped.splice(index, 1, val);
+                        });
+                        mapped.splice(index, 0, compute());
+                    };
+                    this.forEach(generator);
+                    // We also want to know when something gets added to our original list
+                    this.bind('add', function(ev, data, index) {
+                        can.each(data, function(element, i) {
+                            // Call the generator for each newly added element
+                            // The index is the start index + the loop index
+                            generator(element, index + i);
+                        });
+                    });
+                    this.bind('remove', function(ev, data, index) {
+                        // The indices in the mapped list are the same so lets just splice it out
+                        mapped.splice(index, data.length);
+                    });
+                    return mapped;
+                }
+
+            });
+        return can.List;
+    })(__m2, __m15, __m19, __m20);
+
+    // ## can/map/define/define.js
+    var __m40 = (function(can) {
+
+        can.Map.helpers.define = function(Map) {
+            var define = Map.prototype.define;
+
+            Map.defaultGenerators = {};
+            for (var prop in define) {
+                if ("value" in define[prop]) {
+                    if (typeof define[prop].value === "function") {
+                        Map.defaultGenerators[prop] = define[prop].value;
+                    } else {
+                        Map.defaults[prop] = define[prop].value;
+                    }
+                }
+                if (typeof define[prop].Value === "function") {
+                    (function(Constructor) {
+                        Map.defaultGenerators[prop] = function() {
+                            return new Constructor();
+                        };
+                    })(define[prop].Value);
+                }
+            }
+        };
+
+        var oldSetupDefaults = can.Map.prototype._setupDefaults;
+        can.Map.prototype._setupDefaults = function() {
+            var defaults = oldSetupDefaults.call(this),
+                Map = this.constructor;
+            for (var prop in Map.defaultGenerators) {
+                defaults[prop] = Map.defaultGenerators[prop].call(this);
+            }
+            return defaults;
+        };
+
+        var proto = can.Map.prototype,
+            oldSet = proto.__set;
+        proto.__set = function(prop, value, current, success, error) {
+
+
+            // check if there's a setter
+            var errorCallback = function(errors) {
+
+
+                var stub = error && error.call(self, errors);
+                // if 'validations' is on the page it will trigger
+                // the error itself and we dont want to trigger
+                // the event twice. :)
+                if (stub !== false) {
+                    can.trigger(self, 'error', [
+                            prop,
+                            errors
+                        ], true);
+                }
+                return false;
+            },
+                self = this,
+                define = this.define && this.define[prop],
+                setter = define && define.set,
+                getter = define && define.get;
+
+            // if we have a setter
+            if (setter) {
+                // call the setter, if returned value is undefined,
+                // this means the setter is async so we
+                // do not call update property and return right away
+                can.batch.start();
+                var setterCalled = false,
+
+                    setValue = setter.call(this, value, function(value) {
+                        oldSet.call(self, prop, value, current, success, errorCallback);
+                        setterCalled = true;
+
+                    }, errorCallback);
+                if (getter) {
+                    // if there's a getter we do nothing
+                    can.batch.stop();
+                    return;
+                }
+                // if it took a setter and returned nothing, don't set the value
+                else if (setValue === undefined && !setterCalled && setter.length >= 2) {
+
+                    can.batch.stop();
+                    return;
+                } else {
+                    if (!setterCalled) {
+                        oldSet.call(self, prop,
+                            // if no arguments, we are side-effects only
+                            setter.length === 0 && setValue === undefined ? value : setValue,
+                            current,
+                            success,
+                            errorCallback);
+                    }
+                    can.batch.stop();
+                    return this;
+                }
+
+            } else {
+                oldSet.call(self, prop, value, current, success, errorCallback);
+            }
+
+            return this;
+        };
+
+        var converters = {
+            'date': function(str) {
+                var type = typeof str;
+                if (type === 'string') {
+                    str = Date.parse(str);
+                    return isNaN(str) ? null : new Date(str);
+                } else if (type === 'number') {
+                    return new Date(str);
+                } else {
+                    return str;
+                }
+            },
+            'number': function(val) {
+                return +(val);
+            },
+            'boolean': function(val) {
+                if (val === 'false' || val === '0' || !val) {
+                    return false;
+                }
+                return true;
+            },
+            '*': function(val) {
+                return val;
+            },
+            'string': function(val) {
+                return '' + val;
+            }
+        };
+
+        // the old type sets up bubbling
+        var oldType = proto.__type;
+        proto.__type = function(value, prop) {
+            var def = this.define && this.define[prop],
+                type = def && def.type,
+                Type = def && def.Type,
+                newValue = value;
+
+            if (typeof type === "string") {
+                type = converters[type];
+            }
+
+            if (type || Type) {
+                // If there's a type, convert it.
+                if (type) {
+                    newValue = type.call(this, newValue, prop);
+                }
+                // If there's a Type create a new instance of it
+                if (Type && !(newValue instanceof Type)) {
+                    newValue = new Type(newValue);
+                }
+                // If the newValue is a Map, we need to hook it up
+                return newValue;
+
+            }
+            return oldType.call(this, newValue, prop);
+        };
+
+        var oldRemove = proto._remove;
+        proto._remove = function(prop, current) {
+            var remove = this.define && this.define[prop] && this.define[prop].remove,
+                res;
+            if (remove) {
+                can.batch.start();
+                res = remove.call(this, current);
+
+                if (res === false) {
+                    can.batch.stop();
+                    return;
+                } else {
+
+                    res = oldRemove.call(this, prop, current);
+                    can.batch.stop();
+                    return res;
+                }
+            }
+            return oldRemove.call(this, prop, current);
+        };
+
+        var oldSetupComputes = proto._setupComputes;
+        proto._setupComputes = function(defaultsValues) {
+            oldSetupComputes.apply(this, arguments);
+            for (var attr in this.define) {
+                var def = this.define[attr],
+                    get = def.get;
+                if (get) {
+                    this[attr] = can.compute.async(defaultsValues[attr], get, this);
+                    this._computedBindings[attr] = {
+                        count: 0
+                    };
+                }
+            }
+        };
+        // Overwrite the invidual property serializer b/c we will overwrite it.
+        var oldSingleSerialize = can.Map.helpers._serialize;
+        can.Map.helpers._serialize = function(map, name, val) {
+            return serializeProp(map, name, val);
+        };
+        // If the map has a define serializer for the given attr, run it.
+        var serializeProp = function(map, attr, val) {
+            var serializer = map.define && map.define[attr] && map.define[attr].serialize;
+            if (serializer === undefined) {
+                return oldSingleSerialize.apply(this, arguments);
+            } else if (serializer !== false) {
+                return typeof serializer === "function" ? serializer.call(map, val, attr) : oldSingleSerialize.apply(this, arguments);
+            }
+        };
+
+        // Overwrite serialize to add in any missing define serialized properties.
+        var oldSerialize = proto.serialize;
+        proto.serialize = function(property) {
+            var serialized = oldSerialize.apply(this, arguments);
+            if (property) {
+                return serialized;
+            }
+            // add in properties not already serialized
+
+            var serializer,
+                val;
+            // Go through each property.
+            for (var attr in this.define) {
+                // if it's not already defined
+                if (!(attr in serialized)) {
+                    // check there is a serializer so we aren't doing extra work on serializer:false
+                    serializer = this.define && this.define[attr] && this.define[attr].serialize;
+                    if (serializer) {
+                        val = serializeProp(this, attr, this.attr(attr));
+                        if (val !== undefined) {
+                            serialized[attr] = val;
+                        }
+                    }
+                }
+            }
+            return serialized;
+        };
+
+        return can.Map;
+    })(__m2, __m14);
+
+    // ## can/util/object/object.js
+    var __m41 = (function(can) {
+        var isArray = can.isArray;
+
+        can.Object = {};
+
+        var same = can.Object.same = function(a, b, compares, aParent, bParent, deep) {
+            var aType = typeof a,
+                aArray = isArray(a),
+                comparesType = typeof compares,
+                compare;
+            if (comparesType === 'string' || compares === null) {
+                compares = compareMethods[compares];
+                comparesType = 'function';
+            }
+            if (comparesType === 'function') {
+                return compares(a, b, aParent, bParent);
+            }
+            compares = compares || {};
+            if (a === null || b === null) {
+                return a === b;
+            }
+            if (a instanceof Date || b instanceof Date) {
+                return a === b;
+            }
+            if (deep === -1) {
+                return aType === 'object' || a === b;
+            }
+            if (aType !== typeof b || aArray !== isArray(b)) {
+                return false;
+            }
+            if (a === b) {
+                return true;
+            }
+            if (aArray) {
+                if (a.length !== b.length) {
+                    return false;
+                }
+                for (var i = 0; i < a.length; i++) {
+                    compare = compares[i] === undefined ? compares['*'] : compares[i];
+                    if (!same(a[i], b[i], a, b, compare)) {
+                        return false;
+                    }
+                }
+                return true;
+            } else if (aType === 'object' || aType === 'function') {
+                var bCopy = can.extend({}, b);
+                for (var prop in a) {
+                    compare = compares[prop] === undefined ? compares['*'] : compares[prop];
+                    if (!same(a[prop], b[prop], compare, a, b, deep === false ? -1 : undefined)) {
+                        return false;
+                    }
+                    delete bCopy[prop];
+                }
+                // go through bCopy props ... if there is no compare .. return false
+                for (prop in bCopy) {
+                    if (compares[prop] === undefined || !same(undefined, b[prop], compares[prop], a, b, deep === false ? -1 : undefined)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        };
+
+        can.Object.subsets = function(checkSet, sets, compares) {
+            var len = sets.length,
+                subsets = [];
+            for (var i = 0; i < len; i++) {
+                //check this subset
+                var set = sets[i];
+                if (can.Object.subset(checkSet, set, compares)) {
+                    subsets.push(set);
+                }
+            }
+            return subsets;
+        };
+
+        can.Object.subset = function(subset, set, compares) {
+            // go through set {type: 'folder'} and make sure every property
+            // is in subset {type: 'folder', parentId :5}
+            // then make sure that set has fewer properties
+            // make sure we are only checking 'important' properties
+            // in subset (ones that have to have a value)
+            compares = compares || {};
+            for (var prop in set) {
+                if (!same(subset[prop], set[prop], compares[prop], subset, set)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        var compareMethods = {
+            'null': function() {
+                return true;
+            },
+            i: function(a, b) {
+                return ('' + a)
+                    .toLowerCase() === ('' + b)
+                    .toLowerCase();
+            },
+            eq: function(a, b) {
+                return a === b;
+            },
+            similar: function(a, b) {
+
+                return a == b;
+            }
+        };
+        compareMethods.eqeq = compareMethods.similar;
+        return can.Object;
+    })(__m2);
+
+    // ## can/util/fixture/fixture.js
+    var __m42 = (function(can) {
+        // can.fixture relies on can.Object in order to work and needs to be
+        // included before can.fixture in order to use it, otherwise it'll error.
+        if (!can.Object) {
+            throw new Error('can.fixture depends on can.Object. Please include it before can.fixture.');
+        }
+
+        // Get the URL from old Steal root, new Steal config or can.fixture.rootUrl
+        var getUrl = function(url) {
+            if (typeof steal !== 'undefined') {
+                if (can.isFunction(steal.config)) {
+                    return steal.config()
+                        .root.mapJoin(url)
+                        .toString();
+                }
+                return steal.root.join(url)
+                    .toString();
+            }
+            return (can.fixture.rootUrl || '') + url;
+        };
+
+        // Manipulates the AJAX prefilter to identify whether or not we should
+        // manipulate the AJAX call to change the URL to a static file or call
+        // a function for a dynamic fixture.
+        var updateSettings = function(settings, originalOptions) {
+            if (!can.fixture.on) {
+                return;
+            }
+
+            // A simple wrapper for logging fixture.js.
+            var log = function() {
+
+            };
+
+            // We always need the type which can also be called method, default to GET
+            settings.type = settings.type || settings.method || 'GET';
+
+            // add the fixture option if programmed in
+            var data = overwrite(settings);
+
+            // If there is not a fixture for this AJAX request, do nothing.
+            if (!settings.fixture) {
+                if (window.location.protocol === "file:") {
+                    log("ajax request to " + settings.url + ", no fixture found");
+                }
+                return;
+            }
+
+            // If the fixture already exists on can.fixture, update the fixture option
+            if (typeof settings.fixture === "string" && can.fixture[settings.fixture]) {
+                settings.fixture = can.fixture[settings.fixture];
+            }
+
+            // If the fixture setting is a string, we just change the URL of the
+            // AJAX call to the fixture URL.
+            if (typeof settings.fixture === "string") {
+                var url = settings.fixture;
+
+                // If the URL starts with //, we need to update the URL to become
+                // the full path.
+                if (/^\/\//.test(url)) {
+                    // this lets us use rootUrl w/o having steal...
+                    url = getUrl(settings.fixture.substr(2));
+                }
+
+                if (data) {
+                    // Template static fixture URLs
+                    url = can.sub(url, data);
+                }
+
+                delete settings.fixture;
+
+
+
+                // Override the AJAX settings, changing the URL to the fixture file,
+                // removing the data, and changing the type to GET.
+                settings.url = url;
+                settings.data = null;
+                settings.type = "GET";
+                if (!settings.error) {
+                    // If no error handling is provided, we provide one and throw an
+                    // error.
+                    settings.error = function(xhr, error, message) {
+                        throw "fixtures.js Error " + error + " " + message;
+                    };
+                }
+                // Otherwise, it is a function and we add the fixture data type so the
+                // fixture transport will handle it.
+            } else {
+
+
+                // TODO: make everything go here for timing and other fun stuff
+                // add to settings data from fixture ...
+                if (settings.dataTypes) {
+                    settings.dataTypes.splice(0, 0, "fixture");
+                }
+
+                if (data && originalOptions) {
+                    originalOptions.data = originalOptions.data || {};
+                    can.extend(originalOptions.data, data);
+                }
+            }
+        },
+            // A helper function that takes what's called with response
+            // and moves some common args around to make it easier to call
+            extractResponse = function(status, statusText, responses, headers) {
+                // if we get response(RESPONSES, HEADERS)
+                if (typeof status !== "number") {
+                    headers = statusText;
+                    responses = status;
+                    statusText = "success";
+                    status = 200;
+                }
+                // if we get response(200, RESPONSES, HEADERS)
+                if (typeof statusText !== "string") {
+                    headers = responses;
+                    responses = statusText;
+                    statusText = "success";
+                }
+                if (status >= 400 && status <= 599) {
+                    this.dataType = "text";
+                }
+                return [status, statusText, extractResponses(this, responses), headers];
+            },
+            // If we get data instead of responses, make sure we provide a response
+            // type that matches the first datatype (typically JSON)
+            extractResponses = function(settings, responses) {
+                var next = settings.dataTypes ? settings.dataTypes[0] : (settings.dataType || 'json');
+                if (!responses || !responses[next]) {
+                    var tmp = {};
+                    tmp[next] = responses;
+                    responses = tmp;
+                }
+                return responses;
+            };
+
+        // Set up prefiltering and transmission handling in order to actually power
+        // can.fixture. This is handled two different ways, depending on whether or
+        // not CanJS is using jQuery or not.
+
+        // If we are using jQuery, we have access to ajaxPrefilter and ajaxTransport
+        if (can.ajaxPrefilter && can.ajaxTransport) {
+
+            // the pre-filter needs to re-route the url
+            can.ajaxPrefilter(updateSettings);
+
+            can.ajaxTransport("fixture", function(s, original) {
+                // remove the fixture from the datatype
+                s.dataTypes.shift();
+
+                //we'll return the result of the next data type
+                var timeout, stopped = false;
+
+                return {
+                    send: function(headers, callback) {
+                        // we'll immediately wait the delay time for all fixtures
+                        timeout = setTimeout(function() {
+                            // if the user wants to call success on their own, we allow it ...
+                            var success = function() {
+                                if (stopped === false) {
+                                    callback.apply(null, extractResponse.apply(s, arguments));
+                                }
+                            },
+                                // get the result form the fixture
+                                result = s.fixture(original, success, headers, s);
+                            if (result !== undefined) {
+                                // Run the callback as a 200 success and with the results with the correct dataType
+                                callback(200, "success", extractResponses(s, result), {});
+                            }
+                        }, can.fixture.delay);
+                    },
+                    abort: function() {
+                        stopped = true;
+                        clearTimeout(timeout);
+                    }
+                };
+            });
+            // If we are not using jQuery, we don't have access to those nice ajaxPrefilter
+            // and ajaxTransport functions, so we need to monkey patch can.ajax.
+        } else {
+            var AJAX = can.ajax;
+            can.ajax = function(settings) {
+                updateSettings(settings, settings);
+
+                // If the call is a fixture call, we run the same type of code as we would
+                // with jQuery's ajaxTransport.
+                if (settings.fixture) {
+                    var timeout, deferred = new can.Deferred(),
+                        stopped = false;
+
+                    //TODO this should work with response
+                    deferred.getResponseHeader = function() {};
+
+                    // Call success or fail after deferred resolves
+                    deferred.then(settings.success, settings.fail);
+
+                    // Abort should stop the timeout and calling the success callback
+                    deferred.abort = function() {
+                        clearTimeout(timeout);
+                        stopped = true;
+                        deferred.reject(deferred);
+                    };
+                    // set a timeout that simulates making a request ....
+                    timeout = setTimeout(function() {
+                        // if the user wants to call success on their own, we allow it ...
+                        var success = function() {
+                            var response = extractResponse.apply(settings, arguments),
+                                status = response[0];
+
+                            if ((status >= 200 && status < 300 || status === 304) && stopped === false) {
+                                deferred.resolve(response[2][settings.dataType]);
+                            } else {
+                                // TODO probably resolve better
+                                deferred.reject(deferred, 'error', response[1]);
+                            }
+                        },
+                            // Get the results from the fixture.
+                            result = settings.fixture(settings, success, settings.headers, settings);
+                        if (result !== undefined) {
+                            // Resolve with fixture results
+                            deferred.resolve(result);
+                        }
+                    }, can.fixture.delay);
+
+                    return deferred;
+                    // Otherwise just run a normal can.ajax call.
+                } else {
+                    return AJAX(settings);
+                }
+            };
+        }
+
+        // A list of 'overwrite' settings objects
+        var overwrites = [],
+            // Finds and returns the index of an overwrite function
+            find = function(settings, exact) {
+                for (var i = 0; i < overwrites.length; i++) {
+                    if ($fixture._similar(settings, overwrites[i], exact)) {
+                        return i;
+                    }
+                }
+                return -1;
+            },
+            // Overwrites the settings fixture if an overwrite matches
+            overwrite = function(settings) {
+                var index = find(settings);
+                if (index > -1) {
+                    settings.fixture = overwrites[index].fixture;
+                    return $fixture._getData(overwrites[index].url, settings.url);
+                }
+
+            },
+            // Attemps to guess where the id is in an AJAX call's URL and returns it.
+            getId = function(settings) {
+                var id = settings.data.id;
+
+                if (id === undefined && typeof settings.data === "number") {
+                    id = settings.data;
+                }
+
+                // Parses the URL looking for all digits
+                if (id === undefined) {
+                    // Set id equal to the value
+                    settings.url.replace(/\/(\d+)(\/|$|\.)/g, function(all, num) {
+                        id = num;
+                    });
+                }
+
+                if (id === undefined) {
+                    // If that doesn't work Parses the URL looking for all words
+                    id = settings.url.replace(/\/(\w+)(\/|$|\.)/g, function(all, num) {
+                        // As long as num isn't the word "update", set id equal to the value
+                        if (num !== 'update') {
+                            id = num;
+                        }
+                    });
+                }
+
+                if (id === undefined) {
+                    // If id is still not set, a random number is guessed.
+                    id = Math.round(Math.random() * 1000);
+                }
+
+                return id;
+            };
+
+        // ## can.fixture
+        // Simulates AJAX requests.
+        var $fixture = can.fixture = function(settings, fixture) {
+            // If fixture is provided, set up a new fixture.
+            if (fixture !== undefined) {
+                if (typeof settings === 'string') {
+                    // Match URL if it has GET, POST, PUT, or DELETE.
+                    var matches = settings.match(/(GET|POST|PUT|DELETE) (.+)/i);
+                    // If not, we don't set the type, which eventually defaults to GET
+                    if (!matches) {
+                        settings = {
+                            url: settings
+                        };
+                        // If it does match, we split the URL in half and create an object with
+                        // each half as the url and type properties.
+                    } else {
+                        settings = {
+                            url: matches[2],
+                            type: matches[1]
+                        };
+                    }
+                }
+
+                // Check if the same fixture was previously added, if so, we remove it
+                // from our array of fixture overwrites.
+                var index = find(settings, !! fixture);
+                if (index > -1) {
+                    overwrites.splice(index, 1);
+                }
+                if (fixture == null) {
+                    return;
+                }
+                settings.fixture = fixture;
+                overwrites.push(settings);
+                // If a fixture isn't provided, we assume that settings is
+                // an array of fixtures, and we should iterate over it, and set up
+                // the new fixtures.
+            } else {
+                can.each(settings, function(fixture, url) {
+                    $fixture(url, fixture);
+                });
+            }
+        };
+        var replacer = can.replacer;
+
+        can.extend(can.fixture, {
+                // Find an overwrite, given some ajax settings.
+                _similar: function(settings, overwrite, exact) {
+                    if (exact) {
+                        return can.Object.same(settings, overwrite, {
+                                fixture: null
+                            });
+                    } else {
+                        return can.Object.subset(settings, overwrite, can.fixture._compare);
+                    }
+                },
+                // Comparator object used to find a similar overwrite.
+                _compare: {
+                    url: function(a, b) {
+                        return !!$fixture._getData(b, a);
+                    },
+                    fixture: null,
+                    type: "i"
+                },
+                // Returns data from a url, given a fixtue URL. For example, given
+                // "todo/{id}" and "todo/5", it will return an object with an id property
+                // equal to 5.
+                _getData: function(fixtureUrl, url) {
+                    var order = [],
+                        // Sanitizes fixture URL
+                        fixtureUrlAdjusted = fixtureUrl.replace('.', '\\.')
+                            .replace('?', '\\?'),
+                        // Creates a regular expression out of the adjusted fixture URL and
+                        // runs it on the URL we passed in.
+                        res = new RegExp(fixtureUrlAdjusted.replace(replacer, function(whole, part) {
+                                    order.push(part);
+                                    return "([^\/]+)";
+                                }) + "$")
+                            .exec(url),
+                        data = {};
+
+                    // If there were no matches, return null;
+                    if (!res) {
+                        return null;
+                    }
+
+                    // Shift off the URL and just keep the data.
+                    res.shift();
+                    can.each(order, function(name) {
+                        // Add data from regular expression onto data object.
+                        data[name] = res.shift();
+                    });
+                    return data;
+                },
+                // ## can.fixture.store
+                // Make a store of objects to use when making requests against fixtures.
+                store: function(count, make, filter) {
+
+
+                    // the currentId to use when a new instance is created.
+                    var currentId = 0,
+                        findOne = function(id) {
+                            for (var i = 0; i < items.length; i++) {
+                                if (id == items[i].id) {
+                                    return items[i];
+                                }
+                            }
+                        },
+                        methods = {},
+                        types,
+                        items,
+                        reset;
+
+                    if (can.isArray(count) && typeof count[0] === "string") {
+                        types = count;
+                        count = make;
+                        make = filter;
+                        filter = arguments[3];
+                    } else if (typeof count === "string") {
+                        types = [count + "s", count];
+                        count = make;
+                        make = filter;
+                        filter = arguments[3];
+                    }
+
+
+                    if (typeof count === "number") {
+                        items = [];
+                        reset = function() {
+                            items = [];
+                            for (var i = 0; i < (count); i++) {
+                                //call back provided make
+                                var item = make(i, items);
+
+                                if (!item.id) {
+                                    item.id = i;
+                                }
+                                currentId = Math.max(item.id + 1, currentId + 1) || items.length;
+                                items.push(item);
+                            }
+                            if (can.isArray(types)) {
+                                can.fixture["~" + types[0]] = items;
+                                can.fixture["-" + types[0]] = methods.findAll;
+                                can.fixture["-" + types[1]] = methods.findOne;
+                                can.fixture["-" + types[1] + "Update"] = methods.update;
+                                can.fixture["-" + types[1] + "Destroy"] = methods.destroy;
+                                can.fixture["-" + types[1] + "Create"] = methods.create;
+                            }
+                        };
+                    } else {
+                        filter = make;
+                        var initialItems = count;
+                        reset = function() {
+                            items = initialItems.slice(0);
+                        };
+                    }
+
+
+                    // make all items
+                    can.extend(methods, {
+                            findAll: function(request) {
+                                request = request || {};
+                                //copy array of items
+                                var retArr = items.slice(0);
+                                request.data = request.data || {};
+                                //sort using order
+                                //order looks like ["age ASC","gender DESC"]
+                                can.each((request.data.order || [])
+                                    .slice(0)
+                                    .reverse(), function(name) {
+                                        var split = name.split(" ");
+                                        retArr = retArr.sort(function(a, b) {
+                                            if (split[1].toUpperCase() !== "ASC") {
+                                                if (a[split[0]] < b[split[0]]) {
+                                                    return 1;
+                                                } else if (a[split[0]] === b[split[0]]) {
+                                                    return 0;
+                                                } else {
+                                                    return -1;
+                                                }
+                                            } else {
+                                                if (a[split[0]] < b[split[0]]) {
+                                                    return -1;
+                                                } else if (a[split[0]] === b[split[0]]) {
+                                                    return 0;
+                                                } else {
+                                                    return 1;
+                                                }
+                                            }
+                                        });
+                                    });
+
+                                //group is just like a sort
+                                can.each((request.data.group || [])
+                                    .slice(0)
+                                    .reverse(), function(name) {
+                                        var split = name.split(" ");
+                                        retArr = retArr.sort(function(a, b) {
+                                            return a[split[0]] > b[split[0]];
+                                        });
+                                    });
+
+                                var offset = parseInt(request.data.offset, 10) || 0,
+                                    limit = parseInt(request.data.limit, 10) || (items.length - offset),
+                                    i = 0;
+
+                                //filter results if someone added an attr like parentId
+                                for (var param in request.data) {
+                                    i = 0;
+                                    if (request.data[param] !== undefined && // don't do this if the value of the param is null (ignore it)
+                                        (param.indexOf("Id") !== -1 || param.indexOf("_id") !== -1)) {
+                                        while (i < retArr.length) {
+                                            if (request.data[param] != retArr[i][param]) { // jshint eqeqeq: false
+                                                retArr.splice(i, 1);
+                                            } else {
+                                                i++;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (typeof filter === "function") {
+                                    i = 0;
+                                    while (i < retArr.length) {
+                                        if (!filter(retArr[i], request)) {
+                                            retArr.splice(i, 1);
+                                        } else {
+                                            i++;
+                                        }
+                                    }
+                                } else if (typeof filter === "object") {
+                                    i = 0;
+                                    while (i < retArr.length) {
+                                        if (!can.Object.subset(retArr[i], request.data, filter)) {
+                                            retArr.splice(i, 1);
+                                        } else {
+                                            i++;
+                                        }
+                                    }
+                                }
+
+                                // Return the data spliced with limit and offset, along with related values
+                                // (e.g. count, limit, offset)
+                                return {
+                                    "count": retArr.length,
+                                    "limit": request.data.limit,
+                                    "offset": request.data.offset,
+                                    "data": retArr.slice(offset, offset + limit)
+                                };
+                            },
+
+
+                            findOne: function(request, response) {
+                                var item = findOne(getId(request));
+
+                                if (typeof item === "undefined") {
+                                    return response(404, 'Requested resource not found');
+                                }
+
+                                response(item);
+                            },
+                            // ## fixtureStore.update
+                            // Simulates a can.Model.update to a fixture
+                            update: function(request, response) {
+                                var id = getId(request),
+                                    item = findOne(id);
+
+                                if (typeof item === "undefined") {
+                                    return response(404, 'Requested resource not found');
+                                }
+
+                                // TODO: make it work with non-linear ids ..
+                                can.extend(item, request.data);
+                                response({
+                                        id: id
+                                    }, {
+                                        location: request.url || "/" + getId(request)
+                                    });
+                            },
+
+
+                            destroy: function(request, response) {
+                                var id = getId(request),
+                                    item = findOne(id);
+
+                                if (typeof item === "undefined") {
+                                    return response(404, 'Requested resource not found');
+                                }
+
+                                for (var i = 0; i < items.length; i++) {
+                                    if (items[i].id == id) { // jshint eqeqeq: false
+                                        items.splice(i, 1);
+                                        break;
+                                    }
+                                }
+
+                                // TODO: make it work with non-linear ids ..
+                                return {};
+                            },
+
+                            // ## fixtureStore.create
+                            // Simulates a can.Model.create to a fixture
+                            create: function(settings, response) {
+                                var item = make(items.length, items);
+
+                                can.extend(item, settings.data);
+
+                                // If an ID wasn't passed into the request, we give the item
+                                // a unique ID.
+                                if (!item.id) {
+                                    item.id = currentId++;
+                                }
+
+                                // Push the new item into the store.
+                                items.push(item);
+                                response({
+                                        id: item.id
+                                    }, {
+                                        location: settings.url + "/" + item.id
+                                    });
+                            }
+                        });
+                    reset();
+                    // if we have types given add them to can.fixture
+
+                    return can.extend({
+                            getId: getId,
+                            find: function(settings) {
+                                return findOne(getId(settings));
+                            },
+                            reset: reset
+                        }, methods);
+                },
+                rand: function randomize(arr, min, max) {
+                    if (typeof arr === 'number') {
+                        if (typeof min === 'number') {
+                            return arr + Math.floor(Math.random() * (min - arr));
+                        } else {
+                            return Math.floor(Math.random() * arr);
+                        }
+
+                    }
+                    var rand = randomize;
+                    // get a random set
+                    if (min === undefined) {
+                        return rand(arr, rand(arr.length + 1));
+                    }
+                    // get a random selection of arr
+                    var res = [];
+                    arr = arr.slice(0);
+                    // set max
+                    if (!max) {
+                        max = min;
+                    }
+                    //random max
+                    max = min + Math.round(rand(max - min));
+                    for (var i = 0; i < max; i++) {
+                        res.push(arr.splice(rand(arr.length), 1)[0]);
+                    }
+                    return res;
+                },
+                xhr: function(xhr) {
+                    return can.extend({}, {
+                            abort: can.noop,
+                            getAllResponseHeaders: function() {
+                                return "";
+                            },
+                            getResponseHeader: function() {
+                                return "";
+                            },
+                            open: can.noop,
+                            overrideMimeType: can.noop,
+                            readyState: 4,
+                            responseText: "",
+                            responseXML: null,
+                            send: can.noop,
+                            setRequestHeader: can.noop,
+                            status: 200,
+                            statusText: "OK"
+                        }, xhr);
+                },
+                on: true
+            });
+
+        // ## can.fixture.delay
+        // The delay, in milliseconds, between an AJAX request being made and when
+        // the success callback gets called.
+        can.fixture.delay = 200;
+
+        // ## can.fixture.rootUrl
+        // The root URL which fixtures will use.
+        can.fixture.rootUrl = getUrl('');
+
+        can.fixture["-handleFunction"] = function(settings) {
+            if (typeof settings.fixture === "string" && can.fixture[settings.fixture]) {
+                settings.fixture = can.fixture[settings.fixture];
+            }
+            if (typeof settings.fixture === "function") {
+                setTimeout(function() {
+                    if (settings.success) {
+                        settings.success.apply(null, settings.fixture(settings, "success"));
+                    }
+                    if (settings.complete) {
+                        settings.complete.apply(null, settings.fixture(settings, "complete"));
+                    }
+                }, can.fixture.delay);
+                return true;
+            }
+            return false;
+        };
+
+        //Expose this for fixture debugging
+        can.fixture.overwrites = overwrites;
+        can.fixture.make = can.fixture.store;
+        return can.fixture;
+    })(__m2, __m13, __m41);
+
+    window['can'] = __m4;
+})();

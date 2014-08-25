@@ -1,70 +1,24 @@
 
-define(['json!products'], function (products) {
+define([
+  'can',
+  'json!orders',
+  'json!products'
+],
+function (
+  can,
+  orders,
+  products
+) {
+  var store = can.fixture.store
+  var Order = store(2, function (i) { return orders[i] })
+  var Product = store(10, function (i) { return products[i] })
 
-  /** Helpers */
-
-  var productStore = can.fixture.store(products.length - 1, function (i) {
-    return products[i]
-  })
-
-  function extendWithId (data) {
-    return can.extend({}, data, { id: 1 })
-  }
-
-  /** The fixtures */
+  can.fixture.delay = 600
 
   can.fixture({
-
-    /** Products */
-
-    'GET /products': function (request) {
-      return productStore.findAll(request)
-    },
-
-    /** Orders */
-
-    'POST /order/create': function (request) {
-      return extendWithId(request.data)
-    },
-
-    /** Things */
-
-    'POST /thing/new': function (request) {
-      return extendWithId(request.data)
-    },
-
-    'GET /thing/{id}': function (request) {
-      return {
-        id: request.data.id,
-        someValue: Math.random() + 1
-      }
-    },
-
-    'POST /thing/update': function () {
-      return {
-        lastUpdated: Date.now()
-      }
-    },
-
-    /** Items */
-
-    'GET /items/{id}': function (request) {
-      return {
-        id: 1,
-        name: 'One'
-      }
-    },
-
-    'GET /items': function () {
-      return [
-        { id: 1, name: 'One' },
-        { id: 2, name: 'Two' },
-        { id: 3, name: 'Three' }
-      ]
-    }
+    'GET /product': Product.findAll,
+    'GET /product/{id}': Product.findOne,
+    'GET /order': Order.findAll,
+    'GET /order/{id}': Order.findOne,
   })
-
-  /** Options */
-  
-  can.fixture.delay = 600
 })

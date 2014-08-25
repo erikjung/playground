@@ -1,6 +1,11 @@
-define(['fixtures'], function () {
+'use strict'
+define([
+  'can',
+  'fixtures'
+],
+function (can) {
   return can.Model.extend({
-    findAll: 'GET /products'
+    resource: '/product'
   }, {
 
   })

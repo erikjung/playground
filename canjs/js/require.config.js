@@ -1,4 +1,6 @@
 require.config({
+  baseUrl: '/js',
+  useDataMain: false,
   paths: {
     can: '../vendor/can.custom',
     jquery: '//code.jquery.com/jquery-2.1.1.min',
@@ -18,8 +20,4 @@ require.config({
       exports: 'can'
     }
   }
-})
-
-require(['app'], function (App) {
-  var app = new App()
 })

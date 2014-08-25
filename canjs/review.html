@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <main class="container  js-app">
+      <a href="/index.html">Order</a>
+      <header>
+        <h1>Review</h1>
+      </header>
+    </main>
+    <script src="/vendor/require.js"></script>
+    <script src="/js/require.config.js"></script>
+    <script>
+      require.config({
+        config: {
+          app: { route: 'review' }
+        }
+      })
+
+      require(['app'], function (App) {
+        new App()
+      })
+    </script>
+</html>
