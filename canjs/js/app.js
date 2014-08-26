@@ -8,7 +8,8 @@ define([
   'model/order',
   'control/page',
   'control/list',
-  'component/quantity'
+  'component/product',
+  'ui'
 ],
 function (
   module,
@@ -23,6 +24,7 @@ function (
   var config = module.config()
 
   return can.Construct.extend({
+
     init: function () {
       var route = this[config.route]
 
@@ -38,9 +40,20 @@ function (
     },
 
     order: function () {
+      var productList = new Product.List({})
       new List('.js-app-list', {
-        list: new Product.List({}),
+        list: productList,
         template: '#product-list-tpl'
+      })
+      productList.bind('change', function () {
+        console.log(arguments)
+      })
+      can.$('.js-item-add').on('click', function () {
+        productList.unshift(new Product({
+          id: productList.length,
+          displayName: 'New Product',
+          price: 100
+        }))
       })
     },
 

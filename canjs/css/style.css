@@ -3,6 +3,10 @@ body {
   margin-top: 1em;
 }
 
+x\:product {
+  display: block;
+}
+
 .item {
   padding-top: 1em;
   padding-bottom: 1em;

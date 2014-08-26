@@ -13,6 +13,11 @@ function (can, Modal) {
       var view = can.view(options.template)
       var list = options.list
       element.html(view(list))
+    },
+
+    '.item void': function (element) {
+      var model = element.data('model')
+      model.destroy()
     }
   })
 })
