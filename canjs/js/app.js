@@ -9,7 +9,7 @@ define([
   'control/page',
   'control/list',
   'component/product',
-  'ui'
+  'setup/fx'
 ],
 function (
   module,
@@ -42,12 +42,11 @@ function (
     order: function () {
       var productList = new Product.List({})
       new List('.js-app-list', {
+        item: '.js-product',
         list: productList,
         template: '#product-list-tpl'
       })
-      productList.bind('change', function () {
-        console.log(arguments)
-      })
+
       can.$('.js-item-add').on('click', function () {
         productList.unshift(new Product({
           id: productList.length,

@@ -6,7 +6,9 @@ define([
 function (can, Modal) {
   return can.Control.extend({
     defaults: {
-      remover: '.js-item-del'
+      item: '.js-item',
+      list: undefined,
+      template: undefined
     }
   }, {
     init: function (element, options) {
@@ -15,7 +17,7 @@ function (can, Modal) {
       element.html(view(list))
     },
 
-    '.item void': function (element) {
+    '{item} voided': function (element) {
       var model = element.data('model')
       model.destroy()
     }

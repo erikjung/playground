@@ -8,7 +8,9 @@ x\:product {
 }
 
 .item {
+  overflow: hidden;
   padding-top: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid;
+  background-color: #fff;
 }

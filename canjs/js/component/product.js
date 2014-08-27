@@ -11,7 +11,7 @@ function (can) {
     },
     events: {
       '.js-item-del click': function (element, event) {
-        this.element.trigger('void')
+        this.element.trigger('voided')
         event.preventDefault()
       }
     }
