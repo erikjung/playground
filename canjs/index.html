@@ -24,10 +24,61 @@
       </button>
       <button class="btn js-item-add">Add</button>
       <hr>
+      <div class="js-app-form">
+
+      </div>
+      <hr>
       <div class="js-app-list">
 
       </div>
     </main>
+
+    <script id="form-tpl" type="text/mustache">
+      <x:form>
+        <form class="row">
+          <div class="col-xs-5">
+            <div class="form-group {{#invalid 'firstName'}}has-error{{/invalid}}">
+              <label class="control-label">First Name</label>
+              <input class="form-control" type="text" can-value="firstName">
+            </div>
+            <div class="form-group {{#invalid 'lastName'}}has-error{{/invalid}}">
+              <label class="control-label">Last Name</label>
+              <input class="form-control" type="text" can-value="lastName">
+            </div>
+          </div>
+          <div class="col-xs-5">
+            <div class="form-group {{#invalid 'email'}}has-error{{/invalid}}">
+              <label class="control-label">Email</label>
+              <input class="form-control" type="text" can-value="email">
+            </div>
+            <div class="form-group {{#invalid 'phone'}}has-error{{/invalid}}">
+              <label class="control-label">Phone</label>
+              <input class="form-control" placeholder="123-456-7890" type="text" can-value="phone">
+            </div>
+            <div class="form-group {{#invalid 'address'}}has-error{{/invalid}}">
+              <label class="control-label">Address</label>
+              <textarea class="form-control">{{address}}</textarea>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <button class="btn btn-block btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+        {{#each errors}}
+          <p>{{.}}</p>
+        {{/each}}
+      </x:form>
+    </script>
+
+    <script id="input-tpl" type="text/mustache">
+      <input class="form-control"
+       type="{{inputType}}"
+       can-value="value">
+      {{#each errorMessages}}
+        <p>{{.}}</p>
+      {{/each}}
+    </script>
+
     <script id="product-list-tpl" type="text/mustache">
       {{#if isPending}}
         <h1>Loading&hellip;</h1>
@@ -40,8 +91,10 @@
               <span class="text-muted">{{price}}</span>
             </div>
             <div class="col-xs-2">
-              <x:quantity value="stock" />
-              <button class="btn btn-block btn-danger js-item-del">Delete</button>
+              <div class="form-group">
+                <x:quantity value="stock" />
+              </div>
+              <button class="btn btn-block btn-danger" can-click="void">Delete</button>
             </div>
           </div>
         </x:product>

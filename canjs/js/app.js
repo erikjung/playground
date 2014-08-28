@@ -4,11 +4,13 @@ define([
   'can',
   'core/events',
   'map/appState',
+  'map/person',
   'model/product',
   'model/order',
   'control/page',
   'control/list',
   'component/product',
+  'component/form',
   'setup/fx'
 ],
 function (
@@ -16,6 +18,7 @@ function (
   can,
   events,
   AppState,
+  Person,
   Product,
   Order,
   Page,
@@ -54,6 +57,15 @@ function (
           price: 100
         }))
       })
+
+      can.$('.js-app-form').append(
+        can.view('form-tpl', new Person({
+          firstName: 'Joe',
+          lastName: 'Wood',
+          address: '123 NE Soup Street',
+          email: 'tacotown@npr.org'
+        }))
+      )
     },
 
     review: function () {

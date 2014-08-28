@@ -7,12 +7,14 @@ function (can) {
   can.Component.extend({
     tag: 'x:product',
     scope: {
-
+      isVoid: false,
+      void: function () {
+        this.attr('isVoid', true)
+      }
     },
     events: {
-      '.js-item-del click': function (element, event) {
-        this.element.trigger('voided')
-        event.preventDefault()
+      '{scope} isVoid': function (scope, event, newVal) {
+        if (newVal) this.element.trigger('voided')
       }
     }
   })

@@ -1,11 +1,11 @@
 /*!
- * CanJS - 2.1.2
+ * CanJS - 2.1.3
  * http://canjs.us/
  * Copyright (c) 2014 Bitovi
- * Sun, 24 Aug 2014 05:22:50 GMT
+ * Wed, 27 Aug 2014 14:24:44 GMT
  * Licensed MIT
- * Includes: can/component/component.js,can/construct/construct.js,can/map/map.js,can/list/list.js,can/compute/compute.js,can/model/model.js,can/view/view.js,can/control/control.js,can/route/route.js,can/control/route/route.js,can/view/mustache/mustache.js,can/list/promise/promise.js,can/route/pushstate/pushstate.js,can/construct/super/super.js,can/construct/proxy/proxy.js,can/map/validations/validations.js,can/map/list/list.js,can/map/define/define.js,can/util/object/object.js,can/util/fixture/fixture.js
- * Download from: http://bitbuilder.herokuapp.com/can.custom.js?configuration=jquery&plugins=can%2Fcomponent%2Fcomponent.js&plugins=can%2Fconstruct%2Fconstruct.js&plugins=can%2Fmap%2Fmap.js&plugins=can%2Flist%2Flist.js&plugins=can%2Fcompute%2Fcompute.js&plugins=can%2Fmodel%2Fmodel.js&plugins=can%2Fview%2Fview.js&plugins=can%2Fcontrol%2Fcontrol.js&plugins=can%2Froute%2Froute.js&plugins=can%2Fcontrol%2Froute%2Froute.js&plugins=can%2Fview%2Fmustache%2Fmustache.js&plugins=can%2Flist%2Fpromise%2Fpromise.js&plugins=can%2Froute%2Fpushstate%2Fpushstate.js&plugins=can%2Fconstruct%2Fsuper%2Fsuper.js&plugins=can%2Fconstruct%2Fproxy%2Fproxy.js&plugins=can%2Fmap%2Fvalidations%2Fvalidations.js&plugins=can%2Fmap%2Flist%2Flist.js&plugins=can%2Fmap%2Fdefine%2Fdefine.js&plugins=can%2Futil%2Fobject%2Fobject.js&plugins=can%2Futil%2Ffixture%2Ffixture.js
+ * Includes: can/component/component.js,can/construct/construct.js,can/map/map.js,can/list/list.js,can/compute/compute.js,can/model/model.js,can/view/view.js,can/control/control.js,can/route/route.js,can/control/route/route.js,can/view/mustache/mustache.js,can/list/promise/promise.js,can/construct/super/super.js,can/construct/proxy/proxy.js,can/map/validations/validations.js,can/map/backup/backup.js,can/map/list/list.js,can/map/define/define.js,can/util/object/object.js,can/util/fixture/fixture.js
+ * Download from: http://bitbuilder.herokuapp.com/can.custom.js?configuration=jquery&plugins=can%2Fcomponent%2Fcomponent.js&plugins=can%2Fconstruct%2Fconstruct.js&plugins=can%2Fmap%2Fmap.js&plugins=can%2Flist%2Flist.js&plugins=can%2Fcompute%2Fcompute.js&plugins=can%2Fmodel%2Fmodel.js&plugins=can%2Fview%2Fview.js&plugins=can%2Fcontrol%2Fcontrol.js&plugins=can%2Froute%2Froute.js&plugins=can%2Fcontrol%2Froute%2Froute.js&plugins=can%2Fview%2Fmustache%2Fmustache.js&plugins=can%2Flist%2Fpromise%2Fpromise.js&plugins=can%2Fconstruct%2Fsuper%2Fsuper.js&plugins=can%2Fconstruct%2Fproxy%2Fproxy.js&plugins=can%2Fmap%2Fvalidations%2Fvalidations.js&plugins=can%2Fmap%2Fbackup%2Fbackup.js&plugins=can%2Fmap%2Flist%2Flist.js&plugins=can%2Fmap%2Fdefine%2Fdefine.js&plugins=can%2Futil%2Fobject%2Fobject.js&plugins=can%2Futil%2Ffixture%2Ffixture.js
  */
 (function(undefined) {
 
@@ -1654,7 +1654,11 @@
                 },
                 // Extends classes.
 
-                extend: function(fullName, klass, proto) {
+                extend: function(name, staticProperties, instanceProperties) {
+                    var fullName = name,
+                        klass = staticProperties,
+                        proto = instanceProperties;
+
                     // Figure out what was passed and normalize it.
                     if (typeof fullName !== 'string') {
                         proto = klass;
@@ -1668,7 +1672,7 @@
                     proto = proto || {};
                     var _super_class = this,
                         _super = this.prototype,
-                        parts, current, _fullName, _shortName, name, shortName, namespace, prototype;
+                        parts, current, _fullName, _shortName, propName, shortName, namespace, prototype;
                     // Instantiate a base class (but only create the instance,
                     // don't run the init constructor).
                     prototype = this.instance();
@@ -1689,9 +1693,9 @@
                         }
                     }
                     // Copy old stuff onto class (can probably be merged w/ inherit)
-                    for (name in _super_class) {
-                        if (_super_class.hasOwnProperty(name)) {
-                            Constructor[name] = _super_class[name];
+                    for (propName in _super_class) {
+                        if (_super_class.hasOwnProperty(propName)) {
+                            Constructor[propName] = _super_class[propName];
                         }
                     }
                     // Copy new static properties on class.
@@ -2479,6 +2483,10 @@
 
             {
                 setup: function(obj) {
+                    if (obj instanceof can.Map) {
+                        obj = obj.serialize();
+                    }
+
                     // `_data` is where we keep the properties.
                     this._data = {};
 
@@ -3430,7 +3438,9 @@
                         onchanged = function(ev) {
                             if (compute.bound && (ev.batchNum === undefined || ev.batchNum !== batchNum)) {
                                 // Get the new value
+                                var reads = can.__clearReading();
                                 var newValue = func.call(context);
+                                can.__setReading(reads);
                                 // Call the updater with old and new values
                                 updater(newValue, oldValue, ev.batchNum);
                                 oldValue = newValue;
@@ -3795,7 +3805,7 @@
                     if (options.foundObservable) {
                         options.foundObservable(prev, i);
                     }
-                    prev = prev();
+                    prev = cur = prev();
                 }
                 // Look to read a property from something.
                 if (isObserve(prev)) {
@@ -3848,7 +3858,7 @@
             }
             // handle an ending function
             // unless it is a can.Construct-derived constructor
-            if (typeof cur === 'function' && !(can.Construct && cur.prototype instanceof can.Construct)) {
+            if (typeof cur === 'function' && !(can.Construct && cur.prototype instanceof can.Construct) && !(can.route && cur === can.route)) {
                 if (options.isArgument) {
                     if (!cur.isComputed && options.proxyMethods !== false) {
                         cur = can.proxy(cur, prev);
@@ -5218,7 +5228,7 @@
         }
 
         var alphaNumericHU = "-A-Za-z0-9_",
-            attributeNames = "[a-zA-Z_:][" + alphaNumericHU + ":.]+",
+            attributeNames = "[a-zA-Z_:][" + alphaNumericHU + ":.]*",
             spaceEQspace = "\\s*=\\s*",
             dblQuote2dblQuote = "\"((?:\\\\.|[^\"])*)\"",
             quote2quote = "'((?:\\\\.|[^'])*)'",
@@ -6170,7 +6180,7 @@
             ARG_NAMES = SCOPE + ",options",
 
             // matches arguments inside a {{ }}
-            argumentsRegExp = /((([^\s]+?=)?('.*?'|".*?"))|.*?)\s/g,
+            argumentsRegExp = /((([^'"\s]+?=)?('.*?'|".*?"))|.*?)\s/g,
 
             // matches a literal number, string, null or regexp
             literalNumberStringBooleanRegExp = /^(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false|null|undefined)|((.+?)=(('.*?'|".*?"|[0-9]+\.?[0-9]*|true|false)|(.+))))$/,
@@ -6711,7 +6721,7 @@
                         }
                     }
                 } else if (arg && isLookup(arg)) {
-                    args.push(Mustache.get(arg.get, scopeAndOptions, false, true));
+                    args.push(Mustache.get(arg.get, scopeAndOptions, false, true, true));
                 } else {
                     args.push(arg);
                 }
@@ -6824,7 +6834,7 @@
         };
 
 
-        Mustache.get = function(key, scopeAndOptions, isHelper, isArgument) {
+        Mustache.get = function(key, scopeAndOptions, isHelper, isArgument, isLookup) {
 
             // Cache a reference to the current context and options, we will use them a bunch.
             var context = scopeAndOptions.scope.attr('.'),
@@ -6861,7 +6871,7 @@
 
 
             // Use helper over the found value if the found value isn't in the current context
-            if ((initialValue === undefined || computeData.scope !== scopeAndOptions.scope) && Mustache.getHelper(key, options)) {
+            if (!isLookup && (initialValue === undefined || computeData.scope !== scopeAndOptions.scope) && Mustache.getHelper(key, options)) {
                 return key;
             }
 
@@ -7075,6 +7085,15 @@
                             console.log(expr, options.context);
                         }
                     }
+                },
+
+                "@index": function(offset, options) {
+                    if (!options) {
+                        options = offset;
+                        offset = 0;
+                    }
+                    var index = options.scope.attr("@index");
+                    return "" + ((can.isFunction(index) ? index() : index) + offset);
                 }
 
             }, function(fn, name) {
@@ -7670,7 +7689,7 @@
                         can.bind.call(el, "attributes", function(ev) {
                             // Convert attribute name from the `attribute-name` to the `attributeName` format.
                             var camelized = can.camelize(ev.attributeName);
-                            if (!twoWayBindings[camelized]) {
+                            if (!twoWayBindings[camelized] && !ignoreAttributesRegExp.test(camelized)) {
                                 // If there is a mapping for this attribute, update the `componentScope` attribute
                                 componentScope.attr(camelized, el.getAttribute(ev.attributeName));
                             }
@@ -8260,7 +8279,7 @@
                 setup: function(base, fullName, staticProps, protoProps) {
                     // Assume `fullName` wasn't passed. (`can.Model.extend({ ... }, { ... })`)
                     // This is pretty usual.
-                    if (fullName !== "string") {
+                    if (typeof fullName !== "string") {
                         protoProps = staticProps;
                         staticProps = fullName;
                     }
@@ -8298,9 +8317,15 @@
                         // Check the configuration for this ajaxMethod.
                         // If the configuration isn't a function, it should be a string (like `"GET /endpoint"`)
                         // or an object like `{url: "/endpoint", type: 'GET'}`.
-                        if (!can.isFunction(self[name])) {
-                            // Etiher way, `ajaxMaker` will turn it into a function for us.
-                            self[name] = ajaxMaker(method, self[name] ? self[name] : createURLFromResource(self, name));
+
+                        //if we have a string(like `"GET /endpoint"`) or an object(ajaxSettings) set in the static definition(not inherited),
+                        //convert it to a function.
+                        if (staticProps && staticProps[name] && (typeof staticProps[name] === 'string' || typeof staticProps[name] === 'object')) {
+                            self[name] = ajaxMaker(method, staticProps[name]);
+                        }
+                        //if we have a resource property set in the static definition
+                        else if (staticProps && staticProps.resource) {
+                            self[name] = ajaxMaker(method, createURLFromResource(self, name));
                         }
 
                         // There may also be a "maker" function (like `makeFindAll`) that alters the behavior of acting upon models
@@ -8340,7 +8365,7 @@
 
                         // If there was no prototype, or no `model` and no `parseModel`,
                         // we'll have to create a `parseModel`.
-                        else if (!protoProps || (!protoProps[name] && !protoProps[parseName])) {
+                        else if (!staticProps || (!staticProps[name] && !staticProps[parseName])) {
                             can.Construct._overwrite(self, base, parseName, parsers[parseName]());
                         }
                     });
@@ -8552,7 +8577,7 @@
                     // we use those as parameters for an initial findAll.
                     if (can.isPlainObject(params) && !can.isArray(params)) {
                         can.List.prototype.setup.apply(this);
-                        this.replace(this.constructor.Map.findAll(params));
+                        this.replace(can.isDeferred(params) ? params : this.constructor.Map.findAll(params));
                     } else {
                         // Otherwise, set up the list like normal.
                         can.List.prototype.setup.apply(this, arguments);
@@ -8726,10 +8751,13 @@
                     var serialized = can.route.data.serialize(),
                         path = can.route.param(serialized, true);
                     can.route._call("setURL", path);
-
+                    // trigger a url change so its possible to live-bind on url-based changes
+                    can.batch.trigger(eventsObject, "__url", [path, lastHash]);
                     lastHash = path;
                 }, 10);
-            };
+            },
+            // A dummy events object used to dispatch url change events on.
+            eventsObject = can.extend({}, can.event);
 
         can.route = function(url, defaults) {
             // if route ends with a / and url starts with a /, remove the leading / of the url
@@ -8947,6 +8975,8 @@
                 },
 
                 current: function(options) {
+                    // "reads" the url so the url is live-bindable.
+                    can.__reading(eventsObject, "__url");
                     return this._call("matchingPartOfURL") === can.route.param(options);
                 },
                 bindings: {
@@ -9021,7 +9051,7 @@
 
         // The functions in the following list applied to `can.route` (e.g. `can.route.attr('...')`) will
         // instead act on the `can.route.data` observe.
-        each(['bind', 'unbind', 'on', 'off', 'delegate', 'undelegate', 'removeAttr', 'compute', '_get', '__get'], function(name) {
+        each(['bind', 'unbind', 'on', 'off', 'delegate', 'undelegate', 'removeAttr', 'compute', '_get', '__get', 'each'], function(name) {
             can.route[name] = function() {
                 // `delegate` and `undelegate` require
                 // the `can/map/delegate` plugin
@@ -9079,6 +9109,8 @@
                     }
                 }
                 can.route.attr(curParams);
+                // trigger a url change so its possible to live-bind on url-based changes
+                can.batch.trigger(eventsObject, "__url", [hash, lastHash]);
                 can.batch.stop();
             }
         };
@@ -9194,150 +9226,8 @@
             });
     })(__m19);
 
-    // ## can/route/pushstate/pushstate.js
-    var __m35 = (function(can) {
-        "use strict";
-
-        // Initialize plugin only if browser supports pushstate.
-        if (window.history && history.pushState) {
-
-            // Registers itself within `can.route.bindings`.
-            can.route.bindings.pushstate = {
-
-
-                // Start of `location.pathname` is the root.
-                // (Can be configured via `can.route.bindings.pushstate.root`)
-                root: "/",
-                // don't greedily match slashes in routing rules
-                matchSlashes: false,
-                paramsMatcher: /^\?(?:[^=]+=[^&]*&)*[^=]+=[^&]*/,
-                querySeparator: '?',
-
-                // ## bind
-
-                // Intercepts clicks on `<a>` elements and rewrites original `history` methods.
-                bind: function() {
-                    // Intercept routable links.
-                    can.delegate.call(can.$(document.documentElement), 'a', 'click', anchorClickHandler);
-
-                    // Rewrites original `pushState`/`replaceState` methods on `history` and keeps pointer to original methods
-                    can.each(methodsToOverwrite, function(method) {
-                        originalMethods[method] = window.history[method];
-                        window.history[method] = function(state, title, url) {
-                            // Avoid doubled history states (with pushState).
-                            var absolute = url.indexOf("http") === 0;
-                            var searchHash = window.location.search + window.location.hash;
-                            // If url differs from current call original histoy method and update `can.route` state.
-                            if ((!absolute && url !== window.location.pathname + searchHash) || (absolute && url !== window.location.href + searchHash)) {
-                                originalMethods[method].apply(window.history, arguments);
-                                can.route.setState();
-                            }
-                        };
-                    });
-
-                    // Bind to `popstate` event, fires on back/forward.
-                    can.bind.call(window, 'popstate', can.route.setState);
-                },
-
-                // ## unbind
-
-                // Unbinds and restores original `history` methods
-                unbind: function() {
-                    can.undelegate.call(can.$(document.documentElement), 'click', 'a', anchorClickHandler);
-
-                    can.each(methodsToOverwrite, function(method) {
-                        window.history[method] = originalMethods[method];
-                    });
-                    can.unbind.call(window, 'popstate', can.route.setState);
-                },
-
-                // ## matchingPartOfURL
-
-                // Returns matching part of url without root.
-                matchingPartOfURL: function() {
-                    var root = cleanRoot(),
-                        loc = (location.pathname + location.search),
-                        index = loc.indexOf(root);
-
-                    return loc.substr(index + root.length);
-                },
-
-                // ## setURL
-
-                // Updates URL by calling `pushState`.
-                setURL: function(path) {
-                    // Keeps hash if not in path.
-                    if (includeHash && path.indexOf("#") === -1 && window.location.hash) {
-                        path += window.location.hash;
-                    }
-                    window.history.pushState(null, null, can.route._call("root") + path);
-                }
-            };
-
-            // ## anchorClickHandler
-
-            // Handler function for `click` events.
-            var anchorClickHandler = function(e) {
-                if (!(e.isDefaultPrevented ? e.isDefaultPrevented() : e.defaultPrevented === true)) {
-                    // YUI calls back events triggered with this as a wrapped object.
-                    var node = this._node || this;
-                    // Fix for IE showing blank host, but blank host means current host.
-                    var linksHost = node.host || window.location.host;
-
-                    // If link is within the same domain and descendant of `root`
-                    if (window.location.host === linksHost) {
-                        var root = cleanRoot();
-                        if (node.pathname.indexOf(root) === 0) {
-
-                            // Removes root from url.
-                            var url = (node.pathname + node.search).substr(root.length);
-                            // If a route matches update the data.
-                            var curParams = can.route.deparam(url);
-                            if (curParams.hasOwnProperty('route')) {
-                                // Makes it possible to have a link with a hash.
-                                includeHash = true;
-                                window.history.pushState(null, null, node.href);
-
-                                // Test if you can preventDefault
-                                // our tests can't call .click() b/c this
-                                // freezes phantom.
-                                if (e.preventDefault) {
-                                    e.preventDefault();
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-
-                // ## cleanRoot
-
-                // Always returns clean root, without domain.
-                cleanRoot = function() {
-                    var domain = location.protocol + "//" + location.host,
-                        root = can.route._call("root"),
-                        index = root.indexOf(domain);
-                    if (index === 0) {
-                        return root.substr(domain.length);
-                    }
-                    return root;
-                },
-                // Original methods on `history` that will be overwritten
-                methodsToOverwrite = ['pushState', 'replaceState'],
-                // A place to store pointers to original `history` methods.
-                originalMethods = {},
-                // Used to tell setURL to include the hash because we clicked on a link.
-                includeHash = false;
-
-            // Enables plugin, by default `hashchange` binding is used.
-            can.route.defaultBinding = "pushstate";
-        }
-
-        return can;
-    })(__m2, __m31);
-
     // ## can/construct/super/super.js
-    var __m36 = (function(can, Construct) {
+    var __m35 = (function(can, Construct) {
         // tests if we can get super in .toString()
         var isFunction = can.isFunction,
             fnTest = /xyz/.test(function() {
@@ -9375,7 +9265,7 @@
     })(__m2, __m12);
 
     // ## can/construct/proxy/proxy.js
-    var __m37 = (function(can, Construct) {
+    var __m36 = (function(can, Construct) {
         var isFunction = can.isFunction,
             isArray = can.isArray,
             makeArray = can.makeArray,
@@ -9436,7 +9326,7 @@
     })(__m2, __m12);
 
     // ## can/map/validations/validations.js
-    var __m38 = (function(can) {
+    var __m37 = (function(can) {
         //validations object is by property.  You can have validations that
         //span properties, but this way we know which ones to run.
         //  proc should return true if there's an error or the error message
@@ -9615,8 +9505,154 @@
         return can.Map;
     })(__m2, __m15);
 
-    // ## can/map/list/list.js
+    // ## can/util/object/object.js
     var __m39 = (function(can) {
+        var isArray = can.isArray;
+
+        can.Object = {};
+
+        var same = can.Object.same = function(a, b, compares, aParent, bParent, deep) {
+            var aType = typeof a,
+                aArray = isArray(a),
+                comparesType = typeof compares,
+                compare;
+            if (comparesType === 'string' || compares === null) {
+                compares = compareMethods[compares];
+                comparesType = 'function';
+            }
+            if (comparesType === 'function') {
+                return compares(a, b, aParent, bParent);
+            }
+            compares = compares || {};
+            if (a === null || b === null) {
+                return a === b;
+            }
+            if (a instanceof Date || b instanceof Date) {
+                return a === b;
+            }
+            if (deep === -1) {
+                return aType === 'object' || a === b;
+            }
+            if (aType !== typeof b || aArray !== isArray(b)) {
+                return false;
+            }
+            if (a === b) {
+                return true;
+            }
+            if (aArray) {
+                if (a.length !== b.length) {
+                    return false;
+                }
+                for (var i = 0; i < a.length; i++) {
+                    compare = compares[i] === undefined ? compares['*'] : compares[i];
+                    if (!same(a[i], b[i], a, b, compare)) {
+                        return false;
+                    }
+                }
+                return true;
+            } else if (aType === 'object' || aType === 'function') {
+                var bCopy = can.extend({}, b);
+                for (var prop in a) {
+                    compare = compares[prop] === undefined ? compares['*'] : compares[prop];
+                    if (!same(a[prop], b[prop], compare, a, b, deep === false ? -1 : undefined)) {
+                        return false;
+                    }
+                    delete bCopy[prop];
+                }
+                // go through bCopy props ... if there is no compare .. return false
+                for (prop in bCopy) {
+                    if (compares[prop] === undefined || !same(undefined, b[prop], compares[prop], a, b, deep === false ? -1 : undefined)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        };
+
+        can.Object.subsets = function(checkSet, sets, compares) {
+            var len = sets.length,
+                subsets = [];
+            for (var i = 0; i < len; i++) {
+                //check this subset
+                var set = sets[i];
+                if (can.Object.subset(checkSet, set, compares)) {
+                    subsets.push(set);
+                }
+            }
+            return subsets;
+        };
+
+        can.Object.subset = function(subset, set, compares) {
+            // go through set {type: 'folder'} and make sure every property
+            // is in subset {type: 'folder', parentId :5}
+            // then make sure that set has fewer properties
+            // make sure we are only checking 'important' properties
+            // in subset (ones that have to have a value)
+            compares = compares || {};
+            for (var prop in set) {
+                if (!same(subset[prop], set[prop], compares[prop], subset, set)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        var compareMethods = {
+            'null': function() {
+                return true;
+            },
+            i: function(a, b) {
+                return ('' + a)
+                    .toLowerCase() === ('' + b)
+                    .toLowerCase();
+            },
+            eq: function(a, b) {
+                return a === b;
+            },
+            similar: function(a, b) {
+
+                return a == b;
+            }
+        };
+        compareMethods.eqeq = compareMethods.similar;
+        return can.Object;
+    })(__m2);
+
+    // ## can/map/backup/backup.js
+    var __m38 = (function(can) {
+        var flatProps = function(a, cur) {
+            var obj = {};
+            for (var prop in a) {
+                if (typeof a[prop] !== 'object' || a[prop] === null || a[prop] instanceof Date) {
+                    obj[prop] = a[prop];
+                } else {
+                    obj[prop] = cur.attr(prop);
+                }
+            }
+            return obj;
+        };
+        can.extend(can.Map.prototype, {
+
+                backup: function() {
+                    this._backupStore = this._attrs();
+                    return this;
+                },
+                isDirty: function(checkAssociations) {
+                    return this._backupStore && !can.Object.same(this._attrs(), this._backupStore, undefined, undefined, undefined, !! checkAssociations);
+                },
+                restore: function(restoreAssociations) {
+                    var props = restoreAssociations ? this._backupStore : flatProps(this._backupStore, this);
+                    if (this.isDirty(restoreAssociations)) {
+                        this._attrs(props, true);
+                    }
+                    return this;
+                }
+            });
+        return can.Map;
+    })(__m2, __m15, __m39);
+
+    // ## can/map/list/list.js
+    var __m40 = (function(can) {
         can.extend(can.List.prototype, {
                 filter: function(callback) {
                     // The filtered list
@@ -9702,7 +9738,7 @@
     })(__m2, __m15, __m19, __m20);
 
     // ## can/map/define/define.js
-    var __m40 = (function(can) {
+    var __m41 = (function(can) {
 
         can.Map.helpers.define = function(Map) {
             var define = Map.prototype.define;
@@ -9942,119 +9978,6 @@
 
         return can.Map;
     })(__m2, __m14);
-
-    // ## can/util/object/object.js
-    var __m41 = (function(can) {
-        var isArray = can.isArray;
-
-        can.Object = {};
-
-        var same = can.Object.same = function(a, b, compares, aParent, bParent, deep) {
-            var aType = typeof a,
-                aArray = isArray(a),
-                comparesType = typeof compares,
-                compare;
-            if (comparesType === 'string' || compares === null) {
-                compares = compareMethods[compares];
-                comparesType = 'function';
-            }
-            if (comparesType === 'function') {
-                return compares(a, b, aParent, bParent);
-            }
-            compares = compares || {};
-            if (a === null || b === null) {
-                return a === b;
-            }
-            if (a instanceof Date || b instanceof Date) {
-                return a === b;
-            }
-            if (deep === -1) {
-                return aType === 'object' || a === b;
-            }
-            if (aType !== typeof b || aArray !== isArray(b)) {
-                return false;
-            }
-            if (a === b) {
-                return true;
-            }
-            if (aArray) {
-                if (a.length !== b.length) {
-                    return false;
-                }
-                for (var i = 0; i < a.length; i++) {
-                    compare = compares[i] === undefined ? compares['*'] : compares[i];
-                    if (!same(a[i], b[i], a, b, compare)) {
-                        return false;
-                    }
-                }
-                return true;
-            } else if (aType === 'object' || aType === 'function') {
-                var bCopy = can.extend({}, b);
-                for (var prop in a) {
-                    compare = compares[prop] === undefined ? compares['*'] : compares[prop];
-                    if (!same(a[prop], b[prop], compare, a, b, deep === false ? -1 : undefined)) {
-                        return false;
-                    }
-                    delete bCopy[prop];
-                }
-                // go through bCopy props ... if there is no compare .. return false
-                for (prop in bCopy) {
-                    if (compares[prop] === undefined || !same(undefined, b[prop], compares[prop], a, b, deep === false ? -1 : undefined)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            return false;
-        };
-
-        can.Object.subsets = function(checkSet, sets, compares) {
-            var len = sets.length,
-                subsets = [];
-            for (var i = 0; i < len; i++) {
-                //check this subset
-                var set = sets[i];
-                if (can.Object.subset(checkSet, set, compares)) {
-                    subsets.push(set);
-                }
-            }
-            return subsets;
-        };
-
-        can.Object.subset = function(subset, set, compares) {
-            // go through set {type: 'folder'} and make sure every property
-            // is in subset {type: 'folder', parentId :5}
-            // then make sure that set has fewer properties
-            // make sure we are only checking 'important' properties
-            // in subset (ones that have to have a value)
-            compares = compares || {};
-            for (var prop in set) {
-                if (!same(subset[prop], set[prop], compares[prop], subset, set)) {
-                    return false;
-                }
-            }
-            return true;
-        };
-        var compareMethods = {
-            'null': function() {
-                return true;
-            },
-            i: function(a, b) {
-                return ('' + a)
-                    .toLowerCase() === ('' + b)
-                    .toLowerCase();
-            },
-            eq: function(a, b) {
-                return a === b;
-            },
-            similar: function(a, b) {
-
-                return a == b;
-            }
-        };
-        compareMethods.eqeq = compareMethods.similar;
-        return can.Object;
-    })(__m2);
 
     // ## can/util/fixture/fixture.js
     var __m42 = (function(can) {
@@ -10758,7 +10681,7 @@
         can.fixture.overwrites = overwrites;
         can.fixture.make = can.fixture.store;
         return can.fixture;
-    })(__m2, __m13, __m41);
+    })(__m2, __m13, __m39);
 
     window['can'] = __m4;
 })();

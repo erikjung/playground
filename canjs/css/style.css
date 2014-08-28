@@ -3,7 +3,8 @@ body {
   margin-top: 1em;
 }
 
-x\:product {
+x\:product,
+x\:form {
   display: block;
 }
 
