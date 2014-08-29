@@ -19,29 +19,33 @@ function (can) {
 
   function animate (event, transition) {
     event.pause()
-    $.Velocity(event.target, 'transition.' + transition, {
+    $.Velocity(event.target, transition, {
       complete: function () { event.resume() }
     })
   }
 
-  /** Animations */
+  function setEffect (name, key, value) {
+    $.Velocity.RegisterUI.packagedEffects[name][key] = value
+  }
+
+  /** Custom Animations */
 
   $.Velocity.RegisterUI('transition.slideUp', {
-    defaultDuration: FPS * 10,
+    defaultDuration: FPS * 16,
     calls: [
       [ { height: '*=1.1' } ],
       [ { height: '0px', opacity: 0 } ]
     ]
-  });
+  })
+
+  /** Overrides */
+
+  setEffect('callout.pulse', 'defaultDuration', FPS * 24)
+  setEffect('transition.slideLeftIn', 'defaultDuration', FPS * 24)
 
   /*
    * Animation for elements when they trigger "fx-on{event}"
    * e.g. $(elem).trigger('void') => "fx-onvoid"
    */
-  can.each([
-    'fx-inserted',
-    'fx-voided'
-  ], function (name) {
-    can.view.attr(name, bindAnimation)
-  })
+  can.view.attr(/fx-/, bindAnimation)
 })
